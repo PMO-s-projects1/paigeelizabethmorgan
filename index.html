@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Em Morgan | AI enablement</title>
-<meta name="description" content="Em Morgan: AI enablement and learning design. Training, playbooks, reports, AI workflows and a 90-day plan.">
+<title>Paige Elizabeth Morgan | AI enablement</title>
+<meta name="description" content="Paige Elizabeth Morgan: AI Champion, facilitator and learning designer. Training, playbooks, reporting, AI workflows and a 90-day plan for AI enablement.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Geist:wght@400;500;600&display=swap" rel="stylesheet">
@@ -132,11 +132,11 @@ button{ font:inherit; }
 .pv-win .bar i{ width:7px; height:7px; border-radius:50%; background:var(--rule); }
 .pv-win .body{ display:grid; grid-template-columns:1fr 2fr; gap:6px; }
 .pv-win .side{ display:grid; gap:4px; align-content:start; }
-.pv-win .side i{ height:6px; border-radius:3px; background:#0B3C5D; opacity:.25; }
-.pv-win .side i:first-child{ opacity:.9; background:#F2A541; }
+.pv-win .side i{ height:6px; border-radius:3px; background:#14402F; opacity:.22; }
+.pv-win .side i:first-child{ opacity:.9; background:#B58A2C; }
 .pv-win .grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:4px; }
 .pv-win .grid i{ height:22px; border-radius:5px; background:#EEF2F4; }
-.pv-win .grid i:nth-child(1){ background:#0B3C5D; }
+.pv-win .grid i:nth-child(1){ background:#14402F; }
 .pv-flow{ display:flex; align-items:center; gap:6px; flex-wrap:wrap; }
 .pv-flow span{ font-size:12.5px; font-weight:600; padding:6px 10px; border-radius:8px; background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.2); }
 .pv-flow span:last-child{ background:var(--mint); color:var(--ink); border-color:var(--mint); }
@@ -387,20 +387,88 @@ button{ font:inherit; }
 .foot{ border-top:2px solid var(--rule); padding:26px 0 40px; font-size:14.5px; color:var(--ink-3); }
 .foot .wrap{ display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; }
 .foot a{ color:var(--ink); }
+
+/* =====================================================================
+   v3 overrides: new tile order, colours and components
+   ===================================================================== */
+.bento{ grid-auto-rows:auto; }
+.bento > .tile,.bento > .intro{ min-height:262px; }
+.intro{ grid-column:1 / 3; grid-row:1 / 3; }
+.t-about{ grid-column:3 / 5; }
+.t-training,.t-playbook,.t-learning,.t-gift{ grid-column:auto; }
+.t-workflows{ grid-column:1 / 3; }
+.t-reports{ grid-column:3 / 5; }
+.t-plan{ grid-column:1 / 3; }
+.bento > .t-board{ grid-column:1 / -1; min-height:0; flex-direction:row; align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap; }
+.t-board .bd-text{ display:flex; flex-direction:column; gap:8px; }
+.t-board .pv-soon{ width:280px; margin:0; }
+@media (max-width:1100px){ .intro,.t-about,.t-workflows,.t-reports,.t-plan{ grid-column:1 / -1; grid-row:auto; } }
+@media (max-width:640px){ .t-board .pv-soon{ width:100%; } }
+
+.intro h1{ font-size:clamp(52px, 6.4vw, 98px); line-height:.9; }
+.about-link{ display:inline-flex; align-items:center; gap:10px; margin-top:18px; padding:9px 10px 9px 18px; border-radius:999px; background:var(--ink); color:#fff; text-decoration:none; font-weight:600; font-size:15px; }
+.about-link span{ width:28px; height:28px; border-radius:50%; background:var(--pink); color:var(--ink); display:grid; place-items:center; }
+.about-link:hover span{ transform:rotate(-45deg); }
+
+.t-about{ background:var(--blue); color:#fff; }
+.t-about .tag{ background:rgba(255,255,255,.18); }
+.t-about .go{ background:#fff; color:var(--blue); }
+.pv-about{ display:flex; align-items:center; gap:16px; flex-wrap:wrap; }
+.pv-about .avatar{ width:84px; height:84px; font-size:26px; background:var(--pink); color:var(--ink); }
+.pv-about ul{ list-style:none; margin:0; padding:0; display:flex; flex-wrap:wrap; gap:6px; flex:1; min-width:200px; }
+.pv-about li{ background:rgba(255,255,255,.16); border-radius:999px; padding:5px 12px; font-size:13.5px; font-weight:600; }
+.t-training{ background:var(--pink); color:var(--ink); }
+.t-training .tag{ background:rgba(255,255,255,.55); }
+.t-training .go{ background:var(--ink); color:#fff; }
+.t-training .pv-chips span{ background:#fff; color:var(--ink); }
+.t-training .pv-chips span:nth-child(2){ background:var(--sun); }
+.t-training .pv-chips span:nth-child(3){ background:var(--lilac); }
+.t-plan{ background:var(--mint); }
+.t-learning{ background:var(--sun); }
+.mark i{ width:40px; height:40px; font-size:12.5px; }
+.top .btn{ white-space:nowrap; }
+@media (max-width:560px){ .mark{ font-size:0; gap:0; } .mark i{ font-size:12.5px; } }
+.vh-pink .crumb{ background:rgba(255,255,255,.55); }
+
+.story p{ font-size:clamp(17px, 1.5vw, 19px); max-width:40em; }
+.story p.lead{ font-family:var(--display); font-weight:600; font-size:clamp(22px, 2.3vw, 30px); line-height:1.25; letter-spacing:-.015em; max-width:28em; }
+.creds-row{ display:flex; flex-wrap:wrap; gap:8px; margin-top:16px; }
+.creds-row span{ background:var(--paper); border-radius:999px; padding:7px 14px; font-size:14.5px; font-weight:500; }
+.note{ font-size:14px; color:var(--ink-3); margin:14px 0 0; max-width:60em; }
+
+.exp{ display:grid; gap:12px; margin-top:16px; }
+.job{ display:grid; grid-template-columns:200px 1fr; gap:24px; background:var(--paper); border-radius:16px; padding:22px; }
+.job .when{ font-size:14.5px; color:var(--ink-3); font-variant-numeric:tabular-nums; }
+.job h3{ font-size:22px; margin-bottom:2px; letter-spacing:-.01em; }
+.job .org{ color:var(--ink-2); margin:0 0 10px; font-weight:500; }
+.job ul{ margin:0; padding-left:18px; }
+.job li{ margin-bottom:6px; font-size:15.5px; }
+@media (max-width:760px){ .job{ grid-template-columns:1fr; gap:6px; } }
+
+.built{ background:var(--night); color:#fff; border-radius:var(--r); padding:30px 36px; margin-bottom:16px; display:grid; grid-template-columns:auto 1fr; gap:24px; align-items:center; }
+.built .spark{ width:64px; height:64px; border-radius:18px; background:var(--mint); color:var(--ink); display:grid; place-items:center; }
+.built b{ font-family:var(--display); font-weight:700; font-size:clamp(22px, 2.3vw, 30px); letter-spacing:-.02em; line-height:1.15; display:block; margin-bottom:6px; }
+.built p{ margin:0; max-width:46em; opacity:.85; }
+@media (max-width:640px){ .built{ grid-template-columns:1fr; padding:24px; } }
+
+.ten{ display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:8px; }
+.ten div{ background:var(--paper); border-radius:10px; padding:9px 12px; font-size:13.5px; color:var(--ink-3); line-height:1.35; }
+.ten b{ display:block; font-size:14.5px; color:var(--ink); font-weight:600; }
+@media (max-width:420px){ .ten{ grid-template-columns:1fr; } }
 </style>
 </head>
 <body>
 
 <!--
   =====================================================================
-  EDIT ME: links, photo, CV and video URLs live in the CONFIG block at
-  the bottom of this file. Demos live in /demos.
+  EDIT ME: links, photo and CV live in the CONFIG block at the bottom
+  of this file. The sample playbook and report live in /demos.
   =====================================================================
 -->
 
 <header class="top">
   <div class="wrap">
-    <a class="mark" href="#/"><i>EM</i>Em Morgan</a>
+    <a class="mark" href="#/"><i>PEM</i>Paige Elizabeth Morgan</a>
     <div class="top-actions">
       <a class="btn btn-line" data-cfg="cv" download>Download CV</a>
       <a class="btn btn-ink" data-cfg="email">Email me</a>
@@ -415,103 +483,208 @@ button{ font:inherit; }
   <div class="bento" id="bento">
     <section class="intro" style="--i:0" aria-labelledby="name">
       <div>
-        <h1 id="name">Em<br>Morgan</h1>
+        <h1 id="name">Paige<br>Elizabeth<br>Morgan</h1>
         <p class="role">I help people actually use AI at work.</p>
+        <a class="about-link" href="#/about">About me <span aria-hidden="true"><svg width="14" height="14" viewBox="0 0 18 18" fill="none"><path d="M3 9h11M9.5 4.5 14 9l-4.5 4.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
       </div>
       <dl>
-        <div><dt>Focus</dt><dd>AI enablement and learning design</dd></div>
+        <div><dt>Focus</dt><dd>AI enablement, facilitation and learning design</dd></div>
         <div><dt>Location</dt><dd>Dubai, moving to London in December 2026</dd></div>
         <div><dt>Email</dt><dd><a data-cfg="email">paigeelizabethmorgan@gmail.com</a></dd></div>
       </dl>
     </section>
 
-    <a class="tile t-training" href="#/training" style="--i:1">
-      <div class="row"><span class="tag">Enablement</span><span class="go" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9h11M9.5 4.5 14 9l-4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
-      <h2>Training colleagues and CEOs to use AI</h2>
-      <p>From regional teams across EMEA and APAC to chief executives.</p>
-      <div class="pv pv-chips" aria-hidden="true"><span>Regional directors</span><span>Global teams</span><span>CEOs and C-suite</span></div>
+    <a class="tile t-about" href="#/about" style="--i:1">
+      <div class="row"><span class="tag">Start here</span><span class="go" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9h11M9.5 4.5 14 9l-4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+      <h2>About me</h2>
+      <p>My story, my view on AI, my experience and my CV.</p>
+      <div class="pv pv-about"><span class="avatar" data-photo>PEM</span><ul><li>AI Champion at YPO</li><li>Oxford MSc in Education</li><li>Facilitator</li></ul></div>
     </a>
 
-    <a class="tile t-playbook" href="#/playbook" style="--i:2">
-      <div class="row"><span class="tag">Live demo</span><span class="go" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9h11M9.5 4.5 14 9l-4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+    <a class="tile t-training" href="#/training" style="--i:2">
+      <div class="row"><span class="tag">Enablement</span><span class="go" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9h11M9.5 4.5 14 9l-4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+      <h2>Training colleagues and CEOs to use AI</h2>
+      <div class="pv pv-chips" aria-hidden="true"><span>EMEA + APAC</span><span>Departments</span><span>CEOs</span></div>
+    </a>
+
+    <a class="tile t-playbook" href="#/playbook" style="--i:3">
+      <div class="row"><span class="tag">Sample inside</span><span class="go" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9h11M9.5 4.5 14 9l-4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
       <h2>Playbooks and resources</h2>
-      <p>An AI-built playbook, rebuilt for a sample company.</p>
       <div class="pv pv-win" aria-hidden="true"><div class="bar"><i></i><i></i><i></i></div><div class="body"><div class="side"><i></i><i></i><i></i><i></i></div><div class="grid"><i></i><i></i><i></i><i></i><i></i><i></i></div></div></div>
     </a>
 
-    <a class="tile t-workflows" href="#/workflows" style="--i:3">
+    <a class="tile t-workflows" href="#/workflows" style="--i:4">
       <div class="row"><span class="tag">How I build</span><span class="go" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9h11M9.5 4.5 14 9l-4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
       <h2>AI workflows</h2>
-      <p>Projects, skills, connectors and plugins, working together.</p>
-      <div class="pv pv-flow" aria-hidden="true"><span>Context</span><b></b><span>Skills</span><b></b><span>Connectors</span><b></b><span>Live</span></div>
+      <p>Skills, connectors and plugins working together, with five example workflows I run.</p>
+      <div class="pv pv-flow" aria-hidden="true"><span>Context</span><b></b><span>Skills</span><b></b><span>Connectors</span><b></b><span>Plugins</span><b></b><span>Done</span></div>
     </a>
 
-    <a class="tile t-reports" href="#/reports" style="--i:4">
-      <div class="row"><span class="tag">Live demo</span><span class="go" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9h11M9.5 4.5 14 9l-4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
-      <h2>Reports: four sources, one place</h2>
-      <p>Two dashboards, a data pack and a spreadsheet, combined into one report, with a report embedded inside it.</p>
-      <div class="pv pv-merge" aria-hidden="true"><div class="many"><i></i><i></i><i></i><i></i></div><span class="arrow">=</span><div class="one"><i></i><i></i><i></i></div></div>
+    <a class="tile t-reports" href="#/reports" style="--i:5">
+      <div class="row"><span class="tag">Sample inside</span><span class="go" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9h11M9.5 4.5 14 9l-4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+      <h2>Reporting: ten sources, one place</h2>
+      <p>A before and after from my work at YPO, with a sample report you can click through.</p>
+      <div class="pv pv-merge" aria-hidden="true"><div class="many" style="grid-template-columns:repeat(5, 22px)"><i style="height:22px"></i><i style="height:22px"></i><i style="height:22px"></i><i style="height:22px"></i><i style="height:22px"></i><i style="height:22px"></i><i style="height:22px"></i><i style="height:22px"></i><i style="height:22px"></i><i style="height:22px"></i></div><span class="arrow">=</span><div class="one"><i></i><i></i><i></i></div></div>
     </a>
 
-    <a class="tile t-plan" href="#/plan" style="--i:5">
+    <a class="tile t-plan" href="#/plan" style="--i:6">
       <div class="row"><span class="tag">Plan</span><span class="go" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9h11M9.5 4.5 14 9l-4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
       <h2>My 90-day plan for AI enablement</h2>
-      <p>How I'd start in any business, with the tools I'd bring.</p>
+      <p>How I'd start in any business, and the tools I'd bring.</p>
       <div class="pv pv-phases" aria-hidden="true"><span><b>30</b>Listen and baseline</span><span><b>60</b>Pilot and teach</span><span><b>90</b>Prove and scale</span></div>
     </a>
 
-    <a class="tile t-learning" href="#/learning" style="--i:6">
+    <a class="tile t-learning" href="#/learning" style="--i:7">
       <div class="row"><span class="tag">Method</span><span class="go" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9h11M9.5 4.5 14 9l-4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
       <h2>How I design learning</h2>
       <div class="pv pv-steps" aria-hidden="true"><span>Curious</span><span>Capable</span><span>Confident</span><span>Champion</span></div>
     </a>
 
-    <a class="tile t-gift" href="#/gift" style="--i:7">
+    <a class="tile t-gift" href="#/gift" style="--i:8">
       <div class="row"><span class="tag">Free to use</span><span class="go" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9h11M9.5 4.5 14 9l-4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
       <h2>A gift for hiring managers</h2>
       <div class="pv ticket" aria-hidden="true"><div class="main"><small>Admit one</small><b>A prompt that improves your prompts</b></div><div class="stub">GIFT</div></div>
     </a>
 
-    <a class="tile t-about" href="#/about" style="--i:8">
-      <div class="row"><span class="tag">About</span><span class="go" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9h11M9.5 4.5 14 9l-4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
-      <h2>About me</h2>
-      <div class="pv pv-me"><span class="avatar" data-photo>EM</span><span>My view on AI, my story, and my CV.</span></div>
-    </a>
-
     <a class="tile t-board" href="#/board" style="--i:9">
-      <div class="row"><span class="tag">In build</span><span class="go" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9h11M9.5 4.5 14 9l-4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
-      <h2>Board meetings in a box</h2>
+      <div class="bd-text"><span class="tag" style="align-self:flex-start">In build</span><h2 style="max-width:none">Board meetings in a box</h2><p>A branded, ready-to-run meeting kit, built with AI.</p></div>
       <div class="pv pv-soon" aria-hidden="true">Sample presentation coming soon</div>
     </a>
   </div>
 </div>
 
-<!-- ============================ 1. TRAINING ============================ -->
-<div class="wrap view" data-route="training" hidden>
+<!-- ============================ 1. ABOUT ============================ -->
+<div class="wrap view" data-route="about" hidden>
   <header class="view-head vh-blue">
     <a class="crumb" href="#/">All work</a>
+    <div class="about-top">
+      <span class="avatar" data-photo style="background:var(--pink);color:var(--ink)">PEM</span>
+      <div>
+        <h1 tabindex="-1">About me</h1>
+        <p class="lede">I'm Paige Elizabeth Morgan: AI Champion at YPO, facilitator and learning designer, moving home to London in December 2026.</p>
+        <div class="acts"><a class="btn btn-white" data-cfg="cv" download>Download my CV (PDF)</a><a class="btn btn-line" style="color:#fff;border-color:#fff" data-cfg="email">Email me</a><a class="btn btn-line" style="color:#fff;border-color:#fff" data-cfg="linkedin" target="_blank" rel="noopener">LinkedIn</a></div>
+      </div>
+    </div>
+  </header>
+
+  <section class="block story">
+    <h2>My story</h2>
+    <p class="lead" style="margin-top:14px">I started working alongside top CEOs to deliver AI to YPO members. I then brought what I learned into my own work, and I've become the AI Champion in my workplace.</p>
+    <p>I primarily support YPO's Regional Directors across EMEA and APAC, and I also support the entire department and teams across other departments.</p>
+    <p style="margin:0">I'm genuinely excited about what AI can do, where it can go, and how I can help companies have the tools, skills and judgement to use it effectively and, most importantly, safely.</p>
+  </section>
+
+  <section class="block">
+    <h2>A facilitator first</h2>
+    <p class="sub">I'm at my best in a room of senior leaders. A master's in how adults learn, and years in training roles, mean I can read a room, adapt in the moment and leave people confident, not just informed. I run facilitator trainings and train-the-trainer sessions for CEOs, and my trainings and board meetings consistently rate 4.8–4.9/5.</p>
+    <div class="creds-row"><span>MSc Education, University of Oxford</span><span>Training and Development Manager, UAE Ministry of Education</span><span>Regional Forum and Learning Manager, YPO</span><span>Train-the-trainer for CEOs</span></div>
+  </section>
+
+  <section class="block">
+    <h2>My view on AI</h2>
+    <p class="philo" style="margin-top:14px">AI is a tool that speeds up tasks. It doesn't replace professional judgement. I don't see it as a threat; I see it as a way to add time to the working day without adding hours.</p>
+    <p style="color:var(--ink-2);max-width:44em;margin:0">The thinking that matters most stays with us: what's true, what's right for this person, and what to do next. My job is to help people hand AI the work that slows them down, so they have more time for the work only they can do.</p>
+  </section>
+
+  <figure class="quote">
+    <blockquote>&ldquo;AI should strive to enhance us, not replace us.&rdquo;</blockquote>
+    <figcaption>Fei-Fei Li, Co-Director of the Stanford Institute for Human-Centered AI, in <a href="https://democrats-science.house.gov/imo/media/doc/Li%20Testimony.pdf" target="_blank" rel="noopener">testimony to the US House Science Committee</a>, 2018</figcaption>
+  </figure>
+
+  <section class="block">
+    <h2>Experience</h2>
+    <div class="exp">
+      <article class="job">
+        <span class="when">January 2024 to now</span>
+        <div><h3>Regional Director, Middle East and North Africa</h3><p class="org">YPO (Young Presidents' Organization), Dubai</p>
+          <ul>
+            <li>Lead governance, operations, communications and member engagement across 27 chapters of chief executives.</li>
+            <li>YPO's AI Champion: primarily supporting Regional Directors across EMEA and APAC, plus the entire department and cross-department teams.</li>
+            <li>Supported AI trainings delivered alongside AI leaders to CEO and C-suite audiences.</li>
+            <li>Used AI to deliver a project in two weeks that previously took five months.</li>
+            <li>Built the United MENA Playbook: used by every chapter in the region, with management-directed questions down 30%.</li>
+            <li>97% membership retention, leading YPO globally on renewals, and strategic partnerships that grew the regional budget by 25%.</li>
+            <li>Rated Exceeds Expectations.</li>
+          </ul></div>
+      </article>
+      <article class="job">
+        <span class="when">March 2022 to January 2024</span>
+        <div><h3>Regional Forum and Learning Manager</h3><p class="org">YPO, Middle East and North Africa</p>
+          <ul>
+            <li>Wrote and delivered a peer-to-peer learning programme and trained its trainers: Platinum chapters rose from 60% to 100% in one year, and a MENA chapter won Best Chapter globally.</li>
+            <li>Built the Assistant Learning Officer session with YPO's global Learning team; piloted in MENA, now mandatory worldwide.</li>
+            <li>Delivered workshops at the Global Leadership Conference, rated highly valuable by more than 200 executive officers.</li>
+            <li>Launched three Super-Regional Forum and Learning concepts, placing more than 150 members into forums.</li>
+          </ul></div>
+      </article>
+      <article class="job">
+        <span class="when">August 2017 to February 2022</span>
+        <div><h3>Training and Development Manager</h3><p class="org">Ministry of Education, UAE</p>
+          <ul>
+            <li>Directed national training programmes aligned with the UAE Vision 2021 National Agenda.</li>
+            <li>Designed blended and digital learning adopted across the UAE and the wider Gulf region.</li>
+            <li>Ran needs analyses to find capability gaps and design scalable solutions.</li>
+            <li>Led recruitment that expanded faculty by more than 1,000.</li>
+          </ul></div>
+      </article>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2>Education and more</h2>
+    <div class="two" style="margin-top:16px;align-items:start">
+      <ul class="tick">
+        <li>MSc Education, University of Oxford, focused on adult learning methodology. Lead researcher on digital learning and virtual train-the-trainer delivery.</li>
+        <li>BA English Language and Teaching, First Class Honours, Swansea University</li>
+        <li>Certificate in English Language Teaching to Adults, Cambridge English</li>
+        <li>Co-developer of national curriculum frameworks for the UAE Ministry of Education</li>
+      </ul>
+      <ul class="tick">
+        <li>Three years working alongside Birkman coaches</li>
+        <li>Has worked with CEOs and C-suite leaders in every YPO region, and with government ministers</li>
+        <li>UK citizen with full right to work in the UK</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="built" aria-label="How this site was made">
+    <span class="spark" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M12 2v6M12 16v6M2 12h6M16 12h6M5 5l3.5 3.5M15.5 15.5 19 19M19 5l-3.5 3.5M8.5 15.5 5 19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+    <div><b>This whole site was made with AI.</b><p>I designed and built every page, including the sample playbook and report, with AI, using the skills I describe here.</p></div>
+  </section>
+</div>
+
+<!-- ============================ 2. TRAINING ============================ -->
+<div class="wrap view" data-route="training" hidden>
+  <header class="view-head vh-pink">
+    <a class="crumb" href="#/">All work</a>
     <h1 tabindex="-1">Training colleagues and CEOs to use AI</h1>
-    <p class="lede">AI isn't in my job description. I took it on because I could see what it would do for the people around me, and I became the person colleagues and members ask first.</p>
+    <p class="lede">I started by working alongside top CEOs to deliver AI to YPO members. Today I'm YPO's AI Champion, helping colleagues and leaders use AI with confidence, good judgement and safety.</p>
   </header>
 
   <section class="block">
-    <h2>Who I train</h2>
-    <p class="sub">Four audiences, each with a different starting point and a different reason to care.</p>
+    <h2>Who I support</h2>
+    <p class="sub">My main focus is YPO's Regional Directors across EMEA and APAC. I also support the entire department and teams across other departments.</p>
     <div class="four">
-      <div class="cell"><h3>Regional directors</h3><p>Across EMEA and APAC. Hands-on sessions on using AI for their own regional work, and support to complete their KPIs.</p></div>
-      <div class="cell"><h3>The global team</h3><p>AI updates at associate meetings: what's new, what's worth trying and what to avoid.</p></div>
-      <div class="cell"><h3>CEOs and C-suite</h3><p>Sessions delivered alongside AI leaders, focused on decisions and workflows, not features.</p></div>
-      <div class="cell"><h3>CEO members</h3><p>Playbooks for using AI in their businesses, written for people with no time to read manuals.</p></div>
+      <div class="cell hl"><h3>Regional Directors, EMEA and APAC</h3><p>My main focus. Hands-on support so they can use AI in their own regional work and complete their KPIs.</p></div>
+      <div class="cell"><h3>The whole department</h3><p>AI updates at associate meetings, and training on the functions that make our roles more efficient.</p></div>
+      <div class="cell"><h3>Other departments</h3><p>Templates and methods that help teams across YPO use AI accurately and on brand.</p></div>
+      <div class="cell"><h3>CEOs and C-suite</h3><p>AI sessions for YPO members, delivered alongside AI leaders and focused on decisions, not features.</p></div>
     </div>
+  </section>
+
+  <section class="block">
+    <h2>Why I'm a strong facilitator</h2>
+    <p class="sub">My MSc in Education from the University of Oxford was in how adults learn, and I've spent my career in training roles: national training programmes at the UAE Ministry of Education, then forum and learning programmes for YPO. I design sessions around real work, read the room and adapt in the moment, so senior people leave able to do something new, not just aware of it.</p>
+    <div class="creds-row"><span>Oxford MSc in Education</span><span>Facilitator trainings for CEOs</span><span>Train-the-trainer design</span><span>Sessions in every YPO region</span></div>
   </section>
 
   <section class="block">
     <h2>What changed</h2>
     <div class="four" style="margin-top:18px">
-      <div class="stat s-blue"><b class="num">5 months to 2 weeks</b><span>Lead time on one project, cut with AI</span></div>
-      <div class="stat s-sun"><b>Exceeds</b><span>Performance rating, with AI work outside my remit</span></div>
-      <div class="stat s-pink"><b class="num">4.8 to 4.9</b><span>Out of 5, for the sessions I design for CEOs</span></div>
-      <div class="stat s-mint"><b>EMEA + APAC</b><span>Regional teams I train and support, plus the global team</span></div>
+      <div class="stat s-blue"><b class="num">5 months to 2 weeks</b><span>A project's lead time, cut using AI</span></div>
+      <div class="stat s-sun"><b>Exceeds</b><span>Expectations rating, with the time AI frees used to help other regions hit their KPIs</span></div>
+      <div class="stat s-pink"><b class="num">4.8–4.9/5</b><span>My trainings and board meetings consistently rate 4.8–4.9 out of 5</span></div>
+      <div class="stat s-mint"><b>EMEA + APAC</b><span>The regions I primarily support, plus the whole department</span></div>
     </div>
   </section>
 
@@ -529,62 +702,57 @@ button{ font:inherit; }
   </section>
 
   <section class="block">
-    <h2>See it in action</h2>
-    <p class="sub">A segment from a session for executive teams.</p>
-    <div class="video" data-video="training" data-label="Workshop segment: AI for executive teams" data-length="About 12 minutes"></div>
-  </section>
-
-  <section class="block">
     <h2>What I'd do differently</h2>
-    <div class="two" style="margin-top:16px">
-      <div class="cell"><h3>Build champions sooner</h3><p>So expertise doesn't sit with one person, and teams have someone close by to ask.</p></div>
-      <div class="cell"><h3>Measure before the first session</h3><p>Capture usage first, so every later gain has a number against it.</p></div>
-    </div>
+    <p class="philo" style="margin-top:14px;font-size:clamp(19px,1.9vw,24px)">Apart from wishing I'd started sooner, I'd have set up a formal network of AI champions from day one, so every team had its own go-to person close by, as well as me.</p>
   </section>
 </div>
 
-<!-- ============================ 2. PLAYBOOK ============================ -->
+<!-- ============================ 3. PLAYBOOK ============================ -->
 <div class="wrap view" data-route="playbook" hidden>
   <header class="view-head vh-sun">
     <a class="crumb" href="#/">All work</a>
     <h1 tabindex="-1">Playbooks and resources leaders actually use</h1>
-    <p class="lede">Chapter leaders told us resources were hard to find. I used AI to build one interactive playbook for 27 leadership teams. This demo rebuilds it for a fictional company, PMO Enterprises.</p>
-    <div class="acts"><a class="btn btn-ink" href="demos/playbook-demo.html" target="_blank" rel="noopener">Open the PMO Enterprises demo</a></div>
+    <p class="lede">As part of my role as Regional Director at YPO, I look after 27 chapter leadership teams across the Middle East and North Africa. Chapter leaders told us the resources they needed were scattered and hard to find, so questions came to the regional office and new boards took longer to get up to speed. I used AI to build the United MENA Playbook to fix that: one place for everything a chapter leader needs.</p>
+    <p class="lede" style="margin-top:12px">The live playbook is confidential, so I've rebuilt a sample for a fictional company, PMO Enterprises. Open it to see the playbook in action.</p>
+    <div class="acts"><a class="btn btn-ink" href="demos/playbook-demo.html" target="_blank" rel="noopener">Open the sample playbook</a></div>
   </header>
 
   <section class="block">
-    <div class="three">
-      <div class="stat s-sun"><b class="num">27 of 27</b><span>Chapters have accessed it and use it regularly</span></div>
-      <div class="stat s-mint"><b class="num">30% fewer</b><span>Questions coming to the regional office</span></div>
-      <div class="stat s-lilac"><b>Faster</b><span>Chapters reaching the organisation's standard than ever</span></div>
+    <h2>The results</h2>
+    <div class="four" style="margin-top:18px">
+      <div class="stat s-sun"><b class="num">27 of 27</b><span>YPO MENA chapters have accessed the playbook and use it regularly</span></div>
+      <div class="stat s-mint"><b class="num">30% fewer</b><span>Management-directed questions from chapters</span></div>
+      <div class="stat s-lilac"><b class="num">97%</b><span>Membership retention in the region, leading YPO globally on renewals</span></div>
+      <div class="stat s-pink"><b>Shortlisted</b><span>YPO MENA, for YPO's Best Region Award in 2026</span></div>
     </div>
+    <p class="note">The first two are results of the playbook itself. The last two are regional results from the same period, which the playbook supports alongside my team's wider work.</p>
   </section>
 
   <section class="block">
     <h2>The story</h2>
     <div class="two" style="margin-top:18px">
-      <div class="cell"><h3>Problem</h3><p>Leaders couldn't find the resources they needed, so questions came to the regional office, and teams took longer than they should to reach the standard.</p></div>
-      <div class="cell"><h3>Approach</h3><p>A single web playbook: 13 sections, a live dashboard, a regional calendar and an AI assistant that answers only from playbook content. Piloted confidentially with regional leadership, then rolled out with a signed acknowledgement from every chair.</p></div>
-      <div class="cell hl"><h3>Result</h3><p>Every chapter uses it. Management-directed questions are down 30%, and chapters reach the standard faster than ever.</p></div>
-      <div class="cell"><h3>What I'd do differently</h3><p>Write a test set of real leader questions for the assistant before launch, so I could report its accuracy as well as its use.</p></div>
+      <div class="cell"><h3>Problem</h3><p>Resources for chapter leaders were spread across folders, emails and systems. Leaders couldn't find what they needed, so they asked the regional office, and new boards took longer to reach the YPO standard.</p></div>
+      <div class="cell"><h3>Approach</h3><p>One web playbook built with AI: 13 sections, a live commitments dashboard, a regional calendar and an assistant that answers only from playbook content. I piloted it confidentially with regional leadership, then rolled it out with a signed acknowledgement from every chapter chair.</p></div>
+      <div class="cell hl"><h3>Result</h3><p>Every chapter in the region uses it regularly, and management-directed questions fell by 30%, freeing my team for the work that needs people.</p></div>
+      <div class="cell"><h3>What I'd do differently</h3><p>Apart from wishing I'd built it sooner, I'd have recorded a short video tour for each section from day one, for leaders who'd rather watch than read.</p></div>
     </div>
   </section>
 
   <section class="block">
-    <h2>What's in the demo</h2>
-    <p class="sub">The real playbook is confidential. The demo keeps its structure and features; every name, number and link is invented, and each link opens a sample page showing what you'd find there.</p>
+    <h2>What's in the sample</h2>
+    <p class="sub">The sample keeps the live playbook's structure and features. Every name, number and link is invented, and each link opens an example page showing what you'd find there. The live version opens with a chapter sign-in; the sample goes straight to the home page.</p>
     <div class="three">
-      <div class="cell"><h3>Chapter gate</h3><p>Leaders pick their chapter and confirm the acknowledgement before entering. The live version logs each entry.</p></div>
-      <div class="cell"><h3>13 sections and an appendix</h3><p>From governance and commitments to emergency support, each collapsible, with a directory and glossary.</p></div>
-      <div class="cell"><h3>Live dashboard, embedded</h3><p>The commitments tracker sits inside the playbook, so nobody needs another login.</p></div>
-      <div class="cell"><h3>Ask the Playbook</h3><p>An assistant that answers from the playbook only, and politely declines everything else.</p></div>
-      <div class="cell"><h3>Dwell-time analytics</h3><p>Shows which sections leaders actually read, so content effort goes where it matters.</p></div>
-      <div class="cell"><h3>Sample pages behind every link</h3><p>Forms, templates, videos, events and directories, represented without the real systems.</p></div>
+      <div class="cell"><h3>Home at a glance</h3><p>Every section, upcoming dates and the most used resources on one page.</p></div>
+      <div class="cell"><h3>13 sections and an appendix</h3><p>From governance and commitments to emergency support, with a directory and glossary.</p></div>
+      <div class="cell"><h3>Search</h3><p>Finds any topic across the playbook as you type.</p></div>
+      <div class="cell"><h3>Ask the Playbook</h3><p>An assistant that answers only from the playbook and declines everything else, from the weather to the news.</p></div>
+      <div class="cell"><h3>Live tracker, embedded</h3><p>The commitments tracker sits inside the playbook, so leaders need no extra login.</p></div>
+      <div class="cell"><h3>Usage analytics</h3><p>Shows which sections leaders actually read, so content effort goes where it matters.</p></div>
     </div>
   </section>
 </div>
 
-<!-- ============================ 3. WORKFLOWS ============================ -->
+<!-- ============================ 4. WORKFLOWS ============================ -->
 <div class="wrap view" data-route="workflows" hidden>
   <header class="view-head vh-night">
     <a class="crumb" href="#/">All work</a>
@@ -597,96 +765,98 @@ button{ font:inherit; }
     <p class="sub">Each layer removes a step I'd otherwise repeat by hand.</p>
     <div class="stack">
       <div class="layer"><h3>Context</h3><p>Each workstream has its own project, with the method, rules and history written down, so I never re-explain the job.</p></div>
-      <div class="layer"><h3>Skills</h3><p>Packaged know-how for a kind of task: building Word reports, PDFs, spreadsheets and slide decks to the same standard every time.</p></div>
-      <div class="layer"><h3>Connectors</h3><p>Live access to the apps where work lives, such as email, calendars and files, so AI reads the source instead of a copy and paste.</p></div>
+      <div class="layer"><h3>Skills</h3><p>Packaged know-how for a kind of task: Word reports, PDFs, spreadsheets and slide decks, built to the same standard every time.</p></div>
+      <div class="layer"><h3>Connectors</h3><p>Live access to the apps where work lives, such as email, calendars, files and project management, so AI reads the source instead of a copy and paste.</p></div>
       <div class="layer"><h3>Plugins</h3><p>Bundles of skills, connectors and commands for a team process, so a workflow I design can be installed by colleagues, not just used by me.</p></div>
-      <div class="layer"><h3>Ship and measure</h3><p>GitHub and Vercel to publish, a serverless function for the playbook assistant, and Apps Script to log what gets used.</p></div>
+      <div class="layer"><h3>Publish and measure</h3><p>Shareable web pages for teams, an assistant that answers from approved content only, and usage tracking so I know what's working.</p></div>
     </div>
   </section>
 
   <section class="block">
-    <h2>Four workflows I run</h2>
+    <h2>Five example workflows I run</h2>
     <div class="wf">
-      <h3>Monthly chapter report refresh</h3>
-      <div class="flow"><span>Export from the CRM</span><span>Upload to the report's project, where the method is saved</span><span>Parse and merge with Python</span><span>Integrity checks: every count adds up, every chapter present</span><span>Swap only the data, keep every customisation</span><span>Publish through GitHub to Vercel</span></div>
-      <p class="out"><b>Why it matters:</b> a monthly refresh that never breaks what already works. <a href="#/reports">See the report</a></p>
+      <h3>Drafting replies to email automatically</h3>
+      <div class="flow"><span>An email arrives in Outlook</span><span>AI reads the whole thread and its attachments</span><span>It drafts a reply in my voice, unsent</span><span>I check recipients, facts, tone and promises</span><span>I edit if needed, and send</span></div>
+      <p class="out"><b>Why it matters:</b> routine replies take minutes instead of a morning, and nothing leaves without my judgement.</p>
     </div>
     <div class="wf">
-      <h3>Bylaws gap analysis across 27 chapters</h3>
-      <div class="flow"><span>Collect bylaws, PDF and Word</span><span>Read scanned pages with OCR</span><span>Build a checklist from the strongest bylaws</span><span>Match every document against it</span><span>Spot-check flagged gaps against the source</span><span>Word report with ranked findings</span></div>
-      <p class="out"><b>Why it matters:</b> gaps per chapter, now shown in the overview report for every visit.</p>
+      <h3>Designing, running and measuring playbooks</h3>
+      <div class="flow"><span>Gather feedback from leaders</span><span>Design the structure and content with AI</span><span>Build the playbook and its assistant</span><span>Roll out with sign-off from every chair</span><span>Measure use and questions, then improve</span></div>
+      <p class="out"><b>Why it matters:</b> every YPO MENA chapter uses the playbook, and questions to management fell by 30%. <a href="#/playbook">See the playbook</a></p>
     </div>
     <div class="wf">
-      <h3>A playbook assistant that stays in scope</h3>
-      <div class="flow"><span>Playbook content</span><span>Knowledge base in a serverless function</span><span>Claude API, with the key kept server-side</span><span>Answers only from the playbook</span><span>Updated every time content changes</span></div>
-      <p class="out"><b>Why it matters:</b> leaders get answers at 11pm without emailing anyone. <a href="#/playbook">See the playbook</a></p>
+      <h3>Turning meetings into action</h3>
+      <div class="flow"><span>Meeting notes or transcript</span><span>AI pulls out decisions and action points</span><span>Actions created in my project management software, with owners and dates</span><span>Follow-up emails drafted</span><span>Notes saved for the next meeting</span></div>
+      <p class="out"><b>Why it matters:</b> nothing agreed in a meeting gets lost, and the next meeting starts where the last one ended.</p>
     </div>
     <div class="wf">
-      <h3>Event production for leadership meetings</h3>
-      <div class="flow"><span>Agenda and run of show</span><span>Facilitator cue cards, one per slide, timed</span><span>Speaker notes extracted to Word</span><span>Follow-up email and message versions in the chair's voice</span><span>I review, edit and send</span></div>
-      <p class="out"><b>Why it matters:</b> used for the regional board meeting that received a record satisfaction score. <a href="#/board">See where this is going</a></p>
+      <h3>Board meeting deliverables for C-suite and regional leadership</h3>
+      <div class="flow"><span>Agenda and objectives</span><span>Presentation on brand</span><span>Facilitator cue cards, one per slide, timed</span><span>Briefing packs and table activities</span><span>Follow-up messages in the chair's voice</span></div>
+      <p class="out"><b>Why it matters:</b> used for YPO MENA's regional board meeting in Cyprus, which received a record satisfaction score. <a href="#/board">See where this is going</a></p>
+    </div>
+    <div class="wf">
+      <h3>Reporting for success</h3>
+      <div class="flow"><span>Pull data from ten sources</span><span>Match every chapter to one name</span><span>Check every number before it's shared</span><span>One report, ranked by who needs support</span><span>Shared before every chapter visit</span></div>
+      <p class="out"><b>Why it matters:</b> regional chairs walk into every visit knowing what to focus on. <a href="#/reports">See the report</a></p>
     </div>
   </section>
 
   <section class="block">
     <h2>Rules I work by</h2>
     <div class="four" style="margin-top:16px">
-      <div class="cell"><h3>Verify before trusting</h3><p>Every refresh runs checks that would catch a silent error.</p></div>
-      <div class="cell"><h3>Edit surgically</h3><p>Change the data, never rebuild what already works.</p></div>
-      <div class="cell"><h3>Keep sensitive content apart</h3><p>Restricted notes live on their own tab, never in shared views.</p></div>
+      <div class="cell"><h3>Verify before trusting</h3><p>Every number is checked before anyone else sees it.</p></div>
+      <div class="cell"><h3>Edit surgically</h3><p>Change what needs changing, never rebuild what already works.</p></div>
+      <div class="cell"><h3>Keep sensitive content apart</h3><p>Confidential material never goes into shared views.</p></div>
       <div class="cell"><h3>A human sends</h3><p>AI drafts. I decide what leaves my outbox.</p></div>
     </div>
   </section>
+
+  <section class="built" aria-label="How this site was made">
+    <span class="spark" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M12 2v6M12 16v6M2 12h6M16 12h6M5 5l3.5 3.5M15.5 15.5 19 19M19 5l-3.5 3.5M8.5 15.5 5 19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+    <div><b>This website is a workflow too.</b><p>I designed and built the whole site, including the sample playbook and report, with AI, using the skills on this page.</p></div>
+  </section>
 </div>
 
-<!-- ============================ 4. REPORTS ============================ -->
+<!-- ============================ 5. REPORTS ============================ -->
 <div class="wrap view" data-route="reports" hidden>
   <header class="view-head vh-lilac">
     <a class="crumb" href="#/">All work</a>
-    <h1 tabindex="-1">Reports: four sources, one place</h1>
-    <p class="lede">Preparing for one chapter visit used to mean two dashboards, a data pack and a spreadsheet. I combined them into one report, ranked by which chapters need attention first.</p>
-    <div class="acts"><a class="btn btn-ink" href="demos/report-demo.html" target="_blank" rel="noopener">Open the report demo</a><a class="btn btn-line" href="demos/commitments-demo.html" target="_blank" rel="noopener">Open the embedded tracker</a></div>
+    <h1 tabindex="-1">Reporting for success: ten sources, one place</h1>
+    <p class="lede">An example of my work at YPO. Preparing for one chapter visit meant opening ten different sources. I brought them together into one report, ranked by which chapters need support first.</p>
+    <p class="lede" style="margin-top:12px">The sample is based on the real report, but the company is fictional and every name and figure has been changed to protect confidentiality.</p>
+    <div class="acts"><a class="btn btn-line" href="demos/report-demo.html#before" target="_blank" rel="noopener">See the before</a><a class="btn btn-ink" href="demos/report-demo.html#after" target="_blank" rel="noopener">See the after</a></div>
   </header>
 
   <section class="block">
-    <h2>How it used to be, and how it is now</h2>
-    <p class="sub">The demo shows both, using fictional data for PMO Enterprises. Use the Before and After switch at the top of the report.</p>
+    <h2>Before and after</h2>
+    <p class="sub">Before: ten places, ten logins and three different names for the same chapter. After: one report that opens into a full profile for every chapter.</p>
     <div class="ba">
-      <div class="src">
-        <div><b>CRM dashboard</b><span>Chapter health</span></div>
-        <div><b>BI dashboard</b><span>Engagement, a month behind</span></div>
-        <div><b>Quarterly data pack</b><span>Satisfaction, page 17 of 38</span></div>
-        <div><b>Spreadsheet</b><span>Membership, version 6</span></div>
+      <div class="ten">
+        <div><b>Chapter health</b>CRM report</div><div><b>Commitments</b>CRM export to Excel</div>
+        <div><b>Engagement</b>BI dashboard</div><div><b>Membership</b>Shared spreadsheet</div>
+        <div><b>Satisfaction</b>Quarterly PDF pack</div><div><b>Events</b>Event platform export</div>
+        <div><b>Budget</b>Finance tracker</div><div><b>Bylaws</b>Document library</div>
+        <div><b>Officer training</b>Learning platform</div><div><b>Peer groups</b>Online form responses</div>
       </div>
       <span class="arrow" aria-hidden="true">=</span>
-      <div class="one"><b>Chapter Overview Report</b><ul><li>Five lenses for every chapter</li><li>Ranked by a concern score</li><li>Commitments tracker embedded inside</li><li>Restricted notes on their own tab</li></ul></div>
+      <div class="one"><b>Chapter Overview Report</b><ul><li>Ten lenses for every chapter</li><li>Ranked by a concern score</li><li>Click a chapter for its full profile</li><li>A suggested focus for each visit</li></ul></div>
     </div>
-  </section>
-
-  <section class="block">
-    <h2>A report within the report</h2>
-    <p class="sub">The commitments tracker is its own page. Rather than copy its data, I embedded it, so one update keeps every view current.</p>
-    <ol class="seq">
-      <li><div><b>The tracker lives on its own</b><span>A separate report, refreshed monthly from the CRM.</span></div></li>
-      <li><div><b>It's embedded where people need it</b><span>Inside the overview report's Commitments tab, and inside the playbook.</span></div></li>
-      <li><div><b>Update once, current everywhere</b><span>No copies drifting out of date, and no extra logins for leaders.</span></div></li>
-    </ol>
   </section>
 
   <section class="block">
     <h2>The story</h2>
     <div class="two" style="margin-top:18px">
-      <div class="cell"><h3>Problem</h3><p>Health, commitments, engagement, membership and satisfaction lived in four places, on different dates, under different chapter names.</p></div>
-      <div class="cell"><h3>Approach</h3><p>One self-contained report with the data built in, refreshed monthly, and quarterly for satisfaction. A concern score ranks chapters, and restricted visit notes sit behind a password on their own tab.</p></div>
-      <div class="cell hl"><h3>Result</h3><p>Regional chairs get one link before every chapter visit. The same data now feeds board submissions and policy proposals.</p></div>
-      <div class="cell"><h3>What I'd do differently</h3><p>Put restricted notes behind real server-side access control. The current password is a soft gate, and I'd rather it were a hard one.</p></div>
+      <div class="cell"><h3>Problem</h3><p>Ten lenses on chapter performance lived in ten places, refreshed on different dates and named in different ways. Nothing showed which chapters needed support first.</p></div>
+      <div class="cell"><h3>Approach</h3><p>One report with every source matched to a single chapter name and refreshed on a fixed cadence. A concern score ranks chapters, and each one opens into a full profile with a suggested focus for the next visit.</p></div>
+      <div class="cell hl"><h3>Result</h3><p>Regional chairs get one link before every chapter visit, with a clear focus for each conversation. The same data now feeds board submissions and policy proposals.</p></div>
+      <div class="cell"><h3>What I'd do differently</h3><p>Apart from wishing I'd built it sooner, I'd have added trend lines from the start, so chairs could see each chapter's direction of travel as well as where it stands today.</p></div>
     </div>
   </section>
 </div>
 
-<!-- ============================ 5. PLAN ============================ -->
+<!-- ============================ 6. PLAN ============================ -->
 <div class="wrap view" data-route="plan" hidden>
-  <header class="view-head vh-pink">
+  <header class="view-head vh-mint">
     <a class="crumb" href="#/">All work</a>
     <h1 tabindex="-1">My 90-day plan for AI enablement</h1>
     <p class="lede">The plan I'd adapt to any business. Each step links to work that shows how I'd do it, and the tools I'd bring are at the bottom of this page.</p>
@@ -724,7 +894,7 @@ button{ font:inherit; }
         <h3>Prove and scale</h3>
         <p class="goal">Show the impact in numbers, and make the new way of working the default.</p>
         <ol>
-          <li>Measure pilots against the baseline and publish short case studies.<br><a class="ex" href="#/reports">Example: one report, many sources</a></li>
+          <li>Measure pilots against the baseline and publish short case studies.<br><a class="ex" href="#/reports">Example: reporting for success</a></li>
           <li>Scale the winning workflows to the next teams.<br><a class="ex" href="#/training">Example: scaling across regions</a></li>
           <li>Embed AI in onboarding and in managers' routines.<br><a class="ex" href="#/learning">Example: how I design learning</a></li>
           <li>Set up an intake process and a governance rhythm.<br><a class="ex" href="#/plan" data-scroll="prioritiser">Example: use-case prioritiser</a></li>
@@ -773,9 +943,9 @@ button{ font:inherit; }
   </section>
 </div>
 
-<!-- ============================ 6. LEARNING ============================ -->
+<!-- ============================ 7. LEARNING ============================ -->
 <div class="wrap view" data-route="learning" hidden>
-  <header class="view-head vh-mint">
+  <header class="view-head vh-sun">
     <a class="crumb" href="#/">All work</a>
     <h1 tabindex="-1">How I design learning</h1>
     <p class="lede">My Oxford MSc was in how adults learn. For AI, that means building confidence and judgement, not just teaching features.</p>
@@ -815,14 +985,14 @@ button{ font:inherit; }
   <section class="block">
     <h2>Learning design at scale</h2>
     <div class="three" style="margin-top:18px">
-      <div class="stat s-mint"><b class="num">60% to 100%</b><span>Chapters meeting the top quality standard, one year after I wrote a peer-to-peer learning programme and trained its trainers</span></div>
+      <div class="stat s-mint"><b class="num">60% to 100%</b><span>YPO MENA Platinum chapters, one year after I wrote a peer-to-peer learning programme and trained its trainers</span></div>
       <div class="stat s-sun"><b>Best worldwide</b><span>One of those chapters went on to win Best Chapter globally</span></div>
-      <div class="stat s-lilac"><b>Now mandatory</b><span>A session I co-designed with the global learning team, piloted in my region, now required worldwide</span></div>
+      <div class="stat s-lilac"><b>Now mandatory</b><span>A session I co-designed with YPO's global Learning team, piloted in my region, now required worldwide</span></div>
     </div>
   </section>
 </div>
 
-<!-- ============================ 7. GIFT ============================ -->
+<!-- ============================ 8. GIFT ============================ -->
 <div class="wrap view" data-route="gift" hidden>
   <header class="view-head vh-white">
     <a class="crumb" href="#/">All work</a>
@@ -858,62 +1028,12 @@ button{ font:inherit; }
   </section>
 </div>
 
-<!-- ============================ 8. ABOUT ============================ -->
-<div class="wrap view" data-route="about" hidden>
-  <header class="view-head vh-white">
-    <a class="crumb" href="#/">All work</a>
-    <div class="about-top">
-      <span class="avatar" data-photo>EM</span>
-      <div>
-        <h1 tabindex="-1">About me</h1>
-        <p class="lede">Paige Elizabeth Morgan, Em to everyone. Learning designer, regional director and the person colleagues ask about AI.</p>
-        <div class="acts"><a class="btn btn-ink" data-cfg="cv" download>Download my CV (PDF)</a><a class="btn btn-line" data-cfg="email">Email me</a><a class="btn btn-line" data-cfg="linkedin" target="_blank" rel="noopener">LinkedIn</a></div>
-      </div>
-    </div>
-  </header>
-
-  <section class="block">
-    <h2>My view on AI</h2>
-    <p class="philo" style="margin-top:14px">AI is a tool that speeds up tasks. It doesn't replace professional judgement. I don't see it as a threat; I see it as a way to add time to the working day without adding hours.</p>
-    <p style="color:var(--ink-2);max-width:44em;margin:0">The thinking that matters most stays with us: what's true, what's right for this person, and what to do next. My job is to help people hand AI the work that slows them down, so they have more time for the work only they can do.</p>
-  </section>
-
-  <figure class="quote">
-    <blockquote>“AI should strive to enhance us, not replace us.”</blockquote>
-    <figcaption>Fei-Fei Li, Co-Director of the Stanford Institute for Human-Centered AI, in <a href="https://democrats-science.house.gov/imo/media/doc/Li%20Testimony.pdf" target="_blank" rel="noopener">testimony to the US House Science Committee</a>, 2018</figcaption>
-  </figure>
-
-  <section class="block">
-    <h2>My story</h2>
-    <div class="two" style="margin-top:16px;align-items:start">
-      <div>
-        <p>I started in curriculum design, moved into designing learning for chief executives, and now run a region of 27 chapters for a global CEO organisation.</p>
-        <p>AI isn't in my job description. I took it on because I could see what it would do for the people I work with, and it's become the part of my work I care about most. I've trained colleagues across EMEA and APAC, built the tools my region runs on, and learnt what it takes to move busy, senior people from curious to confident.</p>
-        <p style="margin:0">I'm a UK citizen moving home to London in December 2026, looking for a role where enablement is the job.</p>
-      </div>
-      <div>
-        <ol class="timeline">
-          <li><span class="when">2024 to now</span><div><b>Regional Director, Middle East and North Africa</b><span>Global CEO membership organisation</span></div></li>
-          <li><span class="when">2022 to 2024</span><div><b>Regional Forum and Learning Manager</b><span>Same organisation</span></div></li>
-          <li><span class="when">2017 to 2022</span><div><b>Curriculum Development Specialist</b><span>Ministry of Education, UAE</span></div></li>
-        </ol>
-        <ul class="tick" style="margin-top:18px">
-          <li>MSc, University of Oxford, focused on adult education methodology</li>
-          <li>Three years working alongside Birkman coaches</li>
-          <li>Has worked with CEOs and C-suite leaders worldwide, and with government ministers</li>
-          <li>Full right to work in the UK</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-</div>
-
 <!-- ============================ 9. BOARD ============================ -->
 <div class="wrap view" data-route="board" hidden>
   <header class="view-head vh-board">
     <a class="crumb" href="#/">All work</a>
     <h1 tabindex="-1">Board meetings in a box</h1>
-    <p class="lede">A branded, ready-to-run pack for board and leadership meetings, built with AI from the agenda up. I design and run regional board meetings for chief executives; this turns that process into a kit any business can brand and reuse.</p>
+    <p class="lede">A branded, ready-to-run pack for board and leadership meetings, built with AI from the agenda up. I design and run board meetings for YPO's CEOs and regional leaders, consistently rated 4.8–4.9/5. This turns that process into a kit any business can brand and reuse.</p>
     <div class="acts"><a class="btn btn-ink" data-cfg="boardDeck" data-empty-label="Sample presentation coming soon" target="_blank" rel="noopener">Open the sample presentation</a></div>
   </header>
 
@@ -921,7 +1041,7 @@ button{ font:inherit; }
     <h2>What's in the box</h2>
     <div class="three" style="margin-top:16px">
       <div class="cell"><h3>Agenda and run of show</h3><p>Timed to the minute, with owners for every segment.</p></div>
-      <div class="cell"><h3>Branded presentation</h3><p>Built on the company's own design system, ready to present.</p></div>
+      <div class="cell"><h3>Branded presentation</h3><p>Built on the company's own brand, ready to present.</p></div>
       <div class="cell"><h3>Facilitator cue cards</h3><p>One per slide, timed, with prompts for discussion.</p></div>
       <div class="cell"><h3>Table activities</h3><p>Structured exercises that get boards deciding, not just listening.</p></div>
       <div class="cell"><h3>Minutes and action tracker</h3><p>Templates that capture decisions and owners as the meeting runs.</p></div>
@@ -937,25 +1057,22 @@ button{ font:inherit; }
 
 <footer class="foot">
   <div class="wrap">
-    <span>Em Morgan, 2026. Designed and built with Claude.</span>
+    <span>Paige Elizabeth Morgan, 2026. This whole site was designed and built with AI, using the skills on these pages.</span>
     <a data-cfg="email">paigeelizabethmorgan@gmail.com</a>
   </div>
 </footer>
 
 <script>
 /* =====================================================================
-   CONFIG: edit these. An empty value ("") hides that button, shows a
-   "coming soon" frame for videos, or shows initials instead of a photo.
+   CONFIG: edit these. An empty value ("") hides that button or shows
+   initials instead of a photo.
    ===================================================================== */
 const CONFIG = {
   email: "paigeelizabethmorgan@gmail.com",
-  linkedin: "",   // e.g. "https://www.linkedin.com/in/your-handle"
-  cv: "",         // e.g. "assets/Paige_Elizabeth_Morgan_CV.pdf"
-  photo: "",      // e.g. "assets/em-morgan.jpg" (square works best)
-  boardDeck: "",  // link to your sample board presentation
-  videos: {
-    training: ""  // Loom, YouTube or Vimeo share link
-  }
+  linkedin: "",                                   // e.g. "https://www.linkedin.com/in/your-handle"
+  cv: "assets/Paige-Elizabeth-Morgan-CV.pdf",     // PLACEHOLDER: add your CV PDF at this path
+  photo: "",                                      // e.g. "assets/paige-elizabeth-morgan.jpg" (square works best)
+  boardDeck: ""                                   // link to your sample board presentation
 };
 
 document.documentElement.classList.add('js');
@@ -972,37 +1089,14 @@ document.querySelectorAll('[data-cfg]').forEach(el => {
 });
 document.querySelectorAll('[data-photo]').forEach(el => {
   if (!CONFIG.photo) return;
-  const img = new Image(); img.alt = 'Em Morgan'; img.src = CONFIG.photo;
+  const img = new Image(); img.alt = 'Paige Elizabeth Morgan'; img.src = CONFIG.photo;
   img.onload = () => { el.textContent = ''; el.appendChild(img); };
 });
 
-/* ---------- Videos ---------- */
-function toEmbed(url) {
-  try {
-    const u = new URL(url), host = u.hostname.replace(/^www\./, '');
-    if (host.endsWith('loom.com')) return 'https://www.loom.com/embed/' + u.pathname.split('/').filter(Boolean).pop();
-    if (host === 'youtu.be') return 'https://www.youtube-nocookie.com/embed/' + u.pathname.slice(1);
-    if (host.endsWith('youtube.com') && u.searchParams.get('v')) return 'https://www.youtube-nocookie.com/embed/' + u.searchParams.get('v');
-    if (host.endsWith('vimeo.com')) return 'https://player.vimeo.com/video/' + u.pathname.split('/').filter(Boolean).pop();
-    return url;
-  } catch (e) { return null; }
-}
-document.querySelectorAll('.video').forEach(box => {
-  const src = CONFIG.videos[box.dataset.video], embed = src ? toEmbed(src) : null;
-  if (embed) {
-    const f = document.createElement('iframe'); f.src = embed; f.title = box.dataset.label; f.loading = 'lazy';
-    f.allow = 'autoplay; fullscreen; picture-in-picture'; f.allowFullscreen = true; box.appendChild(f);
-  } else {
-    box.innerHTML = '<div class="video-empty"><span class="play" aria-hidden="true"></span><strong></strong><span></span></div>';
-    box.querySelector('strong').textContent = box.dataset.label;
-    box.querySelector('span:last-child').textContent = box.dataset.length + '. Recording in progress.';
-  }
-});
-
 /* ---------- Router ---------- */
-const ORDER = ['training', 'playbook', 'workflows', 'reports', 'plan', 'learning', 'gift', 'about', 'board'];
-const TITLES = { training: 'Training colleagues and CEOs to use AI', playbook: 'Playbooks and resources', workflows: 'AI workflows', reports: 'Reports: four sources, one place',
-  plan: 'My 90-day plan for AI enablement', learning: 'How I design learning', gift: 'A gift for hiring managers', about: 'About me', board: 'Board meetings in a box' };
+const ORDER = ['about', 'training', 'playbook', 'workflows', 'reports', 'plan', 'learning', 'gift', 'board'];
+const TITLES = { about: 'About me', training: 'Training colleagues and CEOs to use AI', playbook: 'Playbooks and resources', workflows: 'AI workflows',
+  reports: 'Reporting: ten sources, one place', plan: 'My 90-day plan for AI enablement', learning: 'How I design learning', gift: 'A gift for hiring managers', board: 'Board meetings in a box' };
 const home = document.getElementById('home');
 const views = [...document.querySelectorAll('.view')];
 let pendingScroll = null, firstLoad = true;
@@ -1018,10 +1112,10 @@ function route() {
     document.getElementById('next').href = '#/' + nxt;
     document.getElementById('next-title').textContent = TITLES[nxt];
     nw.hidden = false;
-    document.title = TITLES[known] + ' | Em Morgan';
+    document.title = TITLES[known] + ' | Paige Elizabeth Morgan';
   } else {
     nw.hidden = true;
-    document.title = 'Em Morgan | AI enablement';
+    document.title = 'Paige Elizabeth Morgan | AI enablement';
   }
   if (pendingScroll) {
     const t = document.getElementById(pendingScroll); pendingScroll = null;

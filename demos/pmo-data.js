@@ -44,6 +44,22 @@ window.PMO = (function () {
       note: "Good momentum. Moderator training booked." }
   ];
 
+  const EXTRA = {
+    "London": { events:14, attendance:64, budget:92, officersTrained:7, officers:7, peerGroups:12, inGroups:71 },
+    "Manchester": { events:9, attendance:58, budget:81, officersTrained:5, officers:7, peerGroups:7, inGroups:62 },
+    "Edinburgh": { events:6, attendance:49, budget:70, officersTrained:6, officers:6, peerGroups:4, inGroups:48 },
+    "Dublin": { events:11, attendance:61, budget:88, officersTrained:6, officers:6, peerGroups:8, inGroups:66 },
+    "Amsterdam": { events:15, attendance:67, budget:95, officersTrained:7, officers:7, peerGroups:10, inGroups:74 },
+    "Brussels": { events:4, attendance:41, budget:55, officersTrained:6, officers:6, peerGroups:3, inGroups:39 },
+    "Paris": { events:13, attendance:55, budget:90, officersTrained:7, officers:7, peerGroups:11, inGroups:58 },
+    "Lisbon": { events:7, attendance:60, budget:76, officersTrained:5, officers:5, peerGroups:4, inGroups:52 },
+    "Madrid": { events:8, attendance:47, budget:68, officersTrained:6, officers:6, peerGroups:7, inGroups:45 },
+    "Milan": { events:10, attendance:59, budget:84, officersTrained:6, officers:6, peerGroups:6, inGroups:63 },
+    "Copenhagen": { events:5, attendance:44, budget:61, officersTrained:3, officers:5, peerGroups:3, inGroups:41 },
+    "Stockholm": { events:9, attendance:63, budget:86, officersTrained:5, officers:5, peerGroups:5, inGroups:60 }
+  };
+  CHAPTERS.forEach(c => Object.assign(c, EXTRA[c.name]));
+
   CHAPTERS.forEach(c => {
     c.met = 14 - c.unmet.length;
     c.concern = Math.round(c.unmet.length * 4 + (100 - c.healthScore) * 0.5 + (100 - c.satisfaction) * 0.3 + (c.engagement < 60 ? 10 : 0) + c.bylaws.length * 3);
@@ -54,6 +70,7 @@ window.PMO = (function () {
     members: CHAPTERS.reduce((s, c) => s + c.members, 0),
     engagement: Math.round(CHAPTERS.reduce((s, c) => s + c.engagement, 0) / CHAPTERS.length),
     satisfaction: Math.round(CHAPTERS.reduce((s, c) => s + c.satisfaction, 0) / CHAPTERS.length),
+    events: CHAPTERS.reduce((s, c) => s + c.events, 0),
     allMet: CHAPTERS.filter(c => c.met === 14).length,
     avgMet: Math.round(CHAPTERS.reduce((s, c) => s + c.met, 0) / CHAPTERS.length * 10) / 10
   };

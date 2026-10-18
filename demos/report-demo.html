@@ -3,369 +3,331 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Chapter Overview Report | PMO Enterprises (demo)</title>
+<title>Chapter Overview Report | Sample of my work</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#F5F7F8; --card:#FFFFFF; --ink:#13232F; --ink-2:#4C5D69; --ink-3:#7A8A95; --rule:#DCE3E7;
-  --brand:#0B3C5D; --brand-2:#145B87; --accent:#F2A541;
-  --good:#1E8E5A; --good-bg:#E3F3EA; --warn:#B9770E; --warn-bg:#FDF1DC; --bad:#C8423B; --bad-bg:#FBE7E5;
+  --bg:#F4F6FA; --surface:#FFFFFF; --ink:#0F172A; --ink-2:#475569; --ink-3:#8392A7; --rule:#E2E8F0; --rule-2:#EEF2F7;
+  --head:#1E1B4B; --accent:#4F46E5; --accent-2:#4338CA; --tint:#EEF2FF;
+  --good:#15803D; --good-bg:#DCFCE7; --ok:#1D4ED8; --ok-bg:#DBEAFE; --watch:#B45309; --watch-bg:#FEF3C7; --risk:#B91C1C; --risk-bg:#FEE2E2;
+  --sans:"IBM Plex Sans", system-ui, sans-serif; --mono:"IBM Plex Mono", ui-monospace, monospace;
 }
 *{ box-sizing:border-box; }
-body{ margin:0; font:15px/1.55 "Plus Jakarta Sans", system-ui, sans-serif; color:var(--ink); background:var(--bg); }
-a{ color:var(--brand-2); }
-button{ font:inherit; }
-:focus-visible{ outline:2px solid var(--accent); outline-offset:2px; }
-.bar{ background:var(--brand); color:#fff; }
-.bar .in{ max-width:1200px; margin:0 auto; padding:16px 24px; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; }
-.brand{ display:flex; align-items:center; gap:12px; }
-.logo{ width:36px; height:36px; border-radius:9px; background:var(--accent); color:var(--brand); display:grid; place-items:center; font-weight:800; font-size:14px; }
-.brand b{ display:block; font-size:16px; }
-.brand span{ font-size:12.5px; opacity:.75; }
-.switch{ display:inline-flex; background:rgba(255,255,255,.12); border-radius:999px; padding:4px; }
-.switch button{ border:0; background:transparent; color:#fff; padding:8px 16px; border-radius:999px; cursor:pointer; font-weight:600; font-size:14px; }
-.switch button[aria-pressed="true"]{ background:#fff; color:var(--brand); }
-.wrap{ max-width:1200px; margin:0 auto; padding:28px 24px 48px; }
-.lead{ display:flex; justify-content:space-between; gap:24px; align-items:flex-end; flex-wrap:wrap; margin-bottom:22px; }
-.lead h1{ margin:0 0 6px; font-size:28px; letter-spacing:-.01em; }
-.lead p{ margin:0; color:var(--ink-2); max-width:62ch; }
-.pill{ font-size:12px; font-weight:600; background:var(--accent); color:var(--ink); padding:3px 10px; border-radius:999px; white-space:nowrap; }
+body{ margin:0; background:var(--bg); color:var(--ink); font:16px/1.55 var(--sans); }
+button{ font:inherit; cursor:pointer; }
+:focus-visible{ outline:2px solid var(--accent); outline-offset:2px; border-radius:4px; }
 [hidden]{ display:none !important; }
+.wrap{ max-width:1240px; margin:0 auto; padding:0 24px; }
+@media (max-width:640px){ .wrap{ padding:0 16px; } }
 
-/* ---------- BEFORE: four mock sources ---------- */
-.sources{ display:grid; grid-template-columns:1fr 1fr; gap:18px; }
-@media (max-width:860px){ .sources{ grid-template-columns:1fr; } }
-.src{ border-radius:12px; overflow:hidden; border:1px solid var(--rule); background:#fff; display:flex; flex-direction:column; }
-.src-cap{ padding:14px 16px; border-top:1px solid var(--rule); font-size:13.5px; color:var(--ink-2); background:#fff; }
-.src-cap b{ color:var(--ink); }
-.chrome{ display:flex; align-items:center; gap:8px; padding:9px 12px; font-size:12px; }
-.chrome i{ width:9px; height:9px; border-radius:50%; background:#D0D5DA; display:inline-block; }
-.chrome .t{ margin-left:6px; font-weight:600; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
-.mock{ flex:1; overflow:hidden; font-size:12px; min-height:236px; }
-/* CRM */
-.crm .chrome{ background:#F3F3F3; border-bottom:1px solid #DDD; color:#333; }
-.crm .mock{ background:#fff; padding:10px 12px; font-family:Arial, sans-serif; }
-.crm .tb{ display:flex; gap:6px; margin-bottom:8px; }
-.crm .tb span{ border:1px solid #C9C9C9; border-radius:4px; padding:2px 8px; font-size:11px; color:#0B5CAB; background:#fff; }
-.crm table{ width:100%; border-collapse:collapse; }
-.crm th{ text-align:left; background:#F7F9FB; border:1px solid #E5E5E5; padding:4px 6px; font-weight:700; font-size:11px; color:#444; }
-.crm td{ border:1px solid #EEE; padding:4px 6px; color:#222; }
-/* BI */
-.bi .chrome{ background:#1C1F26; color:#C9CED8; border-bottom:1px solid #2A2E37; }
-.bi .mock{ background:#22262E; color:#DDE2EA; padding:12px 14px; font-family:"Segoe UI", system-ui, sans-serif; }
-.bi .k{ display:flex; gap:10px; margin-bottom:12px; }
-.bi .k div{ background:#2B303A; border-radius:6px; padding:6px 10px; }
-.bi .k b{ display:block; font-size:16px; color:#7FD1FF; }
-.bi .k span{ font-size:10.5px; color:#9AA3B2; }
-.bi .row{ display:grid; grid-template-columns:44px 1fr 32px; align-items:center; gap:8px; margin:3px 0; font-size:11px; }
-.bi .row .b{ height:9px; background:#3A4150; border-radius:3px; overflow:hidden; }
-.bi .row .b i{ display:block; height:100%; background:#7FD1FF; }
-/* PDF */
-.pdf .chrome{ background:#3B3B3B; color:#EEE; }
-.pdf .mock{ background:#7A7A7A; padding:14px; display:flex; justify-content:center; }
-.pdf .page{ background:#fff; width:100%; max-width:340px; padding:14px 16px; box-shadow:0 2px 8px rgba(0,0,0,.3); font-family:Georgia, serif; color:#222; }
-.pdf .page h4{ margin:0 0 2px; font-size:13px; }
-.pdf .page small{ color:#777; font-size:10px; display:block; margin-bottom:8px; }
-.pdf table{ width:100%; border-collapse:collapse; font-size:10.5px; }
-.pdf th,.pdf td{ border-bottom:1px solid #DDD; padding:3px 4px; text-align:left; }
-.pdf td:last-child,.pdf th:last-child{ text-align:right; }
-/* Excel */
-.xl .chrome{ background:#1D6F42; color:#fff; }
-.xl .mock{ background:#fff; font-family:Calibri, Arial, sans-serif; display:flex; flex-direction:column; }
-.xl .fx{ display:flex; gap:8px; padding:4px 8px; border-bottom:1px solid #D4D4D4; font-size:11px; color:#444; }
-.xl .fx b{ border-right:1px solid #D4D4D4; padding-right:8px; }
-.xl .grid{ flex:1; overflow:hidden; }
-.xl table{ border-collapse:collapse; width:100%; font-size:11px; }
-.xl th{ background:#F3F3F3; border:1px solid #D4D4D4; font-weight:400; color:#666; padding:2px 4px; width:28px; }
-.xl td{ border:1px solid #E1E1E1; padding:2px 6px; white-space:nowrap; }
-.xl .tabs{ display:flex; gap:2px; background:#F3F3F3; border-top:1px solid #D4D4D4; padding:3px 8px; font-size:11px; }
-.xl .tabs span{ padding:2px 10px; }
-.xl .tabs .on{ background:#fff; border-bottom:2px solid #1D6F42; font-weight:600; }
-.pains{ margin-top:22px; background:#fff; border:1px solid var(--rule); border-radius:12px; padding:18px 20px; display:grid; grid-template-columns:repeat(3, 1fr); gap:18px; }
-.pains h3{ margin:0 0 4px; font-size:15px; }
-.pains p{ margin:0; font-size:14px; color:var(--ink-2); }
+/* ---------- Header ---------- */
+.top{ background:var(--head); color:#fff; }
+.top .wrap{ display:flex; align-items:center; justify-content:space-between; gap:16px; height:64px; }
+.brand{ display:flex; align-items:center; gap:12px; }
+.brand .lg{ width:32px; height:32px; border-radius:6px; background:linear-gradient(135deg, #818CF8, #4F46E5); display:grid; place-items:center; font-weight:700; font-size:11px; letter-spacing:.04em; }
+.brand b{ display:block; font-size:15.5px; font-weight:600; line-height:1.2; }
+.brand small{ display:block; font-size:12.5px; color:#C7D2FE; line-height:1.2; }
+.conf{ font-size:13px; color:#C7D2FE; border:1px solid rgba(199,210,254,.35); padding:4px 10px; border-radius:999px; }
+@media (max-width:700px){ .conf{ display:none; } }
+
+/* ---------- Step switch ---------- */
+.steps{ background:var(--surface); border-bottom:1px solid var(--rule); }
+.steps .wrap{ display:grid; grid-template-columns:1fr 1fr; gap:12px; padding-top:14px; padding-bottom:14px; }
+.step{ display:flex; align-items:center; gap:14px; text-align:left; background:var(--bg); border:1.5px solid var(--rule); border-radius:12px; padding:12px 16px; color:var(--ink-2); }
+.step .n{ width:34px; height:34px; border-radius:50%; display:grid; place-items:center; font-weight:700; background:#fff; border:1.5px solid var(--rule); color:var(--ink-3); flex:none; }
+.step b{ display:block; color:var(--ink); font-size:16px; font-weight:600; }
+.step span{ font-size:14px; }
+.step[aria-pressed="true"]{ background:var(--tint); border-color:var(--accent); }
+.step[aria-pressed="true"] .n{ background:var(--accent); border-color:var(--accent); color:#fff; }
+.step.before[aria-pressed="true"]{ background:#FFF8EB; border-color:#F59E0B; }
+.step.before[aria-pressed="true"] .n{ background:#F59E0B; border-color:#F59E0B; }
+
+/* ---------- Banner ---------- */
+.banner{ display:flex; gap:20px; align-items:flex-start; justify-content:space-between; flex-wrap:wrap; padding:30px 0 22px; }
+.banner .tag{ display:inline-block; font-size:13px; font-weight:700; letter-spacing:.06em; padding:4px 12px; border-radius:6px; margin-bottom:10px; }
+.tag-before{ background:#FEF3C7; color:#92400E; }
+.tag-after{ background:var(--good-bg); color:var(--good); }
+.banner h1{ margin:0 0 8px; font-size:clamp(26px, 3vw, 34px); line-height:1.2; letter-spacing:-.01em; font-weight:600; }
+.banner p{ margin:0; color:var(--ink-2); max-width:62ch; }
+.asof{ font-size:13.5px; color:var(--ink-2); background:#fff; border:1px solid var(--rule); border-radius:8px; padding:6px 12px; white-space:nowrap; }
+
+/* ---------- BEFORE: ten source mocks ---------- */
+.srcgrid{ display:grid; grid-template-columns:repeat(auto-fill, minmax(220px, 1fr)); gap:14px; }
+.src{ background:#fff; border:1px solid var(--rule); border-radius:10px; overflow:hidden; display:flex; flex-direction:column; }
+.chrome{ display:flex; align-items:center; gap:8px; padding:7px 10px; font-size:11.5px; font-weight:500; white-space:nowrap; overflow:hidden; }
+.chrome i{ width:8px; height:8px; border-radius:2px; background:currentColor; opacity:.7; flex:none; }
+.mock{ height:142px; overflow:hidden; font-size:10.5px; line-height:1.35; }
+.cap{ padding:10px 12px 12px; border-top:1px solid var(--rule-2); font-size:13px; color:var(--ink-2); flex:1; }
+.cap b{ display:block; color:var(--ink); font-size:14px; font-weight:600; margin-bottom:2px; }
+.mock table{ width:100%; border-collapse:collapse; }
+.mock td,.mock th{ padding:3px 6px; text-align:left; white-space:nowrap; }
+/* tool styles */
+.k-crm .chrome{ background:#F3F3F3; color:#333; border-bottom:1px solid #DDD; } .k-crm .mock{ background:#fff; font-family:Arial, sans-serif; padding:6px; } .k-crm th{ background:#F7F9FB; border:1px solid #E5E5E5; } .k-crm td{ border:1px solid #EEE; }
+.k-xl .chrome{ background:#1D6F42; color:#fff; } .k-xl .mock{ font-family:Calibri, Arial, sans-serif; } .k-xl th{ background:#F3F3F3; border:1px solid #D4D4D4; color:#555; font-weight:400; } .k-xl td{ border:1px solid #E1E1E1; }
+.k-bi .chrome{ background:#1C1F26; color:#C9CED8; } .k-bi .mock{ background:#22262E; color:#DDE2EA; padding:8px 10px; }
+.k-bi .bar{ display:grid; grid-template-columns:28px 1fr 26px; gap:6px; align-items:center; margin:2px 0; }
+.k-bi .bar i{ display:block; height:6px; background:#3A4150; border-radius:2px; position:relative; overflow:hidden; } .k-bi .bar i::after{ content:""; position:absolute; inset:0; width:var(--w); background:#7FD1FF; }
+.k-gs .chrome{ background:#E8F0FE; color:#1A4FB5; } .k-gs .mock{ font-family:Arial, sans-serif; } .k-gs th{ background:#F8F9FA; color:#5F6368; border:1px solid #E0E0E0; font-weight:400; } .k-gs td{ border:1px solid #E0E0E0; } .k-gs .sel{ outline:2px solid #1A73E8; outline-offset:-2px; }
+.k-pdf .chrome{ background:#3B3B3B; color:#EEE; } .k-pdf .mock{ background:#6E6E6E; padding:10px 16px 0; } .k-pdf .page{ background:#fff; height:100%; padding:8px 10px; font-family:Georgia, serif; color:#222; } .k-pdf .page b{ font-size:10.5px; } .k-pdf td{ border-bottom:1px solid #DDD; padding:2px 4px; }
+.k-csv .chrome{ background:#E9E9EB; color:#333; } .k-csv .mock{ background:#FBFBFB; font-family:var(--mono); font-size:9.8px; padding:8px 10px; color:#333; white-space:pre; }
+.k-fin .chrome{ background:#0B3B5E; color:#fff; } .k-fin .mock{ padding:6px; font-family:Arial, sans-serif; } .k-fin th{ color:#555; border-bottom:1px solid #CCC; } .k-fin td{ border-bottom:1px solid #EEE; } .k-fin .neg{ color:#C0392B; }
+.k-lib .chrome{ background:#F0F4F8; color:#2B4B6F; } .k-lib .mock{ padding:6px 10px; } .k-lib .f{ display:flex; gap:8px; align-items:center; padding:3px 0; border-bottom:1px solid #F0F0F0; } .k-lib .f i{ width:12px; height:14px; border-radius:2px; flex:none; } .k-lib .pdf{ background:#E2574C; } .k-lib .doc{ background:#2B579A; }
+.k-lms .chrome{ background:#5B2C83; color:#fff; } .k-lms .mock{ padding:8px 10px; } .k-lms .p{ margin:3px 0 6px; } .k-lms .p div{ display:flex; justify-content:space-between; } .k-lms .p i{ display:block; height:5px; background:#EEE; border-radius:3px; margin-top:2px; position:relative; overflow:hidden; } .k-lms .p i::after{ content:""; position:absolute; inset:0; width:var(--w); background:#7B4BB7; }
+.k-form .chrome{ background:#673AB7; color:#fff; } .k-form .mock{ background:#F0EBF8; padding:8px; } .k-form .r{ background:#fff; border-radius:6px; padding:5px 8px; margin-bottom:5px; border-left:3px solid #673AB7; }
+.pains{ display:grid; grid-template-columns:repeat(3, 1fr); gap:14px; margin:22px 0 0; }
+.pains div{ background:#fff; border:1px solid var(--rule); border-radius:10px; padding:16px 18px; }
+.pains b{ display:block; font-weight:600; margin-bottom:2px; }
+.pains span{ color:var(--ink-2); font-size:15px; }
 @media (max-width:860px){ .pains{ grid-template-columns:1fr; } }
-.cta-row{ margin-top:22px; display:flex; justify-content:center; }
-.btn{ display:inline-flex; align-items:center; gap:8px; border:0; border-radius:999px; padding:12px 22px; font-weight:700; cursor:pointer; background:var(--brand); color:#fff; text-decoration:none; }
-.btn.light{ background:#fff; color:var(--brand); border:1px solid var(--rule); }
+.cta{ display:flex; justify-content:center; margin:26px 0 40px; }
+.btn{ display:inline-flex; align-items:center; gap:10px; height:46px; padding:0 22px; border-radius:10px; border:0; background:var(--accent); color:#fff; font-weight:600; font-size:15.5px; }
+.btn:hover{ background:var(--accent-2); }
 
-/* ---------- AFTER: consolidated report ---------- */
-.tabs-row{ display:flex; gap:4px; border-bottom:1px solid var(--rule); margin-bottom:20px; overflow-x:auto; }
-.tabs-row button{ border:0; background:none; padding:10px 16px; font-weight:600; color:var(--ink-2); cursor:pointer; border-bottom:3px solid transparent; white-space:nowrap; }
-.tabs-row button[aria-selected="true"]{ color:var(--brand); border-bottom-color:var(--accent); }
-.kpis{ display:grid; grid-template-columns:repeat(5, minmax(0,1fr)); gap:12px; margin-bottom:18px; }
-.kpi{ background:#fff; border:1px solid var(--rule); border-radius:12px; padding:14px 16px; }
-.kpi b{ display:block; font-size:24px; color:var(--brand); font-variant-numeric:tabular-nums; line-height:1.2; }
-.kpi span{ font-size:12.5px; color:var(--ink-2); }
-@media (max-width:860px){ .kpis{ grid-template-columns:repeat(2, minmax(0,1fr)); } }
+/* ---------- AFTER: report ---------- */
+.kpis{ display:grid; grid-template-columns:repeat(6, minmax(0,1fr)); gap:12px; margin-bottom:16px; }
+.kpi{ background:#fff; border:1px solid var(--rule); border-radius:10px; padding:14px 16px; }
+.kpi span{ display:block; font-size:13px; color:var(--ink-3); }
+.kpi b{ display:block; font-size:26px; font-weight:600; letter-spacing:-.01em; font-variant-numeric:tabular-nums; line-height:1.25; }
+@media (max-width:1000px){ .kpis{ grid-template-columns:repeat(3, minmax(0,1fr)); } }
+@media (max-width:560px){ .kpis{ grid-template-columns:repeat(2, minmax(0,1fr)); } }
+.toolbar{ display:flex; gap:10px; flex-wrap:wrap; align-items:center; margin-bottom:10px; }
+.toolbar input,.toolbar select{ height:40px; border:1px solid var(--rule); border-radius:8px; background:#fff; padding:0 12px; font:inherit; font-size:15px; color:var(--ink); }
+.toolbar input{ flex:1; min-width:180px; max-width:340px; }
+.toolbar .hint{ margin-left:auto; font-size:14px; color:var(--ink-3); }
 .card{ background:#fff; border:1px solid var(--rule); border-radius:12px; overflow:hidden; }
 .tbl{ overflow-x:auto; }
-.tbl table{ width:100%; border-collapse:collapse; font-size:13.5px; }
-.tbl th{ text-align:left; font-size:12px; color:var(--ink-3); font-weight:600; padding:12px 14px; border-bottom:1px solid var(--rule); background:#F8FAFB; white-space:nowrap; }
-.tbl td{ padding:12px 14px; border-bottom:1px solid var(--rule); vertical-align:middle; }
-.tbl tr:last-child td{ border-bottom:0; }
-.chip{ display:inline-block; font-size:11.5px; font-weight:600; padding:2px 8px; border-radius:999px; margin:2px 4px 2px 0; white-space:nowrap; }
-.h-Thriving{ background:var(--good-bg); color:var(--good); }
-.h-Healthy{ background:#E5F0F8; color:var(--brand-2); }
-.h-Watch{ background:var(--warn-bg); color:var(--warn); }
-.h-At{ background:var(--bad-bg); color:var(--bad); }
-.gap{ background:var(--bad-bg); color:var(--bad); }
-.metbar{ display:flex; align-items:center; gap:8px; font-variant-numeric:tabular-nums; }
-.metbar i{ display:block; width:70px; height:6px; background:#E6EBEE; border-radius:3px; overflow:hidden; position:relative; }
-.metbar i::after{ content:""; position:absolute; inset:0; width:var(--w); background:var(--brand-2); }
-.concern{ font-weight:800; font-variant-numeric:tabular-nums; }
-.method{ font-size:13px; color:var(--ink-2); padding:12px 14px; border-top:1px solid var(--rule); background:#F8FAFB; }
-.embed-note{ display:flex; gap:14px; align-items:flex-start; background:#FFF7EA; border:1px solid #F5D9A8; border-radius:12px; padding:14px 16px; margin-bottom:14px; font-size:14px; }
-.embed-note b{ display:block; margin-bottom:2px; }
-.embed-frame{ border:2px dashed var(--accent); border-radius:14px; padding:6px; background:#fff; }
-.embed-frame iframe{ width:100%; height:720px; border:0; border-radius:10px; display:block; }
-.embed-label{ display:inline-block; font-size:12px; font-weight:700; color:var(--brand); background:var(--accent); padding:3px 10px; border-radius:999px; margin:0 0 8px 6px; }
-.profile{ display:grid; grid-template-columns:280px 1fr; gap:20px; }
-@media (max-width:860px){ .profile{ grid-template-columns:1fr; } }
-.picker{ background:#fff; border:1px solid var(--rule); border-radius:12px; padding:8px; max-height:560px; overflow:auto; }
-.picker button{ display:flex; justify-content:space-between; width:100%; text-align:left; border:0; background:none; padding:10px 12px; border-radius:8px; cursor:pointer; color:var(--ink); }
-.picker button[aria-pressed="true"]{ background:var(--brand); color:#fff; }
-.lenses{ display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:14px; }
-@media (max-width:620px){ .lenses{ grid-template-columns:1fr; } }
-.lens{ background:#fff; border:1px solid var(--rule); border-radius:12px; padding:16px; }
-.lens h3{ margin:0 0 4px; font-size:13px; color:var(--ink-3); font-weight:600; }
-.lens .big{ font-size:26px; font-weight:800; color:var(--brand); line-height:1.2; font-variant-numeric:tabular-nums; }
-.lens p{ margin:6px 0 0; font-size:13.5px; color:var(--ink-2); }
-.lens.wide{ grid-column:1 / -1; }
-.gate{ max-width:420px; background:#fff; border:1px solid var(--rule); border-radius:12px; padding:24px; }
-.gate h3{ margin:0 0 6px; }
-.gate p{ color:var(--ink-2); font-size:14px; }
-.gate form{ display:flex; gap:8px; }
-.gate input{ flex:1; height:42px; border:1px solid var(--rule); border-radius:999px; padding:0 16px; font:inherit; }
-.gate .err{ color:var(--bad); font-size:13px; min-height:1.4em; margin:8px 0 0; }
-details.note{ background:#fff; border:1px solid var(--rule); border-radius:10px; margin-bottom:8px; }
-details.note summary{ padding:12px 16px; cursor:pointer; font-weight:600; }
-details.note div{ padding:0 16px 14px; font-size:14px; color:var(--ink-2); }
-details.note .act{ background:var(--bad-bg); color:var(--bad); border-radius:8px; padding:8px 12px; margin-top:8px; font-weight:600; }
-.sources-tbl{ margin-top:26px; }
-.sources-tbl h2{ font-size:16px; margin:0 0 10px; }
-footer{ max-width:1200px; margin:0 auto; padding:0 24px 32px; font-size:12.5px; color:var(--ink-3); }
+table.rep{ width:100%; border-collapse:collapse; font-size:15px; min-width:820px; }
+table.rep th{ text-align:left; font-size:12.5px; font-weight:600; color:var(--ink-3); padding:11px 14px; background:#F8FAFC; border-bottom:1px solid var(--rule); white-space:nowrap; }
+table.rep td{ padding:11px 14px; border-bottom:1px solid var(--rule-2); vertical-align:middle; font-variant-numeric:tabular-nums; }
+table.rep tr.row:hover td{ background:#FAFBFF; }
+table.rep tr.row.open td{ background:var(--tint); border-bottom-color:transparent; }
+.chap{ display:flex; align-items:center; gap:10px; background:none; border:0; padding:0; font-weight:600; color:var(--ink); text-align:left; }
+.chap svg{ color:var(--ink-3); transition:transform .15s; flex:none; }
+.open .chap svg{ transform:rotate(90deg); color:var(--accent); }
+.chap:hover{ color:var(--accent); }
+.chip{ display:inline-block; font-size:12.5px; font-weight:600; padding:2px 9px; border-radius:999px; white-space:nowrap; }
+.h-Thriving{ background:var(--good-bg); color:var(--good); } .h-Healthy{ background:var(--ok-bg); color:var(--ok); } .h-Watch{ background:var(--watch-bg); color:var(--watch); } .h-At{ background:var(--risk-bg); color:var(--risk); }
+.gap{ background:var(--risk-bg); color:var(--risk); margin:2px 4px 2px 0; }
+.meter{ display:flex; align-items:center; gap:8px; }
+.meter i{ display:block; width:72px; height:6px; border-radius:3px; background:var(--rule-2); position:relative; overflow:hidden; }
+.meter i::after{ content:""; position:absolute; inset:0; width:var(--w); background:var(--c, var(--accent)); }
+.concern b{ font-weight:700; }
+tr.detail td{ background:var(--tint); padding:0 14px 16px; }
+.prof-head{ display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; padding:4px 2px 12px; font-size:14.5px; color:var(--ink-2); }
+.prof-head b{ color:var(--ink); }
+.prof{ display:grid; grid-template-columns:repeat(5, minmax(0,1fr)); gap:10px; }
+@media (max-width:1100px){ .prof{ grid-template-columns:repeat(3, minmax(0,1fr)); } }
+@media (max-width:640px){ .prof{ grid-template-columns:repeat(2, minmax(0,1fr)); } }
+.lens{ background:#fff; border:1px solid var(--rule); border-radius:10px; padding:12px 14px; }
+.lens > span{ display:block; font-size:12.5px; color:var(--ink-3); }
+.lens b{ display:block; font-size:21px; font-weight:600; line-height:1.3; }
+.lens p{ margin:4px 0 0; font-size:13px; color:var(--ink-2); line-height:1.4; }
+.method{ font-size:13.5px; color:var(--ink-2); padding:12px 14px; background:#F8FAFC; border-top:1px solid var(--rule); }
+.sources{ margin:22px 0 40px; }
+.sources h2{ font-size:18px; font-weight:600; margin:0 0 10px; }
+table.plain{ width:100%; border-collapse:collapse; font-size:14.5px; }
+table.plain th{ text-align:left; font-size:12.5px; color:var(--ink-3); font-weight:600; padding:10px 14px; background:#F8FAFC; border-bottom:1px solid var(--rule); }
+table.plain td{ padding:10px 14px; border-bottom:1px solid var(--rule-2); }
+table.plain tr:last-child td{ border-bottom:0; }
+@media (max-width:760px){
+  table.rep{ min-width:0; }
+  table.rep th:nth-child(4), table.rep td:nth-child(4), table.rep th:nth-child(5), table.rep td:nth-child(5), table.rep th:nth-child(6), table.rep td:nth-child(6){ display:none; }
+  table.rep tr.detail td{ display:table-cell; padding:0 10px 12px; }
+  table.rep th, table.rep td{ padding:10px 8px; }
+  table.rep{ table-layout:fixed; width:100%; }
+  table.rep th:nth-child(1){ width:36%; } table.rep th:nth-child(2){ width:26%; } table.rep th:nth-child(3){ width:20%; } table.rep th:nth-child(7){ width:18%; }
+  .meter i{ display:none; }
+  table.rep th{ font-size:11.5px; white-space:normal; line-height:1.25; }
+  .prof-head{ flex-direction:column; gap:4px; }
+  .lens{ min-width:0; overflow-wrap:anywhere; }
+  .lens .chip{ white-space:normal; }
+}
+footer{ border-top:1px solid var(--rule); padding:20px 0 36px; font-size:13.5px; color:var(--ink-3); }
 </style>
 </head>
 <body>
-<header class="bar">
-  <div class="in">
-    <div class="brand"><span class="logo">PMO</span><div><b>Chapter Overview Report</b><span>PMO Enterprises, Europe Region (fictional demo)</span></div></div>
-    <div class="switch" role="group" aria-label="Before or after">
-      <button type="button" data-view="before" aria-pressed="true">Before: 4 sources</button>
-      <button type="button" data-view="after" aria-pressed="false">After: 1 report</button>
-    </div>
+<header class="top">
+  <div class="wrap">
+    <div class="brand"><span class="lg">PMO</span><div><b>Chapter Overview Report</b><small>PMO Enterprises, Europe Region</small></div></div>
+    <span class="conf">Sample: names and figures changed for confidentiality</span>
   </div>
 </header>
 
-<!-- ================= BEFORE ================= -->
-<section class="wrap" id="before">
-  <div class="lead">
+<nav class="steps" aria-label="Before and after">
+  <div class="wrap">
+    <button class="step before" type="button" data-view="before" aria-pressed="true"><span class="n">1</span><span><b>Before</b><span>Ten separate sources</span></span></button>
+    <button class="step after" type="button" data-view="after" aria-pressed="false"><span class="n">2</span><span><b>After</b><span>One report, built by me</span></span></button>
+  </div>
+</nav>
+
+<!-- ======================= BEFORE ======================= -->
+<main class="wrap" id="before">
+  <div class="banner">
     <div>
-      <h1>Before: four tools, no single view of a chapter</h1>
-      <p>To prepare for one chapter visit, a regional leader opened two dashboards, a quarterly data pack and a spreadsheet, each with its own login, date and naming.</p>
-    </div>
-    <span class="pill">Fictional data</span>
-  </div>
-
-  <div class="sources">
-    <div class="src crm">
-      <div class="chrome"><i></i><i></i><i></i><span class="t">CRM Reports: Chapter Health Metrics, Overall Rankings</span></div>
-      <div class="mock">
-        <div class="tb"><span>Edit</span><span>Export</span><span>Subscribe</span><span>Refreshed 02/09/2026</span></div>
-        <table id="crm"></table>
-      </div>
-      <div class="src-cap"><b>Chapter health</b> in the CRM. Names follow the account format, so "PMO Enterprises London Chapter" here.</div>
-    </div>
-
-    <div class="src bi">
-      <div class="chrome"><i></i><i></i><i></i><span class="t">Engagement Insights: FY27 YTD</span></div>
-      <div class="mock">
-        <div class="k"><div><b id="bi-avg"></b><span>Avg. engagement</span></div><div><b>12</b><span>Chapters</span></div><div><b>Aug</b><span>Data to</span></div></div>
-        <div id="bi"></div>
-      </div>
-      <div class="src-cap"><b>Engagement</b> in a separate BI tool, with chapter codes instead of names and data a month behind.</div>
-    </div>
-
-    <div class="src pdf">
-      <div class="chrome"><span class="t">Q3_Member_Data_Pack.pdf</span><span style="margin-left:auto">Page 17 of 38</span></div>
-      <div class="mock">
-        <div class="page">
-          <h4>Section 4: Satisfaction Index by Chapter</h4>
-          <small>Quarterly member survey. Scores out of 100.</small>
-          <table id="pdf"></table>
-        </div>
-      </div>
-      <div class="src-cap"><b>Satisfaction</b> in a 38-page quarterly PDF. Useful, but you have to know it's on page 17.</div>
-    </div>
-
-    <div class="src xl">
-      <div class="chrome"><span class="t">Membership_tracker_FY27_v6_FINAL.xlsx</span></div>
-      <div class="mock">
-        <div class="fx"><b>C4</b><span>=B4-D4</span></div>
-        <div class="grid"><table id="xl"></table></div>
-        <div class="tabs"><span class="on">Members</span><span>Leavers</span><span>Pipeline</span><span>Old_do not use</span></div>
-      </div>
-      <div class="src-cap"><b>Membership</b> in a shared spreadsheet, on its sixth "final" version.</div>
+      <span class="tag tag-before">BEFORE</span>
+      <h1>Ten sources, and no single view of a chapter</h1>
+      <p>To prepare for one chapter visit, a regional leader had to open all ten of these. Each had its own login, its own refresh date and its own way of naming chapters.</p>
     </div>
   </div>
-
+  <div class="srcgrid" id="srcgrid"></div>
   <div class="pains">
-    <div><h3>Four logins, four dates</h3><p>Each source refreshed on its own schedule, so the numbers never described the same moment.</p></div>
-    <div><h3>Three names for one chapter</h3><p>Account names, codes and city names had to be matched by hand before anything could be compared.</p></div>
-    <div><h3>No ranking of concern</h3><p>Nothing showed which chapters needed attention first, so visits were planned on instinct.</p></div>
+    <div><b>Ten logins, ten dates</b><span>Every source refreshed on its own schedule, so the numbers never described the same moment.</span></div>
+    <div><b>Three names for one chapter</b><span>Account names, codes and city names had to be matched by hand before anything could be compared.</span></div>
+    <div><b>No view of who needed help first</b><span>Nothing ranked chapters by need, so visits were planned on instinct rather than evidence.</span></div>
   </div>
-  <div class="cta-row"><button class="btn" type="button" data-view="after">See the consolidated report</button></div>
-</section>
+  <div class="cta"><button class="btn" type="button" data-view="after">See the after: one report</button></div>
+</main>
 
-<!-- ================= AFTER ================= -->
-<section class="wrap" id="after" hidden>
-  <div class="lead">
+<!-- ======================= AFTER ======================= -->
+<main class="wrap" id="after" hidden>
+  <div class="banner">
     <div>
-      <h1>After: one report, five lenses, ranked by concern</h1>
-      <p>Every source is matched to one chapter name and refreshed on a fixed cadence. The Commitments tab is a separate live report, embedded inside this one.</p>
+      <span class="tag tag-after">AFTER</span>
+      <h1>One report, ten lenses, ranked by who needs support first</h1>
+      <p>All ten sources, matched to one chapter name and refreshed on a fixed cadence. Click any chapter to open its full profile.</p>
     </div>
-    <span class="pill">As of <span class="asof"></span></span>
+    <span class="asof" id="asof"></span>
   </div>
 
-  <div class="tabs-row" role="tablist" aria-label="Report sections">
-    <button role="tab" aria-selected="true" data-tab="index">Performance index</button>
-    <button role="tab" aria-selected="false" data-tab="profile">Chapter profile</button>
-    <button role="tab" aria-selected="false" data-tab="commit">Commitments (embedded report)</button>
-    <button role="tab" aria-selected="false" data-tab="notes">Notes (restricted)</button>
+  <div class="kpis" id="kpis"></div>
+
+  <div class="toolbar">
+    <label for="q" style="position:absolute;left:-9999px">Search chapters</label>
+    <input id="q" type="search" placeholder="Search chapters">
+    <label for="hf" style="position:absolute;left:-9999px">Filter by health</label>
+    <select id="hf"><option value="">All health levels</option><option>Thriving</option><option>Healthy</option><option>Watch</option><option>At risk</option></select>
+    <span class="hint">Sorted by concern, highest first</span>
+  </div>
+  <div class="card">
+    <div class="tbl"><table class="rep" id="rep"></table></div>
+    <div class="method">Concern score: 4 per open commitment, plus half of (100 minus health score), plus 0.3 x (100 minus satisfaction), plus 10 if engagement is under 60%, plus 3 per bylaws gap.</div>
   </div>
 
-  <div data-panel="index">
-    <div class="kpis" id="kpis"></div>
-    <div class="card">
-      <div class="tbl"><table id="pi"></table></div>
-      <div class="method">Concern score = 4 per unmet commitment + half of (100 minus health score) + 0.3 x (100 minus satisfaction) + 10 if engagement is under 60% + 3 per bylaws gap. Highest first.</div>
-    </div>
-  </div>
+  <section class="sources card" aria-labelledby="src-h">
+    <div style="padding:16px 14px 6px"><h2 id="src-h">The ten sources behind this report</h2></div>
+    <table class="plain" id="srctable"></table>
+  </section>
+</main>
 
-  <div data-panel="profile" hidden>
-    <div class="profile">
-      <div class="picker" id="picker" aria-label="Choose a chapter"></div>
-      <div class="lenses" id="lenses"></div>
-    </div>
-  </div>
-
-  <div data-panel="commit" hidden>
-    <div class="embed-note">
-      <span class="pill">Report within the report</span>
-      <div><b>This tab embeds the Commitments Tracker, a separate report we maintain on its own.</b>Update the tracker once and it stays current here, in the playbook and anywhere else it's embedded.</div>
-    </div>
-    <span class="embed-label">Embedded: commitments-demo.html</span>
-    <div class="embed-frame"><iframe src="commitments-demo.html?embed=1" title="Embedded Chapter Commitments Tracker" loading="lazy"></iframe></div>
-  </div>
-
-  <div data-panel="notes" hidden>
-    <div class="gate" id="gate">
-      <h3>Restricted: regional leaders only</h3>
-      <p>Notes from past chapter visits sit on their own tab, so they never appear in chapter-facing views. For this demo, the password is <b>demo</b>.</p>
-      <form id="gate-form"><label for="pw" style="position:absolute;left:-9999px">Password</label><input id="pw" type="password" placeholder="Password" autocomplete="off"><button class="btn" type="submit">Unlock</button></form>
-      <p class="err" id="gate-err" aria-live="polite"></p>
-    </div>
-    <div id="notes" hidden></div>
-  </div>
-
-  <div class="sources-tbl card">
-    <div class="tbl"><table>
-      <thead><tr><th>Lens</th><th>Source before</th><th>Refresh</th></tr></thead>
-      <tbody>
-        <tr><td>Chapter health</td><td>CRM health rankings export</td><td>Monthly</td></tr>
-        <tr><td>Chapter commitments</td><td>CRM commitments export, via the embedded tracker</td><td>Monthly</td></tr>
-        <tr><td>Member engagement</td><td>BI engagement dashboard</td><td>Monthly</td></tr>
-        <tr><td>Membership</td><td>Shared membership spreadsheet</td><td>Monthly</td></tr>
-        <tr><td>Satisfaction index</td><td>Quarterly data pack (PDF)</td><td>Quarterly</td></tr>
-        <tr><td>Bylaws gaps</td><td>Document library review</td><td>One-off, then on change</td></tr>
-      </tbody>
-    </table></div>
-  </div>
-</section>
-
-<footer>A demonstration by Em Morgan. PMO Enterprises and all data on this page are fictional.</footer>
+<footer><div class="wrap">A sample of my work by Paige Elizabeth Morgan. The original report was built for a real organisation. This version uses a fictional company, and every name and figure has been changed to protect confidentiality.</div></footer>
 
 <script src="pmo-data.js"></script>
 <script>
 const { COMMITMENTS, CHAPTERS, totals, asOf } = window.PMO;
 const codes = { London:"LDN", Manchester:"MAN", Edinburgh:"EDI", Dublin:"DUB", Amsterdam:"AMS", Brussels:"BRU", Paris:"PAR", Lisbon:"LIS", Madrid:"MAD", Milan:"MIL", Copenhagen:"CPH", Stockholm:"STO" };
-document.querySelectorAll('.asof').forEach(e => e.textContent = asOf);
+const A = [...CHAPTERS].sort((a, b) => a.name.localeCompare(b.name));
+document.getElementById('asof').textContent = 'Data as of ' + asOf;
 
-/* ---------- Before mocks ---------- */
-const byHealth = [...CHAPTERS].sort((a, b) => b.healthScore - a.healthScore);
-document.getElementById('crm').innerHTML = '<tr><th>Account Name</th><th>Health Status</th><th>Score</th><th>Rank</th></tr>' +
-  byHealth.slice(0, 9).map((c, i) => `<tr><td>PMO Enterprises ${c.name} Chapter</td><td>${c.health}</td><td>${(c.healthScore / 100).toFixed(2)}</td><td>${i + 1}</td></tr>`).join('');
-document.getElementById('bi-avg').textContent = totals.engagement + '%';
-document.getElementById('bi').innerHTML = CHAPTERS.map(c => `<div class="row"><span>${codes[c.name]}</span><span class="b"><i style="width:${c.engagement}%"></i></span><span>${c.engagement}%</span></div>`).join('');
-document.getElementById('pdf').innerHTML = '<tr><th>Chapter</th><th>Responses</th><th>SI</th></tr>' +
-  [...CHAPTERS].sort((a, b) => a.name.localeCompare(b.name)).slice(0, 10).map(c => `<tr><td>${c.name}</td><td>${Math.round(c.members * 0.62)}</td><td>${c.satisfaction}</td></tr>`).join('');
-document.getElementById('xl').innerHTML = '<tr><th></th><th>A</th><th>B</th><th>C</th><th>D</th></tr>' +
-  '<tr><th>1</th><td><b>Chapter</b></td><td><b>Members</b></td><td><b>Net</b></td><td><b>Leavers</b></td></tr>' +
-  CHAPTERS.slice(0, 9).map((c, i) => `<tr><th>${i + 2}</th><td>${c.name}</td><td>${c.members}</td><td>${c.yoy > 0 ? '+' : ''}${c.yoy}</td><td>${Math.max(0, 4 - c.yoy)}</td></tr>`).join('');
+/* ======================= BEFORE: ten mocks ======================= */
+const SOURCES = [
+  { k:"crm", tool:"CRM report: Health rankings", lens:"Chapter health", src:"CRM health rankings report", cadence:"Monthly", note:"CRM report, listed by account name.",
+    mock:() => '<table><tr><th>Account Name</th><th>Status</th><th>Score</th></tr>' + [...CHAPTERS].sort((a,b)=>b.healthScore-a.healthScore).slice(0,6).map(c => `<tr><td>PMO Enterprises ${c.name} Chapter</td><td>${c.health}</td><td>${(c.healthScore/100).toFixed(2)}</td></tr>`).join('') + '</table>' },
+  { k:"xl", tool:"Commitments_by_Status.xlsx", lens:"Chapter commitments", src:"CRM commitments export", cadence:"Monthly", note:"Excel export with 14 true or false columns.",
+    mock:() => '<table><tr><th></th><th>A</th><th>B</th><th>C</th><th>D</th></tr><tr><th>16</th><td><b>Account</b></td><td><b>Charter</b></td><td><b>Bylaws</b></td><td><b>Strategy</b></td></tr>' + A.slice(0,6).map((c,i) => `<tr><th>${17+i}</th><td>PMO-${codes[c.name]}</td>${[1,2,3].map(id => `<td>${c.unmet.includes(id)?'FALSE':'TRUE'}</td>`).join('')}</tr>`).join('') + '</table>' },
+  { k:"bi", tool:"Engagement Insights: FY YTD", lens:"Member engagement", src:"BI engagement dashboard", cadence:"Monthly", note:"BI dashboard using chapter codes, a month behind.",
+    mock:() => CHAPTERS.slice(0,9).map(c => `<div class="bar"><span>${codes[c.name]}</span><i style="--w:${c.engagement}%"></i><span>${c.engagement}%</span></div>`).join('') },
+  { k:"gs", tool:"Membership tracker (shared)", lens:"Membership", src:"Shared membership spreadsheet", cadence:"Monthly", note:"Shared sheet, version 6, edited by several people.",
+    mock:() => '<table><tr><th></th><th>A</th><th>B</th><th>C</th></tr><tr><th>1</th><td><b>Chapter</b></td><td><b>Members</b></td><td><b>Net</b></td></tr>' + A.slice(0,6).map((c,i) => `<tr><th>${i+2}</th><td>${c.name}</td><td${i===2?' class="sel"':''}>${c.members}</td><td>${c.yoy>0?'+':''}${c.yoy}</td></tr>`).join('') + '</table>' },
+  { k:"pdf", tool:"Q3_Member_Data_Pack.pdf  p.17/38", lens:"Satisfaction", src:"Quarterly member data pack (PDF)", cadence:"Quarterly", note:"Quarterly PDF pack, on page 17 of 38.",
+    mock:() => '<div class="page"><b>4. Satisfaction Index by Chapter</b><table>' + A.slice(0,6).map(c => `<tr><td>${c.name}</td><td style="text-align:right">${c.satisfaction}</td></tr>`).join('') + '</table></div>' },
+  { k:"csv", tool:"event_attendance_export.csv", lens:"Events", src:"Event platform export (CSV)", cadence:"Monthly", note:"Event platform CSV, one row per attendee.",
+    mock:() => 'event_id,chapter,date,member_id\n' + ['LDN','PAR','AMS','DUB','LDN','MIL','EDI','STO','PAR'].map((c,i) => `EV-${2041+i},${c},2026-09-${String(3+i*2).padStart(2,'0')},M${48210+i*37}`).join('\n') },
+  { k:"fin", tool:"Finance tracker: chapter budgets", lens:"Budget", src:"Finance budget tracker", cadence:"Monthly", note:"Finance tracker most regional leaders can't access.",
+    mock:() => '<table><tr><th>Chapter</th><th>Spent</th><th>Var.</th></tr>' + A.slice(0,6).map(c => `<tr><td>${c.name}</td><td>${c.budget}%</td><td class="${c.budget < 70 ? 'neg' : ''}">${c.budget < 70 ? 'Under' : 'On plan'}</td></tr>`).join('') + '</table>' },
+  { k:"lib", tool:"Document library: Bylaws", lens:"Bylaws", src:"Document library review", cadence:"Annual, and on change", note:"Mixed formats, some of them scanned.",
+    mock:() => [['pdf','Bylaws_London_2019.pdf'],['doc','Brussels bylaws v3.docx'],['pdf','Edinburgh_scan_001.pdf'],['pdf','Lisbon bylaws (signed).pdf'],['doc','MADRID_BYLAWS_FINAL.docx'],['pdf','Paris_statuts_2021.pdf'],['doc','Milan bylaws draft.docx']].map(f => `<div class="f"><i class="${f[0]}"></i>${f[1]}</div>`).join('') },
+  { k:"lms", tool:"Learning platform: Officer training", lens:"Officer training", src:"Learning platform course reports", cadence:"Monthly", note:"One report per course, per cohort.",
+    mock:() => A.slice(0,5).map(c => `<div class="p"><div><span>${c.name}</span><span>${c.officersTrained}/${c.officers}</span></div><i style="--w:${c.officersTrained / c.officers * 100}%"></i></div>`).join('') },
+  { k:"form", tool:"Peer group data: form responses", lens:"Peer groups", src:"Online form responses", cadence:"Quarterly", note:"Online form, submitted each quarter by chapters.",
+    mock:() => A.slice(0,4).map((c,i) => `<div class="r">Response ${14+i} of 37: <b>${c.name}</b>, ${c.peerGroups} groups, ${c.inGroups}% of members</div>`).join('') }
+];
+document.getElementById('srcgrid').innerHTML = SOURCES.map(s => `
+  <article class="src k-${s.k}">
+    <div class="chrome"><i></i>${s.tool}</div>
+    <div class="mock" aria-hidden="true">${s.mock()}</div>
+    <div class="cap"><b>${s.lens}</b>${s.note}</div>
+  </article>`).join('');
+document.getElementById('srctable').innerHTML = '<tr><th>Lens</th><th>Where it lived before</th><th>Refresh</th></tr>' +
+  SOURCES.map(s => `<tr><td>${s.lens}</td><td>${s.src}</td><td>${s.cadence}</td></tr>`).join('');
 
-/* ---------- Before / after switch ---------- */
+/* ======================= Switch ======================= */
 function show(view) {
   document.getElementById('before').hidden = view !== 'before';
   document.getElementById('after').hidden = view !== 'after';
-  document.querySelectorAll('.switch button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.view === view)));
+  document.querySelectorAll('.step').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.view === view)));
+  history.replaceState(null, '', view === 'after' ? '#after' : '#before');
   window.scrollTo(0, 0);
 }
 document.querySelectorAll('[data-view]').forEach(b => b.addEventListener('click', () => show(b.dataset.view)));
 if (location.hash === '#after') show('after');
 
-/* ---------- Tabs ---------- */
-document.querySelectorAll('[role="tab"]').forEach(t => t.addEventListener('click', () => {
-  document.querySelectorAll('[role="tab"]').forEach(x => x.setAttribute('aria-selected', String(x === t)));
-  document.querySelectorAll('[data-panel]').forEach(p => p.hidden = p.dataset.panel !== t.dataset.tab);
-}));
-
-/* ---------- Performance index ---------- */
+/* ======================= AFTER: report ======================= */
 document.getElementById('kpis').innerHTML = [
-  [totals.chapters, 'Chapters'], [totals.members.toLocaleString('en-GB'), 'Members'],
-  [totals.avgMet + '/14', 'Avg. commitments met'], [totals.engagement + '%', 'Avg. engagement'], [totals.satisfaction, 'Avg. satisfaction']
-].map(([b, s]) => `<div class="kpi"><b>${b}</b><span>${s}</span></div>`).join('');
-const hc = h => 'h-' + h.split(' ')[0];
+  ['Chapters', totals.chapters], ['Members', totals.members.toLocaleString('en-GB')], ['Avg. commitments met', totals.avgMet + ' / 14'],
+  ['Avg. engagement', totals.engagement + '%'], ['Avg. satisfaction', totals.satisfaction], ['Events, last 12 months', totals.events]
+].map(([s, b]) => `<div class="kpi"><span>${s}</span><b>${b}</b></div>`).join('');
+
 const ranked = [...CHAPTERS].sort((a, b) => b.concern - a.concern);
-document.getElementById('pi').innerHTML = '<thead><tr><th>Chapter</th><th>Health</th><th>Commitments</th><th>Engagement</th><th>Satisfaction</th><th>Members</th><th>Bylaws gaps</th><th>Concern</th></tr></thead><tbody>' +
-  ranked.map(c => `<tr><td><b>${c.name}</b></td><td><span class="chip ${hc(c.health)}">${c.health}</span></td>
-    <td><span class="metbar"><i style="--w:${c.met / 14 * 100}%"></i>${c.met}/14</span></td>
-    <td>${c.engagement}%</td><td>${c.satisfaction}</td><td>${c.members} <span style="color:var(--ink-3)">(${c.yoy > 0 ? '+' : ''}${c.yoy})</span></td>
-    <td>${c.bylaws.length ? c.bylaws.map(g => `<span class="chip gap">${g}</span>`).join('') : '<span style="color:var(--ink-3)">None</span>'}</td>
-    <td class="concern">${c.concern}</td></tr>`).join('') + '</tbody>';
+const maxConcern = ranked[0].concern;
+const hc = h => 'h-' + h.split(' ')[0];
+const sign = n => (n > 0 ? '+' : '') + n;
+const caret = '<svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="m6 3 5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+const open = new Set();
 
-/* ---------- Chapter profile ---------- */
-let current = ranked[0].name;
-function renderProfile() {
-  document.getElementById('picker').innerHTML = [...CHAPTERS].sort((a, b) => a.name.localeCompare(b.name))
-    .map(c => `<button type="button" aria-pressed="${c.name === current}" data-ch="${c.name}"><span>${c.name}</span><span>${c.concern}</span></button>`).join('');
-  document.querySelectorAll('#picker button').forEach(b => b.addEventListener('click', () => { current = b.dataset.ch; renderProfile(); }));
-  const c = CHAPTERS.find(x => x.name === current);
-  const unmet = c.unmet.map(id => COMMITMENTS.find(k => k.id === id).name);
-  document.getElementById('lenses').innerHTML = `
-    <div class="lens wide"><h3>${c.name} chapter</h3><div class="big">Concern score ${c.concern}</div><p>Rank ${ranked.indexOf(c) + 1} of ${CHAPTERS.length} for attention. Everything a regional leader needs before a visit, on one screen.</p></div>
-    <div class="lens"><h3>Chapter health</h3><div class="big">${c.healthScore}</div><p><span class="chip ${hc(c.health)}">${c.health}</span></p></div>
-    <div class="lens"><h3>Commitments</h3><div class="big">${c.met}/14</div><p>${unmet.length ? 'Open: ' + unmet.join(', ') : 'All commitments met.'}</p></div>
-    <div class="lens"><h3>Member engagement</h3><div class="big">${c.engagement}%</div><p>Members at one or more events in the last 12 months.</p></div>
-    <div class="lens"><h3>Membership</h3><div class="big">${c.members}</div><p>${c.yoy >= 0 ? 'Up' : 'Down'} ${Math.abs(c.yoy)} on last year.</p></div>
-    <div class="lens"><h3>Satisfaction index</h3><div class="big">${c.satisfaction}</div><p>Quarterly member survey, out of 100.</p></div>
-    <div class="lens"><h3>Bylaws</h3><div class="big">${c.bylaws.length} gap${c.bylaws.length === 1 ? '' : 's'}</div><p>${c.bylaws.length ? c.bylaws.map(g => `<span class="chip gap">${g}</span>`).join('') : 'No gaps against the regional checklist.'}</p></div>`;
+function focusAreas(c) {
+  const f = [];
+  if (c.unmet.some(id => id === 10 || id === 11)) f.push('peer group training');
+  if (c.unmet.some(id => id === 1 || id === 2 || id === 7) || c.bylaws.length > 1) f.push('governance documents');
+  if (c.engagement < 60) f.push('member engagement');
+  if (c.budget < 65) f.push('budget planning');
+  if (c.officersTrained < c.officers) f.push('officer training');
+  return f.slice(0, 2);
 }
-renderProfile();
-
-/* ---------- Notes (soft gate, demo only) ---------- */
-document.getElementById('gate-form').addEventListener('submit', e => {
-  e.preventDefault();
-  if (document.getElementById('pw').value.trim().toLowerCase() !== 'demo') {
-    document.getElementById('gate-err').textContent = 'That password is not right. For this demo, use "demo".';
-    return;
-  }
-  document.getElementById('gate').hidden = true;
-  const n = document.getElementById('notes'); n.hidden = false;
-  n.innerHTML = ranked.map(c => `<details class="note"><summary>${c.name} <span style="color:var(--ink-3);font-weight:500">(concern ${c.concern})</span></summary><div>${c.note}${c.concern >= 30 ? '<div class="act">Action: schedule a regional visit this quarter.</div>' : ''}</div></details>`).join('');
+function profile(c) {
+  const openC = c.unmet.map(id => COMMITMENTS.find(k => k.id === id).name);
+  const f = focusAreas(c);
+  return `<div class="prof-head"><span><b>${c.name} profile.</b> Concern score ${c.concern}, rank ${ranked.indexOf(c) + 1} of ${CHAPTERS.length}.</span><span>${f.length ? 'Focus for the next visit: <b>' + f.join(' and ') + '</b>' : 'No urgent focus areas: a candidate to share good practice.'}</span></div>
+  <div class="prof">
+    <div class="lens"><span>Chapter health</span><b>${c.healthScore}</b><p><span class="chip ${hc(c.health)}">${c.health}</span></p></div>
+    <div class="lens"><span>Commitments</span><b>${c.met} of 14</b><p>${openC.length ? 'Open: ' + openC.join(', ') : 'All met'}</p></div>
+    <div class="lens"><span>Member engagement</span><b>${c.engagement}%</b><p>At one or more events in 12 months</p></div>
+    <div class="lens"><span>Membership</span><b>${c.members}</b><p>${sign(c.yoy)} on last year</p></div>
+    <div class="lens"><span>Satisfaction</span><b>${c.satisfaction}</b><p>Quarterly survey, out of 100</p></div>
+    <div class="lens"><span>Events</span><b>${c.events}</b><p>Last 12 months, ${c.attendance}% average attendance</p></div>
+    <div class="lens"><span>Budget</span><b>${c.budget}%</b><p>Of planned spend used to date</p></div>
+    <div class="lens"><span>Bylaws</span><b>${c.bylaws.length} gap${c.bylaws.length === 1 ? '' : 's'}</b><p>${c.bylaws.length ? c.bylaws.map(g => `<span class="chip gap">${g}</span>`).join('') : 'Matches the regional checklist'}</p></div>
+    <div class="lens"><span>Officer training</span><b>${c.officersTrained} of ${c.officers}</b><p>Core officers trained</p></div>
+    <div class="lens"><span>Peer groups</span><b>${c.peerGroups}</b><p>${c.inGroups}% of members in a group</p></div>
+  </div>`;
+}
+function render() {
+  const q = document.getElementById('q').value.trim().toLowerCase(), hf = document.getElementById('hf').value;
+  const rows = ranked.filter(c => c.name.toLowerCase().includes(q) && (!hf || c.health === hf));
+  document.getElementById('rep').innerHTML = '<thead><tr><th>Chapter</th><th>Health</th><th>Commitments</th><th>Engagement</th><th>Satisfaction</th><th>Members</th><th>Concern</th></tr></thead><tbody>' +
+    (rows.length ? rows.map(c => {
+      const isOpen = open.has(c.name), id = 'p-' + c.name;
+      return `<tr class="row${isOpen ? ' open' : ''}">
+        <td><button class="chap" type="button" aria-expanded="${isOpen}" aria-controls="${id}" data-ch="${c.name}">${caret}${c.name}</button></td>
+        <td><span class="chip ${hc(c.health)}">${c.health}</span></td>
+        <td><span class="meter"><i style="--w:${c.met / 14 * 100}%"></i>${c.met}/14</span></td>
+        <td>${c.engagement}%</td><td>${c.satisfaction}</td>
+        <td>${c.members} <span style="color:var(--ink-3)">(${sign(c.yoy)})</span></td>
+        <td class="concern"><span class="meter"><i style="--w:${c.concern / maxConcern * 100}%;--c:${c.concern >= 45 ? 'var(--risk)' : c.concern >= 25 ? 'var(--watch)' : 'var(--good)'}"></i><b>${c.concern}</b></span></td>
+      </tr>
+      <tr class="detail" id="${id}" ${isOpen ? '' : 'hidden'}><td colspan="7">${isOpen ? profile(c) : ''}</td></tr>`;
+    }).join('') : '<tr><td colspan="7">No chapters match. Clear the search or change the filter.</td></tr>') + '</tbody>';
+}
+document.getElementById('rep').addEventListener('click', e => {
+  const b = e.target.closest('.chap'); if (!b) return;
+  const n = b.dataset.ch; open.has(n) ? open.delete(n) : open.add(n);
+  render(); document.querySelector(`.chap[data-ch="${n}"]`).focus();
 });
+document.getElementById('q').addEventListener('input', render);
+document.getElementById('hf').addEventListener('change', render);
+open.add(ranked[0].name);
+render();
 </script>
 </body>
 </html>
