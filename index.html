@@ -1,0 +1,1123 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Em Morgan | AI enablement</title>
+<meta name="description" content="Em Morgan: AI enablement and learning design. Training, playbooks, reports, AI workflows and a 90-day plan.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Geist:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* =====================================================================
+   Tokens
+   ===================================================================== */
+:root{
+  --paper:#F2F0F7;
+  --surface:#FFFFFF;
+  --ink:#1A1530;
+  --ink-2:#4F4A66;
+  --ink-3:#7D7894;
+  --rule:#E0DCEB;
+  --blue:#3346FF;
+  --blue-deep:#2433D6;
+  --pink:#FF5FA2;
+  --sun:#FFD447;
+  --mint:#3DDBA6;
+  --lilac:#C8B9FF;
+  --night:#1A1530;
+  --display:"Bricolage Grotesque", "Arial Rounded MT", system-ui, sans-serif;
+  --sans:"Geist", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --wrap:1240px;
+  --g:24px;
+  --r:24px;
+}
+@media (max-width:720px){ :root{ --g:16px; --r:20px; } }
+*,*::before,*::after{ box-sizing:border-box; }
+html{ -webkit-text-size-adjust:100%; }
+body{ margin:0; background:var(--paper); color:var(--ink); font:17px/1.6 var(--sans); -webkit-font-smoothing:antialiased; overflow-x:hidden; }
+img,svg,iframe{ display:block; max-width:100%; }
+a{ color:inherit; }
+p{ margin:0 0 1em; }
+h1,h2,h3,h4{ margin:0; font-family:var(--display); font-weight:700; letter-spacing:-.02em; line-height:1.05; }
+button{ font:inherit; }
+:focus-visible{ outline:3px solid var(--blue); outline-offset:3px; border-radius:8px; }
+[hidden]{ display:none !important; }
+.wrap{ max-width:var(--wrap); margin:0 auto; padding:0 var(--g); }
+.num{ font-variant-numeric:tabular-nums; }
+
+/* buttons */
+.btn{ display:inline-flex; align-items:center; justify-content:center; gap:8px; height:46px; padding:0 22px; border-radius:999px; font:600 15px/1 var(--sans); text-decoration:none; border:2px solid transparent; cursor:pointer; transition:transform .15s, background-color .15s; }
+.btn:hover{ transform:translateY(-1px); }
+.btn-ink{ background:var(--ink); color:#fff; }
+.btn-blue{ background:var(--blue); color:#fff; }
+.btn-line{ background:transparent; color:var(--ink); border-color:var(--ink); }
+.btn-white{ background:#fff; color:var(--ink); }
+.btn[aria-disabled="true"]{ opacity:.5; pointer-events:none; }
+@media (prefers-reduced-motion:reduce){ .btn{ transition:none; } .btn:hover{ transform:none; } }
+
+/* =====================================================================
+   Top bar
+   ===================================================================== */
+.top{ padding:20px 0; }
+.top .wrap{ display:flex; align-items:center; justify-content:space-between; gap:16px; }
+.mark{ display:inline-flex; align-items:center; gap:10px; text-decoration:none; font-family:var(--display); font-weight:800; font-size:20px; letter-spacing:-.02em; }
+.mark i{ width:36px; height:36px; border-radius:50%; background:var(--pink); display:grid; place-items:center; font-style:normal; font-size:14px; color:var(--ink); }
+.top-actions{ display:flex; gap:10px; }
+@media (max-width:560px){ .top-actions .btn-line{ display:none; } }
+
+/* =====================================================================
+   Home: bento grid
+   ===================================================================== */
+.bento{ display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); gap:16px; padding-bottom:56px; grid-auto-rows:minmax(272px, auto); }
+.intro{ grid-column:1 / 3; grid-row:1 / 3; }
+.t-training{ grid-column:3 / 5; }
+.t-reports{ grid-column:1 / 3; }
+.t-plan{ grid-column:3 / 5; }
+@media (max-width:1100px){
+  .bento{ grid-template-columns:repeat(2, minmax(0,1fr)); }
+  .intro,.t-training,.t-reports,.t-plan{ grid-column:1 / -1; grid-row:auto; }
+}
+@media (max-width:640px){ .bento{ grid-template-columns:1fr; grid-auto-rows:auto; } }
+
+.intro{ background:var(--surface); border-radius:var(--r); padding:36px; display:flex; flex-direction:column; justify-content:space-between; gap:28px; position:relative; overflow:hidden; }
+.intro::before{ content:""; position:absolute; width:340px; height:340px; border-radius:50%; background:var(--pink); right:-120px; top:-140px; }
+.intro::after{ content:""; position:absolute; width:150px; height:150px; border-radius:50%; background:var(--sun); right:120px; top:110px; mix-blend-mode:multiply; }
+.intro > *{ position:relative; z-index:1; }
+.intro h1{ font-size:clamp(64px, 8.4vw, 132px); font-weight:800; line-height:.88; letter-spacing:-.045em; }
+.intro .role{ font-family:var(--display); font-size:clamp(22px, 2.2vw, 30px); font-weight:600; line-height:1.15; max-width:19em; margin:18px 0 0; letter-spacing:-.015em; }
+.intro dl{ display:grid; gap:10px; margin:0; font-size:16px; }
+.intro dl div{ display:flex; gap:12px; align-items:baseline; flex-wrap:wrap; }
+.intro dt{ color:var(--ink-3); width:84px; flex:none; }
+.intro dd{ margin:0; font-weight:500; }
+.intro dd a{ text-decoration-thickness:2px; text-underline-offset:4px; text-decoration-color:var(--pink); }
+.intro .acts{ display:flex; gap:10px; flex-wrap:wrap; }
+@media (max-width:640px){ .intro{ padding:26px; } .intro::before{ width:220px; height:220px; right:-90px; top:-100px; } .intro::after{ width:90px; height:90px; right:70px; top:60px; } }
+
+.tile{ position:relative; border-radius:var(--r); padding:24px; text-decoration:none; display:flex; flex-direction:column; gap:10px; overflow:hidden; transition:transform .2s cubic-bezier(.2,.7,.2,1); isolation:isolate; }
+.tile:hover{ transform:translateY(-4px); }
+.tile .row{ display:flex; justify-content:space-between; align-items:center; }
+.tile .tag{ font-size:13px; font-weight:600; padding:4px 11px; border-radius:999px; background:rgba(255,255,255,.55); }
+.tile .go{ width:40px; height:40px; border-radius:50%; display:grid; place-items:center; background:var(--ink); color:#fff; transition:transform .2s; flex:none; }
+.tile:hover .go{ transform:rotate(-45deg); }
+.tile h2{ font-size:clamp(24px, 2.2vw, 30px); max-width:15ch; }
+.tile p{ font-size:15px; margin:0; max-width:34ch; }
+.tile .pv{ margin-top:auto; padding-top:8px; }
+@media (prefers-reduced-motion:reduce){ .tile,.tile .go{ transition:none; } .tile:hover{ transform:none; } .tile:hover .go{ transform:none; } }
+
+.t-training{ background:var(--blue); color:#fff; }
+.t-training .tag{ background:rgba(255,255,255,.18); }
+.t-training .go{ background:#fff; color:var(--blue); }
+.t-playbook{ background:var(--sun); }
+.t-workflows{ background:var(--night); color:#fff; }
+.t-workflows .tag{ background:rgba(255,255,255,.14); }
+.t-workflows .go{ background:var(--mint); color:var(--ink); }
+.t-reports{ background:var(--lilac); }
+.t-plan{ background:var(--pink); }
+.t-learning{ background:var(--mint); }
+.t-gift{ background:var(--surface); }
+.t-gift .tag{ background:var(--paper); }
+.t-about{ background:var(--surface); }
+.t-about .tag{ background:var(--paper); }
+.t-board{ background:transparent; border:2px dashed var(--ink-3); }
+.t-board .tag{ background:var(--sun); }
+
+/* previews */
+.pv-chips{ display:flex; flex-wrap:wrap; gap:8px; }
+.pv-chips span{ background:#fff; color:var(--blue); font-weight:600; font-size:13.5px; padding:7px 13px; border-radius:999px 999px 999px 4px; }
+.pv-chips span:nth-child(2){ background:var(--sun); color:var(--ink); }
+.pv-chips span:nth-child(3){ background:var(--pink); color:var(--ink); }
+.pv-win{ background:#fff; border-radius:12px; padding:8px; box-shadow:0 1px 0 rgba(0,0,0,.06); }
+.pv-win .bar{ display:flex; gap:4px; margin-bottom:6px; }
+.pv-win .bar i{ width:7px; height:7px; border-radius:50%; background:var(--rule); }
+.pv-win .body{ display:grid; grid-template-columns:1fr 2fr; gap:6px; }
+.pv-win .side{ display:grid; gap:4px; align-content:start; }
+.pv-win .side i{ height:6px; border-radius:3px; background:#0B3C5D; opacity:.25; }
+.pv-win .side i:first-child{ opacity:.9; background:#F2A541; }
+.pv-win .grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:4px; }
+.pv-win .grid i{ height:22px; border-radius:5px; background:#EEF2F4; }
+.pv-win .grid i:nth-child(1){ background:#0B3C5D; }
+.pv-flow{ display:flex; align-items:center; gap:6px; flex-wrap:wrap; }
+.pv-flow span{ font-size:12.5px; font-weight:600; padding:6px 10px; border-radius:8px; background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.2); }
+.pv-flow span:last-child{ background:var(--mint); color:var(--ink); border-color:var(--mint); }
+.pv-flow b{ width:12px; height:2px; background:rgba(255,255,255,.4); }
+.pv-merge{ display:flex; align-items:center; gap:14px; }
+.pv-merge .many{ display:grid; grid-template-columns:repeat(2, 30px); gap:6px; }
+.pv-merge .many i{ height:30px; border-radius:7px; background:rgba(26,21,48,.15); }
+.pv-merge .arrow{ font-family:var(--display); font-weight:800; font-size:26px; }
+.pv-merge .one{ flex:1; max-width:220px; background:#fff; border-radius:12px; padding:10px; display:grid; gap:5px; }
+.pv-merge .one i{ display:block; height:8px; border-radius:4px; background:var(--blue); }
+.pv-merge .one i:nth-child(2){ width:70%; background:var(--pink); }
+.pv-merge .one i:nth-child(3){ width:45%; background:var(--mint); }
+.pv-phases{ display:grid; grid-template-columns:repeat(3,1fr); gap:6px; }
+.pv-phases span{ background:rgba(255,255,255,.55); border-radius:10px; padding:9px 10px; font-size:13px; font-weight:600; line-height:1.25; }
+.pv-phases span b{ display:block; font-family:var(--display); font-size:22px; }
+.pv-steps{ display:flex; align-items:flex-end; gap:5px; height:84px; }
+.pv-steps span{ flex:1; background:rgba(255,255,255,.6); border-radius:8px 8px 4px 4px; font-size:11.5px; font-weight:600; padding:5px 6px; line-height:1.15; }
+.pv-steps span:nth-child(1){ height:34%; } .pv-steps span:nth-child(2){ height:54%; } .pv-steps span:nth-child(3){ height:76%; } .pv-steps span:nth-child(4){ height:100%; background:var(--ink); color:#fff; }
+.ticket{ display:flex; border-radius:12px; overflow:hidden; background:var(--pink); position:relative; }
+.ticket .main{ flex:1; padding:12px 14px; }
+.ticket .main small{ display:block; font-size:11px; font-weight:600; opacity:.75; }
+.ticket .main b{ font-family:var(--display); font-size:20px; line-height:1.05; }
+.ticket .main{ border-right:2px dashed rgba(26,21,48,.35); }
+.ticket .stub{ width:58px; display:grid; place-items:center; font-family:var(--display); font-weight:800; font-size:12px; writing-mode:vertical-rl; transform:rotate(180deg); }
+.ticket::before,.ticket::after{ content:""; position:absolute; right:51px; width:14px; height:14px; border-radius:50%; background:var(--surface); }
+.ticket::before{ top:-7px; } .ticket::after{ bottom:-7px; }
+.pv-me{ display:flex; align-items:center; gap:12px; }
+.avatar{ width:72px; height:72px; border-radius:50%; background:var(--pink); display:grid; place-items:center; font-family:var(--display); font-weight:800; font-size:24px; overflow:hidden; flex:none; }
+.avatar img{ width:100%; height:100%; object-fit:cover; }
+.pv-me span{ font-size:13.5px; color:var(--ink-2); line-height:1.35; }
+.pv-soon{ border:2px dashed var(--ink-3); border-radius:12px; height:76px; display:grid; place-items:center; font-size:13.5px; color:var(--ink-2); font-weight:500; }
+
+/* one orchestrated entrance */
+.js .bento > *{ opacity:0; transform:translateY(14px); }
+.js .bento.in > *{ opacity:1; transform:none; transition:opacity .5s ease, transform .6s cubic-bezier(.2,.7,.2,1); transition-delay:calc(var(--i) * 55ms); }
+@media (prefers-reduced-motion:reduce){ .js .bento > *{ opacity:1; transform:none; } .js .bento.in > *{ transition:none; } }
+
+/* =====================================================================
+   Detail views
+   ===================================================================== */
+.view-head{ border-radius:var(--r); padding:40px; margin-bottom:24px; position:relative; overflow:hidden; }
+.view-head .crumb{ display:inline-flex; align-items:center; gap:8px; font-weight:600; font-size:14px; text-decoration:none; padding:7px 14px; border-radius:999px; background:rgba(255,255,255,.55); margin-bottom:28px; }
+.view-head h1{ font-size:clamp(40px, 6vw, 84px); font-weight:800; line-height:.95; letter-spacing:-.04em; max-width:14ch; outline:none; }
+.view-head .lede{ font-size:clamp(18px, 1.7vw, 21px); max-width:40em; margin:20px 0 0; }
+.view-head .acts{ display:flex; gap:10px; flex-wrap:wrap; margin-top:26px; }
+@media (max-width:640px){ .view-head{ padding:26px; } }
+.vh-blue{ background:var(--blue); color:#fff; } .vh-blue .crumb{ background:rgba(255,255,255,.18); }
+.vh-sun{ background:var(--sun); }
+.vh-night{ background:var(--night); color:#fff; } .vh-night .crumb{ background:rgba(255,255,255,.14); }
+.vh-lilac{ background:var(--lilac); }
+.vh-pink{ background:var(--pink); }
+.vh-mint{ background:var(--mint); }
+.vh-white{ background:var(--surface); }
+.vh-white .crumb{ background:var(--paper); }
+.vh-board{ background:transparent; border:2px dashed var(--ink-3); }
+.vh-board .crumb{ background:var(--sun); }
+
+.block{ background:var(--surface); border-radius:var(--r); padding:36px; margin-bottom:16px; }
+@media (max-width:640px){ .block{ padding:24px 20px; } }
+.block > h2{ font-size:clamp(28px, 3vw, 40px); margin-bottom:10px; }
+.block > .sub{ color:var(--ink-2); max-width:44em; margin-bottom:24px; }
+.two{ display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:16px; }
+.three{ display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:16px; }
+.four{ display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); gap:16px; }
+@media (max-width:960px){ .three,.four{ grid-template-columns:repeat(2, minmax(0,1fr)); } }
+@media (max-width:640px){ .two,.three,.four{ grid-template-columns:1fr; } }
+.cell{ background:var(--paper); border-radius:16px; padding:20px; }
+.cell h3{ font-size:20px; margin-bottom:8px; letter-spacing:-.01em; }
+.cell p{ font-size:15.5px; color:var(--ink-2); margin:0; }
+.cell.hl{ background:var(--ink); color:#fff; }
+.cell.hl p{ color:rgba(255,255,255,.8); }
+.stat{ border-radius:16px; padding:20px; }
+.stat b{ display:block; font-family:var(--display); font-weight:800; font-size:clamp(30px, 3.2vw, 44px); line-height:1; letter-spacing:-.03em; margin-bottom:8px; }
+.stat span{ font-size:14.5px; }
+.s-blue{ background:var(--blue); color:#fff; } .s-sun{ background:var(--sun); } .s-pink{ background:var(--pink); } .s-mint{ background:var(--mint); } .s-lilac{ background:var(--lilac); }
+
+/* numbered steps (real sequences only) */
+.seq{ list-style:none; margin:0; padding:0; counter-reset:n; display:grid; gap:10px; }
+.seq li{ counter-increment:n; display:grid; grid-template-columns:44px 1fr auto; gap:14px; align-items:center; background:var(--paper); border-radius:14px; padding:14px 16px; }
+.seq li::before{ content:counter(n); width:36px; height:36px; border-radius:50%; background:var(--ink); color:#fff; display:grid; place-items:center; font-weight:700; font-size:15px; }
+.seq li b{ display:block; font-weight:600; }
+.seq li span{ color:var(--ink-2); font-size:15px; }
+.seq li em{ font-style:normal; font-weight:600; font-size:14px; color:var(--ink-3); white-space:nowrap; }
+
+/* flow (workflow steps) */
+.flow{ display:flex; flex-wrap:wrap; gap:8px; align-items:stretch; margin:14px 0 12px; counter-reset:f; }
+.flow span{ counter-increment:f; background:var(--paper); border-radius:12px; padding:10px 14px 10px 12px; font-size:14.5px; line-height:1.35; display:flex; gap:10px; align-items:center; flex:1 1 150px; }
+.flow span::before{ content:counter(f); width:24px; height:24px; border-radius:50%; background:var(--ink); color:#fff; font-size:12px; font-weight:700; display:grid; place-items:center; flex:none; }
+.wf{ border-top:2px solid var(--paper); padding:26px 0 8px; }
+.wf:first-of-type{ border-top:0; padding-top:4px; }
+.wf h3{ font-size:24px; }
+.wf .out{ font-size:15px; color:var(--ink-2); margin:0; }
+.wf .out b{ color:var(--ink); }
+
+/* stack diagram */
+.stack{ display:grid; gap:10px; }
+.layer{ display:grid; grid-template-columns:200px 1fr; gap:20px; align-items:center; border-radius:16px; padding:18px 22px; }
+.layer h3{ font-size:22px; }
+.layer p{ margin:0; font-size:15.5px; }
+.layer:nth-child(1){ background:var(--lilac); } .layer:nth-child(2){ background:var(--sun); } .layer:nth-child(3){ background:var(--mint); } .layer:nth-child(4){ background:var(--pink); } .layer:nth-child(5){ background:var(--night); color:#fff; }
+@media (max-width:640px){ .layer{ grid-template-columns:1fr; gap:6px; } }
+
+/* video */
+.video{ position:relative; aspect-ratio:16/9; border-radius:18px; overflow:hidden; background:var(--night); color:#fff; }
+.video iframe{ position:absolute; inset:0; width:100%; height:100%; border:0; }
+.video-empty{ position:absolute; inset:0; display:flex; flex-direction:column; justify-content:flex-end; padding:22px; gap:2px;
+  background:radial-gradient(90% 90% at 100% 0%, var(--pink), transparent 55%), radial-gradient(70% 70% at 0% 100%, var(--blue), transparent 60%), var(--night); }
+.video-empty .play{ position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:76px; height:76px; border-radius:50%; background:#fff; display:grid; place-items:center; }
+.video-empty .play::after{ content:""; border-left:20px solid var(--ink); border-top:12px solid transparent; border-bottom:12px solid transparent; margin-left:6px; }
+.video-empty strong{ font-weight:600; }
+.video-empty span{ font-size:14px; opacity:.8; }
+
+/* before / after diagram */
+.ba{ display:grid; grid-template-columns:1fr auto 1fr; gap:20px; align-items:center; }
+.ba .src{ display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+.ba .src div{ background:var(--paper); border-radius:12px; padding:12px; font-size:14px; }
+.ba .src b{ display:block; font-size:14.5px; }
+.ba .src span{ color:var(--ink-3); font-size:13px; }
+.ba .arrow{ font-family:var(--display); font-weight:800; font-size:44px; }
+.ba .one{ background:var(--lilac); border-radius:16px; padding:18px; }
+.ba .one b{ font-family:var(--display); font-size:22px; display:block; margin-bottom:6px; }
+.ba .one ul{ margin:0; padding-left:18px; font-size:14.5px; }
+@media (max-width:860px){ .ba{ grid-template-columns:1fr; } .ba .arrow{ transform:rotate(90deg); justify-self:center; } }
+
+/* 90-day plan */
+.phases{ display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:16px; }
+@media (max-width:960px){ .phases{ grid-template-columns:1fr; } }
+.phase{ border-radius:20px; padding:24px; display:flex; flex-direction:column; }
+.phase:nth-child(1){ background:var(--sun); } .phase:nth-child(2){ background:var(--mint); } .phase:nth-child(3){ background:var(--lilac); }
+.phase .days{ font-weight:600; font-size:14px; }
+.phase h3{ font-size:30px; margin:4px 0 10px; }
+.phase .goal{ font-size:15.5px; margin-bottom:16px; }
+.phase ol{ list-style:none; padding:0; margin:0 0 18px; display:grid; gap:8px; flex:1; align-content:start; }
+.phase li{ background:rgba(255,255,255,.62); border-radius:12px; padding:12px 14px; font-size:15px; line-height:1.4; }
+.ex{ display:inline-block; margin-top:6px; font-size:13px; font-weight:600; color:var(--ink); background:#fff; border-radius:999px; padding:3px 10px; text-decoration:none; }
+.ex:hover{ background:var(--ink); color:#fff; }
+.phase .out{ border-top:2px solid rgba(26,21,48,.15); padding-top:14px; font-size:14.5px; }
+.phase .out b{ display:block; }
+.phase .out p{ margin:0 0 8px; }
+
+/* prioritiser */
+.prio{ border:2px solid var(--paper); border-radius:16px; overflow:hidden; }
+.prio-row{ display:grid; grid-template-columns:minmax(0,1fr) 88px 88px 88px 74px 124px; gap:12px; align-items:center; padding:12px 18px; border-top:2px solid var(--paper); }
+.prio-row.head{ border-top:0; font-size:13px; color:var(--ink-3); background:var(--paper); padding-top:12px; padding-bottom:10px; }
+.prio-name{ font-weight:600; }
+.prio select{ width:100%; height:38px; border:2px solid var(--paper); border-radius:10px; background:#fff; font:600 15px var(--sans); color:var(--ink); padding:0 8px; }
+.prio-score{ font-family:var(--display); font-weight:800; font-size:20px; font-variant-numeric:tabular-nums; }
+.verdict{ font-size:13px; font-weight:600; padding:4px 11px; border-radius:999px; justify-self:start; }
+.v-now{ background:var(--mint); } .v-next{ background:var(--sun); } .v-park{ background:var(--paper); color:var(--ink-2); }
+.prio-add{ display:flex; gap:10px; padding:14px 18px; background:var(--paper); }
+.prio-add input{ flex:1; min-width:0; height:42px; border:0; border-radius:999px; padding:0 16px; font:400 15px var(--sans); }
+.legend{ font-size:14px; color:var(--ink-3); margin:12px 0 0; }
+@media (max-width:760px){
+  .prio-row{ grid-template-columns:repeat(3, 1fr); gap:10px; padding:14px; }
+  .prio-row.head{ display:none; }
+  .prio-name{ grid-column:1 / -1; }
+  .prio-row label{ display:grid; gap:4px; font-size:12.5px; color:var(--ink-3); }
+  .prio-sw{ grid-column:1 / -1; display:flex; align-items:center; gap:12px; }
+}
+@media (min-width:761px){ .prio-row label .lbl{ position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); } .prio-sw{ display:contents; } }
+
+/* ladder + lights */
+.ladder{ list-style:none; padding:0; margin:0; display:grid; grid-template-columns:repeat(5, minmax(0,1fr)); gap:10px; counter-reset:r; }
+.ladder li{ counter-increment:r; background:var(--paper); border-radius:16px; padding:18px; display:flex; flex-direction:column; gap:8px; }
+.ladder li::before{ content:counter(r); width:28px; height:28px; border-radius:50%; background:var(--blue); color:#fff; display:grid; place-items:center; font-weight:700; font-size:13px; }
+.ladder h4{ font-size:22px; }
+.ladder .q{ font-size:14.5px; color:var(--ink-2); margin:0; min-height:2.9em; }
+.ladder dl{ margin:0; font-size:13.5px; display:grid; gap:4px; padding-top:10px; border-top:2px solid #fff; }
+.ladder dt{ color:var(--ink-3); } .ladder dd{ margin:0 0 6px; }
+@media (max-width:1040px){ .ladder{ grid-template-columns:repeat(2, minmax(0,1fr)); } }
+@media (max-width:560px){ .ladder{ grid-template-columns:1fr; } }
+.light{ border-radius:16px; padding:20px; }
+.light h4{ font-size:21px; margin-bottom:4px; }
+.light .rl{ font-size:14px; margin-bottom:10px; opacity:.8; }
+.light ul{ margin:0; padding-left:18px; font-size:15px; }
+.l-go{ background:var(--mint); } .l-caution{ background:var(--sun); } .l-stop{ background:var(--pink); }
+
+/* 4C framework */
+.four-c{ display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); gap:12px; align-items:end; }
+.cstep{ border-radius:18px; padding:20px; display:flex; flex-direction:column; gap:10px; }
+.cstep:nth-child(1){ background:var(--lilac); min-height:360px; }
+.cstep:nth-child(2){ background:var(--sun); min-height:400px; }
+.cstep:nth-child(3){ background:var(--mint); min-height:440px; }
+.cstep:nth-child(4){ background:var(--ink); color:#fff; min-height:480px; }
+.cstep .st{ font-size:13px; font-weight:600; opacity:.75; }
+.cstep h3{ font-size:30px; }
+.cstep .who{ font-size:15px; margin:0 0 4px; }
+.cstep dl{ margin:auto 0 0; display:grid; gap:4px; font-size:14px; }
+.cstep dt{ font-weight:600; }
+.cstep dd{ margin:0 0 8px; opacity:.85; }
+.base{ margin-top:12px; background:var(--ink); color:#fff; border-radius:18px; padding:18px 22px; display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+.base b{ font-family:var(--display); font-size:20px; display:block; margin-bottom:2px; }
+.base p{ margin:0; font-size:15px; opacity:.85; }
+@media (max-width:960px){ .four-c{ grid-template-columns:repeat(2, minmax(0,1fr)); } .cstep{ min-height:0 !important; } }
+@media (max-width:560px){ .four-c,.base{ grid-template-columns:1fr; } }
+
+.principles{ list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:12px; }
+.principles li{ background:var(--paper); border-radius:16px; padding:20px; }
+.principles b{ font-family:var(--display); font-size:22px; display:block; line-height:1.1; margin-bottom:6px; letter-spacing:-.015em; }
+.principles span{ color:var(--ink-2); font-size:15px; display:block; }
+.principles em{ font-style:normal; font-size:13.5px; font-weight:600; display:inline-block; margin-top:10px; background:#fff; padding:3px 10px; border-radius:999px; }
+@media (max-width:760px){ .principles{ grid-template-columns:1fr; } }
+
+/* gift */
+.big-ticket{ display:grid; grid-template-columns:1fr 120px; border-radius:24px; overflow:hidden; position:relative; background:var(--pink); }
+.big-ticket .main{ padding:30px; }
+.big-ticket .main{ border-right:3px dashed rgba(26,21,48,.35); }
+.big-ticket .stub{ display:grid; place-items:center; font-family:var(--display); font-weight:800; font-size:20px; writing-mode:vertical-rl; transform:rotate(180deg); letter-spacing:.02em; }
+.big-ticket::before,.big-ticket::after{ content:""; position:absolute; right:108px; width:24px; height:24px; border-radius:50%; background:var(--paper); }
+.big-ticket::before{ top:-12px; } .big-ticket::after{ bottom:-12px; }
+.big-ticket h2{ font-size:clamp(28px, 3vw, 40px); margin-bottom:6px; }
+.prompt-box{ background:var(--ink); color:#F4F1FF; border-radius:16px; padding:22px; font:14.5px/1.6 var(--sans); white-space:pre-wrap; margin:18px 0 14px; max-height:440px; overflow:auto; }
+.copy-row{ display:flex; gap:12px; align-items:center; flex-wrap:wrap; }
+.copied{ font-weight:600; font-size:14px; }
+@media (max-width:640px){ .big-ticket{ grid-template-columns:1fr; } .big-ticket .main{ border-right:0; } .big-ticket .stub{ display:none; } .big-ticket::before,.big-ticket::after{ display:none; } .big-ticket .main{ padding:22px; } }
+.compare{ display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+.compare div{ border-radius:16px; padding:20px; font-size:15px; }
+.compare .before{ background:var(--paper); }
+.compare .after{ background:var(--mint); }
+.compare b{ font-family:var(--display); font-size:19px; display:block; margin-bottom:8px; }
+@media (max-width:760px){ .compare{ grid-template-columns:1fr; } }
+
+/* about */
+.about-top{ display:grid; grid-template-columns:auto 1fr; gap:36px; align-items:center; }
+.about-top .avatar{ width:200px; height:200px; font-size:64px; }
+@media (max-width:760px){ .about-top{ grid-template-columns:1fr; gap:20px; } .about-top .avatar{ width:140px; height:140px; font-size:44px; } }
+.quote{ background:var(--blue); color:#fff; border-radius:var(--r); padding:40px; margin:0 0 16px; }
+.quote blockquote{ margin:0 0 18px; font-family:var(--display); font-weight:700; font-size:clamp(30px, 4vw, 56px); line-height:1.02; letter-spacing:-.03em; max-width:18ch; }
+.quote figcaption{ font-size:15px; opacity:.9; }
+.quote figcaption a{ color:#fff; }
+.philo{ font-family:var(--display); font-weight:600; font-size:clamp(22px, 2.3vw, 30px); line-height:1.25; letter-spacing:-.015em; max-width:28em; }
+.timeline{ list-style:none; margin:0; padding:0; display:grid; gap:10px; }
+.timeline li{ display:grid; grid-template-columns:130px 1fr; gap:16px; background:var(--paper); border-radius:14px; padding:14px 18px; font-size:15.5px; }
+.timeline .when{ color:var(--ink-3); font-variant-numeric:tabular-nums; }
+.timeline b{ display:block; font-weight:600; }
+.timeline span{ color:var(--ink-2); }
+@media (max-width:560px){ .timeline li{ grid-template-columns:1fr; gap:2px; } }
+.tick{ list-style:none; margin:0; padding:0; display:grid; gap:8px; }
+.tick li{ padding-left:28px; position:relative; }
+.tick li::before{ content:""; position:absolute; left:0; top:7px; width:16px; height:16px; border-radius:50%; background:var(--mint); }
+
+/* next card + footer */
+.next{ display:flex; justify-content:space-between; align-items:center; gap:16px; background:var(--ink); color:#fff; border-radius:var(--r); padding:26px 30px; text-decoration:none; margin:8px 0 56px; }
+.next small{ display:block; opacity:.7; font-size:14px; }
+.next b{ font-family:var(--display); font-size:clamp(24px, 2.6vw, 34px); letter-spacing:-.02em; }
+.next .go{ width:52px; height:52px; border-radius:50%; background:var(--pink); color:var(--ink); display:grid; place-items:center; flex:none; transition:transform .2s; }
+.next:hover .go{ transform:rotate(-45deg); }
+.foot{ border-top:2px solid var(--rule); padding:26px 0 40px; font-size:14.5px; color:var(--ink-3); }
+.foot .wrap{ display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; }
+.foot a{ color:var(--ink); }
+</style>
+</head>
+<body>
+
+<!--
+  =====================================================================
+  EDIT ME: links, photo, CV and video URLs live in the CONFIG block at
+  the bottom of this file. Demos live in /demos.
+  =====================================================================
+-->
+
+<header class="top">
+  <div class="wrap">
+    <a class="mark" href="#/"><i>EM</i>Em Morgan</a>
+    <div class="top-actions">
+      <a class="btn btn-line" data-cfg="cv" download>Download CV</a>
+      <a class="btn btn-ink" data-cfg="email">Email me</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ============================ HOME ============================ -->
+<div class="wrap" id="home">
+  <div class="bento" id="bento">
+    <section class="intro" style="--i:0" aria-labelledby="name">
+      <div>
+        <h1 id="name">Em<br>Morgan</h1>
+        <p class="role">I help people actually use AI at work.</p>
+      </div>
+      <dl>
+        <div><dt>Focus</dt><dd>AI enablement and learning design</dd></div>
+        <div><dt>Location</dt><dd>Dubai, moving to London in December 2026</dd></div>
+        <div><dt>Email</dt><dd><a data-cfg="email">paigeelizabethmorgan@gmail.com</a></dd></div>
+      </dl>
+    </section>
+
+    <a class="tile t-training" href="#/training" style="--i:1">
+      <div class="row"><span class="tag">Enablement</span><span class="go" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9h11M9.5 4.5 14 9l-4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+      <h2>Training colleagues and CEOs to use AI</h2>
+      <p>From regional teams across EMEA and APAC to chief executives.</p>
+      <div class="pv pv-chips" aria-hidden="true"><span>Regional directors</span><span>Global teams</span><span>CEOs and C-suite</span></div>
+    </a>
+
+    <a class="tile t-playbook" href="#/playbook" style="--i:2">
+      <div class="row"><span class="tag">Live demo</span><span class="go" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9h11M9.5 4.5 14 9l-4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+      <h2>Playbooks and resources</h2>
+      <p>An AI-built playbook, rebuilt for a sample company.</p>
+      <div class="pv pv-win" aria-hidden="true"><div class="bar"><i></i><i></i><i></i></div><div class="body"><div class="side"><i></i><i></i><i></i><i></i></div><div class="grid"><i></i><i></i><i></i><i></i><i></i><i></i></div></div></div>
+    </a>
+
+    <a class="tile t-workflows" href="#/workflows" style="--i:3">
+      <div class="row"><span class="tag">How I build</span><span class="go" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9h11M9.5 4.5 14 9l-4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+      <h2>AI workflows</h2>
+      <p>Projects, skills, connectors and plugins, working together.</p>
+      <div class="pv pv-flow" aria-hidden="true"><span>Context</span><b></b><span>Skills</span><b></b><span>Connectors</span><b></b><span>Live</span></div>
+    </a>
+
+    <a class="tile t-reports" href="#/reports" style="--i:4">
+      <div class="row"><span class="tag">Live demo</span><span class="go" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9h11M9.5 4.5 14 9l-4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+      <h2>Reports: four sources, one place</h2>
+      <p>Two dashboards, a data pack and a spreadsheet, combined into one report, with a report embedded inside it.</p>
+      <div class="pv pv-merge" aria-hidden="true"><div class="many"><i></i><i></i><i></i><i></i></div><span class="arrow">=</span><div class="one"><i></i><i></i><i></i></div></div>
+    </a>
+
+    <a class="tile t-plan" href="#/plan" style="--i:5">
+      <div class="row"><span class="tag">Plan</span><span class="go" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9h11M9.5 4.5 14 9l-4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+      <h2>My 90-day plan for AI enablement</h2>
+      <p>How I'd start in any business, with the tools I'd bring.</p>
+      <div class="pv pv-phases" aria-hidden="true"><span><b>30</b>Listen and baseline</span><span><b>60</b>Pilot and teach</span><span><b>90</b>Prove and scale</span></div>
+    </a>
+
+    <a class="tile t-learning" href="#/learning" style="--i:6">
+      <div class="row"><span class="tag">Method</span><span class="go" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9h11M9.5 4.5 14 9l-4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+      <h2>How I design learning</h2>
+      <div class="pv pv-steps" aria-hidden="true"><span>Curious</span><span>Capable</span><span>Confident</span><span>Champion</span></div>
+    </a>
+
+    <a class="tile t-gift" href="#/gift" style="--i:7">
+      <div class="row"><span class="tag">Free to use</span><span class="go" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9h11M9.5 4.5 14 9l-4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+      <h2>A gift for hiring managers</h2>
+      <div class="pv ticket" aria-hidden="true"><div class="main"><small>Admit one</small><b>A prompt that improves your prompts</b></div><div class="stub">GIFT</div></div>
+    </a>
+
+    <a class="tile t-about" href="#/about" style="--i:8">
+      <div class="row"><span class="tag">About</span><span class="go" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9h11M9.5 4.5 14 9l-4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+      <h2>About me</h2>
+      <div class="pv pv-me"><span class="avatar" data-photo>EM</span><span>My view on AI, my story, and my CV.</span></div>
+    </a>
+
+    <a class="tile t-board" href="#/board" style="--i:9">
+      <div class="row"><span class="tag">In build</span><span class="go" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9h11M9.5 4.5 14 9l-4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+      <h2>Board meetings in a box</h2>
+      <div class="pv pv-soon" aria-hidden="true">Sample presentation coming soon</div>
+    </a>
+  </div>
+</div>
+
+<!-- ============================ 1. TRAINING ============================ -->
+<div class="wrap view" data-route="training" hidden>
+  <header class="view-head vh-blue">
+    <a class="crumb" href="#/">All work</a>
+    <h1 tabindex="-1">Training colleagues and CEOs to use AI</h1>
+    <p class="lede">AI isn't in my job description. I took it on because I could see what it would do for the people around me, and I became the person colleagues and members ask first.</p>
+  </header>
+
+  <section class="block">
+    <h2>Who I train</h2>
+    <p class="sub">Four audiences, each with a different starting point and a different reason to care.</p>
+    <div class="four">
+      <div class="cell"><h3>Regional directors</h3><p>Across EMEA and APAC. Hands-on sessions on using AI for their own regional work, and support to complete their KPIs.</p></div>
+      <div class="cell"><h3>The global team</h3><p>AI updates at associate meetings: what's new, what's worth trying and what to avoid.</p></div>
+      <div class="cell"><h3>CEOs and C-suite</h3><p>Sessions delivered alongside AI leaders, focused on decisions and workflows, not features.</p></div>
+      <div class="cell"><h3>CEO members</h3><p>Playbooks for using AI in their businesses, written for people with no time to read manuals.</p></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2>What changed</h2>
+    <div class="four" style="margin-top:18px">
+      <div class="stat s-blue"><b class="num">5 months to 2 weeks</b><span>Lead time on one project, cut with AI</span></div>
+      <div class="stat s-sun"><b>Exceeds</b><span>Performance rating, with AI work outside my remit</span></div>
+      <div class="stat s-pink"><b class="num">4.8 to 4.9</b><span>Out of 5, for the sessions I design for CEOs</span></div>
+      <div class="stat s-mint"><b>EMEA + APAC</b><span>Regional teams I train and support, plus the global team</span></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2>My signature session: AI for executive teams</h2>
+    <p class="sub">Ninety minutes, built so every leader leaves having done real work with AI, not just watched it.</p>
+    <ol class="seq">
+      <li><div><b>What AI is good at, and what it isn't</b><span>Set honest expectations before anyone types a word.</span></div><em>10 min</em></li>
+      <li><div><b>A live demo on a task from the room</b><span>Their problem, not a polished example.</span></div><em>15 min</em></li>
+      <li><div><b>How to ask: intent, detail and tone</b><span>One pattern that works in any tool.</span></div><em>15 min</em></li>
+      <li><div><b>Try it on your own work</b><span>In pairs, on something due this week.</span></div><em>25 min</em></li>
+      <li><div><b>Judgement and guardrails</b><span>What stays human, and what never goes into a tool.</span></div><em>10 min</em></li>
+      <li><div><b>Commit to one workflow</b><span>For the next 30 days, with a check-in booked.</span></div><em>15 min</em></li>
+    </ol>
+  </section>
+
+  <section class="block">
+    <h2>See it in action</h2>
+    <p class="sub">A segment from a session for executive teams.</p>
+    <div class="video" data-video="training" data-label="Workshop segment: AI for executive teams" data-length="About 12 minutes"></div>
+  </section>
+
+  <section class="block">
+    <h2>What I'd do differently</h2>
+    <div class="two" style="margin-top:16px">
+      <div class="cell"><h3>Build champions sooner</h3><p>So expertise doesn't sit with one person, and teams have someone close by to ask.</p></div>
+      <div class="cell"><h3>Measure before the first session</h3><p>Capture usage first, so every later gain has a number against it.</p></div>
+    </div>
+  </section>
+</div>
+
+<!-- ============================ 2. PLAYBOOK ============================ -->
+<div class="wrap view" data-route="playbook" hidden>
+  <header class="view-head vh-sun">
+    <a class="crumb" href="#/">All work</a>
+    <h1 tabindex="-1">Playbooks and resources leaders actually use</h1>
+    <p class="lede">Chapter leaders told us resources were hard to find. I used AI to build one interactive playbook for 27 leadership teams. This demo rebuilds it for a fictional company, PMO Enterprises.</p>
+    <div class="acts"><a class="btn btn-ink" href="demos/playbook-demo.html" target="_blank" rel="noopener">Open the PMO Enterprises demo</a></div>
+  </header>
+
+  <section class="block">
+    <div class="three">
+      <div class="stat s-sun"><b class="num">27 of 27</b><span>Chapters have accessed it and use it regularly</span></div>
+      <div class="stat s-mint"><b class="num">30% fewer</b><span>Questions coming to the regional office</span></div>
+      <div class="stat s-lilac"><b>Faster</b><span>Chapters reaching the organisation's standard than ever</span></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2>The story</h2>
+    <div class="two" style="margin-top:18px">
+      <div class="cell"><h3>Problem</h3><p>Leaders couldn't find the resources they needed, so questions came to the regional office, and teams took longer than they should to reach the standard.</p></div>
+      <div class="cell"><h3>Approach</h3><p>A single web playbook: 13 sections, a live dashboard, a regional calendar and an AI assistant that answers only from playbook content. Piloted confidentially with regional leadership, then rolled out with a signed acknowledgement from every chair.</p></div>
+      <div class="cell hl"><h3>Result</h3><p>Every chapter uses it. Management-directed questions are down 30%, and chapters reach the standard faster than ever.</p></div>
+      <div class="cell"><h3>What I'd do differently</h3><p>Write a test set of real leader questions for the assistant before launch, so I could report its accuracy as well as its use.</p></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2>What's in the demo</h2>
+    <p class="sub">The real playbook is confidential. The demo keeps its structure and features; every name, number and link is invented, and each link opens a sample page showing what you'd find there.</p>
+    <div class="three">
+      <div class="cell"><h3>Chapter gate</h3><p>Leaders pick their chapter and confirm the acknowledgement before entering. The live version logs each entry.</p></div>
+      <div class="cell"><h3>13 sections and an appendix</h3><p>From governance and commitments to emergency support, each collapsible, with a directory and glossary.</p></div>
+      <div class="cell"><h3>Live dashboard, embedded</h3><p>The commitments tracker sits inside the playbook, so nobody needs another login.</p></div>
+      <div class="cell"><h3>Ask the Playbook</h3><p>An assistant that answers from the playbook only, and politely declines everything else.</p></div>
+      <div class="cell"><h3>Dwell-time analytics</h3><p>Shows which sections leaders actually read, so content effort goes where it matters.</p></div>
+      <div class="cell"><h3>Sample pages behind every link</h3><p>Forms, templates, videos, events and directories, represented without the real systems.</p></div>
+    </div>
+  </section>
+</div>
+
+<!-- ============================ 3. WORKFLOWS ============================ -->
+<div class="wrap view" data-route="workflows" hidden>
+  <header class="view-head vh-night">
+    <a class="crumb" href="#/">All work</a>
+    <h1 tabindex="-1">How I build AI workflows</h1>
+    <p class="lede">I treat AI like a new team member: it gets the context once, the right tools for the job and access to where the work lives. Then I check its work.</p>
+  </header>
+
+  <section class="block">
+    <h2>My stack, layer by layer</h2>
+    <p class="sub">Each layer removes a step I'd otherwise repeat by hand.</p>
+    <div class="stack">
+      <div class="layer"><h3>Context</h3><p>Each workstream has its own project, with the method, rules and history written down, so I never re-explain the job.</p></div>
+      <div class="layer"><h3>Skills</h3><p>Packaged know-how for a kind of task: building Word reports, PDFs, spreadsheets and slide decks to the same standard every time.</p></div>
+      <div class="layer"><h3>Connectors</h3><p>Live access to the apps where work lives, such as email, calendars and files, so AI reads the source instead of a copy and paste.</p></div>
+      <div class="layer"><h3>Plugins</h3><p>Bundles of skills, connectors and commands for a team process, so a workflow I design can be installed by colleagues, not just used by me.</p></div>
+      <div class="layer"><h3>Ship and measure</h3><p>GitHub and Vercel to publish, a serverless function for the playbook assistant, and Apps Script to log what gets used.</p></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2>Four workflows I run</h2>
+    <div class="wf">
+      <h3>Monthly chapter report refresh</h3>
+      <div class="flow"><span>Export from the CRM</span><span>Upload to the report's project, where the method is saved</span><span>Parse and merge with Python</span><span>Integrity checks: every count adds up, every chapter present</span><span>Swap only the data, keep every customisation</span><span>Publish through GitHub to Vercel</span></div>
+      <p class="out"><b>Why it matters:</b> a monthly refresh that never breaks what already works. <a href="#/reports">See the report</a></p>
+    </div>
+    <div class="wf">
+      <h3>Bylaws gap analysis across 27 chapters</h3>
+      <div class="flow"><span>Collect bylaws, PDF and Word</span><span>Read scanned pages with OCR</span><span>Build a checklist from the strongest bylaws</span><span>Match every document against it</span><span>Spot-check flagged gaps against the source</span><span>Word report with ranked findings</span></div>
+      <p class="out"><b>Why it matters:</b> gaps per chapter, now shown in the overview report for every visit.</p>
+    </div>
+    <div class="wf">
+      <h3>A playbook assistant that stays in scope</h3>
+      <div class="flow"><span>Playbook content</span><span>Knowledge base in a serverless function</span><span>Claude API, with the key kept server-side</span><span>Answers only from the playbook</span><span>Updated every time content changes</span></div>
+      <p class="out"><b>Why it matters:</b> leaders get answers at 11pm without emailing anyone. <a href="#/playbook">See the playbook</a></p>
+    </div>
+    <div class="wf">
+      <h3>Event production for leadership meetings</h3>
+      <div class="flow"><span>Agenda and run of show</span><span>Facilitator cue cards, one per slide, timed</span><span>Speaker notes extracted to Word</span><span>Follow-up email and message versions in the chair's voice</span><span>I review, edit and send</span></div>
+      <p class="out"><b>Why it matters:</b> used for the regional board meeting that received a record satisfaction score. <a href="#/board">See where this is going</a></p>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2>Rules I work by</h2>
+    <div class="four" style="margin-top:16px">
+      <div class="cell"><h3>Verify before trusting</h3><p>Every refresh runs checks that would catch a silent error.</p></div>
+      <div class="cell"><h3>Edit surgically</h3><p>Change the data, never rebuild what already works.</p></div>
+      <div class="cell"><h3>Keep sensitive content apart</h3><p>Restricted notes live on their own tab, never in shared views.</p></div>
+      <div class="cell"><h3>A human sends</h3><p>AI drafts. I decide what leaves my outbox.</p></div>
+    </div>
+  </section>
+</div>
+
+<!-- ============================ 4. REPORTS ============================ -->
+<div class="wrap view" data-route="reports" hidden>
+  <header class="view-head vh-lilac">
+    <a class="crumb" href="#/">All work</a>
+    <h1 tabindex="-1">Reports: four sources, one place</h1>
+    <p class="lede">Preparing for one chapter visit used to mean two dashboards, a data pack and a spreadsheet. I combined them into one report, ranked by which chapters need attention first.</p>
+    <div class="acts"><a class="btn btn-ink" href="demos/report-demo.html" target="_blank" rel="noopener">Open the report demo</a><a class="btn btn-line" href="demos/commitments-demo.html" target="_blank" rel="noopener">Open the embedded tracker</a></div>
+  </header>
+
+  <section class="block">
+    <h2>How it used to be, and how it is now</h2>
+    <p class="sub">The demo shows both, using fictional data for PMO Enterprises. Use the Before and After switch at the top of the report.</p>
+    <div class="ba">
+      <div class="src">
+        <div><b>CRM dashboard</b><span>Chapter health</span></div>
+        <div><b>BI dashboard</b><span>Engagement, a month behind</span></div>
+        <div><b>Quarterly data pack</b><span>Satisfaction, page 17 of 38</span></div>
+        <div><b>Spreadsheet</b><span>Membership, version 6</span></div>
+      </div>
+      <span class="arrow" aria-hidden="true">=</span>
+      <div class="one"><b>Chapter Overview Report</b><ul><li>Five lenses for every chapter</li><li>Ranked by a concern score</li><li>Commitments tracker embedded inside</li><li>Restricted notes on their own tab</li></ul></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2>A report within the report</h2>
+    <p class="sub">The commitments tracker is its own page. Rather than copy its data, I embedded it, so one update keeps every view current.</p>
+    <ol class="seq">
+      <li><div><b>The tracker lives on its own</b><span>A separate report, refreshed monthly from the CRM.</span></div></li>
+      <li><div><b>It's embedded where people need it</b><span>Inside the overview report's Commitments tab, and inside the playbook.</span></div></li>
+      <li><div><b>Update once, current everywhere</b><span>No copies drifting out of date, and no extra logins for leaders.</span></div></li>
+    </ol>
+  </section>
+
+  <section class="block">
+    <h2>The story</h2>
+    <div class="two" style="margin-top:18px">
+      <div class="cell"><h3>Problem</h3><p>Health, commitments, engagement, membership and satisfaction lived in four places, on different dates, under different chapter names.</p></div>
+      <div class="cell"><h3>Approach</h3><p>One self-contained report with the data built in, refreshed monthly, and quarterly for satisfaction. A concern score ranks chapters, and restricted visit notes sit behind a password on their own tab.</p></div>
+      <div class="cell hl"><h3>Result</h3><p>Regional chairs get one link before every chapter visit. The same data now feeds board submissions and policy proposals.</p></div>
+      <div class="cell"><h3>What I'd do differently</h3><p>Put restricted notes behind real server-side access control. The current password is a soft gate, and I'd rather it were a hard one.</p></div>
+    </div>
+  </section>
+</div>
+
+<!-- ============================ 5. PLAN ============================ -->
+<div class="wrap view" data-route="plan" hidden>
+  <header class="view-head vh-pink">
+    <a class="crumb" href="#/">All work</a>
+    <h1 tabindex="-1">My 90-day plan for AI enablement</h1>
+    <p class="lede">The plan I'd adapt to any business. Each step links to work that shows how I'd do it, and the tools I'd bring are at the bottom of this page.</p>
+  </header>
+
+  <section class="block">
+    <div class="phases">
+      <div class="phase">
+        <span class="days">Days 1 to 30</span>
+        <h3>Listen and baseline</h3>
+        <p class="goal">Understand how work really gets done, and agree with the sponsor what success looks like.</p>
+        <ol>
+          <li>A listening tour: the sponsor, IT and security, legal, L&amp;D, and at least 15 people doing the work.<br><a class="ex" href="#/playbook">Example: building from user feedback</a></li>
+          <li>Audit access against real use, including unofficial tools.<br><a class="ex" href="#/plan" data-scroll="scorecard">Example: adoption scorecard</a></li>
+          <li>Run use-case discovery with three teams and score every idea.<br><a class="ex" href="#/plan" data-scroll="prioritiser">Example: use-case prioritiser</a></li>
+          <li>Agree guardrails with IT and legal in plain language.<br><a class="ex" href="#/plan" data-scroll="guardrails">Example: responsible-use guide</a></li>
+          <li>Deliver one quick win for a willing team.<br><a class="ex" href="#/gift">Example: the prompt gift</a></li>
+        </ol>
+        <div class="out"><p><b>You'll have</b>A discovery readout, a scored backlog, a baseline scorecard and a signed-off plan.</p><p><b>Measured by</b>Baseline captured, three teams engaged, sponsor sign-off.</p></div>
+      </div>
+      <div class="phase">
+        <span class="days">Days 31 to 60</span>
+        <h3>Pilot and teach</h3>
+        <p class="goal">Prove value on a few high-priority workflows, and build the people who will spread it.</p>
+        <ol>
+          <li>Launch two or three pilots, each with a named owner and a success measure.<br><a class="ex" href="#/workflows">Example: my AI workflows</a></li>
+          <li>Build role-based learning: short tutorials plus live workshops.<br><a class="ex" href="#/training">Example: my signature session</a></li>
+          <li>Recruit and train a champions network through train-the-trainer.<br><a class="ex" href="#/learning">Example: the 4C framework</a></li>
+          <li>Open weekly office hours and a shared library of prompts and workflows.<br><a class="ex" href="#/playbook">Example: the playbook</a></li>
+        </ol>
+        <div class="out"><p><b>You'll have</b>Live pilots, learning paths for each role, trained champions and a first resource hub.</p><p><b>Measured by</b>Activation in pilot teams, session ratings, champions trained.</p></div>
+      </div>
+      <div class="phase">
+        <span class="days">Days 61 to 90</span>
+        <h3>Prove and scale</h3>
+        <p class="goal">Show the impact in numbers, and make the new way of working the default.</p>
+        <ol>
+          <li>Measure pilots against the baseline and publish short case studies.<br><a class="ex" href="#/reports">Example: one report, many sources</a></li>
+          <li>Scale the winning workflows to the next teams.<br><a class="ex" href="#/training">Example: scaling across regions</a></li>
+          <li>Embed AI in onboarding and in managers' routines.<br><a class="ex" href="#/learning">Example: how I design learning</a></li>
+          <li>Set up an intake process and a governance rhythm.<br><a class="ex" href="#/plan" data-scroll="prioritiser">Example: use-case prioritiser</a></li>
+          <li>Present a 90-day impact readout and a two-quarter roadmap.<br><a class="ex" href="#/plan" data-scroll="scorecard">Example: adoption scorecard</a></li>
+        </ol>
+        <div class="out"><p><b>You'll have</b>An impact readout, a scale plan, a playbook and a signed-off roadmap.</p><p><b>Measured by</b>Weekly active use, hours saved, confidence scores, workflows in daily use.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="prioritiser">
+    <h2>Use-case prioritiser</h2>
+    <p class="sub">Score each idea from 1 to 5. Priority is value times ease, divided by risk, and the list re-sorts as you score. Try it, or add your own idea.</p>
+    <div class="prio">
+      <div class="prio-row head" aria-hidden="true"><span>Use case</span><span>Value</span><span>Ease</span><span>Risk</span><span>Priority</span><span>Verdict</span></div>
+      <div id="prio-rows"></div>
+      <form class="prio-add" id="prio-add">
+        <label for="prio-new" style="position:absolute;left:-9999px">New use case</label>
+        <input id="prio-new" type="text" placeholder="Add your own use case" maxlength="60">
+        <button class="btn btn-ink" type="submit">Add use case</button>
+      </form>
+    </div>
+    <p class="legend">Start now at 6 or above. Plan next from 3 to 6. Park below 3.</p>
+  </section>
+
+  <section class="block" id="scorecard">
+    <h2>Adoption scorecard</h2>
+    <p class="sub">Five measures, in the order adoption actually happens. Licences don't turn into habits on their own, so each stage gets its own number. Targets are agreed with the sponsor in the first 30 days.</p>
+    <ol class="ladder">
+      <li><h4>Access</h4><p class="q">Can the right people use approved tools?</p><dl><dt>Metric</dt><dd>Share of target staff with a working login</dd><dt>Example target</dt><dd>All pilot teams by day 30</dd></dl></li>
+      <li><h4>Activation</h4><p class="q">Have they used it for real work?</p><dl><dt>Metric</dt><dd>Share completing a first work task within 14 days</dd><dt>Example target</dt><dd>80% of pilot users</dd></dl></li>
+      <li><h4>Habit</h4><p class="q">Do they come back every week?</p><dl><dt>Metric</dt><dd>Weekly active users divided by licensed users</dd><dt>Example target</dt><dd>60% by day 90</dd></dl></li>
+      <li><h4>Value</h4><p class="q">What does it save or improve?</p><dl><dt>Metric</dt><dd>Hours saved per person per week, sampled</dd><dt>Example target</dt><dd>Two hours or more</dd></dl></li>
+      <li><h4>Confidence</h4><p class="q">Do people know when and how to use it?</p><dl><dt>Metric</dt><dd>"I know when and how to use AI in my role", 1 to 5</dd><dt>Example target</dt><dd>4.0 or above</dd></dl></li>
+    </ol>
+  </section>
+
+  <section class="block" id="guardrails">
+    <h2>Responsible-use guide</h2>
+    <p class="sub">A one-page answer to the question everyone asks first: what can I put into which tool? Adapted to each organisation's policy before it goes out.</p>
+    <div class="three">
+      <div class="light l-go"><h4>Go ahead</h4><p class="rl">Any approved AI tool</p><ul><li>Public information</li><li>Your own drafts and notes</li><li>Templates and brainstorming</li></ul></div>
+      <div class="light l-caution"><h4>Approved tool, minimal detail</h4><p class="rl">Your organisation's enterprise AI</p><ul><li>Internal documents and notes</li><li>Client names, removed where you can</li><li>Unreleased plans</li></ul></div>
+      <div class="light l-stop"><h4>Stop and ask first</h4><p class="rl">Only with explicit approval and controls</p><ul><li>Personal or sensitive data</li><li>Financial, legal or HR matters</li><li>Anything under NDA or regulation</li></ul></div>
+    </div>
+  </section>
+</div>
+
+<!-- ============================ 6. LEARNING ============================ -->
+<div class="wrap view" data-route="learning" hidden>
+  <header class="view-head vh-mint">
+    <a class="crumb" href="#/">All work</a>
+    <h1 tabindex="-1">How I design learning</h1>
+    <p class="lede">My Oxford MSc was in how adults learn. For AI, that means building confidence and judgement, not just teaching features.</p>
+  </header>
+
+  <section class="block">
+    <h2>The 4C framework for AI capability</h2>
+    <p class="sub">How I'd move a business from curiosity to self-sustaining capability. People sit at different stages, so each stage gets its own learning, not one course for everyone.</p>
+    <div class="four-c">
+      <div class="cstep"><span class="st">Stage 1</span><h3>Curious</h3><p class="who">Has heard the hype, hasn't used AI for real work.</p>
+        <dl><dt>What they need</dt><dd>To see it work on their own task, safely.</dd><dt>What I build</dt><dd>Short live demos on real tasks and a one-page guardrails guide.</dd><dt>How we know</dt><dd>A first real task done within 14 days.</dd></dl></div>
+      <div class="cstep"><span class="st">Stage 2</span><h3>Capable</h3><p class="who">Uses AI for simple tasks, but not consistently.</p>
+        <dl><dt>What they need</dt><dd>A reliable way to ask, and to check.</dd><dt>What I build</dt><dd>Role-based tutorials, prompt patterns and job aids.</dd><dt>How we know</dt><dd>Weekly use and time saved on routine work.</dd></dl></div>
+      <div class="cstep"><span class="st">Stage 3</span><h3>Confident</h3><p class="who">Uses AI daily, and knows when not to.</p>
+        <dl><dt>What they need</dt><dd>Workflows built around their real processes.</dd><dt>What I build</dt><dd>Workflow clinics, team templates, and skills and connectors set up for the team.</dd><dt>How we know</dt><dd>A workflow in daily use, with quality checks built in.</dd></dl></div>
+      <div class="cstep"><span class="st">Stage 4</span><h3>Champion</h3><p class="who">Teaches others and spots new uses.</p>
+        <dl><dt>What they need</dt><dd>Recognition, time and a network.</dd><dt>What I build</dt><dd>Train-the-trainer, a champions network and a shared library.</dd><dt>How we know</dt><dd>Peers trained and new use cases submitted.</dd></dl></div>
+    </div>
+    <div class="base">
+      <div><b>Judgement stays human</b><p>At every stage, AI drafts and people decide. Learning always covers checking the output, not just producing it.</p></div>
+      <div><b>Guardrails from day one</b><p>Everyone knows what can go into which tool before they start, so confidence never outruns safety.</p></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2>Six principles behind everything I build</h2>
+    <ul class="principles" style="margin-top:18px">
+      <li><b>Start from the behaviour, not the content.</b><span>I ask what people need to do differently at work, then build only what gets them there.</span><em>Action mapping</em></li>
+      <li><b>Respect what adults already know.</b><span>Senior people learn when it's relevant, self-directed and built on their experience.</span><em>Knowles' andragogy</em></li>
+      <li><b>Show, then hand over.</b><span>One worked example, then a partial one they finish, then their own real task.</span><em>Merrill's first principles</em></li>
+      <li><b>Cut anything that doesn't help.</b><span>Short segments, plain screens, one idea at a time.</span><em>Mayer's multimedia principles</em></li>
+      <li><b>Most learning happens back at the desk.</b><span>Job aids, champions and office hours do more than any single session.</span><em>70-20-10</em></li>
+      <li><b>Measure what changed, not who attended.</b><span>Behaviour at 30 days matters more than the rating on the day.</span><em>Kirkpatrick's four levels</em></li>
+    </ul>
+  </section>
+
+  <section class="block">
+    <h2>Learning design at scale</h2>
+    <div class="three" style="margin-top:18px">
+      <div class="stat s-mint"><b class="num">60% to 100%</b><span>Chapters meeting the top quality standard, one year after I wrote a peer-to-peer learning programme and trained its trainers</span></div>
+      <div class="stat s-sun"><b>Best worldwide</b><span>One of those chapters went on to win Best Chapter globally</span></div>
+      <div class="stat s-lilac"><b>Now mandatory</b><span>A session I co-designed with the global learning team, piloted in my region, now required worldwide</span></div>
+    </div>
+  </section>
+</div>
+
+<!-- ============================ 7. GIFT ============================ -->
+<div class="wrap view" data-route="gift" hidden>
+  <header class="view-head vh-white">
+    <a class="crumb" href="#/">All work</a>
+    <h1 tabindex="-1">A gift for hiring managers</h1>
+    <p class="lede">Thank you for looking. Here's something you can use today: a prompt that improves your prompts. Paste in any request you'd give an AI assistant, and it hands back a sharper version, with what changed and why.</p>
+  </header>
+
+  <section class="big-ticket" style="margin-bottom:16px">
+    <div class="main">
+      <h2>The Prompt Polisher</h2>
+      <p style="margin:0">Works in Claude, ChatGPT, Copilot and Gemini.</p>
+      <div class="prompt-box" id="prompt"></div>
+      <div class="copy-row"><button class="btn btn-ink" type="button" id="copy">Copy the prompt</button><span class="copied" id="copied" aria-live="polite"></span></div>
+    </div>
+    <div class="stub" aria-hidden="true">ADMIT ONE</div>
+  </section>
+
+  <section class="block">
+    <h2>How to use it</h2>
+    <ol class="seq" style="margin-top:16px">
+      <li><div><b>Copy the prompt into your AI assistant</b><span>A new chat works best.</span></div></li>
+      <li><div><b>Replace the placeholder with your draft request</b><span>Rough is fine. That's the point.</span></div></li>
+      <li><div><b>Answer its questions, then use the improved prompt</b><span>Save the good ones as templates for your team.</span></div></li>
+    </ol>
+  </section>
+
+  <section class="block">
+    <h2>Before and after</h2>
+    <div class="compare" style="margin-top:16px">
+      <div class="before"><b>Before</b>Write an email to the team about the new expenses process.</div>
+      <div class="after"><b>After</b>You're my internal communications partner. Draft an email from me to my 12-person team announcing our new expenses process, which starts on 1 March. Purpose: everyone submits claims in the new tool, not by email. Include what changes, the deadline, where to find the guide and who to ask. Format: a subject line and under 150 words, friendly and direct, in UK English. If anything you need is missing, ask me before drafting.</div>
+    </div>
+  </section>
+</div>
+
+<!-- ============================ 8. ABOUT ============================ -->
+<div class="wrap view" data-route="about" hidden>
+  <header class="view-head vh-white">
+    <a class="crumb" href="#/">All work</a>
+    <div class="about-top">
+      <span class="avatar" data-photo>EM</span>
+      <div>
+        <h1 tabindex="-1">About me</h1>
+        <p class="lede">Paige Elizabeth Morgan, Em to everyone. Learning designer, regional director and the person colleagues ask about AI.</p>
+        <div class="acts"><a class="btn btn-ink" data-cfg="cv" download>Download my CV (PDF)</a><a class="btn btn-line" data-cfg="email">Email me</a><a class="btn btn-line" data-cfg="linkedin" target="_blank" rel="noopener">LinkedIn</a></div>
+      </div>
+    </div>
+  </header>
+
+  <section class="block">
+    <h2>My view on AI</h2>
+    <p class="philo" style="margin-top:14px">AI is a tool that speeds up tasks. It doesn't replace professional judgement. I don't see it as a threat; I see it as a way to add time to the working day without adding hours.</p>
+    <p style="color:var(--ink-2);max-width:44em;margin:0">The thinking that matters most stays with us: what's true, what's right for this person, and what to do next. My job is to help people hand AI the work that slows them down, so they have more time for the work only they can do.</p>
+  </section>
+
+  <figure class="quote">
+    <blockquote>“AI should strive to enhance us, not replace us.”</blockquote>
+    <figcaption>Fei-Fei Li, Co-Director of the Stanford Institute for Human-Centered AI, in <a href="https://democrats-science.house.gov/imo/media/doc/Li%20Testimony.pdf" target="_blank" rel="noopener">testimony to the US House Science Committee</a>, 2018</figcaption>
+  </figure>
+
+  <section class="block">
+    <h2>My story</h2>
+    <div class="two" style="margin-top:16px;align-items:start">
+      <div>
+        <p>I started in curriculum design, moved into designing learning for chief executives, and now run a region of 27 chapters for a global CEO organisation.</p>
+        <p>AI isn't in my job description. I took it on because I could see what it would do for the people I work with, and it's become the part of my work I care about most. I've trained colleagues across EMEA and APAC, built the tools my region runs on, and learnt what it takes to move busy, senior people from curious to confident.</p>
+        <p style="margin:0">I'm a UK citizen moving home to London in December 2026, looking for a role where enablement is the job.</p>
+      </div>
+      <div>
+        <ol class="timeline">
+          <li><span class="when">2024 to now</span><div><b>Regional Director, Middle East and North Africa</b><span>Global CEO membership organisation</span></div></li>
+          <li><span class="when">2022 to 2024</span><div><b>Regional Forum and Learning Manager</b><span>Same organisation</span></div></li>
+          <li><span class="when">2017 to 2022</span><div><b>Curriculum Development Specialist</b><span>Ministry of Education, UAE</span></div></li>
+        </ol>
+        <ul class="tick" style="margin-top:18px">
+          <li>MSc, University of Oxford, focused on adult education methodology</li>
+          <li>Three years working alongside Birkman coaches</li>
+          <li>Has worked with CEOs and C-suite leaders worldwide, and with government ministers</li>
+          <li>Full right to work in the UK</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============================ 9. BOARD ============================ -->
+<div class="wrap view" data-route="board" hidden>
+  <header class="view-head vh-board">
+    <a class="crumb" href="#/">All work</a>
+    <h1 tabindex="-1">Board meetings in a box</h1>
+    <p class="lede">A branded, ready-to-run pack for board and leadership meetings, built with AI from the agenda up. I design and run regional board meetings for chief executives; this turns that process into a kit any business can brand and reuse.</p>
+    <div class="acts"><a class="btn btn-ink" data-cfg="boardDeck" data-empty-label="Sample presentation coming soon" target="_blank" rel="noopener">Open the sample presentation</a></div>
+  </header>
+
+  <section class="block">
+    <h2>What's in the box</h2>
+    <div class="three" style="margin-top:16px">
+      <div class="cell"><h3>Agenda and run of show</h3><p>Timed to the minute, with owners for every segment.</p></div>
+      <div class="cell"><h3>Branded presentation</h3><p>Built on the company's own design system, ready to present.</p></div>
+      <div class="cell"><h3>Facilitator cue cards</h3><p>One per slide, timed, with prompts for discussion.</p></div>
+      <div class="cell"><h3>Table activities</h3><p>Structured exercises that get boards deciding, not just listening.</p></div>
+      <div class="cell"><h3>Minutes and action tracker</h3><p>Templates that capture decisions and owners as the meeting runs.</p></div>
+      <div class="cell"><h3>Follow-up messages</h3><p>Email and message drafts in the chair's voice, ready to review and send.</p></div>
+    </div>
+  </section>
+</div>
+
+<!-- Next-up card (filled by the router) -->
+<div class="wrap" id="next-wrap" hidden><a class="next" id="next" href="#/"><span><small>Next up</small><b id="next-title"></b></span><span class="go" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 18 18" fill="none"><path d="M3 9h11M9.5 4.5 14 9l-4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></div>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <span>Em Morgan, 2026. Designed and built with Claude.</span>
+    <a data-cfg="email">paigeelizabethmorgan@gmail.com</a>
+  </div>
+</footer>
+
+<script>
+/* =====================================================================
+   CONFIG: edit these. An empty value ("") hides that button, shows a
+   "coming soon" frame for videos, or shows initials instead of a photo.
+   ===================================================================== */
+const CONFIG = {
+  email: "paigeelizabethmorgan@gmail.com",
+  linkedin: "",   // e.g. "https://www.linkedin.com/in/your-handle"
+  cv: "",         // e.g. "assets/Paige_Elizabeth_Morgan_CV.pdf"
+  photo: "",      // e.g. "assets/em-morgan.jpg" (square works best)
+  boardDeck: "",  // link to your sample board presentation
+  videos: {
+    training: ""  // Loom, YouTube or Vimeo share link
+  }
+};
+
+document.documentElement.classList.add('js');
+
+/* ---------- Config-driven links ---------- */
+document.querySelectorAll('[data-cfg]').forEach(el => {
+  const key = el.dataset.cfg, val = CONFIG[key];
+  if (!val) {
+    if (el.dataset.emptyLabel) { el.textContent = el.dataset.emptyLabel; el.setAttribute('aria-disabled', 'true'); el.removeAttribute('href'); }
+    else if (el.tagName === 'A' && el.classList.contains('btn')) el.hidden = true;
+    return;
+  }
+  el.href = key === 'email' ? 'mailto:' + val : val;
+});
+document.querySelectorAll('[data-photo]').forEach(el => {
+  if (!CONFIG.photo) return;
+  const img = new Image(); img.alt = 'Em Morgan'; img.src = CONFIG.photo;
+  img.onload = () => { el.textContent = ''; el.appendChild(img); };
+});
+
+/* ---------- Videos ---------- */
+function toEmbed(url) {
+  try {
+    const u = new URL(url), host = u.hostname.replace(/^www\./, '');
+    if (host.endsWith('loom.com')) return 'https://www.loom.com/embed/' + u.pathname.split('/').filter(Boolean).pop();
+    if (host === 'youtu.be') return 'https://www.youtube-nocookie.com/embed/' + u.pathname.slice(1);
+    if (host.endsWith('youtube.com') && u.searchParams.get('v')) return 'https://www.youtube-nocookie.com/embed/' + u.searchParams.get('v');
+    if (host.endsWith('vimeo.com')) return 'https://player.vimeo.com/video/' + u.pathname.split('/').filter(Boolean).pop();
+    return url;
+  } catch (e) { return null; }
+}
+document.querySelectorAll('.video').forEach(box => {
+  const src = CONFIG.videos[box.dataset.video], embed = src ? toEmbed(src) : null;
+  if (embed) {
+    const f = document.createElement('iframe'); f.src = embed; f.title = box.dataset.label; f.loading = 'lazy';
+    f.allow = 'autoplay; fullscreen; picture-in-picture'; f.allowFullscreen = true; box.appendChild(f);
+  } else {
+    box.innerHTML = '<div class="video-empty"><span class="play" aria-hidden="true"></span><strong></strong><span></span></div>';
+    box.querySelector('strong').textContent = box.dataset.label;
+    box.querySelector('span:last-child').textContent = box.dataset.length + '. Recording in progress.';
+  }
+});
+
+/* ---------- Router ---------- */
+const ORDER = ['training', 'playbook', 'workflows', 'reports', 'plan', 'learning', 'gift', 'about', 'board'];
+const TITLES = { training: 'Training colleagues and CEOs to use AI', playbook: 'Playbooks and resources', workflows: 'AI workflows', reports: 'Reports: four sources, one place',
+  plan: 'My 90-day plan for AI enablement', learning: 'How I design learning', gift: 'A gift for hiring managers', about: 'About me', board: 'Board meetings in a box' };
+const home = document.getElementById('home');
+const views = [...document.querySelectorAll('.view')];
+let pendingScroll = null, firstLoad = true;
+
+function route() {
+  const key = location.hash.replace(/^#\/?/, '').split('?')[0];
+  const known = ORDER.includes(key) ? key : '';
+  home.hidden = !!known;
+  views.forEach(v => v.hidden = v.dataset.route !== known);
+  const nw = document.getElementById('next-wrap');
+  if (known) {
+    const nxt = ORDER[(ORDER.indexOf(known) + 1) % ORDER.length];
+    document.getElementById('next').href = '#/' + nxt;
+    document.getElementById('next-title').textContent = TITLES[nxt];
+    nw.hidden = false;
+    document.title = TITLES[known] + ' | Em Morgan';
+  } else {
+    nw.hidden = true;
+    document.title = 'Em Morgan | AI enablement';
+  }
+  if (pendingScroll) {
+    const t = document.getElementById(pendingScroll); pendingScroll = null;
+    if (t) { t.scrollIntoView({ block: 'start' }); return; }
+  }
+  window.scrollTo(0, 0);
+  if (known && !firstLoad) { const h = document.querySelector(`.view[data-route="${known}"] h1`); if (h) h.focus({ preventScroll: true }); }
+  firstLoad = false;
+}
+window.addEventListener('hashchange', route);
+document.addEventListener('click', e => {
+  const a = e.target.closest('[data-scroll]'); if (!a) return;
+  e.preventDefault();
+  const target = a.dataset.scroll, href = a.getAttribute('href');
+  if (location.hash === href) document.getElementById(target).scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+  else { pendingScroll = target; location.hash = href; }
+});
+route();
+requestAnimationFrame(() => requestAnimationFrame(() => document.getElementById('bento').classList.add('in')));
+
+/* ---------- Gift: the prompt ---------- */
+const PROMPT = `You are an expert prompt engineer. Improve the prompt I give you so it gets a better result, faster, with fewer rounds of corrections.
+
+Here is my draft prompt:
+<draft>
+[PASTE YOUR PROMPT HERE]
+</draft>
+
+Step 1. If my draft leaves out anything you need, ask me up to 3 short questions: who the output is for, what a great result looks like, and any constraints. If the draft already answers these, skip to step 2.
+
+Step 2. Rewrite my prompt so it includes:
+- Role: who the AI should act as
+- Task: one clear instruction in plain words
+- Context: the background you couldn't guess (audience, purpose, what's been tried)
+- Inputs: what I'll provide, clearly marked
+- Output: the exact format, length and tone, with a short example if it helps
+- Quality check: how to check the answer before giving it to me, and to ask rather than invent if information is missing
+
+Step 3. Give me:
+1. The improved prompt, ready to copy
+2. One line on each change and why it helps
+3. One optional upgrade for next time, such as saving it as a reusable template
+
+Keep the improved prompt as short as it can be while still complete. Match my language and spelling.`;
+document.getElementById('prompt').textContent = PROMPT;
+document.getElementById('copy').addEventListener('click', async () => {
+  const msg = document.getElementById('copied');
+  try { await navigator.clipboard.writeText(PROMPT); msg.textContent = 'Copied. Paste it into your AI assistant.'; }
+  catch (e) {
+    const r = document.createRange(); r.selectNodeContents(document.getElementById('prompt'));
+    const s = getSelection(); s.removeAllRanges(); s.addRange(r);
+    msg.textContent = 'Selected. Press Ctrl+C or Cmd+C to copy.';
+  }
+});
+
+/* ---------- Plan: use-case prioritiser ---------- */
+const USE_CASES = [
+  { name: "Meeting minutes and action trackers", value: 5, ease: 4, risk: 2 },
+  { name: "Routine email replies", value: 4, ease: 5, risk: 2 },
+  { name: "Board pack summaries", value: 5, ease: 3, risk: 3 },
+  { name: "Policy Q&A assistant", value: 4, ease: 2, risk: 3 },
+  { name: "Event feedback analysis", value: 3, ease: 4, risk: 1 },
+  { name: "Drafting HR decisions", value: 3, ease: 3, risk: 5 }
+];
+(function () {
+  const rowsEl = document.getElementById('prio-rows'), form = document.getElementById('prio-add'), input = document.getElementById('prio-new');
+  const score = u => Math.round(u.value * u.ease / u.risk * 10) / 10;
+  const verdict = s => s >= 6 ? ['v-now', 'Start now'] : s >= 3 ? ['v-next', 'Plan next'] : ['v-park', 'Park for now'];
+  function select(u, key, label) {
+    const wrap = document.createElement('label'), l = document.createElement('span'), s = document.createElement('select');
+    l.className = 'lbl'; l.textContent = label; s.setAttribute('aria-label', label + ' for ' + u.name);
+    for (let n = 1; n <= 5; n++) { const o = document.createElement('option'); o.value = n; o.textContent = n; o.selected = n === u[key]; s.appendChild(o); }
+    s.addEventListener('change', () => { u[key] = Number(s.value); render(s.getAttribute('aria-label')); });
+    wrap.append(l, s); return wrap;
+  }
+  function render(focus) {
+    rowsEl.innerHTML = '';
+    [...USE_CASES].sort((a, b) => score(b) - score(a)).forEach(u => {
+      const row = document.createElement('div'); row.className = 'prio-row';
+      const name = document.createElement('span'); name.className = 'prio-name'; name.textContent = u.name;
+      const s = score(u), [cls, word] = verdict(s);
+      const sw = document.createElement('div'); sw.className = 'prio-sw';
+      const sc = document.createElement('span'); sc.className = 'prio-score'; sc.textContent = s.toFixed(1);
+      const v = document.createElement('span'); v.className = 'verdict ' + cls; v.textContent = word;
+      sw.append(sc, v);
+      row.append(name, select(u, 'value', 'Value'), select(u, 'ease', 'Ease'), select(u, 'risk', 'Risk'), sw);
+      rowsEl.appendChild(row);
+    });
+    if (focus) { const f = [...rowsEl.querySelectorAll('select')].find(x => x.getAttribute('aria-label') === focus); if (f) f.focus(); }
+  }
+  form.addEventListener('submit', e => {
+    e.preventDefault(); const name = input.value.trim(); if (!name) { input.focus(); return; }
+    USE_CASES.push({ name, value: 3, ease: 3, risk: 3 }); input.value = ''; render('Value for ' + name);
+  });
+  render();
+})();
+</script>
+</body>
+</html>

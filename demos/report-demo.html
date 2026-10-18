@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chapter Overview Report | PMO Enterprises (demo)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F5F7F8; --card:#FFFFFF; --ink:#13232F; --ink-2:#4C5D69; --ink-3:#7A8A95; --rule:#DCE3E7;
+  --brand:#0B3C5D; --brand-2:#145B87; --accent:#F2A541;
+  --good:#1E8E5A; --good-bg:#E3F3EA; --warn:#B9770E; --warn-bg:#FDF1DC; --bad:#C8423B; --bad-bg:#FBE7E5;
+}
+*{ box-sizing:border-box; }
+body{ margin:0; font:15px/1.55 "Plus Jakarta Sans", system-ui, sans-serif; color:var(--ink); background:var(--bg); }
+a{ color:var(--brand-2); }
+button{ font:inherit; }
+:focus-visible{ outline:2px solid var(--accent); outline-offset:2px; }
+.bar{ background:var(--brand); color:#fff; }
+.bar .in{ max-width:1200px; margin:0 auto; padding:16px 24px; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; }
+.brand{ display:flex; align-items:center; gap:12px; }
+.logo{ width:36px; height:36px; border-radius:9px; background:var(--accent); color:var(--brand); display:grid; place-items:center; font-weight:800; font-size:14px; }
+.brand b{ display:block; font-size:16px; }
+.brand span{ font-size:12.5px; opacity:.75; }
+.switch{ display:inline-flex; background:rgba(255,255,255,.12); border-radius:999px; padding:4px; }
+.switch button{ border:0; background:transparent; color:#fff; padding:8px 16px; border-radius:999px; cursor:pointer; font-weight:600; font-size:14px; }
+.switch button[aria-pressed="true"]{ background:#fff; color:var(--brand); }
+.wrap{ max-width:1200px; margin:0 auto; padding:28px 24px 48px; }
+.lead{ display:flex; justify-content:space-between; gap:24px; align-items:flex-end; flex-wrap:wrap; margin-bottom:22px; }
+.lead h1{ margin:0 0 6px; font-size:28px; letter-spacing:-.01em; }
+.lead p{ margin:0; color:var(--ink-2); max-width:62ch; }
+.pill{ font-size:12px; font-weight:600; background:var(--accent); color:var(--ink); padding:3px 10px; border-radius:999px; white-space:nowrap; }
+[hidden]{ display:none !important; }
+
+/* ---------- BEFORE: four mock sources ---------- */
+.sources{ display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+@media (max-width:860px){ .sources{ grid-template-columns:1fr; } }
+.src{ border-radius:12px; overflow:hidden; border:1px solid var(--rule); background:#fff; display:flex; flex-direction:column; }
+.src-cap{ padding:14px 16px; border-top:1px solid var(--rule); font-size:13.5px; color:var(--ink-2); background:#fff; }
+.src-cap b{ color:var(--ink); }
+.chrome{ display:flex; align-items:center; gap:8px; padding:9px 12px; font-size:12px; }
+.chrome i{ width:9px; height:9px; border-radius:50%; background:#D0D5DA; display:inline-block; }
+.chrome .t{ margin-left:6px; font-weight:600; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.mock{ flex:1; overflow:hidden; font-size:12px; min-height:236px; }
+/* CRM */
+.crm .chrome{ background:#F3F3F3; border-bottom:1px solid #DDD; color:#333; }
+.crm .mock{ background:#fff; padding:10px 12px; font-family:Arial, sans-serif; }
+.crm .tb{ display:flex; gap:6px; margin-bottom:8px; }
+.crm .tb span{ border:1px solid #C9C9C9; border-radius:4px; padding:2px 8px; font-size:11px; color:#0B5CAB; background:#fff; }
+.crm table{ width:100%; border-collapse:collapse; }
+.crm th{ text-align:left; background:#F7F9FB; border:1px solid #E5E5E5; padding:4px 6px; font-weight:700; font-size:11px; color:#444; }
+.crm td{ border:1px solid #EEE; padding:4px 6px; color:#222; }
+/* BI */
+.bi .chrome{ background:#1C1F26; color:#C9CED8; border-bottom:1px solid #2A2E37; }
+.bi .mock{ background:#22262E; color:#DDE2EA; padding:12px 14px; font-family:"Segoe UI", system-ui, sans-serif; }
+.bi .k{ display:flex; gap:10px; margin-bottom:12px; }
+.bi .k div{ background:#2B303A; border-radius:6px; padding:6px 10px; }
+.bi .k b{ display:block; font-size:16px; color:#7FD1FF; }
+.bi .k span{ font-size:10.5px; color:#9AA3B2; }
+.bi .row{ display:grid; grid-template-columns:44px 1fr 32px; align-items:center; gap:8px; margin:3px 0; font-size:11px; }
+.bi .row .b{ height:9px; background:#3A4150; border-radius:3px; overflow:hidden; }
+.bi .row .b i{ display:block; height:100%; background:#7FD1FF; }
+/* PDF */
+.pdf .chrome{ background:#3B3B3B; color:#EEE; }
+.pdf .mock{ background:#7A7A7A; padding:14px; display:flex; justify-content:center; }
+.pdf .page{ background:#fff; width:100%; max-width:340px; padding:14px 16px; box-shadow:0 2px 8px rgba(0,0,0,.3); font-family:Georgia, serif; color:#222; }
+.pdf .page h4{ margin:0 0 2px; font-size:13px; }
+.pdf .page small{ color:#777; font-size:10px; display:block; margin-bottom:8px; }
+.pdf table{ width:100%; border-collapse:collapse; font-size:10.5px; }
+.pdf th,.pdf td{ border-bottom:1px solid #DDD; padding:3px 4px; text-align:left; }
+.pdf td:last-child,.pdf th:last-child{ text-align:right; }
+/* Excel */
+.xl .chrome{ background:#1D6F42; color:#fff; }
+.xl .mock{ background:#fff; font-family:Calibri, Arial, sans-serif; display:flex; flex-direction:column; }
+.xl .fx{ display:flex; gap:8px; padding:4px 8px; border-bottom:1px solid #D4D4D4; font-size:11px; color:#444; }
+.xl .fx b{ border-right:1px solid #D4D4D4; padding-right:8px; }
+.xl .grid{ flex:1; overflow:hidden; }
+.xl table{ border-collapse:collapse; width:100%; font-size:11px; }
+.xl th{ background:#F3F3F3; border:1px solid #D4D4D4; font-weight:400; color:#666; padding:2px 4px; width:28px; }
+.xl td{ border:1px solid #E1E1E1; padding:2px 6px; white-space:nowrap; }
+.xl .tabs{ display:flex; gap:2px; background:#F3F3F3; border-top:1px solid #D4D4D4; padding:3px 8px; font-size:11px; }
+.xl .tabs span{ padding:2px 10px; }
+.xl .tabs .on{ background:#fff; border-bottom:2px solid #1D6F42; font-weight:600; }
+.pains{ margin-top:22px; background:#fff; border:1px solid var(--rule); border-radius:12px; padding:18px 20px; display:grid; grid-template-columns:repeat(3, 1fr); gap:18px; }
+.pains h3{ margin:0 0 4px; font-size:15px; }
+.pains p{ margin:0; font-size:14px; color:var(--ink-2); }
+@media (max-width:860px){ .pains{ grid-template-columns:1fr; } }
+.cta-row{ margin-top:22px; display:flex; justify-content:center; }
+.btn{ display:inline-flex; align-items:center; gap:8px; border:0; border-radius:999px; padding:12px 22px; font-weight:700; cursor:pointer; background:var(--brand); color:#fff; text-decoration:none; }
+.btn.light{ background:#fff; color:var(--brand); border:1px solid var(--rule); }
+
+/* ---------- AFTER: consolidated report ---------- */
+.tabs-row{ display:flex; gap:4px; border-bottom:1px solid var(--rule); margin-bottom:20px; overflow-x:auto; }
+.tabs-row button{ border:0; background:none; padding:10px 16px; font-weight:600; color:var(--ink-2); cursor:pointer; border-bottom:3px solid transparent; white-space:nowrap; }
+.tabs-row button[aria-selected="true"]{ color:var(--brand); border-bottom-color:var(--accent); }
+.kpis{ display:grid; grid-template-columns:repeat(5, minmax(0,1fr)); gap:12px; margin-bottom:18px; }
+.kpi{ background:#fff; border:1px solid var(--rule); border-radius:12px; padding:14px 16px; }
+.kpi b{ display:block; font-size:24px; color:var(--brand); font-variant-numeric:tabular-nums; line-height:1.2; }
+.kpi span{ font-size:12.5px; color:var(--ink-2); }
+@media (max-width:860px){ .kpis{ grid-template-columns:repeat(2, minmax(0,1fr)); } }
+.card{ background:#fff; border:1px solid var(--rule); border-radius:12px; overflow:hidden; }
+.tbl{ overflow-x:auto; }
+.tbl table{ width:100%; border-collapse:collapse; font-size:13.5px; }
+.tbl th{ text-align:left; font-size:12px; color:var(--ink-3); font-weight:600; padding:12px 14px; border-bottom:1px solid var(--rule); background:#F8FAFB; white-space:nowrap; }
+.tbl td{ padding:12px 14px; border-bottom:1px solid var(--rule); vertical-align:middle; }
+.tbl tr:last-child td{ border-bottom:0; }
+.chip{ display:inline-block; font-size:11.5px; font-weight:600; padding:2px 8px; border-radius:999px; margin:2px 4px 2px 0; white-space:nowrap; }
+.h-Thriving{ background:var(--good-bg); color:var(--good); }
+.h-Healthy{ background:#E5F0F8; color:var(--brand-2); }
+.h-Watch{ background:var(--warn-bg); color:var(--warn); }
+.h-At{ background:var(--bad-bg); color:var(--bad); }
+.gap{ background:var(--bad-bg); color:var(--bad); }
+.metbar{ display:flex; align-items:center; gap:8px; font-variant-numeric:tabular-nums; }
+.metbar i{ display:block; width:70px; height:6px; background:#E6EBEE; border-radius:3px; overflow:hidden; position:relative; }
+.metbar i::after{ content:""; position:absolute; inset:0; width:var(--w); background:var(--brand-2); }
+.concern{ font-weight:800; font-variant-numeric:tabular-nums; }
+.method{ font-size:13px; color:var(--ink-2); padding:12px 14px; border-top:1px solid var(--rule); background:#F8FAFB; }
+.embed-note{ display:flex; gap:14px; align-items:flex-start; background:#FFF7EA; border:1px solid #F5D9A8; border-radius:12px; padding:14px 16px; margin-bottom:14px; font-size:14px; }
+.embed-note b{ display:block; margin-bottom:2px; }
+.embed-frame{ border:2px dashed var(--accent); border-radius:14px; padding:6px; background:#fff; }
+.embed-frame iframe{ width:100%; height:720px; border:0; border-radius:10px; display:block; }
+.embed-label{ display:inline-block; font-size:12px; font-weight:700; color:var(--brand); background:var(--accent); padding:3px 10px; border-radius:999px; margin:0 0 8px 6px; }
+.profile{ display:grid; grid-template-columns:280px 1fr; gap:20px; }
+@media (max-width:860px){ .profile{ grid-template-columns:1fr; } }
+.picker{ background:#fff; border:1px solid var(--rule); border-radius:12px; padding:8px; max-height:560px; overflow:auto; }
+.picker button{ display:flex; justify-content:space-between; width:100%; text-align:left; border:0; background:none; padding:10px 12px; border-radius:8px; cursor:pointer; color:var(--ink); }
+.picker button[aria-pressed="true"]{ background:var(--brand); color:#fff; }
+.lenses{ display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:14px; }
+@media (max-width:620px){ .lenses{ grid-template-columns:1fr; } }
+.lens{ background:#fff; border:1px solid var(--rule); border-radius:12px; padding:16px; }
+.lens h3{ margin:0 0 4px; font-size:13px; color:var(--ink-3); font-weight:600; }
+.lens .big{ font-size:26px; font-weight:800; color:var(--brand); line-height:1.2; font-variant-numeric:tabular-nums; }
+.lens p{ margin:6px 0 0; font-size:13.5px; color:var(--ink-2); }
+.lens.wide{ grid-column:1 / -1; }
+.gate{ max-width:420px; background:#fff; border:1px solid var(--rule); border-radius:12px; padding:24px; }
+.gate h3{ margin:0 0 6px; }
+.gate p{ color:var(--ink-2); font-size:14px; }
+.gate form{ display:flex; gap:8px; }
+.gate input{ flex:1; height:42px; border:1px solid var(--rule); border-radius:999px; padding:0 16px; font:inherit; }
+.gate .err{ color:var(--bad); font-size:13px; min-height:1.4em; margin:8px 0 0; }
+details.note{ background:#fff; border:1px solid var(--rule); border-radius:10px; margin-bottom:8px; }
+details.note summary{ padding:12px 16px; cursor:pointer; font-weight:600; }
+details.note div{ padding:0 16px 14px; font-size:14px; color:var(--ink-2); }
+details.note .act{ background:var(--bad-bg); color:var(--bad); border-radius:8px; padding:8px 12px; margin-top:8px; font-weight:600; }
+.sources-tbl{ margin-top:26px; }
+.sources-tbl h2{ font-size:16px; margin:0 0 10px; }
+footer{ max-width:1200px; margin:0 auto; padding:0 24px 32px; font-size:12.5px; color:var(--ink-3); }
+</style>
+</head>
+<body>
+<header class="bar">
+  <div class="in">
+    <div class="brand"><span class="logo">PMO</span><div><b>Chapter Overview Report</b><span>PMO Enterprises, Europe Region (fictional demo)</span></div></div>
+    <div class="switch" role="group" aria-label="Before or after">
+      <button type="button" data-view="before" aria-pressed="true">Before: 4 sources</button>
+      <button type="button" data-view="after" aria-pressed="false">After: 1 report</button>
+    </div>
+  </div>
+</header>
+
+<!-- ================= BEFORE ================= -->
+<section class="wrap" id="before">
+  <div class="lead">
+    <div>
+      <h1>Before: four tools, no single view of a chapter</h1>
+      <p>To prepare for one chapter visit, a regional leader opened two dashboards, a quarterly data pack and a spreadsheet, each with its own login, date and naming.</p>
+    </div>
+    <span class="pill">Fictional data</span>
+  </div>
+
+  <div class="sources">
+    <div class="src crm">
+      <div class="chrome"><i></i><i></i><i></i><span class="t">CRM Reports: Chapter Health Metrics, Overall Rankings</span></div>
+      <div class="mock">
+        <div class="tb"><span>Edit</span><span>Export</span><span>Subscribe</span><span>Refreshed 02/09/2026</span></div>
+        <table id="crm"></table>
+      </div>
+      <div class="src-cap"><b>Chapter health</b> in the CRM. Names follow the account format, so "PMO Enterprises London Chapter" here.</div>
+    </div>
+
+    <div class="src bi">
+      <div class="chrome"><i></i><i></i><i></i><span class="t">Engagement Insights: FY27 YTD</span></div>
+      <div class="mock">
+        <div class="k"><div><b id="bi-avg"></b><span>Avg. engagement</span></div><div><b>12</b><span>Chapters</span></div><div><b>Aug</b><span>Data to</span></div></div>
+        <div id="bi"></div>
+      </div>
+      <div class="src-cap"><b>Engagement</b> in a separate BI tool, with chapter codes instead of names and data a month behind.</div>
+    </div>
+
+    <div class="src pdf">
+      <div class="chrome"><span class="t">Q3_Member_Data_Pack.pdf</span><span style="margin-left:auto">Page 17 of 38</span></div>
+      <div class="mock">
+        <div class="page">
+          <h4>Section 4: Satisfaction Index by Chapter</h4>
+          <small>Quarterly member survey. Scores out of 100.</small>
+          <table id="pdf"></table>
+        </div>
+      </div>
+      <div class="src-cap"><b>Satisfaction</b> in a 38-page quarterly PDF. Useful, but you have to know it's on page 17.</div>
+    </div>
+
+    <div class="src xl">
+      <div class="chrome"><span class="t">Membership_tracker_FY27_v6_FINAL.xlsx</span></div>
+      <div class="mock">
+        <div class="fx"><b>C4</b><span>=B4-D4</span></div>
+        <div class="grid"><table id="xl"></table></div>
+        <div class="tabs"><span class="on">Members</span><span>Leavers</span><span>Pipeline</span><span>Old_do not use</span></div>
+      </div>
+      <div class="src-cap"><b>Membership</b> in a shared spreadsheet, on its sixth "final" version.</div>
+    </div>
+  </div>
+
+  <div class="pains">
+    <div><h3>Four logins, four dates</h3><p>Each source refreshed on its own schedule, so the numbers never described the same moment.</p></div>
+    <div><h3>Three names for one chapter</h3><p>Account names, codes and city names had to be matched by hand before anything could be compared.</p></div>
+    <div><h3>No ranking of concern</h3><p>Nothing showed which chapters needed attention first, so visits were planned on instinct.</p></div>
+  </div>
+  <div class="cta-row"><button class="btn" type="button" data-view="after">See the consolidated report</button></div>
+</section>
+
+<!-- ================= AFTER ================= -->
+<section class="wrap" id="after" hidden>
+  <div class="lead">
+    <div>
+      <h1>After: one report, five lenses, ranked by concern</h1>
+      <p>Every source is matched to one chapter name and refreshed on a fixed cadence. The Commitments tab is a separate live report, embedded inside this one.</p>
+    </div>
+    <span class="pill">As of <span class="asof"></span></span>
+  </div>
+
+  <div class="tabs-row" role="tablist" aria-label="Report sections">
+    <button role="tab" aria-selected="true" data-tab="index">Performance index</button>
+    <button role="tab" aria-selected="false" data-tab="profile">Chapter profile</button>
+    <button role="tab" aria-selected="false" data-tab="commit">Commitments (embedded report)</button>
+    <button role="tab" aria-selected="false" data-tab="notes">Notes (restricted)</button>
+  </div>
+
+  <div data-panel="index">
+    <div class="kpis" id="kpis"></div>
+    <div class="card">
+      <div class="tbl"><table id="pi"></table></div>
+      <div class="method">Concern score = 4 per unmet commitment + half of (100 minus health score) + 0.3 x (100 minus satisfaction) + 10 if engagement is under 60% + 3 per bylaws gap. Highest first.</div>
+    </div>
+  </div>
+
+  <div data-panel="profile" hidden>
+    <div class="profile">
+      <div class="picker" id="picker" aria-label="Choose a chapter"></div>
+      <div class="lenses" id="lenses"></div>
+    </div>
+  </div>
+
+  <div data-panel="commit" hidden>
+    <div class="embed-note">
+      <span class="pill">Report within the report</span>
+      <div><b>This tab embeds the Commitments Tracker, a separate report we maintain on its own.</b>Update the tracker once and it stays current here, in the playbook and anywhere else it's embedded.</div>
+    </div>
+    <span class="embed-label">Embedded: commitments-demo.html</span>
+    <div class="embed-frame"><iframe src="commitments-demo.html?embed=1" title="Embedded Chapter Commitments Tracker" loading="lazy"></iframe></div>
+  </div>
+
+  <div data-panel="notes" hidden>
+    <div class="gate" id="gate">
+      <h3>Restricted: regional leaders only</h3>
+      <p>Notes from past chapter visits sit on their own tab, so they never appear in chapter-facing views. For this demo, the password is <b>demo</b>.</p>
+      <form id="gate-form"><label for="pw" style="position:absolute;left:-9999px">Password</label><input id="pw" type="password" placeholder="Password" autocomplete="off"><button class="btn" type="submit">Unlock</button></form>
+      <p class="err" id="gate-err" aria-live="polite"></p>
+    </div>
+    <div id="notes" hidden></div>
+  </div>
+
+  <div class="sources-tbl card">
+    <div class="tbl"><table>
+      <thead><tr><th>Lens</th><th>Source before</th><th>Refresh</th></tr></thead>
+      <tbody>
+        <tr><td>Chapter health</td><td>CRM health rankings export</td><td>Monthly</td></tr>
+        <tr><td>Chapter commitments</td><td>CRM commitments export, via the embedded tracker</td><td>Monthly</td></tr>
+        <tr><td>Member engagement</td><td>BI engagement dashboard</td><td>Monthly</td></tr>
+        <tr><td>Membership</td><td>Shared membership spreadsheet</td><td>Monthly</td></tr>
+        <tr><td>Satisfaction index</td><td>Quarterly data pack (PDF)</td><td>Quarterly</td></tr>
+        <tr><td>Bylaws gaps</td><td>Document library review</td><td>One-off, then on change</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+
+<footer>A demonstration by Em Morgan. PMO Enterprises and all data on this page are fictional.</footer>
+
+<script src="pmo-data.js"></script>
+<script>
+const { COMMITMENTS, CHAPTERS, totals, asOf } = window.PMO;
+const codes = { London:"LDN", Manchester:"MAN", Edinburgh:"EDI", Dublin:"DUB", Amsterdam:"AMS", Brussels:"BRU", Paris:"PAR", Lisbon:"LIS", Madrid:"MAD", Milan:"MIL", Copenhagen:"CPH", Stockholm:"STO" };
+document.querySelectorAll('.asof').forEach(e => e.textContent = asOf);
+
+/* ---------- Before mocks ---------- */
+const byHealth = [...CHAPTERS].sort((a, b) => b.healthScore - a.healthScore);
+document.getElementById('crm').innerHTML = '<tr><th>Account Name</th><th>Health Status</th><th>Score</th><th>Rank</th></tr>' +
+  byHealth.slice(0, 9).map((c, i) => `<tr><td>PMO Enterprises ${c.name} Chapter</td><td>${c.health}</td><td>${(c.healthScore / 100).toFixed(2)}</td><td>${i + 1}</td></tr>`).join('');
+document.getElementById('bi-avg').textContent = totals.engagement + '%';
+document.getElementById('bi').innerHTML = CHAPTERS.map(c => `<div class="row"><span>${codes[c.name]}</span><span class="b"><i style="width:${c.engagement}%"></i></span><span>${c.engagement}%</span></div>`).join('');
+document.getElementById('pdf').innerHTML = '<tr><th>Chapter</th><th>Responses</th><th>SI</th></tr>' +
+  [...CHAPTERS].sort((a, b) => a.name.localeCompare(b.name)).slice(0, 10).map(c => `<tr><td>${c.name}</td><td>${Math.round(c.members * 0.62)}</td><td>${c.satisfaction}</td></tr>`).join('');
+document.getElementById('xl').innerHTML = '<tr><th></th><th>A</th><th>B</th><th>C</th><th>D</th></tr>' +
+  '<tr><th>1</th><td><b>Chapter</b></td><td><b>Members</b></td><td><b>Net</b></td><td><b>Leavers</b></td></tr>' +
+  CHAPTERS.slice(0, 9).map((c, i) => `<tr><th>${i + 2}</th><td>${c.name}</td><td>${c.members}</td><td>${c.yoy > 0 ? '+' : ''}${c.yoy}</td><td>${Math.max(0, 4 - c.yoy)}</td></tr>`).join('');
+
+/* ---------- Before / after switch ---------- */
+function show(view) {
+  document.getElementById('before').hidden = view !== 'before';
+  document.getElementById('after').hidden = view !== 'after';
+  document.querySelectorAll('.switch button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.view === view)));
+  window.scrollTo(0, 0);
+}
+document.querySelectorAll('[data-view]').forEach(b => b.addEventListener('click', () => show(b.dataset.view)));
+if (location.hash === '#after') show('after');
+
+/* ---------- Tabs ---------- */
+document.querySelectorAll('[role="tab"]').forEach(t => t.addEventListener('click', () => {
+  document.querySelectorAll('[role="tab"]').forEach(x => x.setAttribute('aria-selected', String(x === t)));
+  document.querySelectorAll('[data-panel]').forEach(p => p.hidden = p.dataset.panel !== t.dataset.tab);
+}));
+
+/* ---------- Performance index ---------- */
+document.getElementById('kpis').innerHTML = [
+  [totals.chapters, 'Chapters'], [totals.members.toLocaleString('en-GB'), 'Members'],
+  [totals.avgMet + '/14', 'Avg. commitments met'], [totals.engagement + '%', 'Avg. engagement'], [totals.satisfaction, 'Avg. satisfaction']
+].map(([b, s]) => `<div class="kpi"><b>${b}</b><span>${s}</span></div>`).join('');
+const hc = h => 'h-' + h.split(' ')[0];
+const ranked = [...CHAPTERS].sort((a, b) => b.concern - a.concern);
+document.getElementById('pi').innerHTML = '<thead><tr><th>Chapter</th><th>Health</th><th>Commitments</th><th>Engagement</th><th>Satisfaction</th><th>Members</th><th>Bylaws gaps</th><th>Concern</th></tr></thead><tbody>' +
+  ranked.map(c => `<tr><td><b>${c.name}</b></td><td><span class="chip ${hc(c.health)}">${c.health}</span></td>
+    <td><span class="metbar"><i style="--w:${c.met / 14 * 100}%"></i>${c.met}/14</span></td>
+    <td>${c.engagement}%</td><td>${c.satisfaction}</td><td>${c.members} <span style="color:var(--ink-3)">(${c.yoy > 0 ? '+' : ''}${c.yoy})</span></td>
+    <td>${c.bylaws.length ? c.bylaws.map(g => `<span class="chip gap">${g}</span>`).join('') : '<span style="color:var(--ink-3)">None</span>'}</td>
+    <td class="concern">${c.concern}</td></tr>`).join('') + '</tbody>';
+
+/* ---------- Chapter profile ---------- */
+let current = ranked[0].name;
+function renderProfile() {
+  document.getElementById('picker').innerHTML = [...CHAPTERS].sort((a, b) => a.name.localeCompare(b.name))
+    .map(c => `<button type="button" aria-pressed="${c.name === current}" data-ch="${c.name}"><span>${c.name}</span><span>${c.concern}</span></button>`).join('');
+  document.querySelectorAll('#picker button').forEach(b => b.addEventListener('click', () => { current = b.dataset.ch; renderProfile(); }));
+  const c = CHAPTERS.find(x => x.name === current);
+  const unmet = c.unmet.map(id => COMMITMENTS.find(k => k.id === id).name);
+  document.getElementById('lenses').innerHTML = `
+    <div class="lens wide"><h3>${c.name} chapter</h3><div class="big">Concern score ${c.concern}</div><p>Rank ${ranked.indexOf(c) + 1} of ${CHAPTERS.length} for attention. Everything a regional leader needs before a visit, on one screen.</p></div>
+    <div class="lens"><h3>Chapter health</h3><div class="big">${c.healthScore}</div><p><span class="chip ${hc(c.health)}">${c.health}</span></p></div>
+    <div class="lens"><h3>Commitments</h3><div class="big">${c.met}/14</div><p>${unmet.length ? 'Open: ' + unmet.join(', ') : 'All commitments met.'}</p></div>
+    <div class="lens"><h3>Member engagement</h3><div class="big">${c.engagement}%</div><p>Members at one or more events in the last 12 months.</p></div>
+    <div class="lens"><h3>Membership</h3><div class="big">${c.members}</div><p>${c.yoy >= 0 ? 'Up' : 'Down'} ${Math.abs(c.yoy)} on last year.</p></div>
+    <div class="lens"><h3>Satisfaction index</h3><div class="big">${c.satisfaction}</div><p>Quarterly member survey, out of 100.</p></div>
+    <div class="lens"><h3>Bylaws</h3><div class="big">${c.bylaws.length} gap${c.bylaws.length === 1 ? '' : 's'}</div><p>${c.bylaws.length ? c.bylaws.map(g => `<span class="chip gap">${g}</span>`).join('') : 'No gaps against the regional checklist.'}</p></div>`;
+}
+renderProfile();
+
+/* ---------- Notes (soft gate, demo only) ---------- */
+document.getElementById('gate-form').addEventListener('submit', e => {
+  e.preventDefault();
+  if (document.getElementById('pw').value.trim().toLowerCase() !== 'demo') {
+    document.getElementById('gate-err').textContent = 'That password is not right. For this demo, use "demo".';
+    return;
+  }
+  document.getElementById('gate').hidden = true;
+  const n = document.getElementById('notes'); n.hidden = false;
+  n.innerHTML = ranked.map(c => `<details class="note"><summary>${c.name} <span style="color:var(--ink-3);font-weight:500">(concern ${c.concern})</span></summary><div>${c.note}${c.concern >= 30 ? '<div class="act">Action: schedule a regional visit this quarter.</div>' : ''}</div></details>`).join('');
+});
+</script>
+</body>
+</html>

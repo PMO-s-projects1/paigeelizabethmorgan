@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Europe Region Playbook | PMO Enterprises (demo)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F5F7F8; --card:#FFFFFF; --ink:#13232F; --ink-2:#4C5D69; --ink-3:#7A8A95; --rule:#DCE3E7;
+  --brand:#0B3C5D; --brand-2:#145B87; --accent:#F2A541; --accent-soft:#FDF1DC; --good:#1E8E5A;
+}
+*{ box-sizing:border-box; }
+html{ scroll-behavior:smooth; scroll-padding-top:76px; }
+@media (prefers-reduced-motion:reduce){ html{ scroll-behavior:auto; } }
+body{ margin:0; font:16px/1.6 "Plus Jakarta Sans", system-ui, sans-serif; color:var(--ink); background:var(--bg); }
+a{ color:var(--brand-2); }
+button{ font:inherit; cursor:pointer; }
+:focus-visible{ outline:2px solid var(--accent); outline-offset:2px; }
+[hidden]{ display:none !important; }
+.demo-strip{ background:var(--accent); color:var(--ink); font-size:13px; font-weight:600; text-align:center; padding:6px 16px; }
+.logo{ width:40px; height:40px; border-radius:10px; background:var(--accent); color:var(--brand); display:grid; place-items:center; font-weight:800; font-size:14px; flex:none; }
+.btn{ display:inline-flex; align-items:center; justify-content:center; gap:8px; border:0; border-radius:999px; padding:11px 22px; font-weight:700; background:var(--brand); color:#fff; text-decoration:none; }
+.btn:disabled{ opacity:.45; cursor:not-allowed; }
+.btn.ghost{ background:#fff; color:var(--brand); border:1px solid var(--rule); }
+
+/* ---------- Gate ---------- */
+.gate{ min-height:100vh; display:grid; place-items:center; padding:24px; background:linear-gradient(160deg, var(--brand) 0%, #0A2B42 100%); }
+.gate-card{ background:#fff; border-radius:18px; padding:32px; width:100%; max-width:440px; }
+.gate-card h1{ font-size:24px; margin:16px 0 6px; line-height:1.2; }
+.gate-card p{ color:var(--ink-2); font-size:14.5px; margin:0 0 18px; }
+.gate-card select{ width:100%; height:46px; border:1px solid var(--rule); border-radius:10px; padding:0 12px; font:inherit; margin-bottom:14px; background:#fff; }
+.gate-card small{ display:block; color:var(--ink-3); font-size:12.5px; margin-top:14px; }
+.modal{ position:fixed; inset:0; background:rgba(10,30,45,.6); display:grid; place-items:center; padding:20px; z-index:50; }
+.modal-card{ background:#fff; border-radius:16px; padding:28px; max-width:480px; width:100%; }
+.modal-card h2{ margin:0 0 8px; font-size:21px; }
+.modal-card ol{ padding-left:20px; color:var(--ink-2); }
+.modal-card label{ display:flex; gap:10px; align-items:flex-start; font-size:14.5px; margin:14px 0 20px; }
+
+/* ---------- Header + nav ---------- */
+.head{ position:sticky; top:0; z-index:30; background:var(--brand); color:#fff; }
+.head .in{ max-width:1100px; margin:0 auto; padding:12px 20px; display:flex; align-items:center; gap:12px; }
+.head b{ font-size:15px; display:block; line-height:1.2; }
+.head span{ font-size:12px; opacity:.75; }
+.head .sp{ flex:1; }
+.head button{ background:rgba(255,255,255,.12); color:#fff; border:0; border-radius:999px; padding:8px 14px; font-weight:600; font-size:14px; }
+.navgrid{ position:absolute; left:0; right:0; top:100%; background:#fff; color:var(--ink); border-bottom:1px solid var(--rule); box-shadow:0 12px 24px rgba(0,0,0,.08); }
+.navgrid .in{ display:grid; grid-template-columns:repeat(auto-fill, minmax(200px, 1fr)); gap:8px; padding:16px 20px; }
+.navgrid a{ display:flex; gap:10px; padding:10px 12px; border-radius:10px; text-decoration:none; color:var(--ink); font-size:14px; font-weight:600; background:var(--bg); }
+.navgrid a i{ font-style:normal; color:var(--ink-3); font-variant-numeric:tabular-nums; }
+@media (max-width:640px){ .head .who{ display:none; } }
+
+/* ---------- Cover + TOC ---------- */
+main{ max-width:1100px; margin:0 auto; padding:0 20px 80px; }
+.cover{ margin:24px 0; border-radius:20px; background:var(--brand); color:#fff; padding:44px 40px; position:relative; overflow:hidden; }
+.cover::after{ content:""; position:absolute; right:-80px; top:-80px; width:300px; height:300px; border-radius:50%; background:var(--accent); opacity:.9; }
+.cover small{ font-weight:600; opacity:.8; }
+.cover h1{ font-size:clamp(30px, 5vw, 48px); line-height:1.05; margin:8px 0 12px; max-width:16ch; position:relative; z-index:1; }
+.cover p{ max-width:52ch; opacity:.85; margin:0; position:relative; z-index:1; }
+.toc{ display:grid; grid-template-columns:repeat(auto-fill, minmax(190px, 1fr)); gap:12px; margin-bottom:36px; }
+.toc a{ background:#fff; border:1px solid var(--rule); border-radius:14px; padding:16px; text-decoration:none; color:var(--ink); display:flex; flex-direction:column; gap:6px; min-height:104px; }
+.toc a:hover{ border-color:var(--brand-2); }
+.toc i{ font-style:normal; font-weight:800; color:var(--accent); font-size:20px; font-variant-numeric:tabular-nums; }
+.toc b{ font-size:14.5px; line-height:1.3; }
+
+/* ---------- Sections ---------- */
+.sec{ background:#fff; border:1px solid var(--rule); border-radius:16px; margin-bottom:14px; overflow:hidden; }
+.sec-h{ width:100%; display:flex; align-items:center; gap:16px; background:none; border:0; padding:20px 22px; text-align:left; color:var(--ink); }
+.sec-h i{ font-style:normal; font-weight:800; color:var(--accent); font-size:22px; width:36px; font-variant-numeric:tabular-nums; }
+.sec-h b{ flex:1; font-size:20px; }
+.sec-h::after{ content:"+"; font-size:22px; color:var(--ink-3); }
+.sec[data-open="true"] .sec-h::after{ content:"−"; }
+.sec-b{ padding:0 22px 22px 74px; }
+@media (max-width:640px){ .sec-b{ padding:0 18px 18px; } }
+.sub{ border-top:1px solid var(--rule); }
+.sub > button{ width:100%; text-align:left; background:none; border:0; padding:14px 0; font-weight:700; color:var(--ink); display:flex; justify-content:space-between; font-size:16px; }
+.sub > button::after{ content:"+"; color:var(--ink-3); }
+.sub[data-open="true"] > button::after{ content:"−"; }
+.sub-b{ padding:0 0 16px; color:var(--ink-2); font-size:15px; }
+.solo{ color:var(--ink-2); font-size:15px; }
+.sub-b p,.solo p{ margin:0 0 10px; }
+ul.tidy,ol.tidy{ margin:0 0 10px; padding-left:20px; }
+.res{ display:inline-flex; align-items:center; gap:8px; margin:4px 8px 4px 0; padding:7px 12px; border-radius:10px; background:var(--accent-soft); color:var(--ink); text-decoration:none; font-weight:600; font-size:14px; }
+.res span{ font-size:11px; font-weight:700; background:#fff; color:var(--brand); padding:1px 7px; border-radius:999px; }
+.res:hover{ background:#FBE3BC; }
+.cards{ display:grid; grid-template-columns:repeat(auto-fill, minmax(200px, 1fr)); gap:10px; margin:10px 0; }
+.cards div{ background:var(--bg); border-radius:12px; padding:14px; font-size:14px; }
+.cards b{ display:block; color:var(--ink); margin-bottom:4px; }
+.kpis{ display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); gap:10px; margin:10px 0 14px; }
+.kpis div{ background:var(--bg); border-radius:12px; padding:12px 14px; }
+.kpis b{ display:block; font-size:22px; color:var(--brand); }
+.kpis span{ font-size:12.5px; }
+@media (max-width:640px){ .kpis{ grid-template-columns:repeat(2, minmax(0,1fr)); } }
+.frame{ border:1px solid var(--rule); border-radius:12px; overflow:hidden; margin:8px 0 12px; }
+.frame iframe{ display:block; width:100%; height:640px; border:0; }
+table.plain{ width:100%; border-collapse:collapse; font-size:14px; margin:6px 0 12px; }
+table.plain th{ text-align:left; font-size:12px; color:var(--ink-3); padding:8px 10px; border-bottom:1px solid var(--rule); }
+table.plain td{ padding:8px 10px; border-bottom:1px solid var(--rule); color:var(--ink); }
+.people{ display:grid; grid-template-columns:repeat(auto-fill, minmax(220px, 1fr)); gap:12px; margin:8px 0 14px; }
+.person{ background:var(--bg); border-radius:14px; padding:16px; font-size:14px; }
+.person .av{ width:52px; height:52px; border-radius:50%; background:var(--brand); color:#fff; display:grid; place-items:center; font-weight:800; margin-bottom:10px; }
+.person b{ display:block; color:var(--ink); }
+.person em{ font-style:normal; color:var(--ink-3); font-size:13px; display:block; margin-bottom:6px; }
+
+/* ---------- Resource pages ---------- */
+.respage{ max-width:880px; margin:24px auto 80px; padding:0 20px; }
+.res-top{ display:flex; justify-content:space-between; align-items:center; gap:12px; margin-bottom:16px; flex-wrap:wrap; }
+.res-kind{ font-size:13px; font-weight:700; color:var(--brand); background:var(--accent-soft); padding:4px 10px; border-radius:999px; }
+.res-card{ background:#fff; border:1px solid var(--rule); border-radius:16px; padding:28px; }
+.res-card h1{ margin:0 0 4px; font-size:26px; line-height:1.2; }
+.res-card .meta{ color:var(--ink-3); font-size:13.5px; margin-bottom:20px; }
+.res-card h2{ font-size:16px; margin:20px 0 6px; }
+.res-card p{ color:var(--ink-2); margin:0 0 10px; }
+.res-note{ margin-top:16px; font-size:13.5px; color:var(--ink-2); background:var(--bg); border-radius:10px; padding:12px 14px; }
+.field{ display:grid; gap:6px; margin-bottom:14px; font-size:14px; font-weight:600; }
+.field input,.field select,.field textarea{ font:inherit; font-weight:400; border:1px solid var(--rule); border-radius:10px; padding:10px 12px; }
+.sheet{ overflow-x:auto; border:1px solid var(--rule); border-radius:10px; }
+.sheet table{ border-collapse:collapse; width:100%; font-size:13.5px; }
+.sheet th{ background:#EEF2F4; padding:8px 10px; text-align:left; font-size:12px; }
+.sheet td{ border-top:1px solid var(--rule); padding:8px 10px; }
+.player{ aspect-ratio:16/9; background:#0A2B42; border-radius:12px; display:grid; place-items:center; color:#fff; position:relative; }
+.player .pl{ width:70px; height:70px; border-radius:50%; background:var(--accent); display:grid; place-items:center; }
+.player .pl::after{ content:""; border-left:20px solid var(--brand); border-top:12px solid transparent; border-bottom:12px solid transparent; margin-left:6px; }
+.player small{ position:absolute; left:16px; bottom:12px; opacity:.8; }
+.cal{ display:grid; grid-template-columns:repeat(7, 1fr); gap:4px; font-size:12.5px; }
+.cal div{ background:var(--bg); border-radius:8px; min-height:62px; padding:6px; }
+.cal .hd{ background:none; min-height:0; font-weight:700; color:var(--ink-3); text-align:center; }
+.cal .ev{ display:block; background:var(--brand); color:#fff; border-radius:6px; padding:2px 5px; margin-top:4px; font-size:11px; line-height:1.3; }
+
+/* ---------- Assistant + analytics ---------- */
+.fab{ position:fixed; right:20px; bottom:20px; z-index:40; display:flex; gap:10px; }
+.fab button{ border:0; border-radius:999px; padding:12px 18px; font-weight:700; box-shadow:0 8px 20px rgba(11,60,93,.25); }
+.fab .ask{ background:var(--brand); color:#fff; }
+.fab .vis{ background:#fff; color:var(--brand); }
+.panel{ position:fixed; right:20px; bottom:80px; width:min(380px, calc(100vw - 40px)); max-height:min(560px, calc(100vh - 120px)); background:#fff; border-radius:16px; box-shadow:0 18px 40px rgba(0,0,0,.18); z-index:45; display:flex; flex-direction:column; overflow:hidden; }
+.panel-h{ background:var(--brand); color:#fff; padding:14px 16px; display:flex; justify-content:space-between; align-items:center; }
+.panel-h button{ background:none; border:0; color:#fff; font-size:20px; line-height:1; }
+.panel-b{ padding:14px 16px; overflow:auto; flex:1; font-size:14.5px; }
+.msg{ margin-bottom:10px; padding:10px 12px; border-radius:12px; max-width:92%; }
+.msg.me{ background:var(--brand); color:#fff; margin-left:auto; }
+.msg.bot{ background:var(--bg); }
+.msg.bot a{ font-weight:600; }
+.chips{ display:flex; flex-wrap:wrap; gap:6px; margin:6px 0 12px; }
+.chips button{ border:1px solid var(--rule); background:#fff; border-radius:999px; padding:5px 10px; font-size:12.5px; }
+.panel form{ display:flex; gap:8px; padding:12px; border-top:1px solid var(--rule); }
+.panel input{ flex:1; border:1px solid var(--rule); border-radius:999px; padding:9px 14px; font:inherit; font-size:14px; min-width:0; }
+.vrow{ display:grid; grid-template-columns:1fr 46px; gap:8px; align-items:center; margin:6px 0; font-size:13px; }
+.vrow .bar{ height:8px; background:var(--bg); border-radius:4px; overflow:hidden; margin-top:3px; }
+.vrow .bar i{ display:block; height:100%; background:var(--accent); }
+.vrow b{ font-variant-numeric:tabular-nums; text-align:right; }
+</style>
+</head>
+<body>
+<div class="demo-strip">Demo of a live governance playbook. PMO Enterprises is fictional, and every link opens a sample page.</div>
+
+<!-- ========== Gate ========== -->
+<div class="gate" id="gate">
+  <form class="gate-card" id="gate-form">
+    <span class="logo">PMO</span>
+    <h1>Europe Region Playbook</h1>
+    <p>Everything chapter leaders need in one place. Choose your chapter to enter.</p>
+    <label for="chapter" style="position:absolute;left:-9999px">Your chapter</label>
+    <select id="chapter" required><option value="">Choose your chapter</option></select>
+    <button class="btn" type="submit" style="width:100%">Enter</button>
+    <small>In the live version, each entry is logged to a Google Sheet through Apps Script, so the region can see which chapters have opened the playbook.</small>
+  </form>
+</div>
+<div class="modal" id="check" hidden>
+  <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="check-t">
+    <h2 id="check-t">Before you start</h2>
+    <ol>
+      <li>Download the <a href="#res/r0">acknowledgement of receipt</a>.</li>
+      <li>Read the welcome from your Regional Chairs in Section 00.</li>
+      <li>Return the signed acknowledgement to the regional office by 30 September.</li>
+    </ol>
+    <label><input type="checkbox" id="agree"> I'll share this playbook only with my chapter board and chapter manager.</label>
+    <button class="btn" id="enter" disabled>Enter the playbook</button>
+  </div>
+</div>
+
+<!-- ========== App ========== -->
+<div id="app" hidden>
+  <header class="head">
+    <div class="in">
+      <span class="logo">PMO</span>
+      <div class="who"><b>Europe Region Playbook</b><span id="who"></span></div>
+      <div class="sp"></div>
+      <button type="button" id="navbtn" aria-expanded="false" aria-controls="navgrid">Sections</button>
+    </div>
+    <nav class="navgrid" id="navgrid" hidden><div class="in" id="navlist"></div></nav>
+  </header>
+
+  <main id="book">
+    <div class="cover">
+      <small id="hello"></small>
+      <h1>How our region works, in one place</h1>
+      <p>Governance, commitments, calendars, people and resources for every chapter in the PMO Enterprises Europe Region. Updated for the 2026 to 2027 year.</p>
+    </div>
+    <div class="toc" id="toc"></div>
+    <div id="sections"></div>
+  </main>
+
+  <div class="respage" id="respage" hidden></div>
+
+  <div class="fab">
+    <button class="vis" type="button" id="visbtn">Your visit</button>
+    <button class="ask" type="button" id="askbtn">Ask the Playbook</button>
+  </div>
+  <div class="panel" id="askpanel" hidden role="dialog" aria-label="Ask the Playbook">
+    <div class="panel-h"><b>Ask the Playbook</b><button type="button" data-close="askpanel" aria-label="Close">×</button></div>
+    <div class="panel-b" id="chat">
+      <div class="msg bot">I answer only from this playbook. In the live version I'm Claude, called through a serverless function with the playbook as my knowledge base. Try one of these:</div>
+      <div class="chips" id="chips"></div>
+    </div>
+    <form id="askform"><input id="askin" placeholder="Ask about the playbook" autocomplete="off" aria-label="Your question"><button class="btn" type="submit" style="padding:9px 16px">Ask</button></form>
+  </div>
+  <div class="panel" id="vispanel" hidden role="dialog" aria-label="Your visit">
+    <div class="panel-h"><b>Your visit (demo analytics)</b><button type="button" data-close="vispanel" aria-label="Close">×</button></div>
+    <div class="panel-b"><p style="margin-top:0;color:var(--ink-2)">Seconds spent on each section during this visit. The live version sends this to a Google Sheet, so the region learns which sections leaders actually use.</p><div id="visrows"></div></div>
+  </div>
+</div>
+
+<script src="pmo-data.js"></script>
+<script>
+const { COMMITMENTS, CHAPTERS, totals } = window.PMO;
+let lastSection = 's00';
+const R = (id, label, kind) => `<a class="res" href="#res/${id}">${label} <span>${kind}</span></a>`;
+
+/* ===================== Resources (dummy links → sample pages) ===================== */
+const RES = {
+  r0:  { kind:"PDF", title:"Acknowledgement of receipt", meta:"PDF, 1 page", live:"a PDF in the document library",
+         type:"doc", body:[["Purpose","Confirms that the chapter chair, incoming chair and chapter manager have received the playbook."],["To return","Sign, scan and email to the regional office by 30 September."]] },
+  r1:  { kind:"PDF", title:"Chapter Chair role and responsibilities", meta:"PDF, 4 pages, updated August 2026", live:"a PDF in the document library",
+         type:"doc", body:[["The role in one line","Lead the chapter board to deliver a great member experience and meet the regional commitments."],["Core duties","Chair board meetings, own the strategic plan, appoint officers, and represent the chapter at regional meetings."],["Time commitment","About six hours a month, plus two regional meetings a year."]] },
+  r2:  { kind:"PDF", title:"Chapter Chair roadmap", meta:"PDF, 2 pages", live:"a PDF roadmap, with one for every officer role",
+         type:"doc", body:[["Before you start","Meet your predecessor and chapter manager. Book officer training."],["First 90 days","Confirm your board, submit the strategic plan, publish the learning calendar."],["Through the year","Quarterly board reviews, peer group check-ins, succession conversations."]] },
+  r3:  { kind:"Word", title:"Sample chapter bylaws", meta:"Word document, 12 pages", live:"a Word template in the document library",
+         type:"doc", body:[["Article 1: Name and purpose","The chapter is part of the PMO Enterprises Europe Region and follows its policies."],["Article 4: Officers and terms","Officers serve two-year terms, renewable once."],["Article 7: Conduct","The chapter maintains a conduct committee of at least three members."]] },
+  r4:  { kind:"Form", title:"Strategic plan session request", meta:"Online form", live:"an online request form",
+         type:"form", fields:[["Chapter","select"],["Preferred dates","text"],["Session format","select:In person|Virtual"],["What do you want to focus on?","textarea"]] },
+  r5:  { kind:"Video", title:"How to write your strategic plan", meta:"Video, 14 minutes", live:"a hosted training video",
+         type:"video", chapters:["0:00 Why a plan matters","2:30 Setting three priorities","7:10 Turning priorities into goals","11:40 Submitting your plan"] },
+  r6:  { kind:"Sheet", title:"Succession planning worksheet", meta:"Spreadsheet template", live:"a spreadsheet template",
+         type:"sheet", cols:["Role","Current holder","Term ends","Potential successor","Ready by"], rows:[["Chapter Chair","(name)","Jun 2027","(name)","Jan 2027"],["Learning Officer","(name)","Jun 2027","(name)","Mar 2027"],["Membership Officer","(name)","Jun 2028","(to identify)","Mar 2028"]] },
+  r7:  { kind:"Sheet", title:"Chapter budget template", meta:"Spreadsheet template", live:"a spreadsheet template with formulas",
+         type:"sheet", cols:["Category","Guide share","Budget","Actual","Variance"], rows:[["Learning events","40 to 50%","£","£","£"],["Member engagement","20 to 30%","£","£","£"],["Operations","10 to 15%","£","£","£"],["Reserve","5 to 10%","£","£","£"]] },
+  r8:  { kind:"Word", title:"Sample partnership agreement", meta:"Word document, 5 pages", live:"a Word template",
+         type:"doc", body:[["Parties","The chapter and the partner organisation."],["What the partner provides","Sponsorship, venue or speakers, as agreed."],["What the chapter provides","Recognition at agreed events. No member data is shared."]] },
+  r9:  { kind:"PDF", title:"Conduct committee process", meta:"PDF, 3 pages", live:"a PDF in the document library",
+         type:"doc", body:[["Who it's for","Conduct committee members and chapter chairs."],["Principles","Confidential, fair and timely. Every concern gets a response."],["Escalation","Concerns the chapter can't resolve go to the regional chairs."]] },
+  r10: { kind:"Event", title:"Officer training 2027", meta:"Event registration", live:"an event registration page",
+         type:"event", when:"21 January 2027, 10:00 to 13:00 GMT", where:"Virtual", agenda:["Welcome and the year ahead","Your role, your roadmap","Working with your chapter manager","Peer practice and Q&A"] },
+  r11: { kind:"PDF", title:"Working with your chapter manager", meta:"PDF guide and templates", live:"a folder of guides and templates",
+         type:"doc", body:[["Agree a rhythm","A fixed weekly check-in beats ad hoc messages."],["Share the plan","Your manager should see the strategic plan before anyone else."],["Templates included","Board agenda, handover note, event brief, meeting minutes."]] },
+  r12: { kind:"Form", title:"Chapter support request", meta:"Online form", live:"an online request form",
+         type:"form", fields:[["Chapter","select"],["What do you need help with?","select:Board facilitation|Strategic planning|Member engagement|Something else"],["Tell us more","textarea"]] },
+  r13: { kind:"PDF", title:"Chapter commitments defined", meta:"PDF, 6 pages", live:"a PDF in the document library",
+         type:"doc", body:[["What the commitments are","Fourteen standards every chapter meets each year."],["How they're tracked","Monthly, from the CRM, in the Commitments Tracker in Section 01."],["Where to get help","Each commitment links to the playbook section that explains it."]] },
+  r14: { kind:"Directory", title:"Networks directory", meta:"Searchable directory", live:"the networks directory",
+         type:"directory", people:[["Women in Leadership","Business network","Monthly virtual roundtable"],["Family Business","Business network","Quarterly in person"],["Sustainability","Business network","Monthly webinar"],["Wellbeing","Personal network","Bi-monthly meet-up"]] },
+  r15: { kind:"Form", title:"Request emergency assistance", meta:"Secure form, staffed 24/7", live:"a secure request form",
+         type:"form", fields:[["Your name","text"],["Where are you?","text"],["What do you need?","textarea"],["Best number to reach you","text"]] },
+  r16: { kind:"Directory", title:"Speaker catalogue", meta:"Searchable directory", live:"the speaker catalogue",
+         type:"directory", people:[["Dr Hana Ito","AI and the future of work","Keynote, 45 minutes"],["Marcus Hale","Leading through change","Workshop, half day"],["Elena Rossi","Negotiation","Workshop, 2 hours"]] },
+  r17: { kind:"Form", title:"Member referral", meta:"Online form", live:"an online referral form",
+         type:"form", fields:[["Your name","text"],["Candidate name","text"],["Why would they be a great fit?","textarea"]] },
+  r18: { kind:"Event", title:"Peer group moderator training", meta:"Event registration", live:"an event registration page",
+         type:"event", when:"11 February 2027, 09:00 to 17:00 CET", where:"Amsterdam", agenda:["The moderator's role","Building trust and confidentiality","Running a great monthly meeting","Practice rounds with feedback"] },
+  r19: { kind:"Calendar", title:"Regional calendar", meta:"Shared calendar", live:"a shared online calendar",
+         type:"calendar" }
+};
+const EVENTS = [
+  ["14 Nov 2026","Regional Board Meeting","Lisbon"],["2 Dec 2026","Chapter Manager Workshop","Virtual"],
+  ["21 Jan 2027","Officer training","Virtual"],["11 Feb 2027","Peer group moderator training","Amsterdam"],
+  ["18 Mar 2027","Regional learning summit","London"],["24 Jun 2027","Regional Board Meeting","Copenhagen"]
+];
+
+/* ===================== Sections ===================== */
+const S = [
+  { n:"00", t:"Introduction", subs:[
+    ["Welcome from your Regional Chairs", `<div class="people"><div class="person"><div class="av">AM</div><b>Amara Mensah</b><em>Regional Chair</em>"This playbook brings what you need into one place: how the region works, what's expected, and who to ask."</div><div class="person"><div class="av">LB</div><b>Lukas Brandt</b><em>Regional Chair, Alumni</em>"Use it before every board meeting, and whenever a question comes up."</div></div>`],
+    ["How to use this playbook", `<ul class="tidy"><li>Use <b>Sections</b> at the top to jump anywhere.</li><li><b>Ask the Playbook</b> answers from this content only.</li><li>Resource links open the live document, form or tool.</li></ul>`],
+    ["Acknowledgement", `<p>Chapter chairs, incoming chairs and chapter managers confirm receipt by 30 September.</p>${R('r0','Acknowledgement of receipt','PDF')}`] ]},
+  { n:"01", t:"Regional Data", subs:[
+    ["Regional snapshot", `<div class="kpis" id="kpis"></div>`],
+    ["Chapter Commitments Tracker (live, embedded)", `<p>The tracker is its own report, embedded here so leaders never need another login.</p><div class="frame"><iframe src="commitments-demo.html?embed=1" title="Chapter Commitments Tracker" loading="lazy"></iframe></div>`],
+    ["Which section helps with which commitment", `<table class="plain"><tr><th>Commitment</th><th>Where to find help</th></tr><tr><td>Charter, bylaws, conduct committee</td><td><a href="#s03">03 Chapter Governance</a></td></tr><tr><td>Officers trained, officer-elect</td><td><a href="#s03">03 Chapter Governance</a></td></tr><tr><td>Moderators, peer training, peer data</td><td><a href="#s07">07 Peer Groups</a></td></tr><tr><td>Learning calendar</td><td><a href="#s08">08 Learning</a></td></tr><tr><td>Roster, minimum membership</td><td><a href="#s05">05 Membership</a></td></tr></table>`] ]},
+  { n:"02", t:"Regional Calendar", solo:`<table class="plain"><tr><th>Date</th><th>Event</th><th>Where</th></tr>${EVENTS.map(e => `<tr><td>${e[0]}</td><td>${e[1]}</td><td>${e[2]}</td></tr>`).join('')}</table>${R('r19','Open the full regional calendar','Calendar')}` },
+  { n:"03", t:"Chapter Governance", subs:[
+    ["Chapter Chair role and roadmap", `<p>The chair leads the board to deliver a great member experience and meet the regional commitments.</p>${R('r1','Role and responsibilities','PDF')}${R('r2','Chapter Chair roadmap','PDF')}`],
+    ["Governance documents", `<p>Every chapter keeps bylaws that match the regional template. Review them each year at the first board meeting.</p>${R('r3','Sample chapter bylaws','Word')}`],
+    ["Strategic planning", `<p>Submit your plan by 31 August. A regional officer can facilitate a planning session for your board.</p>${R('r4','Request a planning session','Form')}${R('r5','How to write your plan','Video')}`],
+    ["Succession planning", `<p>Name a successor for every core role at least six months before a term ends.</p>${R('r6','Succession planning worksheet','Sheet')}`],
+    ["Budget and finance", `<p>Guide shares of chapter spend: learning 40 to 50%, member engagement 20 to 30%, operations 10 to 15%, reserve 5 to 10%.</p>${R('r7','Chapter budget template','Sheet')}`],
+    ["Strategic partnerships", `<p>Partners can sponsor, host or speak. No member data is ever shared.</p>${R('r8','Sample partnership agreement','Word')}`],
+    ["Conduct committee", `<ol class="tidy"><li>A concern is raised with any committee member.</li><li>The committee acknowledges it within five working days.</li><li>The committee reviews it in confidence.</li><li>The committee decides and communicates the outcome.</li><li>The case is recorded and closed.</li></ol>${R('r9','Conduct committee process','PDF')}`],
+    ["Officer training", `<p>All core officers complete training by 31 March. Next cohort: 21 January 2027, virtual.</p>${R('r10','Register for officer training','Event')}`],
+    ["Working with your chapter manager", `<div class="cards"><div><b>Agree a rhythm</b>A weekly check-in beats ad hoc messages.</div><div><b>Share the plan first</b>Your manager sees the plan before anyone else.</div><div><b>One voice to members</b>Agree who sends what, and when.</div><div><b>Hand over well</b>Use the handover note at every officer change.</div></div>${R('r11','Guides and templates','PDF')}`],
+    ["Chapter support programme", `<ol class="tidy"><li>Submit a support request.</li><li>The regional office calls you within a week.</li><li>A regional officer or facilitator is matched to you.</li><li>You agree the support and a check-in date.</li></ol>${R('r12','Request chapter support','Form')}`] ]},
+  { n:"04", t:"Chapter Commitments", solo:`<p>Fourteen standards every chapter meets each year. Progress is tracked monthly in Section 01.</p><table class="plain"><tr><th>#</th><th>Commitment</th><th>Due</th></tr>${COMMITMENTS.map(k => `<tr><td>${k.id}</td><td>${k.name}</td><td>${k.due}</td></tr>`).join('')}</table>${R('r13','Commitments defined','PDF')}` },
+  { n:"05", t:"Membership", solo:`<ul class="tidy"><li>Keep your roster current every month; it drives the minimum membership commitment.</li><li>Welcome every new member within 30 days, with a buddy from the board.</li><li>Referrals from members convert best, so make asking easy.</li></ul>${R('r17','Member referral form','Form')}` },
+  { n:"06", t:"Member Engagement", solo:`<p>The regional benchmark is 70% of members at one or more events a year.</p><div class="cards"><div><b>First 90 days</b>New members get a personal invitation to three events.</div><div><b>Quiet members</b>A board member calls anyone with no events in six months.</div><div><b>Families</b>One family-friendly event each term.</div></div>` },
+  { n:"07", t:"Peer Groups", solo:`<p>Peer groups are small, confidential groups of members who meet monthly.</p><ul class="tidy"><li>Every moderator is trained by 31 March.</li><li>Every member completes peer group training.</li><li>Group data is updated each quarter.</li></ul>${R('r18','Moderator training','Event')}` },
+  { n:"08", t:"Learning", solo:`<p>Publish your learning calendar by 31 July, with at least four events across the year.</p>${R('r16','Speaker catalogue','Directory')}` },
+  { n:"09", t:"Partners and Family", solo:`<p>Partners and families are part of the network. Each chapter appoints a family officer and runs at least one family event a year.</p>` },
+  { n:"10", t:"Next Generation", solo:`<p>Members' children aged 16 to 25 can join next-generation events, run regionally twice a year.</p>` },
+  { n:"11", t:"Networks", solo:`<p>Business and personal networks connect members across chapters around shared interests.</p>${R('r14','Networks directory','Directory')}` },
+  { n:"12", t:"Member Emergency Support", solo:`<p>Members in an emergency anywhere in the world can get help 24 hours a day. Call +44 20 0000 0000 (demo number) or use the form.</p>${R('r15','Request emergency assistance','Form')}` },
+  { n:"A",  t:"Appendix: Directory and glossary", subs:[
+    ["Regional office", `<div class="people">${[["AR","Alex Rivera","Regional Director","Governance, the regional board"],["PN","Priya Nair","Regional Manager","Commitments, data, budgets"],["TK","Tom Kerr","Membership and Engagement","Rosters, referrals, onboarding"],["SM","Sofia Marques","Events","Regional meetings, venues"],["JW","Jonah Weiss","Learning","Speakers, officer training"]].map(p => `<div class="person"><div class="av">${p[0]}</div><b>${p[1]}</b><em>${p[2]}</em>Ask about: ${p[3]}<br><a href="mailto:${p[1].split(' ')[0].toLowerCase()}@pmo-enterprises.example">${p[1].split(' ')[0].toLowerCase()}@pmo-enterprises.example</a></div>`).join('')}</div>`],
+    ["Glossary", `<table class="plain"><tr><th>Term</th><th>Meaning</th></tr><tr><td>RBM</td><td>Regional Board Meeting</td></tr><tr><td>RLT</td><td>Regional Leadership Team</td></tr><tr><td>CM</td><td>Chapter Manager</td></tr><tr><td>PG</td><td>Peer group</td></tr><tr><td>SP</td><td>Strategic plan</td></tr></table>`] ]}
+];
+
+/* ===================== Render ===================== */
+document.getElementById('chapter').innerHTML += CHAPTERS.map(c => `<option>${c.name}</option>`).join('') + '<option>Regional office</option>';
+const id = s => 's' + s.n;
+document.getElementById('toc').innerHTML = S.map(s => `<a href="#${id(s)}"><i>${s.n}</i><b>${s.t}</b></a>`).join('');
+document.getElementById('navlist').innerHTML = S.map(s => `<a href="#${id(s)}"><i>${s.n}</i>${s.t}</a>`).join('');
+document.getElementById('sections').innerHTML = S.map(s => `
+  <section class="sec" id="${id(s)}" data-title="${s.n} ${s.t}" data-open="${s.n === '00'}">
+    <button class="sec-h" type="button" aria-expanded="${s.n === '00'}"><i>${s.n}</i><b>${s.t}</b></button>
+    <div class="sec-b" ${s.n === '00' ? '' : 'hidden'}>
+      ${s.solo ? `<div class="solo" data-chunk="${s.t}">${s.solo}</div>` :
+        s.subs.map((u, i) => `<div class="sub" data-open="${i === 0}"><button type="button" aria-expanded="${i === 0}">${u[0]}</button><div class="sub-b" data-chunk="${u[0]}" ${i === 0 ? '' : 'hidden'}>${u[1]}</div></div>`).join('')}
+    </div>
+  </section>`).join('');
+document.getElementById('kpis').innerHTML = [[totals.chapters,'Chapters'],[totals.members.toLocaleString('en-GB'),'Members'],[totals.engagement + '%','Avg. engagement'],[totals.allMet,'Chapters at 14/14']].map(k => `<div><b>${k[0]}</b><span>${k[1]}</span></div>`).join('');
+
+function setOpen(el, open, body, btn) { el.dataset.open = open; body.hidden = !open; btn.setAttribute('aria-expanded', open); }
+document.querySelectorAll('.sec').forEach(sec => {
+  const btn = sec.querySelector('.sec-h'), body = sec.querySelector('.sec-b');
+  btn.addEventListener('click', () => setOpen(sec, sec.dataset.open !== 'true', body, btn));
+  sec.querySelectorAll('.sub').forEach(sub => {
+    const b = sub.querySelector('button'), bd = sub.querySelector('.sub-b');
+    b.addEventListener('click', () => setOpen(sub, sub.dataset.open !== 'true', bd, b));
+  });
+});
+function openSection(sid) {
+  const sec = document.getElementById(sid); if (!sec) return;
+  setOpen(sec, true, sec.querySelector('.sec-b'), sec.querySelector('.sec-h'));
+}
+
+/* ===================== Gate ===================== */
+let chapterName = '';
+document.getElementById('gate-form').addEventListener('submit', e => {
+  e.preventDefault();
+  chapterName = document.getElementById('chapter').value;
+  if (!chapterName) return;
+  document.getElementById('check').hidden = false;
+  document.getElementById('agree').focus();
+});
+document.getElementById('agree').addEventListener('change', e => document.getElementById('enter').disabled = !e.target.checked);
+document.getElementById('enter').addEventListener('click', enterBook);
+function enterBook() {
+  document.getElementById('check').hidden = true;
+  document.getElementById('gate').hidden = true;
+  document.getElementById('app').hidden = false;
+  document.getElementById('who').textContent = chapterName ? chapterName + (chapterName === 'Regional office' ? '' : ' chapter') : 'Guest';
+  document.getElementById('hello').textContent = 'Welcome' + (chapterName ? ', ' + chapterName : '');
+  route();
+}
+
+/* ===================== Router: sections + resource pages ===================== */
+function route() {
+  const h = location.hash.slice(1);
+  const book = document.getElementById('book'), page = document.getElementById('respage');
+  if (h.startsWith('res/') && RES[h.slice(4)]) {
+    if (document.getElementById('app').hidden) { chapterName = chapterName || 'Guest'; document.getElementById('check').hidden = true; document.getElementById('gate').hidden = true; document.getElementById('app').hidden = false; }
+    book.hidden = true; page.hidden = false; page.innerHTML = resPage(RES[h.slice(4)]); window.scrollTo(0, 0);
+    page.querySelector('h1').focus({ preventScroll: true });
+    return;
+  }
+  page.hidden = true; book.hidden = false;
+  if (h.startsWith('s')) { lastSection = h; openSection(h); const t = document.getElementById(h); if (t) setTimeout(() => t.scrollIntoView(), 0); }
+}
+window.addEventListener('hashchange', () => { document.getElementById('navgrid').hidden = true; route(); });
+document.addEventListener('click', e => { const a = e.target.closest('a.res'); if (a) { const s = a.closest('.sec'); if (s) lastSection = s.id; } });
+
+function resPage(r) {
+  let inner = '';
+  if (r.type === 'doc') inner = r.body.map(b => `<h2>${b[0]}</h2><p>${b[1]}</p>`).join('');
+  if (r.type === 'form') inner = '<form onsubmit="event.preventDefault();this.querySelector(\'.res-note\').hidden=false">' + r.fields.map(f => {
+      const [label, t] = f; const lid = label.replace(/\W+/g, '');
+      if (t === 'select') return `<label class="field" for="${lid}">${label}<select id="${lid}">${CHAPTERS.map(c => `<option>${c.name}</option>`).join('')}</select></label>`;
+      if (t.startsWith('select:')) return `<label class="field" for="${lid}">${label}<select id="${lid}">${t.slice(7).split('|').map(o => `<option>${o}</option>`).join('')}</select></label>`;
+      if (t === 'textarea') return `<label class="field" for="${lid}">${label}<textarea id="${lid}" rows="4"></textarea></label>`;
+      return `<label class="field" for="${lid}">${label}<input id="${lid}"></label>`;
+    }).join('') + '<button class="btn" type="submit">Submit</button><p class="res-note" hidden>Demo only: this form isn\'t connected to anything.</p></form>';
+  if (r.type === 'sheet') inner = `<div class="sheet"><table><tr>${r.cols.map(c => `<th>${c}</th>`).join('')}</tr>${r.rows.map(row => `<tr>${row.map(c => `<td>${c}</td>`).join('')}</tr>`).join('')}</table></div>`;
+  if (r.type === 'video') inner = `<div class="player"><span class="pl" aria-hidden="true"></span><small>${r.meta}</small></div><h2>Chapters</h2><ul class="tidy">${r.chapters.map(c => `<li>${c}</li>`).join('')}</ul>`;
+  if (r.type === 'event') inner = `<p><b>When:</b> ${r.when}<br><b>Where:</b> ${r.where}</p><h2>Agenda</h2><ol class="tidy">${r.agenda.map(a => `<li>${a}</li>`).join('')}</ol><button class="btn" type="button" onclick="this.nextElementSibling.hidden=false">Register</button><p class="res-note" hidden>Demo only: registration isn't connected.</p>`;
+  if (r.type === 'directory') inner = `<div class="people">${r.people.map(p => `<div class="person"><b>${p[0]}</b><em>${p[1]}</em>${p[2]}</div>`).join('')}</div>`;
+  if (r.type === 'calendar') {
+    const days = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
+    let cells = days.map(d => `<div class="hd">${d}</div>`).join('') + '<div></div><div></div><div></div><div></div><div></div><div></div>';
+    for (let d = 1; d <= 30; d++) cells += `<div>${d}${d === 14 ? '<span class="ev">Regional Board Meeting, Lisbon</span>' : ''}${d === 25 ? '<span class="ev">Chair check-in call</span>' : ''}</div>`;
+    inner = `<h2>November 2026</h2><div class="cal">${cells}</div>`;
+  }
+  return `<div class="res-top"><a class="btn ghost" href="#${lastSection}">Back to the playbook</a><span class="res-kind">Sample ${r.kind.toLowerCase()} page</span></div>
+    <div class="res-card"><h1 tabindex="-1">${r.title}</h1><div class="meta">${r.meta}</div>${inner}
+    <p class="res-note">In the live playbook, this link opens ${r.live}. This sample shows what you'd find there.</p></div>`;
+}
+
+/* ===================== Nav toggle ===================== */
+const navbtn = document.getElementById('navbtn');
+navbtn.addEventListener('click', () => { const g = document.getElementById('navgrid'); g.hidden = !g.hidden; navbtn.setAttribute('aria-expanded', String(!g.hidden)); });
+
+/* ===================== Ask the Playbook (demo retrieval) ===================== */
+const STOP = new Set('the a an and or of to in on for is are do does i we my our how what who where when which can with about this that it be at by from your you'.split(' '));
+const words = t => (t.toLowerCase().match(/[a-z0-9]+/g) || []).filter(w => w.length > 2 && !STOP.has(w)).map(w => w.replace(/(ing|ed|es|s)$/, ''));
+const CHUNKS = [...document.querySelectorAll('[data-chunk]')].map(el => {
+  const sec = el.closest('.sec');
+  const copy = el.cloneNode(true); copy.querySelectorAll('.res, iframe').forEach(n => n.remove());
+  return { el, sec: sec.id, secTitle: sec.dataset.title, title: el.dataset.chunk, text: copy.textContent.replace(/\s+/g, ' ').trim() };
+});
+function answer(q) {
+  const qw = [...new Set(words(q))];
+  let best = null, bestScore = 0;
+  CHUNKS.forEach(c => {
+    const tw = new Set(words(c.text)), hw = new Set(words(c.title + ' ' + c.secTitle));
+    const s = qw.reduce((n, w) => n + (hw.has(w) ? 2 : 0) + (tw.has(w) ? 1 : 0), 0);
+    if (s > bestScore) { bestScore = s; best = c; }
+  });
+  if (!best || bestScore < 2) return "I can only answer questions about this playbook, and I couldn't find that here. Try asking about commitments, training, budgets or who to contact.";
+  const sentences = best.text.split(/(?<=[.!?])\s+/).slice(0, 2).join(' ');
+  return `${sentences} <br><a href="#${best.sec}" data-goto="${best.sec}">Read more in ${best.secTitle}</a>`;
+}
+const chat = document.getElementById('chat');
+function ask(q) {
+  chat.insertAdjacentHTML('beforeend', `<div class="msg me"></div>`); chat.lastElementChild.textContent = q;
+  chat.insertAdjacentHTML('beforeend', `<div class="msg bot">${answer(q)}</div>`);
+  chat.scrollTop = chat.scrollHeight;
+}
+["What are the chapter commitments?","When is officer training?","How do I request a planning session?","What's the weather today?"].forEach(q => {
+  const b = document.createElement('button'); b.type = 'button'; b.textContent = q; b.addEventListener('click', () => ask(q)); document.getElementById('chips').appendChild(b);
+});
+document.getElementById('askform').addEventListener('submit', e => { e.preventDefault(); const i = document.getElementById('askin'); if (i.value.trim()) { ask(i.value.trim()); i.value = ''; } });
+document.getElementById('askbtn').addEventListener('click', () => { document.getElementById('vispanel').hidden = true; const p = document.getElementById('askpanel'); p.hidden = !p.hidden; if (!p.hidden) document.getElementById('askin').focus(); });
+document.querySelectorAll('[data-close]').forEach(b => b.addEventListener('click', () => document.getElementById(b.dataset.close).hidden = true));
+
+/* ===================== Dwell time (demo analytics) ===================== */
+const seen = {}; const visible = new Set();
+const io = new IntersectionObserver(es => es.forEach(e => e.isIntersecting ? visible.add(e.target.id) : visible.delete(e.target.id)), { threshold: 0.25 });
+document.querySelectorAll('.sec').forEach(s => io.observe(s));
+setInterval(() => {
+  if (document.hidden || document.getElementById('book').hidden) return;
+  visible.forEach(v => seen[v] = (seen[v] || 0) + 1);
+  if (!document.getElementById('vispanel').hidden) renderVisit();
+}, 1000);
+function renderVisit() {
+  const rows = S.map(s => [s, seen[id(s)] || 0]).filter(r => r[1] > 0).sort((a, b) => b[1] - a[1]);
+  const max = rows.length ? rows[0][1] : 1;
+  document.getElementById('visrows').innerHTML = rows.length ? rows.map(([s, n]) => `<div class="vrow"><div>${s.n} ${s.t}<div class="bar"><i style="width:${n / max * 100}%"></i></div></div><b>${n}s</b></div>`).join('') : '<p>Scroll through a few sections, then check back.</p>';
+}
+document.getElementById('visbtn').addEventListener('click', () => { document.getElementById('askpanel').hidden = true; const p = document.getElementById('vispanel'); p.hidden = !p.hidden; renderVisit(); });
+if (new URLSearchParams(location.search).get('skip') || location.hash.startsWith('#res/')) { chapterName = chapterName || 'London'; enterBook(); }
+</script>
+</body>
+</html>

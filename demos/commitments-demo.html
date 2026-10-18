@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chapter Commitments Tracker | PMO Enterprises (demo)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F5F7F8; --card:#FFFFFF; --ink:#13232F; --ink-2:#4C5D69; --rule:#DCE3E7;
+  --brand:#0B3C5D; --accent:#F2A541; --met:#1E8E5A; --met-bg:#E3F3EA; --unmet:#C8423B; --unmet-bg:#FBE7E5;
+}
+*{ box-sizing:border-box; }
+body{ margin:0; font:15px/1.5 "Plus Jakarta Sans", system-ui, sans-serif; color:var(--ink); background:var(--bg); }
+.top{ background:var(--brand); color:#fff; padding:18px 24px; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; }
+.top h1{ margin:0; font-size:18px; font-weight:700; }
+.top span{ font-size:13px; opacity:.8; }
+.embed .top{ display:none; }
+main{ padding:20px 24px 32px; }
+.embed main{ padding:14px; }
+.stats{ display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); gap:10px; margin-bottom:14px; }
+.stat{ background:var(--card); border:1px solid var(--rule); border-radius:10px; padding:12px 14px; }
+.stat b{ display:block; font-size:22px; font-weight:700; color:var(--brand); font-variant-numeric:tabular-nums; line-height:1.2; }
+.stat span{ font-size:12.5px; color:var(--ink-2); }
+@media (max-width:640px){ .stats{ grid-template-columns:repeat(2, minmax(0,1fr)); } }
+.controls{ display:flex; gap:10px; flex-wrap:wrap; margin-bottom:12px; }
+.controls input,.controls select{ height:36px; border:1px solid var(--rule); border-radius:8px; padding:0 12px; font:inherit; background:#fff; color:var(--ink); }
+.controls input{ flex:1; min-width:160px; }
+.table-wrap{ background:var(--card); border:1px solid var(--rule); border-radius:10px; overflow:auto; max-height:560px; }
+table{ border-collapse:separate; border-spacing:0; width:100%; font-size:13px; }
+th,td{ padding:8px 6px; border-bottom:1px solid var(--rule); text-align:center; white-space:nowrap; }
+thead th{ position:sticky; top:0; background:#EEF2F4; z-index:2; font-weight:600; font-size:11.5px; color:var(--ink-2); white-space:normal; min-width:66px; vertical-align:bottom; line-height:1.25; }
+th:first-child,td:first-child{ position:sticky; left:0; text-align:left; background:#fff; z-index:1; padding-left:14px; min-width:120px; font-weight:600; }
+thead th:first-child{ z-index:3; background:#EEF2F4; }
+td.score{ font-weight:700; font-variant-numeric:tabular-nums; }
+.dot{ display:inline-grid; place-items:center; width:24px; height:24px; border-radius:6px; font-size:13px; font-weight:700; }
+.dot.y{ background:var(--met-bg); color:var(--met); }
+.dot.n{ background:var(--unmet-bg); color:var(--unmet); }
+.foot{ font-size:12px; color:var(--ink-2); margin-top:10px; display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; }
+.demo{ background:var(--accent); color:var(--ink); font-weight:600; padding:2px 8px; border-radius:999px; font-size:11.5px; }
+</style>
+</head>
+<body>
+<header class="top">
+  <h1>PMO Enterprises: Chapter Commitments Tracker</h1>
+  <span>Europe Region (fictional demo data)</span>
+</header>
+<main>
+  <div class="stats" id="stats"></div>
+  <div class="controls">
+    <label class="visually-hidden" for="q" style="position:absolute;left:-9999px">Search chapters</label>
+    <input id="q" type="search" placeholder="Search chapters">
+    <label for="f" style="position:absolute;left:-9999px">Filter</label>
+    <select id="f">
+      <option value="all">All chapters</option>
+      <option value="gaps">Chapters with gaps</option>
+      <option value="full">All 14 met</option>
+    </select>
+  </div>
+  <div class="table-wrap"><table id="t"></table></div>
+  <div class="foot"><span>As of <span id="asof"></span>. Source: CRM export, refreshed monthly.</span><span class="demo">Demo data</span></div>
+</main>
+<script src="pmo-data.js"></script>
+<script>
+const { COMMITMENTS, CHAPTERS, totals, missCount, asOf } = window.PMO;
+if (new URLSearchParams(location.search).get('embed')) document.body.classList.add('embed');
+document.getElementById('asof').textContent = asOf;
+const topMiss = missCount[0];
+document.getElementById('stats').innerHTML = [
+  [totals.chapters, 'Chapters'],
+  [totals.allMet, 'Meeting all 14'],
+  [totals.avgMet + ' / 14', 'Average met'],
+  [topMiss.k.short, 'Most missed (' + topMiss.n + ' chapters)']
+].map(([b, s]) => `<div class="stat"><b>${b}</b><span>${s}</span></div>`).join('');
+
+function render() {
+  const q = document.getElementById('q').value.trim().toLowerCase();
+  const f = document.getElementById('f').value;
+  const rows = [...CHAPTERS].sort((a, b) => a.name.localeCompare(b.name))
+    .filter(c => c.name.toLowerCase().includes(q))
+    .filter(c => f === 'all' || (f === 'gaps' ? c.met < 14 : c.met === 14));
+  const head = '<thead><tr><th>Chapter</th><th>Met</th>' +
+    COMMITMENTS.map(k => `<th title="${k.name}">${k.short}</th>`).join('') + '</tr></thead>';
+  const body = '<tbody>' + rows.map(c => '<tr><td>' + c.name + '</td><td class="score">' + c.met + '</td>' +
+    COMMITMENTS.map(k => c.unmet.includes(k.id)
+      ? `<td><span class="dot n" title="${k.name}: not met">✕</span></td>`
+      : `<td><span class="dot y" title="${k.name}: met">✓</span></td>`).join('') + '</tr>').join('') +
+    (rows.length ? '' : `<tr><td colspan="16" style="text-align:left">No chapters match. Clear the search or change the filter.</td></tr>`) + '</tbody>';
+  document.getElementById('t').innerHTML = head + body;
+}
+document.getElementById('q').addEventListener('input', render);
+document.getElementById('f').addEventListener('change', render);
+render();
+</script>
+</body>
+</html>
