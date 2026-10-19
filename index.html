@@ -64,7 +64,7 @@ button{ font:inherit; }
 .mark{ display:inline-flex; align-items:center; gap:10px; text-decoration:none; font-family:var(--display); font-weight:800; font-size:20px; letter-spacing:-.02em; }
 .mark i{ width:36px; height:36px; border-radius:50%; background:var(--pink); display:grid; place-items:center; font-style:normal; font-size:14px; color:var(--ink); }
 .top-actions{ display:flex; gap:10px; }
-@media (max-width:560px){ .top-actions .btn-line{ display:none; } }
+@media (max-width:560px){ .top-actions{ gap:8px; } .top .btn{ height:40px; padding:0 14px; font-size:14px; } }
 
 /* =====================================================================
    Home: bento grid
@@ -459,7 +459,7 @@ button{ font:inherit; }
 /* =====================================================================
    v4: sample work, governance, platforms, build notes, qualifications
    ===================================================================== */
-.bento{ padding-bottom:16px; }
+.bento{ padding-bottom:56px; }
 .t-about{ grid-column:3 / 5; }
 .t-training{ grid-column:3 / 4; }
 .t-gov{ grid-column:4 / 5; background:var(--lilac); }
@@ -661,7 +661,7 @@ table.cmp{ width:100%; border-collapse:collapse; font-size:15px; table-layout:fi
   <div class="wrap">
     <a class="mark" href="#/"><i>PEM</i>Paige Elizabeth Morgan</a>
     <div class="top-actions">
-      <a class="btn btn-line" data-cfg="cv" download>Download CV</a>
+      <a class="btn btn-line" data-cfg="cv" download>Download my CV</a>
       <a class="btn btn-ink" data-cfg="email">Email me</a>
     </div>
   </div>
@@ -735,26 +735,6 @@ table.cmp{ width:100%; border-collapse:collapse; font-size:15px; table-layout:fi
     </a>
   </div>
 
-  <section class="quals" aria-labelledby="quals-title">
-    <h2 id="quals-title">Qualifications</h2>
-    <p class="sub">A master's in how adults learn, and current accreditations in using and teaching AI.</p>
-    <div class="quals-grid">
-      <div class="qual-main">
-        <span class="q-kicker">Master's degree</span>
-        <b>MSc Education, University of Oxford</b>
-        <p>Focused on adult learning methodology. Lead researcher on digital learning and virtual train-the-trainer delivery.</p>
-      </div>
-      <div>
-        <span class="q-kicker">AI accreditations</span>
-        <ul class="acc">
-          <li><span class="iss iss-a">Anthropic Academy</span><b>AI Fluency: Framework &amp; Foundations</b><span class="when">Certificate of completion, October 2026</span></li>
-          <li><span class="iss iss-a">Anthropic Academy</span><b>Teaching AI Fluency</b><span class="when">Certificate of completion, October 2026</span></li>
-          <li><span class="iss iss-o">OpenAI Academy</span><b>AI Foundations</b><span class="when">Course completion certificate, October 2026</span></li>
-          <li><span class="iss iss-o">OpenAI Academy</span><b>Applied AI Foundations</b><span class="when">Course completion certificate, October 2026</span></li>
-        </ul>
-      </div>
-    </div>
-  </section>
 </div>
 
 <!-- ============================ 1. ABOUT ============================ -->
