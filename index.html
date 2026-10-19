@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Paige Elizabeth Morgan | AI enablement</title>
-<meta name="description" content="Paige Elizabeth Morgan: AI Champion, facilitator and learning designer, relocating to London. Training, sample work with real-world results, AI governance and platform choice, how I build with AI, and an AI strategy with a 90-day plan.">
+<meta name="description" content="Paige Elizabeth Morgan: AI Champion, facilitator and learning designer, relocating to London. Training, real AI use cases with results, AI governance and platform choice, and an AI strategy with a 90-day plan.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Geist:wght@400;500;600&display=swap" rel="stylesheet">
@@ -612,8 +612,11 @@ table.cmp{ width:100%; border-collapse:collapse; font-size:15px; table-layout:fi
 .mini-sw i{ width:34px; height:34px; border-radius:50%; }
 .brand-row p{ margin:0; flex:1; min-width:240px; color:var(--ink-2); font-size:15.5px; }
 .brand-row p b{ color:var(--ink); }
-.t-plan{ grid-column:3 / 5; }
-@media (max-width:1100px){ .t-plan{ grid-column:1 / -1; } }
+.t-plan{ grid-column:1 / -1; }
+.t-plan p{ max-width:52ch; }
+.pv-projects{ grid-template-columns:repeat(5, minmax(0,1fr)); }
+@media (max-width:1100px){ .pv-projects{ grid-template-columns:repeat(3, minmax(0,1fr)); } }
+@media (max-width:760px){ .pv-projects{ grid-template-columns:repeat(2, minmax(0,1fr)); } .pv-projects span:last-child{ grid-column:1 / -1; } }
 
 /* AI strategy: modes, 4D competencies, academies */
 .modes{ display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:16px; }
@@ -645,6 +648,9 @@ table.cmp{ width:100%; border-collapse:collapse; font-size:15px; table-layout:fi
 .a-learn{ background:var(--blue); color:#fff; } .a-learn .ak{ background:rgba(255,255,255,.18); } .a-learn::after{ background:var(--sun); }
 .a-champ{ background:var(--pink); } .a-champ .ak{ background:rgba(255,255,255,.55); } .a-champ::after{ background:var(--lilac); }
 @media (max-width:760px){ .academies{ grid-template-columns:1fr; } }
+
+.project .wf h3{ font-size:19px; }
+.project .wf{ padding-top:18px; }
 
 /* three-minute lesson */
 .lesson{ background:var(--paper); border-radius:20px; padding:24px; }
@@ -737,30 +743,24 @@ table.cmp{ width:100%; border-collapse:collapse; font-size:15px; table-layout:fi
 
     <a class="tile t-work" href="#/work" style="--i:4">
       <div class="row"><span class="tag">Samples inside</span><span class="go" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9h11M9.5 4.5 14 9l-4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
-      <div class="work-top"><h2>Sample work and real-world results</h2><p>Four projects, each with materials you can open and the numbers behind them.</p></div>
+      <div class="work-top"><h2>Real use cases</h2><p>Five real ways I use AI at work, with materials you can open and the results behind them.</p></div>
       <div class="pv pv-projects" aria-hidden="true">
         <span><b>4.8–4.9/5</b>AI for executive teams training kit</span>
         <span><b>27 of 27</b>Chapters using my governance playbook</span>
         <span><b>10 to 1</b>Sources in my Chapter Overview Report</span>
         <span><b>Record</b>Satisfaction score for my board meeting</span>
+        <span><b>5 months to 2 weeks</b>A project's lead time, cut using AI</span>
       </div>
     </a>
 
-    <a class="tile t-workflows" href="#/workflows" style="--i:5">
-      <div class="row"><span class="tag">How I build</span><span class="go" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9h11M9.5 4.5 14 9l-4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
-      <h2>How I build with AI</h2>
-      <p>My AI stack, five workflows I run, and how I built this site.</p>
-      <div class="pv pv-flow" aria-hidden="true"><span>Context</span><b></b><span>Skills</span><b></b><span>Connectors</span><b></b><span>Plugins</span><b></b><span>Done</span></div>
-    </a>
-
-    <a class="tile t-plan" href="#/plan" style="--i:6">
+    <a class="tile t-plan" href="#/plan" style="--i:5">
       <div class="row"><span class="tag">Plan</span><span class="go" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9h11M9.5 4.5 14 9l-4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
       <h2>My AI strategy and 90-day plan</h2>
       <p>Fluency over prompts: the framework, the first 90 days and the academies that follow.</p>
       <div class="pv pv-phases" aria-hidden="true"><span><b>30</b>Listen and baseline</span><span><b>60</b>Pilot and teach</span><span><b>90</b>Prove and scale</span></div>
     </a>
 
-    <a class="tile t-gift" href="#/gift" style="--i:7">
+    <a class="tile t-gift" href="#/gift" style="--i:6">
       <div class="gift-text"><span class="tag" style="align-self:flex-start">Free to use</span><h2>A gift for hiring managers</h2><p>A prompt that improves your prompts. Copy it and use it today.</p></div>
       <div class="gift-end"><div class="pv ticket" aria-hidden="true"><div class="main"><small>Admit one</small><b>A prompt that improves your prompts</b></div><div class="stub">GIFT</div></div><span class="go" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9h11M9.5 4.5 14 9l-4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
     </a>
@@ -902,9 +902,7 @@ table.cmp{ width:100%; border-collapse:collapse; font-size:15px; table-layout:fi
 
   <section class="block">
     <h2>What changed</h2>
-    <div class="four" style="margin-top:18px">
-      <div class="stat s-blue"><b class="num">5 months to 2 weeks</b><span>A project's lead time, cut using AI</span></div>
-      <div class="stat s-sun"><b>Exceeds</b><span>Expectations rating, with the time AI frees used to help other regions hit their KPIs</span></div>
+    <div class="two" style="margin-top:18px">
       <div class="stat s-pink"><b class="num">4.8–4.9/5</b><span>My trainings and board meetings consistently rate 4.8–4.9 out of 5</span></div>
       <div class="stat s-mint"><b>EMEA + APAC</b><span>The regions I primarily support, plus the whole department</span></div>
     </div>
@@ -981,13 +979,14 @@ table.cmp{ width:100%; border-collapse:collapse; font-size:15px; table-layout:fi
 <div class="wrap view" data-route="work" hidden>
   <header class="view-head vh-sun">
     <a class="crumb" href="#/">All work</a>
-    <h1 tabindex="-1">Sample work and real-world results</h1>
-    <p class="lede">Four projects from my work at YPO. Each one has materials you can open and the results it delivered. Where the original is confidential, I've rebuilt it for a fictional company, PMO Enterprises, with every name and figure changed.</p>
+    <h1 tabindex="-1">Real use cases</h1>
+    <p class="lede">Real ways I use AI at work, from a training kit to the workflows I run every day, each with the results it delivered. Where the original is confidential, I've rebuilt it for a fictional company, PMO Enterprises, with every name and figure changed.</p>
     <nav class="jump" aria-label="Projects on this page">
       <a href="#/work" data-scroll="proj-training">01 AI for executive teams</a>
       <a href="#/work" data-scroll="proj-playbook">02 Governance playbook</a>
       <a href="#/work" data-scroll="proj-report">03 Chapter Overview Report</a>
       <a href="#/work" data-scroll="proj-board">04 Board meetings in a box</a>
+      <a href="#/work" data-scroll="proj-build">05 How I build with AI</a>
     </nav>
   </header>
 
@@ -1034,6 +1033,9 @@ table.cmp{ width:100%; border-collapse:collapse; font-size:15px; table-layout:fi
       <div class="cell hl"><h3>Result</h3><p>Every chapter in the region uses it regularly, and management-directed questions fell by 30%, freeing my team for the work that needs people.</p></div>
     </div>
 
+    <h3 class="sec">How I built it with AI</h3>
+    <div class="flow"><span>Gather feedback from leaders</span><span>Design the structure and content with AI</span><span>Build the playbook and its assistant</span><span>Roll out with sign-off from every chair</span><span>Measure use and questions, then improve</span></div>
+
     <h3 class="rw">Real-world results</h3>
     <div class="four">
       <div class="stat s-sun"><b class="num">27 of 27</b><span>YPO MENA chapters have accessed the playbook and use it regularly</span></div>
@@ -1076,6 +1078,9 @@ table.cmp{ width:100%; border-collapse:collapse; font-size:15px; table-layout:fi
       <div class="cell hl"><h3>Result</h3><p>Regional chairs get one link before every chapter visit, with a clear focus for each conversation. The same data now feeds board submissions and policy proposals.</p></div>
     </div>
 
+    <h3 class="sec">How I built it with AI</h3>
+    <div class="flow"><span>Pull data from ten sources</span><span>Match every chapter to one name</span><span>Check every number before it's shared</span><span>One report, ranked by who needs support</span><span>Shared before every chapter visit</span></div>
+
     <h3 class="rw">Real-world results</h3>
     <div class="three">
       <div class="stat s-lilac"><b class="num">10 to 1</b><span>Sources brought together into one report, matched to a single name for every chapter</span></div>
@@ -1105,10 +1110,60 @@ table.cmp{ width:100%; border-collapse:collapse; font-size:15px; table-layout:fi
       <div class="cell"><h3>Follow-up</h3><p>Emails, WhatsApp messages and social captions, ready to review and send.</p></div>
     </div>
 
+    <h3 class="sec">How I built it with AI</h3>
+    <div class="flow"><span>Agenda and objectives</span><span>Presentation on brand</span><span>Facilitator cue cards, one per slide, timed</span><span>Briefing packs and table activities</span><span>Follow-up messages in the chair's voice</span></div>
+
     <h3 class="rw">Real-world results</h3>
     <div class="two">
       <div class="stat s-pink"><b>Record</b><span>Satisfaction score for the Regional Board Meeting in Cyprus</span></div>
       <div class="stat s-sun"><b class="num">60</b><span>Participants in one connection activity, designed for the whole room</span></div>
+    </div>
+  </section>
+
+  <!-- 05 How I build with AI -->
+  <section class="project" id="proj-build" aria-labelledby="pj5">
+    <div class="proj-head">
+      <span class="proj-num" aria-hidden="true">05</span>
+      <div>
+        <span class="proj-kicker">Everyday workflows</span>
+        <h2 id="pj5">How I build with AI</h2>
+        <p class="proj-lede">I treat AI like a new team member: it gets the context once, the right tools for the job and access to where the work lives. Then I check its work.</p>
+      </div>
+    </div>
+
+    <h3 class="sec">My stack, layer by layer</h3>
+    <div class="stack">
+      <div class="layer"><h3>Context</h3><p>Each workstream has its own project, with the method, rules and history written down, so I never re-explain the job.</p></div>
+      <div class="layer"><h3>Skills</h3><p>Packaged know-how for a kind of task: Word reports, PDFs, spreadsheets and slide decks, built to the same standard every time.</p></div>
+      <div class="layer"><h3>Connectors</h3><p>Live access to the apps where work lives, such as email, calendars, files and Monday.com, so AI reads the source instead of a copy and paste.</p></div>
+      <div class="layer"><h3>Plugins</h3><p>Bundles of skills, connectors and commands for a team process, so a workflow I design can be installed by colleagues, not just used by me.</p></div>
+      <div class="layer"><h3>Publish and measure</h3><p>Shareable web pages for teams, an assistant that answers from approved content only, and usage tracking so I know what's working.</p></div>
+    </div>
+
+    <h3 class="sec">Two workflows I run every day</h3>
+    <div class="wf">
+      <h3>Drafting replies to email automatically</h3>
+      <div class="flow"><span>An email arrives in Outlook</span><span>AI reads the whole thread and its attachments</span><span>It drafts a reply in my voice, unsent</span><span>I check recipients, facts, tone and promises</span><span>I edit if needed, and send</span></div>
+      <p class="out"><b>Why it matters:</b> routine replies take minutes instead of a morning, and nothing leaves without my judgement.</p>
+    </div>
+    <div class="wf">
+      <h3>Turning meetings into action</h3>
+      <div class="flow"><span>Meeting notes or transcript</span><span>AI pulls out decisions and action points</span><span>Actions created in Monday.com, with owners and dates</span><span>Follow-up emails drafted</span><span>Notes saved for the next meeting</span></div>
+      <p class="out"><b>Why it matters:</b> nothing agreed in a meeting gets lost, and the next meeting starts where the last one ended.</p>
+    </div>
+
+    <h3 class="sec">Rules I work by</h3>
+    <div class="four">
+      <div class="cell"><h3>Verify before trusting</h3><p>Every number is checked before anyone else sees it.</p></div>
+      <div class="cell"><h3>Edit surgically</h3><p>Change what needs changing, never rebuild what already works.</p></div>
+      <div class="cell"><h3>Keep sensitive content apart</h3><p>Confidential material never goes into shared views.</p></div>
+      <div class="cell"><h3>A human sends</h3><p>AI drafts. I decide what leaves my outbox.</p></div>
+    </div>
+
+    <h3 class="rw">Real-world results</h3>
+    <div class="two">
+      <div class="stat s-blue"><b class="num">5 months to 2 weeks</b><span>A project's lead time, cut using AI</span></div>
+      <div class="stat s-mint"><b>Exceeds</b><span>Expectations rating, with the time AI frees used to help other regions hit their KPIs</span></div>
     </div>
   </section>
 </div>
@@ -1180,83 +1235,6 @@ table.cmp{ width:100%; border-collapse:collapse; font-size:15px; table-layout:fi
       <li><a href="https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes" target="_blank" rel="noopener">Microsoft: Release notes for Microsoft 365 Copilot</a></li>
       <li><a href="https://www.hso.com/blog/microsoft-copilot-vs-studio/" target="_blank" rel="noopener">HSO: Microsoft Copilot vs Copilot Studio (2026)</a></li>
     </ul>
-  </section>
-</div>
-
-<!-- ============================ 4. WORKFLOWS ============================ -->
-<div class="wrap view" data-route="workflows" hidden>
-  <header class="view-head vh-night">
-    <a class="crumb" href="#/">All work</a>
-    <h1 tabindex="-1">How I build with AI</h1>
-    <p class="lede">I treat AI like a new team member: it gets the context once, the right tools for the job and access to where the work lives. Then I check its work. This site was built the same way.</p>
-  </header>
-
-  <section class="block">
-    <h2>My stack, layer by layer</h2>
-    <p class="sub">Each layer removes a step I'd otherwise repeat by hand.</p>
-    <div class="stack">
-      <div class="layer"><h3>Context</h3><p>Each workstream has its own project, with the method, rules and history written down, so I never re-explain the job.</p></div>
-      <div class="layer"><h3>Skills</h3><p>Packaged know-how for a kind of task: Word reports, PDFs, spreadsheets and slide decks, built to the same standard every time.</p></div>
-      <div class="layer"><h3>Connectors</h3><p>Live access to the apps where work lives, such as email, calendars, files and Monday.com, so AI reads the source instead of a copy and paste.</p></div>
-      <div class="layer"><h3>Plugins</h3><p>Bundles of skills, connectors and commands for a team process, so a workflow I design can be installed by colleagues, not just used by me.</p></div>
-      <div class="layer"><h3>Publish and measure</h3><p>Shareable web pages for teams, an assistant that answers from approved content only, and usage tracking so I know what's working.</p></div>
-    </div>
-  </section>
-
-  <section class="block">
-    <h2>Five example workflows I run</h2>
-    <div class="wf">
-      <h3>Drafting replies to email automatically</h3>
-      <div class="flow"><span>An email arrives in Outlook</span><span>AI reads the whole thread and its attachments</span><span>It drafts a reply in my voice, unsent</span><span>I check recipients, facts, tone and promises</span><span>I edit if needed, and send</span></div>
-      <p class="out"><b>Why it matters:</b> routine replies take minutes instead of a morning, and nothing leaves without my judgement.</p>
-    </div>
-    <div class="wf">
-      <h3>Designing, running and measuring playbooks</h3>
-      <div class="flow"><span>Gather feedback from leaders</span><span>Design the structure and content with AI</span><span>Build the playbook and its assistant</span><span>Roll out with sign-off from every chair</span><span>Measure use and questions, then improve</span></div>
-      <p class="out"><b>Why it matters:</b> every YPO MENA chapter uses the playbook, and questions to management fell by 30%.</p>
-    </div>
-    <div class="wf">
-      <h3>Turning meetings into action</h3>
-      <div class="flow"><span>Meeting notes or transcript</span><span>AI pulls out decisions and action points</span><span>Actions created in Monday.com, with owners and dates</span><span>Follow-up emails drafted</span><span>Notes saved for the next meeting</span></div>
-      <p class="out"><b>Why it matters:</b> nothing agreed in a meeting gets lost, and the next meeting starts where the last one ended.</p>
-    </div>
-    <div class="wf">
-      <h3>Board meeting deliverables for C-suite and regional leadership</h3>
-      <div class="flow"><span>Agenda and objectives</span><span>Presentation on brand</span><span>Facilitator cue cards, one per slide, timed</span><span>Briefing packs and table activities</span><span>Follow-up messages in the chair's voice</span></div>
-      <p class="out"><b>Why it matters:</b> used for YPO MENA's regional board meeting in Cyprus, which received a record satisfaction score.</p>
-    </div>
-    <div class="wf">
-      <h3>Reporting for success</h3>
-      <div class="flow"><span>Pull data from ten sources</span><span>Match every chapter to one name</span><span>Check every number before it's shared</span><span>One report, ranked by who needs support</span><span>Shared before every chapter visit</span></div>
-      <p class="out"><b>Why it matters:</b> regional chairs walk into every visit knowing what to focus on.</p>
-    </div>
-  </section>
-
-  <section class="block" id="rules" style="scroll-margin-top:16px">
-    <h2>Rules I work by</h2>
-    <div class="four" style="margin-top:16px">
-      <div class="cell"><h3>Verify before trusting</h3><p>Every number is checked before anyone else sees it.</p></div>
-      <div class="cell"><h3>Edit surgically</h3><p>Change what needs changing, never rebuild what already works.</p></div>
-      <div class="cell"><h3>Keep sensitive content apart</h3><p>Confidential material never goes into shared views.</p></div>
-      <div class="cell"><h3>A human sends</h3><p>AI drafts. I decide what leaves my outbox.</p></div>
-    </div>
-  </section>
-
-  <section class="block" id="this-site" style="scroll-margin-top:16px">
-    <h2>How I built this site</h2>
-    <p class="sub">I designed and built every page with AI, including the sample playbook, the report and the training kit. Everything starts from something real: I supplied every figure, and each one was checked before it went on a page.</p>
-    <div class="four">
-      <div class="cell"><h3>Tools</h3><p>Claude for research, writing, design and code. Canva, through a connector, for the training deck, workbook and guide.</p></div>
-      <div class="cell"><h3>Data input</h3><p>My real results, my CV, the structure of my live work rebuilt with one fictional data set, AI enablement job descriptions and current product documentation.</p></div>
-      <div class="cell"><h3>Links</h3><p>My own domain, printed on my CV. Samples open in a new tab, and every section has its own link to share.</p></div>
-      <div class="cell"><h3>Checks</h3><p>Every page on desktop and phone, every link, and every number against its source. Confidential work is rebuilt with every name and figure changed.</p></div>
-    </div>
-    <h3 class="sec">Branding</h3>
-    <div class="brand-row">
-      <div class="mini-sw" aria-hidden="true"><i style="background:#3346FF"></i><i style="background:#FF5FA2"></i><i style="background:#FFD447"></i><i style="background:#3DDBA6"></i><i style="background:#C8B9FF"></i><i style="background:#1A1530"></i></div>
-      <p><b>Bricolage Grotesque</b> for headlines and <b>Geist</b> for body text, in electric blue, hot pink, sunshine, mint, lilac and ink. I chose it to feel modern and confident, and deliberately unlike my employer's. The same brand runs through the samples, the training kit, my CV and my LinkedIn banner.</p>
-    </div>
-    <p class="philo" style="margin-top:26px;font-size:clamp(19px,1.9vw,24px)">What I'd tell any team doing the same: start with the evidence, not the design. AI makes building fast, so the real work is deciding what's worth saying.</p>
   </section>
 </div>
 
@@ -1423,7 +1401,7 @@ table.cmp{ width:100%; border-collapse:collapse; font-size:15px; table-layout:fi
 
 <footer class="foot">
   <div class="wrap">
-    <span>Paige Elizabeth Morgan, 2026. This whole site was designed and built with AI. <a href="#/workflows" data-scroll="this-site">See how I built it</a>.</span>
+    <span>Paige Elizabeth Morgan, 2026. This whole site was designed and built with AI.</span>
     <a data-cfg="email">paigeelizabethmorgan@gmail.com</a>
   </div>
 </footer>
@@ -1459,12 +1437,12 @@ document.querySelectorAll('[data-photo]').forEach(el => {
 });
 
 /* ---------- Router ---------- */
-const ORDER = ['about', 'training', 'work', 'governance', 'workflows', 'plan', 'gift'];
-const TITLES = { about: 'About me', training: 'Training colleagues and CEOs to use AI', work: 'Sample work and real-world results', governance: 'AI governance',
-  workflows: 'How I build with AI', plan: 'My AI strategy and 90-day plan', gift: 'A gift for hiring managers' };
+const ORDER = ['about', 'training', 'work', 'governance', 'plan', 'gift'];
+const TITLES = { about: 'About me', training: 'Training colleagues and CEOs to use AI', work: 'Real use cases', governance: 'AI governance',
+  plan: 'My AI strategy and 90-day plan', gift: 'A gift for hiring managers' };
 /* Older links still work: they open the matching project on the Sample work page. */
 const ALIAS = { playbook: ['work', 'proj-playbook'], reports: ['work', 'proj-report'], board: ['work', 'proj-board'],
-  learning: ['plan', 'framework'], platforms: ['governance', 'platforms'], built: ['workflows', 'this-site'] };
+  learning: ['plan', 'framework'], platforms: ['governance', 'platforms'], workflows: ['work', 'proj-build'], built: ['work', 'proj-build'] };
 const home = document.getElementById('home');
 const views = [...document.querySelectorAll('.view')];
 let pendingScroll = null, firstLoad = true;
