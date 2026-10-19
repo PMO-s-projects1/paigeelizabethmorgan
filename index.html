@@ -702,9 +702,9 @@ p,li,dd,.stat span,.cell p,.mat span{ text-wrap:pretty; }
 @media (max-width:860px){ .session li{ grid-template-columns:36px minmax(0,1fr); align-items:start; } .session .pr{ grid-column:2; border-left:0; padding-left:0; border-top:2px solid #fff; padding-top:10px; } .session .t{ grid-column:2; text-align:left; } }
 
 /* round 7: real results */
-.results-grid{ display:grid; grid-template-columns:repeat(5, minmax(0,1fr)); gap:12px; }
+.results-grid{ display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); gap:12px; }
 .results-grid .stat b{ font-size:clamp(24px, 2.4vw, 34px); }
-@media (max-width:1100px){ .results-grid{ grid-template-columns:repeat(3, minmax(0,1fr)); } }
+@media (max-width:860px){ .results-grid{ grid-template-columns:repeat(2, minmax(0,1fr)); } }
 @media (max-width:640px){ .results-grid{ grid-template-columns:repeat(2, minmax(0,1fr)); } }
 .from{ display:flex; gap:6px; flex-wrap:wrap; margin-top:12px; }
 .from span{ font-size:12.5px; font-weight:600; background:#fff; border-radius:999px; padding:2px 10px; }
@@ -721,6 +721,22 @@ p,li,dd,.stat span,.cell p,.mat span{ text-wrap:pretty; }
 .nw{ white-space:nowrap; }
 @media (max-width:640px){ .flow > span{ flex:1 1 100%; } .results-grid .stat:last-child:nth-child(odd){ grid-column:span 2; } }
 @media (max-width:480px){ .results-grid .stat{ padding:16px 14px; } .results-grid .stat b{ font-size:22px; } }
+.stat b{ text-wrap:balance; }
+/* home: story of the site */
+.story{ list-style:none; counter-reset:st; margin:22px 0 0; padding:0; display:grid; gap:9px; }
+.story li{ counter-increment:st; display:grid; grid-template-columns:28px 1fr; gap:12px; align-items:center; font-size:16.5px; line-height:1.35; color:var(--ink-2); }
+.story li::before{ content:counter(st); width:28px; height:28px; border-radius:50%; display:grid; place-items:center; font:700 13.5px/1 var(--sans); background:var(--blue); color:#fff; }
+.story li:nth-child(2)::before{ background:var(--pink); color:var(--ink); }
+.story li:nth-child(3)::before{ background:var(--mint); color:var(--ink); }
+.story li:nth-child(4)::before{ background:var(--lilac); color:var(--ink); }
+.story b{ color:var(--ink); font-weight:600; }
+.bento .t-training{ grid-column:3 / 5; }
+.bento .t-plan{ grid-column:1 / 3; }
+.bento .t-gov{ grid-column:3 / 5; }
+.t-gov p{ max-width:34em; }
+@media (max-width:1100px){ .bento .t-training{ grid-column:1 / -1; } .bento .t-plan,.bento .t-gov{ grid-column:auto; } }
+@media (max-width:640px){ .bento .t-plan,.bento .t-gov{ grid-column:1 / -1; } .story li{ font-size:15.5px; } }
+
 /* three-minute lesson */
 .lesson{ background:var(--paper); border-radius:20px; padding:24px; }
 .lesson-steps{ list-style:none; margin:0 0 20px; padding:0; display:flex; gap:8px; flex-wrap:wrap; counter-reset:ls; }
@@ -782,7 +798,12 @@ p,li,dd,.stat span,.cell p,.mat span{ text-wrap:pretty; }
       <div>
         <h1 id="name">Paige<br>Elizabeth<br>Morgan</h1>
         <p class="role">I help people actually use AI at work.</p>
-        <a class="about-link" href="#/about">About me <span aria-hidden="true"><svg width="14" height="14" viewBox="0 0 18 18" fill="none"><path d="M3 9h11M9.5 4.5 14 9l-4.5 4.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+        <ol class="story" aria-label="The story of this site">
+          <li><span><b>Who I am</b></span></li>
+          <li><span><b>How I've enabled AI at YPO</b>, through training and use cases</span></li>
+          <li><span><b>How I'd enable AI in your company</b></span></li>
+          <li><span><b>How I'd work with your policy teams</b> to align governance</span></li>
+        </ol>
       </div>
       <dl>
         <div><dt>Focus</dt><dd>AI enablement, facilitation and learning design</dd></div>
@@ -792,26 +813,21 @@ p,li,dd,.stat span,.cell p,.mat span{ text-wrap:pretty; }
     </section>
 
     <a class="tile t-about" href="#/about" style="--i:1">
-      <div class="row"><span class="tag">Start here</span><span class="go" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9h11M9.5 4.5 14 9l-4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+      <div class="row"><span class="tag">1 · Who I am</span><span class="go" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9h11M9.5 4.5 14 9l-4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
       <h2>About me</h2>
-      <p>My story, my view on AI, my experience and my CV.</p>
+      <p>My story, my experience, my qualifications and my CV.</p>
       <div class="pv pv-about"><span class="avatar" data-photo>PEM</span><ul><li>AI Champion at YPO</li><li>Oxford MSc in Education</li><li>Facilitator</li></ul></div>
     </a>
 
     <a class="tile t-training" href="#/training" style="--i:2">
-      <div class="row"><span class="tag">Enablement</span><span class="go" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9h11M9.5 4.5 14 9l-4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+      <div class="row"><span class="tag">2 · At YPO</span><span class="go" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9h11M9.5 4.5 14 9l-4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
       <h2>Training colleagues and CEOs to use AI</h2>
-      <div class="pv pv-chips" aria-hidden="true"><span>EMEA + APAC</span><span>CEOs</span><span>Learning design</span></div>
+      <p>Who I support, where I've delivered training, the kit I built with AI and my signature session.</p>
+      <div class="pv pv-chips" aria-hidden="true"><span>My MENA team</span><span>CEOs in 13 countries</span><span>Learning design</span></div>
     </a>
 
-    <a class="tile t-gov" href="#/governance" style="--i:3">
-      <div class="row"><span class="tag">Governance</span><span class="go" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9h11M9.5 4.5 14 9l-4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
-      <h2>AI governance</h2>
-      <div class="pv pv-chips" aria-hidden="true"><span>Policy</span><span>Bylaws</span><span>Choosing tools</span></div>
-    </a>
-
-    <a class="tile t-work" href="#/work" style="--i:4">
-      <div class="row"><span class="tag">Samples inside</span><span class="go" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9h11M9.5 4.5 14 9l-4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+    <a class="tile t-work" href="#/work" style="--i:3">
+      <div class="row"><span class="tag">2 · At YPO</span><span class="go" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9h11M9.5 4.5 14 9l-4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
       <div class="work-top"><h2>Real use cases</h2><p>Five real ways I use AI at work, with materials you can open and the results behind them.</p></div>
       <div class="pv pv-projects" aria-hidden="true">
         <span><b>4.8–4.9/5</b>AI for executive teams training kit</span>
@@ -822,11 +838,18 @@ p,li,dd,.stat span,.cell p,.mat span{ text-wrap:pretty; }
       </div>
     </a>
 
-    <a class="tile t-plan" href="#/plan" style="--i:5">
-      <div class="row"><span class="tag">Plan</span><span class="go" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9h11M9.5 4.5 14 9l-4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+    <a class="tile t-plan" href="#/plan" style="--i:4">
+      <div class="row"><span class="tag">3 · In your company</span><span class="go" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9h11M9.5 4.5 14 9l-4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
       <h2>My AI strategy and 90-day plan</h2>
-      <p>Fluency over prompts: the framework, the first 90 days and the academies that follow.</p>
+      <p>How I'd enable AI in your company: the framework, the first 90 days and the academies that follow.</p>
       <div class="pv pv-phases" aria-hidden="true"><span><b>30</b>Listen and baseline</span><span><b>60</b>Pilot and teach</span><span><b>90</b>Prove and scale</span></div>
+    </a>
+
+    <a class="tile t-gov" href="#/governance" style="--i:5">
+      <div class="row"><span class="tag">4 · With your policy teams</span><span class="go" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9h11M9.5 4.5 14 9l-4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+      <h2>AI governance</h2>
+      <p>The policy, bylaws and manuals I've written, and how I'd work with your policy teams to align AI governance.</p>
+      <div class="pv pv-chips" aria-hidden="true"><span>Policy</span><span>Bylaws</span><span>Choosing tools</span></div>
     </a>
 
     <a class="tile t-gift" href="#/gift" style="--i:6">
@@ -868,18 +891,19 @@ p,li,dd,.stat span,.cell p,.mat span{ text-wrap:pretty; }
     <div class="exp">
       <article class="job">
         <span class="when">January 2024 to now</span>
-        <div><h3>Regional Director, Middle East and North Africa</h3><p class="org">YPO (Young Presidents' Organization)</p>
+        <div><h3>Regional Director, Middle East and North Africa</h3><p class="org">YPO (Young Presidents' Organization). A top performer, rated Exceeds Expectations.</p>
           <ul>
             <li>Lead the MENA management team, and governance, operations, communications and member engagement across 27 chapters of chief executives.</li>
             <li>YPO's AI Champion: developed AI training for my management team, who now act as AI Champions for the organisation, and support Regional Directors across EMEA and APAC plus teams across YPO.</li>
             <li>Shared AI use cases with departments and IT, leading to enterprise adoption and a proper AI policy across the organisation.</li>
-            <li>Supported in-person AI training for CEOs in 13 countries, and run an AI Workshop for members that has visited chapters across the region, consistently rated 4.8 or above.</li>
-            <li>Write and amend chapter and regional bylaws and operations manuals, and coordinate the FY27 to 29 Regional Officer Elections.</li>
-            <li>Used AI to deliver a project in two weeks that previously took five months.</li>
+            <li>Supported in-person AI training for CEOs in every global region, across 13 countries. Every chapter in the region has received our AI Workshop for members, consistently rated 4.8 or above.</li>
+            <li>Built the United MENA Playbook, Chapter Overview Report and board materials with AI. Together: 97% of Chapter Officers attending training, member engagement up 12%, Forum participation up 5% and the most applicants yet for the regional board.</li>
             <li>Achieved every regional KPI by the end of Q3, except the one tied to events that must take place in Q4.</li>
-            <li>Built the United MENA Playbook: used by every chapter in the region, with management-directed questions down 30%.</li>
+            <li>Design and deliver Regional Board Meetings for CEOs, consistently rated 4.8 to 4.9 out of 5, including a record satisfaction score in Cyprus with 60 chapter leaders.</li>
+            <li>MENA was shortlisted for YPO's Best Region Award, with our chapters top-ranked on member experience.</li>
+            <li>Write and amend chapter and regional bylaws and operations manuals, and coordinate the FY27 to 29 Regional Officer Elections.</li>
+            <li>Used AI to deliver a project in two weeks that previously took five months. The United MENA Playbook is used by every chapter, with management-directed questions down 30%.</li>
             <li>97% membership retention, leading YPO globally on renewals, and strategic partnerships that grew the regional budget by 25%.</li>
-            <li>Rated Exceeds Expectations.</li>
           </ul></div>
       </article>
       <article class="job">
@@ -966,8 +990,8 @@ p,li,dd,.stat span,.cell p,.mat span{ text-wrap:pretty; }
 
     <h3 class="sec">Where I've delivered training</h3>
     <div class="places">
-      <div class="place p-blue"><b class="big">13 countries</b><h4><span class="nw">In-person</span> AI training with CEOs</h4><p>Delivered alongside AI leaders, with AI tools used live in the room.</p><div class="countries" aria-label="Countries"><span>UAE</span><span>Pakistan</span><span>UK</span><span>Spain</span><span>Australia</span><span>Singapore</span><span>Thailand</span><span>US</span><span>Canada</span><span>Tunisia</span><span>Morocco</span><span>Cyprus</span><span>Turkey</span></div></div>
-      <div class="place p-pink"><b class="big">Rated 4.8+</b><h4>Our AI Workshop for members</h4><p>As a region, we share our AI training with CEO and executive members, not just our own team. The workshop has visited chapters in:</p><div class="countries" aria-label="Chapters visited"><span>Dubai</span><span>Saudi Arabia</span><span>Jordan</span><span>Palestine</span><span>Pakistan</span><span>Morocco</span><span>Tunisia</span><span>Oman</span><span>Qatar</span><span>Kuwait</span><span>Bahrain</span><span>Lebanon</span><span>Egypt</span></div></div>
+      <div class="place p-blue"><b class="big">13 countries</b><h4><span class="nw">In-person</span> AI training with CEOs</h4><p>CEOs in every global region, with AI tools used live in the room.</p><div class="countries" aria-label="Countries"><span>UAE</span><span>Pakistan</span><span>UK</span><span>Spain</span><span>Australia</span><span>Singapore</span><span>Thailand</span><span>US</span><span>Canada</span><span>Tunisia</span><span>Morocco</span><span>Cyprus</span><span>Turkey</span></div></div>
+      <div class="place p-pink"><b class="big">Rated 4.8+</b><h4>Our AI Workshop for members</h4><p>As a region, we share our AI training with CEO and executive members, not just our own team. 100% of our chapters have received AI workshops, in:</p><div class="countries" aria-label="Chapters visited"><span>Dubai</span><span>Saudi Arabia</span><span>Jordan</span><span>Palestine</span><span>Pakistan</span><span>Morocco</span><span>Tunisia</span><span>Oman</span><span>Qatar</span><span>Kuwait</span><span>Bahrain</span><span>Lebanon</span><span>Egypt</span></div></div>
     </div>
 
     <h3 class="sec">The training kit</h3>
@@ -1040,7 +1064,7 @@ p,li,dd,.stat span,.cell p,.mat span{ text-wrap:pretty; }
 
 </div>
 
-<!-- ============================ 3. SAMPLE WORK ============================ -->
+<!-- ============================ 3. REAL USE CASES ============================ -->
 <div class="wrap view" data-route="work" hidden>
   <header class="view-head vh-sun">
     <a class="crumb" href="#/">All work</a>
@@ -1061,20 +1085,21 @@ p,li,dd,.stat span,.cell p,.mat span{ text-wrap:pretty; }
     <p class="sub">These results don't belong to any one use case. The training, playbook, report, board meetings and everyday workflows support one another, and together they delivered this.</p>
     <div class="results-grid">
       <div class="stat s-blue"><b class="num">97%</b><span>Chapter Officers attending training</span></div>
-      <div class="stat s-sun"><b class="num">12%</b><span>Improvement in member engagement</span></div>
-      <div class="stat s-mint"><b class="num">5%</b><span>Improvement in Forum participation</span></div>
-      <div class="stat s-pink"><b class="num">Highest</b><span>Number of applicants to join the regional board</span></div>
-      <div class="stat s-lilac"><b class="num">27 of 27</b><span>Chapters using the playbook regularly</span></div>
-      <div class="stat s-mint"><b class="num">30% fewer</b><span>Management-directed questions from chapters</span></div>
-      <div class="stat s-lilac"><b class="num">End of Q3</b><span>Regional KPIs achieved*</span></div>
+      <div class="stat s-sun"><b class="num">100%</b><span>Of chapters in the region have received AI workshops</span></div>
+      <div class="stat s-mint"><b class="num">12%</b><span>Improvement in member engagement</span></div>
+      <div class="stat s-pink"><b class="num">5%</b><span>Improvement in Forum participation</span></div>
+      <div class="stat s-lilac"><b class="num">Highest</b><span>Number of applicants to join the regional board</span></div>
+      <div class="stat s-blue"><b class="num">27 of 27</b><span>Chapters using the playbook regularly</span></div>
+      <div class="stat s-sun"><b class="num">30% fewer</b><span>Management-directed questions from chapters</span></div>
+      <div class="stat s-mint"><b class="num">End of Q3</b><span>Regional KPIs achieved*</span></div>
       <div class="stat s-pink"><b class="num">97%</b><span>Membership retention, leading YPO globally on renewals</span></div>
-      <div class="stat s-blue"><b class="num">4.8–4.9/5</b><span>Chapter Board Meetings and trainings</span></div>
-      <div class="stat s-sun"><b class="num">Record</b><span>Satisfaction score at the Cyprus Regional Board Meeting, with 60 chapter leaders</span></div>
+      <div class="stat s-lilac"><b class="num">4.8–4.9/5</b><span>Chapter Board Meetings and trainings</span></div>
+      <div class="stat s-blue"><b class="num">Record</b><span>Satisfaction score at the Cyprus Regional Board Meeting, with 60 chapter leaders</span></div>
       <div class="stat s-sun"><b class="num">10 to 1</b><span>Sources brought together into one report</span></div>
-      <div class="stat s-pink"><b class="num">5 months to 2 weeks</b><span>A project's lead time, cut using AI</span></div>
-      <div class="stat s-blue"><b class="num">60% to 100%</b><span>Platinum chapters in one year, after a peer-learning programme I wrote</span></div>
-      <div class="stat s-mint"><b class="num">Now mandatory</b><span>A session I co-designed, piloted in MENA, now required worldwide</span></div>
-      <div class="stat s-lilac"><b class="num">Exceeds</b><span>Expectations rating, with the time AI frees used to help other regions</span></div>
+      <div class="stat s-mint"><b class="num">5 months to 2 weeks</b><span>A project's lead time, cut using AI</span></div>
+      <div class="stat s-pink"><b class="num">60% to 100%</b><span>Platinum chapters in one year, after a peer-learning programme I wrote</span></div>
+      <div class="stat s-lilac"><b class="num">Now mandatory</b><span>A session I co-designed, piloted in MENA, now required worldwide</span></div>
+      <div class="stat s-blue"><b>Top performer</b><span>Rated Exceeds Expectations, with the time AI frees used to help other regions</span></div>
     </div>
     <p class="note">*Every KPI except the one tied to events that must take place in Q4.</p>
     <h3 class="sec">What it changed</h3>
@@ -1240,55 +1265,7 @@ p,li,dd,.stat span,.cell p,.mat span{ text-wrap:pretty; }
   </section>
 </div>
 
-<!-- ============================ GOVERNANCE ============================ -->
-<div class="wrap view" data-route="governance" hidden>
-  <header class="view-head vh-lilac">
-    <a class="crumb" href="#/">All work</a>
-    <h1 tabindex="-1">AI governance</h1>
-    <p class="lede">Governance is what lets people use AI with confidence. I've written national policy and curriculum, and the bylaws and manuals organisations run on, and I bring the same discipline to AI: clear use cases, the right people signing off, the right tools, and confidential information kept where it belongs.</p>
-  </header>
-
-  <section class="block">
-    <h2>Where my governance experience comes from</h2>
-    <div class="gov-grid gov5">
-      <article class="gcard g-blue wide"><span class="gk">Government</span><h3>National policy and curriculum, rolled out nationwide</h3><p>At the UAE Ministry of Education, I led policy frameworks and national curricula aligned with the UAE Vision 2021 National Agenda, adopted across the UAE and the wider Gulf region.</p>
-        <ul class="glist"><li>Project lead, National English Language Curriculum Framework (2019)</li><li>Project lead, National Literacy and Communication Framework (2021)</li><li>Co-developer, English Language Curriculum Framework of Excellence (2022)</li><li>Project lead, Academic Writing Curriculum, grades 1 to 12 (2018)</li></ul></article>
-      <article class="gcard g-sun"><span class="gk">Chapters</span><h3>Chapter bylaws</h3><p>I support YPO's chapters in writing, developing and amending their bylaws against the regional template. The Chapter Overview Report flags any gaps before each visit.</p></article>
-      <article class="gcard g-mint"><span class="gk">Region</span><h3>Regional bylaws</h3><p>I help write and amend the bylaws that set how the region itself is led, and coordinate the FY27 to 29 Regional Officer Elections and each year's officer handover.</p></article>
-      <article class="gcard g-pink"><span class="gk">Operations</span><h3>Operations manuals</h3><p>I write the manuals chapters run on: the United MENA Playbook, onboarding checklists and governance templates for incoming chapter boards, and a budgeting and tracking system now used by several YPO regions.</p></article>
-      <article class="gcard g-lilac"><span class="gk">AI</span><h3>AI use cases shared across the organisation</h3><p>I work with internal teams and IT to share real AI use cases, so AI is used safely and consistently. This led to enterprise adoption and a proper AI policy across the organisation.</p></article>
-    </div>
-  </section>
-
-  <section class="block" id="platforms" style="scroll-margin-top:16px">
-    <h2>Choosing an AI platform</h2>
-    <p class="sub">The three platforms I'm asked about most, compared for the people who'll use them every day: ChatGPT Enterprise, Claude Enterprise and Microsoft 365 Copilot. I checked every line against each company's own documentation in October 2026, and I re-check before any recommendation. Pricing is left out because it changes too often to print.</p>
-    <div class="cmp-wrap">
-      <table class="cmp">
-        <thead><tr><th scope="col"><span class="sr">Question</span></th><th scope="col"><span class="pdot" style="background:var(--mint)"></span>ChatGPT Enterprise</th><th scope="col"><span class="pdot" style="background:var(--pink)"></span>Claude Enterprise</th><th scope="col"><span class="pdot" style="background:var(--blue)"></span>Microsoft 365 Copilot</th></tr></thead>
-        <tbody>
-        <tr><th scope="row">Where people use it</th><td data-p="ChatGPT Enterprise">The ChatGPT apps on web, desktop and mobile, and @ChatGPT inside Slack and Microsoft Teams.</td><td data-p="Claude Enterprise">The Claude apps, plus Claude inside Word, Excel, PowerPoint and Outlook, in the Chrome browser and in Slack.</td><td data-p="Microsoft 365 Copilot">Inside Word, Excel, PowerPoint, Outlook and Teams, plus the Microsoft 365 Copilot app.</td></tr>
-        <tr><th scope="row">Company data</th><td data-p="ChatGPT Enterprise">Connected apps such as Google Drive, SharePoint, Teams, Gmail and Outlook, which respect existing permissions.</td><td data-p="Claude Enterprise">Connectors for Google Drive, Gmail, Slack and Microsoft 365, plus custom connectors for internal systems. Admins approve each one.</td><td data-p="Microsoft 365 Copilot">Grounded in email, files, meetings and calendars through Microsoft Graph, plus connectors to other business systems.</td></tr>
-        <tr><th scope="row">Agents and automation</th><td data-p="ChatGPT Enterprise">Shareable workspace agents that can run on a schedule, and ChatGPT Work for longer, multi-step tasks.</td><td data-p="Claude Enterprise">Takes on longer research, analysis and document tasks in the background and returns finished work.</td><td data-p="Microsoft 365 Copilot">Copilot Cowork for multi-step tasks, pausing for approval before anything sensitive is sent, and Copilot Studio for building agents.</td></tr>
-        <tr><th scope="row">Reusable team workflows</th><td data-p="ChatGPT Enterprise">Shared projects and plugins. Custom GPTs are being retired in favour of plugins.</td><td data-p="Claude Enterprise">Skills that capture a team's templates, standards and workflows, plus projects and memory.</td><td data-p="Microsoft 365 Copilot">Simple agents built in the Copilot app, and agents built in Copilot Studio.</td></tr>
-        <tr><th scope="row">Models</th><td data-p="ChatGPT Enterprise">OpenAI's own models.</td><td data-p="Claude Enterprise">Anthropic's Claude models.</td><td data-p="Microsoft 365 Copilot">A mix, including OpenAI and Anthropic models in some apps.</td></tr>
-        <tr><th scope="row">Admin and governance</th><td data-p="ChatGPT Enterprise">SSO, SCIM, role-based access, IP allowlisting, audit logs and a Compliance API. Business data isn't used for training by default.</td><td data-p="Claude Enterprise">SSO, SCIM, role-based access, spend controls, audit logs, a Compliance API and custom data retention. No training on your data by default.</td><td data-p="Microsoft 365 Copilot">Managed in the Microsoft 365 admin centre, with sensitivity labels, data loss prevention policies and Agent 365 for governing agents.</td></tr>
-        <tr class="watch"><th scope="row">Watch out for</th><td data-p="ChatGPT Enterprise">Teams that built custom GPTs need a plan to move them to plugins.</td><td data-p="Claude Enterprise">Usage is billed on top of seats, so set spend controls from day one.</td><td data-p="Microsoft 365 Copilot">Copilot can surface anything people already have access to, so tidy SharePoint permissions first.</td></tr>
-        <tr class="pick"><th scope="row">I'd choose it when</th><td data-p="ChatGPT Enterprise">People already use ChatGPT and want one assistant that reaches across many apps.</td><td data-p="Claude Enterprise">The work is long documents, analysis and writing to a set standard, across Google and Microsoft tools.</td><td data-p="Microsoft 365 Copilot">The business runs on Microsoft 365 and wants AI inside the tools people already use.</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <ul class="srcs" aria-label="Sources">
-      <li><a href="https://help.openai.com/en/articles/10128477-chatgpt-enterprise-and-edu-release-notes" target="_blank" rel="noopener">OpenAI: ChatGPT Enterprise and Edu release notes</a></li>
-      <li><a href="https://openai.com/index/more-ways-to-work-with-your-team/" target="_blank" rel="noopener">OpenAI: More ways to work with your team and tools in ChatGPT</a></li>
-      <li><a href="https://claude.com/solutions/enterprise" target="_blank" rel="noopener">Anthropic: Claude Enterprise</a></li>
-      <li><a href="https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes" target="_blank" rel="noopener">Microsoft: Release notes for Microsoft 365 Copilot</a></li>
-      <li><a href="https://www.hso.com/blog/microsoft-copilot-vs-studio/" target="_blank" rel="noopener">HSO: Microsoft Copilot vs Copilot Studio (2026)</a></li>
-    </ul>
-  </section>
-</div>
-
-<!-- ============================ 6. PLAN ============================ -->
+<!-- ============================ 4. STRATEGY ============================ -->
 <div class="wrap view" data-route="plan" hidden>
   <header class="view-head vh-mint">
     <a class="crumb" href="#/">All work</a>
@@ -1344,7 +1321,7 @@ p,li,dd,.stat span,.cell p,.mat span{ text-wrap:pretty; }
           <li>A listening tour: the sponsor, IT and security, legal, L&amp;D, and at least 15 people doing the work.</li>
           <li>Audit access against real use, including unofficial tools.</li>
           <li>Run use-case discovery with three teams and score every idea.</li>
-          <li>Agree guardrails with IT and legal in plain language.</li>
+          <li>Agree guardrails with IT, legal and policy teams in plain language.</li>
           <li>Deliver one quick win for a willing team.</li>
         </ol>
         <div class="out"><p><b>You'll have</b>A discovery readout, a scored backlog, a baseline scorecard and a signed-off plan.</p><p><b>Measured by</b>Baseline captured, three teams engaged, sponsor sign-off.</p></div>
@@ -1369,7 +1346,7 @@ p,li,dd,.stat span,.cell p,.mat span{ text-wrap:pretty; }
           <li>Measure pilots against the baseline and publish short case studies.</li>
           <li>Scale the winning workflows to the next teams.</li>
           <li>Embed AI in onboarding and in managers' routines.</li>
-          <li>Set up an intake process and a governance rhythm.</li>
+          <li>Set up an intake process and a governance rhythm with your policy teams.</li>
           <li>Present a 90-day impact readout and a two-quarter roadmap.</li>
         </ol>
         <div class="out"><p><b>You'll have</b>An impact readout, a scale plan, a playbook and a signed-off roadmap for the two academies.</p><p><b>Measured by</b>Weekly active use, hours saved, confidence scores, workflows in daily use.</p></div>
@@ -1408,7 +1385,55 @@ p,li,dd,.stat span,.cell p,.mat span{ text-wrap:pretty; }
 
 </div>
 
-<!-- ============================ 8. GIFT ============================ -->
+<!-- ============================ 5. GOVERNANCE ============================ -->
+<div class="wrap view" data-route="governance" hidden>
+  <header class="view-head vh-lilac">
+    <a class="crumb" href="#/">All work</a>
+    <h1 tabindex="-1">AI governance</h1>
+    <p class="lede">Governance is what lets people use AI with confidence. I've written national policy and curriculum, and the bylaws and manuals organisations run on, and I bring the same discipline to AI: clear use cases, the right people signing off, the right tools, and confidential information kept where it belongs. In your company, I'd work with your policy teams to align AI governance from the start.</p>
+  </header>
+
+  <section class="block">
+    <h2>Where my governance experience comes from</h2>
+    <div class="gov-grid gov5">
+      <article class="gcard g-blue wide"><span class="gk">Government</span><h3>National policy and curriculum, rolled out nationwide</h3><p>At the UAE Ministry of Education, I led policy frameworks and national curricula aligned with the UAE Vision 2021 National Agenda, adopted across the UAE and the wider Gulf region.</p>
+        <ul class="glist"><li>Project lead, National English Language Curriculum Framework (2019)</li><li>Project lead, National Literacy and Communication Framework (2021)</li><li>Co-developer, English Language Curriculum Framework of Excellence (2022)</li><li>Project lead, Academic Writing Curriculum, grades 1 to 12 (2018)</li></ul></article>
+      <article class="gcard g-sun"><span class="gk">Chapters</span><h3>Chapter bylaws</h3><p>I support YPO's chapters in writing, developing and amending their bylaws against the regional template. The Chapter Overview Report flags any gaps before each visit.</p></article>
+      <article class="gcard g-mint"><span class="gk">Region</span><h3>Regional bylaws</h3><p>I help write and amend the bylaws that set how the region itself is led, and coordinate the FY27 to 29 Regional Officer Elections and each year's officer handover.</p></article>
+      <article class="gcard g-pink"><span class="gk">Operations</span><h3>Operations manuals</h3><p>I write the manuals chapters run on: the United MENA Playbook, onboarding checklists and governance templates for incoming chapter boards, and a budgeting and tracking system now used by several YPO regions.</p></article>
+      <article class="gcard g-lilac"><span class="gk">AI</span><h3>AI use cases shared across the organisation</h3><p>I work with internal teams and IT to share real AI use cases, so AI is used safely and consistently. This led to enterprise adoption and a proper AI policy across the organisation.</p></article>
+    </div>
+  </section>
+
+  <section class="block" id="platforms" style="scroll-margin-top:16px">
+    <h2>Choosing an AI platform</h2>
+    <p class="sub">The three platforms I'm asked about most, compared for the people who'll use them every day: ChatGPT Enterprise, Claude Enterprise and Microsoft 365 Copilot. I checked every line against each company's own documentation in October 2026, and I re-check before any recommendation. Pricing is left out because it changes too often to print.</p>
+    <div class="cmp-wrap">
+      <table class="cmp">
+        <thead><tr><th scope="col"><span class="sr">Question</span></th><th scope="col"><span class="pdot" style="background:var(--mint)"></span>ChatGPT Enterprise</th><th scope="col"><span class="pdot" style="background:var(--pink)"></span>Claude Enterprise</th><th scope="col"><span class="pdot" style="background:var(--blue)"></span>Microsoft 365 Copilot</th></tr></thead>
+        <tbody>
+        <tr><th scope="row">Where people use it</th><td data-p="ChatGPT Enterprise">The ChatGPT apps on web, desktop and mobile, and @ChatGPT inside Slack and Microsoft Teams.</td><td data-p="Claude Enterprise">The Claude apps, plus Claude inside Word, Excel, PowerPoint and Outlook, in the Chrome browser and in Slack.</td><td data-p="Microsoft 365 Copilot">Inside Word, Excel, PowerPoint, Outlook and Teams, plus the Microsoft 365 Copilot app.</td></tr>
+        <tr><th scope="row">Company data</th><td data-p="ChatGPT Enterprise">Connected apps such as Google Drive, SharePoint, Teams, Gmail and Outlook, which respect existing permissions.</td><td data-p="Claude Enterprise">Connectors for Google Drive, Gmail, Slack and Microsoft 365, plus custom connectors for internal systems. Admins approve each one.</td><td data-p="Microsoft 365 Copilot">Grounded in email, files, meetings and calendars through Microsoft Graph, plus connectors to other business systems.</td></tr>
+        <tr><th scope="row">Agents and automation</th><td data-p="ChatGPT Enterprise">Shareable workspace agents that can run on a schedule, and ChatGPT Work for longer, multi-step tasks.</td><td data-p="Claude Enterprise">Takes on longer research, analysis and document tasks in the background and returns finished work.</td><td data-p="Microsoft 365 Copilot">Copilot Cowork for multi-step tasks, pausing for approval before anything sensitive is sent, and Copilot Studio for building agents.</td></tr>
+        <tr><th scope="row">Reusable team workflows</th><td data-p="ChatGPT Enterprise">Shared projects and plugins. Custom GPTs are being retired in favour of plugins.</td><td data-p="Claude Enterprise">Skills that capture a team's templates, standards and workflows, plus projects and memory.</td><td data-p="Microsoft 365 Copilot">Simple agents built in the Copilot app, and agents built in Copilot Studio.</td></tr>
+        <tr><th scope="row">Models</th><td data-p="ChatGPT Enterprise">OpenAI's own models.</td><td data-p="Claude Enterprise">Anthropic's Claude models.</td><td data-p="Microsoft 365 Copilot">A mix, including OpenAI and Anthropic models in some apps.</td></tr>
+        <tr><th scope="row">Admin and governance</th><td data-p="ChatGPT Enterprise">SSO, SCIM, role-based access, IP allowlisting, audit logs and a Compliance API. Business data isn't used for training by default.</td><td data-p="Claude Enterprise">SSO, SCIM, role-based access, spend controls, audit logs, a Compliance API and custom data retention. No training on your data by default.</td><td data-p="Microsoft 365 Copilot">Managed in the Microsoft 365 admin centre, with sensitivity labels, data loss prevention policies and Agent 365 for governing agents.</td></tr>
+        <tr class="watch"><th scope="row">Watch out for</th><td data-p="ChatGPT Enterprise">Teams that built custom GPTs need a plan to move them to plugins.</td><td data-p="Claude Enterprise">Usage is billed on top of seats, so set spend controls from day one.</td><td data-p="Microsoft 365 Copilot">Copilot can surface anything people already have access to, so tidy SharePoint permissions first.</td></tr>
+        <tr class="pick"><th scope="row">I'd choose it when</th><td data-p="ChatGPT Enterprise">People already use ChatGPT and want one assistant that reaches across many apps.</td><td data-p="Claude Enterprise">The work is long documents, analysis and writing to a set standard, across Google and Microsoft tools.</td><td data-p="Microsoft 365 Copilot">The business runs on Microsoft 365 and wants AI inside the tools people already use.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <ul class="srcs" aria-label="Sources">
+      <li><a href="https://help.openai.com/en/articles/10128477-chatgpt-enterprise-and-edu-release-notes" target="_blank" rel="noopener">OpenAI: ChatGPT Enterprise and Edu release notes</a></li>
+      <li><a href="https://openai.com/index/more-ways-to-work-with-your-team/" target="_blank" rel="noopener">OpenAI: More ways to work with your team and tools in ChatGPT</a></li>
+      <li><a href="https://claude.com/solutions/enterprise" target="_blank" rel="noopener">Anthropic: Claude Enterprise</a></li>
+      <li><a href="https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes" target="_blank" rel="noopener">Microsoft: Release notes for Microsoft 365 Copilot</a></li>
+      <li><a href="https://www.hso.com/blog/microsoft-copilot-vs-studio/" target="_blank" rel="noopener">HSO: Microsoft Copilot vs Copilot Studio (2026)</a></li>
+    </ul>
+  </section>
+</div>
+
+<!-- ============================ 6. GIFT ============================ -->
 <div class="wrap view" data-route="gift" hidden>
   <header class="view-head vh-white">
     <a class="crumb" href="#/">All work</a>
@@ -1487,7 +1512,7 @@ document.querySelectorAll('[data-photo]').forEach(el => {
 });
 
 /* ---------- Router ---------- */
-const ORDER = ['about', 'training', 'work', 'governance', 'plan', 'gift'];
+const ORDER = ['about', 'training', 'work', 'plan', 'governance', 'gift'];
 const TITLES = { about: 'About me', training: 'Training colleagues and CEOs to use AI', work: 'Real use cases', governance: 'AI governance',
   plan: 'My AI strategy and 90-day plan', gift: 'A gift for hiring managers' };
 /* Older links still work: they open the matching project on the Sample work page. */
