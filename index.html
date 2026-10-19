@@ -364,7 +364,7 @@ button{ font:inherit; }
 .about-top .avatar{ width:200px; height:200px; font-size:64px; }
 @media (max-width:760px){ .about-top{ grid-template-columns:1fr; gap:20px; } .about-top .avatar{ width:140px; height:140px; font-size:44px; } }
 .quote{ background:var(--blue); color:#fff; border-radius:var(--r); padding:40px; margin:0 0 16px; }
-.quote blockquote{ margin:0 0 18px; font-family:var(--display); font-weight:700; font-size:clamp(30px, 4vw, 56px); line-height:1.02; letter-spacing:-.03em; max-width:18ch; }
+.quote blockquote{ margin:0 0 18px; font-family:var(--display); font-weight:700; font-size:clamp(30px, 4vw, 56px); line-height:1.02; letter-spacing:-.03em; max-width:18ch; text-wrap:balance; }
 .quote figcaption{ font-size:15px; opacity:.9; }
 .quote figcaption a{ color:#fff; }
 .philo{ font-family:var(--display); font-weight:600; font-size:clamp(22px, 2.3vw, 30px); line-height:1.25; letter-spacing:-.015em; max-width:28em; }
@@ -723,19 +723,19 @@ p,li,dd,.stat span,.cell p,.mat span{ text-wrap:pretty; }
 @media (max-width:480px){ .results-grid .stat{ padding:16px 14px; } .results-grid .stat b{ font-size:22px; } }
 .stat b{ text-wrap:balance; }
 /* home: story of the site */
-.story{ list-style:none; counter-reset:st; margin:22px 0 0; padding:0; display:grid; gap:9px; }
-.story li{ counter-increment:st; display:grid; grid-template-columns:28px 1fr; gap:12px; align-items:center; font-size:16.5px; line-height:1.35; color:var(--ink-2); }
-.story li::before{ content:counter(st); width:28px; height:28px; border-radius:50%; display:grid; place-items:center; font:700 13.5px/1 var(--sans); background:var(--blue); color:#fff; }
-.story li:nth-child(2)::before{ background:var(--pink); color:var(--ink); }
-.story li:nth-child(3)::before{ background:var(--mint); color:var(--ink); }
-.story li:nth-child(4)::before{ background:var(--lilac); color:var(--ink); }
-.story b{ color:var(--ink); font-weight:600; }
+.journey{ list-style:none; counter-reset:st; margin:22px 0 0; padding:0; display:grid; gap:9px; }
+.journey li{ counter-increment:st; display:grid; grid-template-columns:28px 1fr; gap:12px; align-items:center; font-size:16.5px; line-height:1.35; color:var(--ink-2); }
+.journey li::before{ content:counter(st); width:28px; height:28px; border-radius:50%; display:grid; place-items:center; font:700 13.5px/1 var(--sans); background:var(--blue); color:#fff; }
+.journey li:nth-child(2)::before{ background:var(--pink); color:var(--ink); }
+.journey li:nth-child(3)::before{ background:var(--mint); color:var(--ink); }
+.journey li:nth-child(4)::before{ background:var(--lilac); color:var(--ink); }
+.journey b{ color:var(--ink); font-weight:600; }
 .bento .t-training{ grid-column:3 / 5; }
 .bento .t-plan{ grid-column:1 / 3; }
 .bento .t-gov{ grid-column:3 / 5; }
 .t-gov p{ max-width:34em; }
 @media (max-width:1100px){ .bento .t-training{ grid-column:1 / -1; } .bento .t-plan,.bento .t-gov{ grid-column:auto; } }
-@media (max-width:640px){ .bento .t-plan,.bento .t-gov{ grid-column:1 / -1; } .story li{ font-size:15.5px; } }
+@media (max-width:640px){ .bento .t-plan,.bento .t-gov{ grid-column:1 / -1; } .journey li{ font-size:15.5px; } }
 
 /* three-minute lesson */
 .lesson{ background:var(--paper); border-radius:20px; padding:24px; }
@@ -798,7 +798,7 @@ p,li,dd,.stat span,.cell p,.mat span{ text-wrap:pretty; }
       <div>
         <h1 id="name">Paige<br>Elizabeth<br>Morgan</h1>
         <p class="role">I help people actually use AI at work.</p>
-        <ol class="story" aria-label="The story of this site">
+        <ol class="journey" aria-label="The story of this site">
           <li><span><b>Who I am</b></span></li>
           <li><span><b>How I've enabled AI at YPO</b>, through training and use cases</span></li>
           <li><span><b>How I'd enable AI in your company</b></span></li>
