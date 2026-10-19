@@ -13,9 +13,10 @@ A static site with no build step. Every push to `main` updates the live site at 
 
 ## Sections
 
-About me, Training, Real use cases (five use cases with real-world results, including how I build with AI),
-AI governance (including the platform comparison), the AI strategy and 90-day plan (including the two academies),
-and a gift for hiring managers.
+About me, Training (who I support, facilitation, where I've delivered training, the training kit and the signature session),
+Real use cases (the combined real results, then five use cases ending with everyday workflows),
+AI governance (where the experience comes from, plus the platform comparison), the AI strategy and 90-day plan
+(including the two academies), and a gift for hiring managers.
 Older links still work: `#/playbook`, `#/reports`, `#/board`, `#/workflows` and `#/built` open the matching use case,
 `#/learning` opens the framework on the strategy page and `#/platforms` opens Governance.
 

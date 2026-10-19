@@ -223,8 +223,8 @@ button{ font:inherit; }
 
 /* flow (workflow steps) */
 .flow{ display:flex; flex-wrap:wrap; gap:8px; align-items:stretch; margin:14px 0 12px; counter-reset:f; }
-.flow span{ counter-increment:f; background:var(--paper); border-radius:12px; padding:10px 14px 10px 12px; font-size:14.5px; line-height:1.35; display:flex; gap:10px; align-items:center; flex:1 1 150px; }
-.flow span::before{ content:counter(f); width:24px; height:24px; border-radius:50%; background:var(--ink); color:#fff; font-size:12px; font-weight:700; display:grid; place-items:center; flex:none; }
+.flow > span{ counter-increment:f; background:var(--paper); border-radius:12px; padding:10px 14px 10px 12px; font-size:14.5px; line-height:1.35; display:flex; gap:10px; align-items:center; flex:1 1 150px; }
+.flow > span::before{ content:counter(f); width:24px; height:24px; border-radius:50%; background:var(--ink); color:#fff; font-size:12px; font-weight:700; display:grid; place-items:center; flex:none; }
 .wf{ border-top:2px solid var(--paper); padding:26px 0 8px; }
 .wf:first-of-type{ border-top:0; padding-top:4px; }
 .wf h3{ font-size:24px; }
@@ -671,6 +671,56 @@ table.cmp{ width:100%; border-collapse:collapse; font-size:15px; table-layout:fi
 .academy .fmt{ margin:0; font-size:14.5px; opacity:.9; }
 @media (max-width:480px){ .cpath li{ grid-template-columns:1fr; gap:4px; } }
 
+/* round 7: text wrapping */
+h1,h2,h3,h4,.philo,.lead{ text-wrap:balance; }
+p,li,dd,.stat span,.cell p,.mat span{ text-wrap:pretty; }
+.tile h2,.tile p,.t-work p,.t-plan p,.view-head h1,.academy h3,.qual-main b{ max-width:none; }
+
+/* round 7: training */
+.changed{ display:grid; grid-template-columns:repeat(6, minmax(0,1fr)); gap:16px; margin-top:18px; }
+.changed .stat{ grid-column:span 2; }
+.changed .stat:nth-child(n+4){ grid-column:span 3; }
+@media (max-width:960px){ .changed{ grid-template-columns:repeat(2, minmax(0,1fr)); } .changed .stat,.changed .stat:nth-child(n+4){ grid-column:auto; } .changed .stat:last-child{ grid-column:1 / -1; } }
+@media (max-width:560px){ .changed{ grid-template-columns:1fr; } }
+.places{ display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:14px; }
+.place{ border-radius:20px; padding:22px; }
+.place .big{ display:block; font:800 clamp(30px, 3.2vw, 44px)/1 var(--display); letter-spacing:-.03em; margin-bottom:10px; }
+.place h4{ font:700 18px/1.3 var(--sans); margin:0 0 4px; letter-spacing:0; }
+.place p{ margin:0; font-size:15px; }
+.place .countries span{ background:rgba(255,255,255,.78); color:var(--ink); }
+.p-blue{ background:var(--blue); color:#fff; } .p-pink{ background:var(--pink); }
+@media (max-width:760px){ .places{ grid-template-columns:1fr; } }
+.session{ list-style:none; margin:16px 0 0; padding:0; display:grid; gap:10px; counter-reset:ss; }
+.session li{ counter-increment:ss; display:grid; grid-template-columns:44px minmax(0,1fr) minmax(0,1.2fr) 64px; gap:16px; align-items:center; background:var(--paper); border-radius:16px; padding:16px 18px; }
+.session li::before{ content:counter(ss); width:36px; height:36px; border-radius:50%; background:var(--ink); color:#fff; display:grid; place-items:center; font-weight:700; font-size:15px; }
+.session .blk b{ display:block; font-weight:600; }
+.session .blk span{ display:block; color:var(--ink-2); font-size:15px; }
+.session .pr{ border-left:2px solid #fff; padding-left:16px; }
+.session .pr em{ font-style:normal; display:inline-block; font-size:13px; font-weight:600; background:#fff; border-radius:999px; padding:2px 10px; margin-bottom:5px; }
+.session .pr span{ display:block; font-size:14.5px; color:var(--ink-2); }
+.session .t{ font-weight:600; font-size:14px; color:var(--ink-3); text-align:right; white-space:nowrap; }
+@media (max-width:860px){ .session li{ grid-template-columns:36px minmax(0,1fr); align-items:start; } .session .pr{ grid-column:2; border-left:0; padding-left:0; border-top:2px solid #fff; padding-top:10px; } .session .t{ grid-column:2; text-align:left; } }
+
+/* round 7: real results */
+.results-grid{ display:grid; grid-template-columns:repeat(5, minmax(0,1fr)); gap:12px; }
+.results-grid .stat b{ font-size:clamp(24px, 2.4vw, 34px); }
+@media (max-width:1100px){ .results-grid{ grid-template-columns:repeat(3, minmax(0,1fr)); } }
+@media (max-width:640px){ .results-grid{ grid-template-columns:repeat(2, minmax(0,1fr)); } }
+.from{ display:flex; gap:6px; flex-wrap:wrap; margin-top:12px; }
+.from span{ font-size:12.5px; font-weight:600; background:#fff; border-radius:999px; padding:2px 10px; }
+.cell.hl .from span{ background:rgba(255,255,255,.15); color:#fff; }
+
+/* round 7: governance */
+.gov5{ grid-template-columns:repeat(3, minmax(0,1fr)); }
+.gov5 .wide{ grid-column:span 2; }
+@media (max-width:860px){ .gov5{ grid-template-columns:1fr; } .gov5 .wide{ grid-column:auto; } }
+.g-lilac{ background:var(--lilac); }
+.glist{ margin:12px 0 0; padding-left:18px; font-size:15px; }
+.glist li{ margin-bottom:4px; }
+
+.nw{ white-space:nowrap; }
+@media (max-width:640px){ .flow > span{ flex:1 1 100%; } .results-grid .stat:last-child:nth-child(odd){ grid-column:span 2; } }
+@media (max-width:480px){ .results-grid .stat{ padding:16px 14px; } .results-grid .stat b{ font-size:22px; } }
 /* three-minute lesson */
 .lesson{ background:var(--paper); border-radius:20px; padding:24px; }
 .lesson-steps{ list-style:none; margin:0 0 20px; padding:0; display:flex; gap:8px; flex-wrap:wrap; counter-reset:ls; }
@@ -804,14 +854,8 @@ table.cmp{ width:100%; border-collapse:collapse; font-size:15px; table-layout:fi
   <section class="block story">
     <h2>My story</h2>
     <p class="lead" style="margin-top:14px">I started working alongside top CEOs to deliver AI to YPO members. I then brought what I learned into my own work, and I've become the AI Champion in my workplace.</p>
-    <p>I primarily support YPO's Regional Directors across EMEA and APAC, and I also support the entire department and teams across other departments.</p>
+    <p>I lead YPO's management team for the Middle East and North Africa. I developed training for my team, and they now act as AI Champions for the organisation, sharing tools and resources and training other teams at their level. I also support YPO's Regional Directors across EMEA and APAC, and teams right across the organisation.</p>
     <p style="margin:0">I'm genuinely excited about what AI can do, where it can go, and how I can help companies have the tools, skills and judgement to use it effectively and, most importantly, safely.</p>
-  </section>
-
-  <section class="block">
-    <h2>My view on AI</h2>
-    <p class="philo" style="margin-top:14px">AI is a tool that speeds up tasks. It doesn't replace professional judgement. I don't see it as a threat; I see it as a way to add time to the working day without adding hours.</p>
-    <p style="color:var(--ink-2);max-width:44em;margin:0">The thinking that matters most stays with us: what's true, what's right for this person, and what to do next. My job is to help people hand AI the work that slows them down, so they have more time for the work only they can do.</p>
   </section>
 
   <figure class="quote">
@@ -826,9 +870,11 @@ table.cmp{ width:100%; border-collapse:collapse; font-size:15px; table-layout:fi
         <span class="when">January 2024 to now</span>
         <div><h3>Regional Director, Middle East and North Africa</h3><p class="org">YPO (Young Presidents' Organization)</p>
           <ul>
-            <li>Lead governance, operations, communications and member engagement across 27 chapters of chief executives.</li>
-            <li>YPO's AI Champion: primarily supporting Regional Directors across EMEA and APAC, plus the entire department and cross-department teams.</li>
-            <li>Supported AI trainings delivered alongside AI leaders to CEO and C-suite audiences.</li>
+            <li>Lead the MENA management team, and governance, operations, communications and member engagement across 27 chapters of chief executives.</li>
+            <li>YPO's AI Champion: developed AI training for my management team, who now act as AI Champions for the organisation, and support Regional Directors across EMEA and APAC plus teams across YPO.</li>
+            <li>Shared AI use cases with departments and IT, leading to enterprise adoption and a proper AI policy across the organisation.</li>
+            <li>Supported in-person AI training for CEOs in 13 countries, and run an AI Workshop for members that has visited chapters across the region, consistently rated 4.8 or above.</li>
+            <li>Write and amend chapter and regional bylaws and operations manuals, and coordinate the FY27 to 29 Regional Officer Elections.</li>
             <li>Used AI to deliver a project in two weeks that previously took five months.</li>
             <li>Achieved every regional KPI by the end of Q3, except the one tied to events that must take place in Q4.</li>
             <li>Built the United MENA Playbook: used by every chapter in the region, with management-directed questions down 30%.</li>
@@ -904,47 +950,61 @@ table.cmp{ width:100%; border-collapse:collapse; font-size:15px; table-layout:fi
 
   <section class="block">
     <h2>Who I support</h2>
-    <p class="sub">My main focus is YPO's Regional Directors across EMEA and APAC. I also support the entire department and teams across other departments.</p>
+    <p class="sub">I lead the management team for the Middle East and North Africa, and support teams and members well beyond it.</p>
     <div class="four">
-      <div class="cell hl"><h3>Regional Directors, EMEA and APAC</h3><p>My main focus. Hands-on support so they can use AI in their own regional work and complete their KPIs.</p></div>
-      <div class="cell"><h3>The whole department</h3><p>AI updates at associate meetings, and training on the functions that make our roles more efficient.</p></div>
-      <div class="cell"><h3>Other departments</h3><p>Templates and methods that help teams across YPO use AI accurately and on brand.</p></div>
-      <div class="cell"><h3>CEOs and C-suite</h3><p>AI sessions for YPO members, delivered alongside AI leaders and focused on decisions, not features.</p></div>
+      <div class="cell hl"><h3>My MENA management team</h3><p>I developed training to support my team. They now act as AI Champions for the organisation, sharing tools and resources and training other teams at their level to use AI effectively.</p></div>
+      <div class="cell"><h3>Regional Directors, EMEA and APAC</h3><p>Hands-on support so they can use AI in their own regional work and complete their KPIs.</p></div>
+      <div class="cell"><h3>The department and other teams</h3><p>AI updates at associate meetings, plus templates and methods that help teams across YPO use AI accurately and on brand.</p></div>
+      <div class="cell"><h3>CEOs and executives</h3><p>We share our AI training with members too, through an AI Workshop that visits chapters across the region.</p></div>
     </div>
   </section>
 
-  <section class="block">
-    <h2>Why I'm a strong facilitator</h2>
+  <section class="block" id="facilitation" style="scroll-margin-top:16px">
+    <h2>Facilitation</h2>
     <p class="sub">My MSc in Education from the University of Oxford was in how adults learn, and I've spent my career in training roles: national training programmes at the UAE Ministry of Education, then forum and learning programmes for YPO. I design sessions around real work, read the room and adapt in the moment, so senior people leave able to do something new, not just aware of it.</p>
     <div class="creds-row"><span>Oxford MSc in Education</span><span>Facilitator trainings for CEOs</span><span>Train-the-trainer design</span><span>Sessions in every YPO region</span></div>
+
+    <h3 class="sec">Where I've delivered training</h3>
+    <div class="places">
+      <div class="place p-blue"><b class="big">13 countries</b><h4><span class="nw">In-person</span> AI training with CEOs</h4><p>Delivered alongside AI leaders, with AI tools used live in the room.</p><div class="countries" aria-label="Countries"><span>UAE</span><span>Pakistan</span><span>UK</span><span>Spain</span><span>Australia</span><span>Singapore</span><span>Thailand</span><span>US</span><span>Canada</span><span>Tunisia</span><span>Morocco</span><span>Cyprus</span><span>Turkey</span></div></div>
+      <div class="place p-pink"><b class="big">Rated 4.8+</b><h4>Our AI Workshop for members</h4><p>As a region, we share our AI training with CEO and executive members, not just our own team. The workshop has visited chapters in:</p><div class="countries" aria-label="Chapters visited"><span>Dubai</span><span>Saudi Arabia</span><span>Jordan</span><span>Palestine</span><span>Pakistan</span><span>Morocco</span><span>Tunisia</span><span>Oman</span><span>Qatar</span><span>Kuwait</span><span>Bahrain</span><span>Lebanon</span><span>Egypt</span></div></div>
+    </div>
+
+    <h3 class="sec">The training kit</h3>
+    <div class="mats">
+      <a class="mat m-blue" href="https://canva.link/7yug4g97w7ci1kx" target="_blank" rel="noopener"><small>Presentation, 21 slides</small><b>The session deck</b><span>The train-the-trainer edition, with a full script in the speaker notes.</span><em>Open in Canva</em></a>
+      <a class="mat m-pink" href="https://canva.link/vxg58w4xnru9yq6" target="_blank" rel="noopener"><small>Workbook, 8 pages</small><b>Participant workbook</b><span>Three activities, two job aids and sample meeting notes for practice.</span><em>Open in Canva</em></a>
+      <a class="mat m-mint" href="https://canva.link/m6kyjw1m2hfo142" target="_blank" rel="noopener"><small>Guide</small><b>Facilitator guide</b><span>Learning outcomes, timings and preparation, so the session runs the same every time.</span><em>Open in Canva</em></a>
+    </div>
+    <p class="note">Built for the fictional PMO Enterprises. Every piece was created with AI, using my brand and learning methods: <a href="#/work" data-scroll="proj-training">see how in Real use cases</a>.</p>
   </section>
 
   <section class="block">
     <h2>What changed</h2>
-    <div class="three" style="margin-top:18px">
-      <div class="stat s-pink"><b class="num">4.8–4.9/5</b><span>My trainings and board meetings consistently rate 4.8–4.9 out of 5</span></div>
-      <div class="stat s-mint"><b>EMEA + APAC</b><span>The regions I primarily support, plus the whole department</span></div>
-      <div class="stat s-blue"><b class="num">13 countries</b><span>Where I've supported in-person training with CEOs, using AI tools</span></div>
+    <div class="changed">
+      <div class="stat s-pink"><b class="num">4.8–4.9/5</b><span>Consistently achieved in Chapter Board Meetings and trainings</span></div>
+      <div class="stat s-sun"><b>&ldquo;Highly valuable&rdquo;</b><span>How CEOs describe the sessions</span></div>
+      <div class="stat s-mint"><b>Months to weeks</b><span>Production time for meeting materials, cut with AI</span></div>
+      <div class="stat s-lilac"><b>All KPIs met</b><span>More visibility on data and tracking, so every KPI in the region was met</span></div>
+      <div class="stat s-blue"><b>Enterprise adoption</b><span>Sharing use cases with departments and IT led to enterprise adoption and a proper AI policy across the organisation</span></div>
     </div>
-    <div class="countries" aria-label="Countries"><span>UAE</span><span>Pakistan</span><span>UK</span><span>Spain</span><span>Australia</span><span>Singapore</span><span>Thailand</span><span>US</span><span>Canada</span><span>Tunisia</span><span>Morocco</span><span>Cyprus</span><span>Turkey</span></div>
   </section>
 
   <section class="block">
     <h2>My signature session: AI for executive teams</h2>
-    <p class="sub">Ninety minutes, built so every leader leaves having done real work with AI, not just watched it.</p>
-    <ol class="seq">
-      <li><div><b>What AI is good at, and what it isn't</b><span>Set honest expectations before anyone types a word.</span></div><em>10 min</em></li>
-      <li><div><b>A live demo on a task from the room</b><span>Their problem, not a polished example.</span></div><em>15 min</em></li>
-      <li><div><b>How to ask: intent, detail and tone</b><span>One pattern that works in any tool.</span></div><em>15 min</em></li>
-      <li><div><b>Try it on your own work</b><span>In pairs, on something due this week.</span></div><em>25 min</em></li>
-      <li><div><b>Judgement and guardrails</b><span>What stays human, and what never goes into a tool.</span></div><em>10 min</em></li>
-      <li><div><b>Commit to one workflow</b><span>For the next 30 days, with a check-in booked.</span></div><em>15 min</em></li>
+    <p class="sub">Ninety minutes, built so every leader leaves having done real work with AI, not just watched it. Each block rests on a principle of how adults learn.</p>
+    <ol class="session">
+      <li><div class="blk"><b>What AI is good at, and what it isn't</b><span>Set honest expectations before anyone types a word.</span></div><div class="pr"><em>Knowles' andragogy</em><span>Senior people learn when it's relevant and builds on their experience, so we start with their questions and doubts.</span></div><span class="t">10 min</span></li>
+      <li><div class="blk"><b>A live demo on a task from the room</b><span>Their problem, not a polished example.</span></div><div class="pr"><em>Merrill's first principles</em><span>Show first: one worked example on a real problem before anyone tries it.</span></div><span class="t">15 min</span></li>
+      <li><div class="blk"><b>How to ask: intent, detail and tone</b><span>One pattern that works in any tool.</span></div><div class="pr"><em>Mayer's multimedia principles</em><span>Cut anything that doesn't help: short segments, plain screens, one idea at a time.</span></div><span class="t">15 min</span></li>
+      <li><div class="blk"><b>Try it on your own work</b><span>In pairs, on something due this week.</span></div><div class="pr"><em>Action mapping</em><span>Start from the behaviour, not the content: they practise the exact task they need to do differently.</span></div><span class="t">25 min</span></li>
+      <li><div class="blk"><b>Judgement and guardrails</b><span>What stays human, and what never goes into a tool.</span></div><div class="pr"><em>The four Ds</em><span>Discernment and diligence: checking every output, and knowing what stays out of a tool.</span></div><span class="t">10 min</span></li>
+      <li><div class="blk"><b>Commit to one workflow</b><span>For the next 30 days, with a check-in booked.</span></div><div class="pr"><em>70-20-10 and Kirkpatrick</em><span>About 70% of learning comes from doing the job, 20% from other people and 10% from training, so the real learning happens back at the desk. The 30-day check-in measures what changed, not who attended.</span></div><span class="t">15 min</span></li>
     </ol>
-    <div class="acts-row"><a class="btn btn-ink" href="#/work" data-scroll="proj-training">See the full training kit</a></div>
   </section>
 
   <section class="block" id="lesson" style="scroll-margin-top:16px">
-    <h2>Try a three-minute lesson</h2>
+    <h2>Try a <span class="nw">three-minute</span> lesson</h2>
     <p class="sub">A taste of how I teach: one worked example, then you try, then a quick check. It's the "How to ask" block from my signature session.</p>
     <div class="lesson" id="lesson-box">
       <ol class="lesson-steps" aria-label="Lesson progress"><li class="on" aria-current="step">See it</li><li>Try it</li><li>Check it</li></ol>
@@ -978,18 +1038,6 @@ table.cmp{ width:100%; border-collapse:collapse; font-size:15px; table-layout:fi
     </div>
   </section>
 
-  <section class="block">
-    <h2>Six principles behind everything I build</h2>
-    <ul class="principles" style="margin-top:18px">
-      <li><b>Start from the behaviour, not the content.</b><span>I ask what people need to do differently at work, then build only what gets them there.</span><em>Action mapping</em></li>
-      <li><b>Respect what adults already know.</b><span>Senior people learn when it's relevant, self-directed and built on their experience.</span><em>Knowles' andragogy</em></li>
-      <li><b>Show, then hand over.</b><span>One worked example, then a partial one they finish, then their own real task.</span><em>Merrill's first principles</em></li>
-      <li><b>Cut anything that doesn't help.</b><span>Short segments, plain screens, one idea at a time.</span><em>Mayer's multimedia principles</em></li>
-      <li><b>Most learning happens back at the desk.</b><span>The 70-20-10 model says roughly 70% of what we learn comes from doing the job, 20% from other people, such as coaching and feedback, and only 10% from formal training. So job aids, champions and office hours do more than any single session.</span><em>70-20-10</em></li>
-      <li><b>Measure what changed, not who attended.</b><span>Behaviour at 30 days matters more than the rating on the day.</span><em>Kirkpatrick's four levels</em></li>
-    </ul>
-  </section>
-
 </div>
 
 <!-- ============================ 3. SAMPLE WORK ============================ -->
@@ -997,15 +1045,48 @@ table.cmp{ width:100%; border-collapse:collapse; font-size:15px; table-layout:fi
   <header class="view-head vh-sun">
     <a class="crumb" href="#/">All work</a>
     <h1 tabindex="-1">Real use cases</h1>
-    <p class="lede">Real ways I use AI at work, from a training kit to the workflows I run every day, each with the results it delivered. Where the original is confidential, I've rebuilt it for a fictional company, PMO Enterprises, with every name and figure changed.</p>
-    <nav class="jump" aria-label="Projects on this page">
+    <p class="lede">Five real ways I use AI at work. They work together: the training builds confidence, the playbook and report give leaders what they need, and board meetings and everyday workflows turn it into action. Where the original is confidential, I've rebuilt it for a fictional company, PMO Enterprises, with every name and figure changed.</p>
+    <nav class="jump" aria-label="On this page">
+      <a href="#/work" data-scroll="results">Real results</a>
       <a href="#/work" data-scroll="proj-training">01 AI for executive teams</a>
       <a href="#/work" data-scroll="proj-playbook">02 Governance playbook</a>
       <a href="#/work" data-scroll="proj-report">03 Chapter Overview Report</a>
       <a href="#/work" data-scroll="proj-board">04 Board meetings in a box</a>
-      <a href="#/work" data-scroll="proj-build">05 How I build with AI</a>
+      <a href="#/work" data-scroll="proj-build">05 Everyday workflows</a>
     </nav>
   </header>
+
+  <section class="block" id="results" style="scroll-margin-top:16px">
+    <h2>Real results</h2>
+    <p class="sub">These results don't belong to any one use case. The training, playbook, report, board meetings and everyday workflows support one another, and together they delivered this.</p>
+    <div class="results-grid">
+      <div class="stat s-blue"><b class="num">97%</b><span>Chapter Officers attending training</span></div>
+      <div class="stat s-sun"><b class="num">12%</b><span>Improvement in member engagement</span></div>
+      <div class="stat s-mint"><b class="num">5%</b><span>Improvement in Forum participation</span></div>
+      <div class="stat s-pink"><b class="num">Highest</b><span>Number of applicants to join the regional board</span></div>
+      <div class="stat s-lilac"><b class="num">27 of 27</b><span>Chapters using the playbook regularly</span></div>
+      <div class="stat s-mint"><b class="num">30% fewer</b><span>Management-directed questions from chapters</span></div>
+      <div class="stat s-lilac"><b class="num">End of Q3</b><span>Regional KPIs achieved*</span></div>
+      <div class="stat s-pink"><b class="num">97%</b><span>Membership retention, leading YPO globally on renewals</span></div>
+      <div class="stat s-blue"><b class="num">4.8–4.9/5</b><span>Chapter Board Meetings and trainings</span></div>
+      <div class="stat s-sun"><b class="num">Record</b><span>Satisfaction score at the Cyprus Regional Board Meeting, with 60 chapter leaders</span></div>
+      <div class="stat s-sun"><b class="num">10 to 1</b><span>Sources brought together into one report</span></div>
+      <div class="stat s-pink"><b class="num">5 months to 2 weeks</b><span>A project's lead time, cut using AI</span></div>
+      <div class="stat s-blue"><b class="num">60% to 100%</b><span>Platinum chapters in one year, after a peer-learning programme I wrote</span></div>
+      <div class="stat s-mint"><b class="num">Now mandatory</b><span>A session I co-designed, piloted in MENA, now required worldwide</span></div>
+      <div class="stat s-lilac"><b class="num">Exceeds</b><span>Expectations rating, with the time AI frees used to help other regions</span></div>
+    </div>
+    <p class="note">*Every KPI except the one tied to events that must take place in Q4.</p>
+    <h3 class="sec">What it changed</h3>
+    <div class="three">
+      <div class="cell hl"><h3>Leaders with the right tools</h3><p>Chapter Officers understand and run their roles, complete succession planning and hand over meaningfully. This is why 97% now attend training.</p><div class="from"><span>Training</span><span>Playbook</span></div></div>
+      <div class="cell"><h3>A consultative support model</h3><p>With all the information in one place, we changed our support strategy to a more consultative approach.</p><div class="from"><span>Report</span><span>Playbook</span></div></div>
+      <div class="cell"><h3>Targeted chapter visits</h3><p>More targeted feedback for every Chapter Visit, from one report shared before each visit.</p><div class="from"><span>Report</span></div></div>
+      <div class="cell"><h3>Visibility for leaders</h3><p>Better visibility for Executive Officers and Chairs, and support with Executive Officer handover.</p><div class="from"><span>Report</span><span>Playbook</span></div></div>
+      <div class="cell"><h3>Stronger follow-up</h3><p>Stronger, more valuable follow-up after every board meeting.</p><div class="from"><span>Board meetings</span><span>Everyday workflows</span></div></div>
+      <div class="cell"><h3>Data that travels</h3><p>The same data now feeds board submissions and policy proposals.</p><div class="from"><span>Report</span></div></div>
+    </div>
+  </section>
 
   <!-- 01 Training kit -->
   <section class="project" id="proj-training" aria-labelledby="pj1">
@@ -1013,21 +1094,18 @@ table.cmp{ width:100%; border-collapse:collapse; font-size:15px; table-layout:fi
       <span class="proj-num" aria-hidden="true">01</span>
       <div>
         <span class="proj-kicker">Training kit</span>
-        <h2 id="pj1">AI for executive teams</h2>
-        <p class="proj-lede">My signature 90-minute session, packaged as a train-the-trainer kit so any trainer can run it. Every leader leaves having done real work with AI, not just watched it.</p>
+        <h2 id="pj1">AI for executive teams, built end to end with AI</h2>
+        <p class="proj-lede">My signature session, packaged as a train-the-trainer kit: a 21-slide deck with a full trainer script, a participant workbook and a facilitator guide. Every piece was created with AI, using my brand and my learning methodology.</p>
       </div>
     </div>
-    <div class="mats">
-      <a class="mat m-blue" href="https://canva.link/7yug4g97w7ci1kx" target="_blank" rel="noopener"><small>Presentation, 21 slides</small><b>The session deck</b><span>The train-the-trainer edition, with a full script in the speaker notes.</span><em>Open in Canva</em></a>
-      <a class="mat m-pink" href="https://canva.link/vxg58w4xnru9yq6" target="_blank" rel="noopener"><small>Workbook, 8 pages</small><b>Participant workbook</b><span>Three activities, two job aids and sample meeting notes for practice.</span><em>Open in Canva</em></a>
-      <a class="mat m-mint" href="https://canva.link/m6kyjw1m2hfo142" target="_blank" rel="noopener"><small>Guide</small><b>Facilitator guide</b><span>Learning outcomes, timings and preparation, so the session runs the same every time.</span><em>Open in Canva</em></a>
-    </div>
-    <p class="note">Built for the fictional PMO Enterprises from the session I run.</p>
-    <h3 class="rw">Real-world results</h3>
-    <div class="three">
-      <div class="stat s-pink"><b class="num">4.8–4.9/5</b><span>How my trainings and board meetings consistently rate</span></div>
-      <div class="stat s-mint"><b class="num">60% to 100%</b><span>Platinum chapters in one year, after I wrote a peer-learning programme and trained its trainers</span></div>
-      <div class="stat s-lilac"><b>Now mandatory</b><span>A session I co-designed with YPO's global Learning team, piloted in my region, now required worldwide</span></div>
+    <div class="proj-acts"><a class="btn btn-ink" href="#/training" data-scroll="facilitation">See the finished kit</a></div>
+
+    <h3 class="sec">How AI built it</h3>
+    <div class="flow"><span>A brief from real needs: what leaders must do differently</span><span><span>Learning design block by block: Knowles, Merrill, Mayer and <span class="nw">70-20-10</span></span></span><span>My brand applied: colours, fonts and the PMO Enterprises logo</span><span>The deck built in Canva, with a full script in the speaker notes</span><span>Workbook activities and a facilitator guide to match</span></div>
+
+    <div class="two" style="margin-top:16px">
+      <div class="cell"><h3>What AI did</h3><p>Drafted the structure, slides, trainer script, activities and guide, applied the brand and built every piece in Canva through a connector.</p></div>
+      <div class="cell hl"><h3>What I did</h3><p>Set the outcomes, chose the learning methods, checked every slide and activity, and decided what stayed in.</p></div>
     </div>
   </section>
 
@@ -1054,18 +1132,6 @@ table.cmp{ width:100%; border-collapse:collapse; font-size:15px; table-layout:fi
       <div class="cell"><h3>Approach</h3><p>One web playbook built with AI: 13 sections, a live commitments dashboard, a regional calendar and an assistant that answers only from playbook content. I piloted it confidentially with regional leadership, then rolled it out with a signed acknowledgement from every chapter chair.</p></div>
       <div class="cell hl"><h3>Result</h3><p>Every chapter in the region uses it regularly, and management-directed questions fell by 30%, freeing my team for the work that needs people.</p></div>
     </div>
-
-    <h3 class="sec">How I built it with AI</h3>
-    <div class="flow"><span>Gather feedback from leaders</span><span>Design the structure and content with AI</span><span>Build the playbook and its assistant</span><span>Roll out with sign-off from every chair</span><span>Measure use and questions, then improve</span></div>
-
-    <h3 class="rw">Real-world results</h3>
-    <div class="four">
-      <div class="stat s-sun"><b class="num">27 of 27</b><span>YPO MENA chapters have accessed the playbook and use it regularly</span></div>
-      <div class="stat s-mint"><b class="num">30% fewer</b><span>Management-directed questions from chapters</span></div>
-      <div class="stat s-lilac"><b>End of Q3</b><span>Regional KPIs achieved, a full quarter ahead of year end*</span></div>
-      <div class="stat s-pink"><b class="num">97%</b><span>Membership retention in the region, leading YPO globally on renewals</span></div>
-    </div>
-    <p class="note">*Every KPI except the one tied to events that must take place in Q4. The first two results come from the playbook itself. The last two are regional results from the same period, which the playbook supports alongside my team's wider work.</p>
   </section>
 
   <!-- 03 Report -->
@@ -1103,16 +1169,6 @@ table.cmp{ width:100%; border-collapse:collapse; font-size:15px; table-layout:fi
       <div class="cell"><h3>Approach</h3><p>One report with every source matched to a single chapter name and refreshed on a fixed cadence. A concern score ranks chapters, and each one opens into a full profile with a suggested focus for the next visit.</p></div>
       <div class="cell hl"><h3>Result</h3><p>Regional chairs get one link before every chapter visit, with a clear focus for each conversation. The same data now feeds board submissions and policy proposals.</p></div>
     </div>
-
-    <h3 class="sec">How I built it with AI</h3>
-    <div class="flow"><span>Pull data from ten sources</span><span>Match every chapter to one name</span><span>Check every number before it's shared</span><span>One report, ranked by who needs support</span><span>Shared before every chapter visit</span></div>
-
-    <h3 class="rw">Real-world results</h3>
-    <div class="three">
-      <div class="stat s-lilac"><b class="num">10 to 1</b><span>Sources brought together into one report, matched to a single name for every chapter</span></div>
-      <div class="stat s-sun"><b>Every visit</b><span>Regional chairs get one link before each chapter visit, with a suggested focus</span></div>
-      <div class="stat s-mint"><b>Reused</b><span>The same data now feeds board submissions and policy proposals</span></div>
-    </div>
   </section>
 
   <!-- 04 Board meetings -->
@@ -1122,7 +1178,7 @@ table.cmp{ width:100%; border-collapse:collapse; font-size:15px; table-layout:fi
       <div>
         <span class="proj-kicker">Events</span>
         <h2 id="pj4">Board meetings in a box</h2>
-        <p class="proj-lede">I design and run board meetings for YPO's CEOs and regional leaders, building every deliverable with AI from the agenda up. This is what went into YPO MENA's Regional Board Meeting in Cyprus in June 2026. The materials belong to YPO members, so they aren't shared here; the training kit above shows the same way of working.</p>
+        <p class="proj-lede">I design and run board meetings for YPO's CEOs and regional leaders, building every deliverable with AI from the agenda up. They consistently rate 4.8–4.9 out of 5. This is what went into YPO MENA's Regional Board Meeting in Cyprus in June 2026; the materials belong to YPO members, so they aren't shared here.</p>
       </div>
     </div>
 
@@ -1135,47 +1191,43 @@ table.cmp{ width:100%; border-collapse:collapse; font-size:15px; table-layout:fi
       <div class="cell"><h3>The moments people remember</h3><p>A dinner speech, a new chapter spotlight panel and a team challenge on the water.</p></div>
       <div class="cell"><h3>Follow-up</h3><p>Emails, WhatsApp messages and social captions, ready to review and send.</p></div>
     </div>
-
-    <h3 class="sec">How I built it with AI</h3>
-    <div class="flow"><span>Agenda and objectives</span><span>Presentation on brand</span><span>Facilitator cue cards, one per slide, timed</span><span>Briefing packs and table activities</span><span>Follow-up messages in the chair's voice</span></div>
-
-    <h3 class="rw">Real-world results</h3>
-    <div class="two">
-      <div class="stat s-pink"><b>Record</b><span>Satisfaction score for the Regional Board Meeting in Cyprus</span></div>
-      <div class="stat s-sun"><b class="num">60</b><span>Participants in one connection activity, designed for the whole room</span></div>
-    </div>
   </section>
 
-  <!-- 05 How I build with AI -->
+  <!-- 05 Everyday workflows -->
   <section class="project" id="proj-build" aria-labelledby="pj5">
     <div class="proj-head">
       <span class="proj-num" aria-hidden="true">05</span>
       <div>
-        <span class="proj-kicker">Everyday workflows</span>
-        <h2 id="pj5">How I build with AI</h2>
-        <p class="proj-lede">I treat AI like a new team member: it gets the context once, the right tools for the job and access to where the work lives. Then I check its work.</p>
+        <span class="proj-kicker">Everyday AI</span>
+        <h2 id="pj5">Everyday workflows</h2>
+        <p class="proj-lede">I treat AI like a new team member: it gets the context once, the right tools for the job and access to where the work lives. Then I check its work. These are the workflows I run every week.</p>
       </div>
     </div>
 
-    <h3 class="sec">My stack, layer by layer</h3>
-    <div class="stack">
-      <div class="layer"><h3>Context</h3><p>Each workstream has its own project, with the method, rules and history written down, so I never re-explain the job.</p></div>
-      <div class="layer"><h3>Skills</h3><p>Packaged know-how for a kind of task: Word reports, PDFs, spreadsheets and slide decks, built to the same standard every time.</p></div>
-      <div class="layer"><h3>Connectors</h3><p>Live access to the apps where work lives, such as email, calendars, files and Monday.com, so AI reads the source instead of a copy and paste.</p></div>
-      <div class="layer"><h3>Plugins</h3><p>Bundles of skills, connectors and commands for a team process, so a workflow I design can be installed by colleagues, not just used by me.</p></div>
-      <div class="layer"><h3>Publish and measure</h3><p>Shareable web pages for teams, an assistant that answers from approved content only, and usage tracking so I know what's working.</p></div>
-    </div>
-
-    <h3 class="sec">Two workflows I run every day</h3>
     <div class="wf">
       <h3>Drafting replies to email automatically</h3>
       <div class="flow"><span>An email arrives in Outlook</span><span>AI reads the whole thread and its attachments</span><span>It drafts a reply in my voice, unsent</span><span>I check recipients, facts, tone and promises</span><span>I edit if needed, and send</span></div>
       <p class="out"><b>Why it matters:</b> routine replies take minutes instead of a morning, and nothing leaves without my judgement.</p>
     </div>
     <div class="wf">
+      <h3>Designing, running and measuring playbooks</h3>
+      <div class="flow"><span>Gather feedback from leaders</span><span>Design the structure and content with AI</span><span>Build the playbook and its assistant</span><span>Roll out with sign-off from every chair</span><span>Measure use and questions, then improve</span></div>
+      <p class="out"><b>Why it matters:</b> every YPO MENA chapter uses the playbook, and questions to management fell by 30%.</p>
+    </div>
+    <div class="wf">
       <h3>Turning meetings into action</h3>
       <div class="flow"><span>Meeting notes or transcript</span><span>AI pulls out decisions and action points</span><span>Actions created in Monday.com, with owners and dates</span><span>Follow-up emails drafted</span><span>Notes saved for the next meeting</span></div>
       <p class="out"><b>Why it matters:</b> nothing agreed in a meeting gets lost, and the next meeting starts where the last one ended.</p>
+    </div>
+    <div class="wf">
+      <h3>Board meeting deliverables for C-suite and regional leadership</h3>
+      <div class="flow"><span>Agenda and objectives</span><span>Presentation on brand</span><span>Facilitator cue cards, one per slide, timed</span><span>Briefing packs and table activities</span><span>Follow-up messages in the chair's voice</span></div>
+      <p class="out"><b>Why it matters:</b> board meetings consistently rate 4.8–4.9 out of 5, and Cyprus received a record satisfaction score.</p>
+    </div>
+    <div class="wf">
+      <h3>Reporting for success</h3>
+      <div class="flow"><span>Pull data from ten sources</span><span>Match every chapter to one name</span><span>Check every number before it's shared</span><span>One report, ranked by who needs support</span><span>Shared before every chapter visit</span></div>
+      <p class="out"><b>Why it matters:</b> regional chairs walk into every visit knowing what to focus on.</p>
     </div>
 
     <h3 class="sec">Rules I work by</h3>
@@ -1185,12 +1237,6 @@ table.cmp{ width:100%; border-collapse:collapse; font-size:15px; table-layout:fi
       <div class="cell"><h3>Keep sensitive content apart</h3><p>Confidential material never goes into shared views.</p></div>
       <div class="cell"><h3>A human sends</h3><p>AI drafts. I decide what leaves my outbox.</p></div>
     </div>
-
-    <h3 class="rw">Real-world results</h3>
-    <div class="two">
-      <div class="stat s-blue"><b class="num">5 months to 2 weeks</b><span>A project's lead time, cut using AI</span></div>
-      <div class="stat s-mint"><b>Exceeds</b><span>Expectations rating, with the time AI frees used to help other regions hit their KPIs</span></div>
-    </div>
   </section>
 </div>
 
@@ -1199,15 +1245,18 @@ table.cmp{ width:100%; border-collapse:collapse; font-size:15px; table-layout:fi
   <header class="view-head vh-lilac">
     <a class="crumb" href="#/">All work</a>
     <h1 tabindex="-1">AI governance</h1>
-    <p class="lede">Governance is what lets people use AI with confidence. I've written government policy and helped leadership teams write the rules they run on, and I bring the same discipline to AI: clear use cases, the right people signing off, the right tools, and confidential information kept where it belongs.</p>
+    <p class="lede">Governance is what lets people use AI with confidence. I've written national policy and curriculum, and the bylaws and manuals organisations run on, and I bring the same discipline to AI: clear use cases, the right people signing off, the right tools, and confidential information kept where it belongs.</p>
   </header>
 
   <section class="block">
     <h2>Where my governance experience comes from</h2>
-    <div class="gov-grid three-up">
-      <article class="gcard g-blue"><span class="gk">Policy</span><h3>Written government policy</h3><p>I wrote government policy for the Ministry of Education in the UAE.</p></article>
-      <article class="gcard g-sun"><span class="gk">Rules</span><h3>Chapter bylaws</h3><p>I support YPO chapters in writing, developing and amending their bylaws, so each one runs to the organisation's standards.</p></article>
-      <article class="gcard g-mint"><span class="gk">Sign-off</span><h3>Use cases shared with IT and policy makers</h3><p>Before an AI use case goes wider, I share it with IT and policy makers: what it does, the data it touches and the guardrails around it.</p></article>
+    <div class="gov-grid gov5">
+      <article class="gcard g-blue wide"><span class="gk">Government</span><h3>National policy and curriculum, rolled out nationwide</h3><p>At the UAE Ministry of Education, I led policy frameworks and national curricula aligned with the UAE Vision 2021 National Agenda, adopted across the UAE and the wider Gulf region.</p>
+        <ul class="glist"><li>Project lead, National English Language Curriculum Framework (2019)</li><li>Project lead, National Literacy and Communication Framework (2021)</li><li>Co-developer, English Language Curriculum Framework of Excellence (2022)</li><li>Project lead, Academic Writing Curriculum, grades 1 to 12 (2018)</li></ul></article>
+      <article class="gcard g-sun"><span class="gk">Chapters</span><h3>Chapter bylaws</h3><p>I support YPO's chapters in writing, developing and amending their bylaws against the regional template. The Chapter Overview Report flags any gaps before each visit.</p></article>
+      <article class="gcard g-mint"><span class="gk">Region</span><h3>Regional bylaws</h3><p>I help write and amend the bylaws that set how the region itself is led, and coordinate the FY27 to 29 Regional Officer Elections and each year's officer handover.</p></article>
+      <article class="gcard g-pink"><span class="gk">Operations</span><h3>Operations manuals</h3><p>I write the manuals chapters run on: the United MENA Playbook, onboarding checklists and governance templates for incoming chapter boards, and a budgeting and tracking system now used by several YPO regions.</p></article>
+      <article class="gcard g-lilac"><span class="gk">AI</span><h3>AI use cases shared across the organisation</h3><p>I work with internal teams and IT to share real AI use cases, so AI is used safely and consistently. This led to enterprise adoption and a proper AI policy across the organisation.</p></article>
     </div>
   </section>
 
@@ -1228,17 +1277,6 @@ table.cmp{ width:100%; border-collapse:collapse; font-size:15px; table-layout:fi
         <tr class="pick"><th scope="row">I'd choose it when</th><td data-p="ChatGPT Enterprise">People already use ChatGPT and want one assistant that reaches across many apps.</td><td data-p="Claude Enterprise">The work is long documents, analysis and writing to a set standard, across Google and Microsoft tools.</td><td data-p="Microsoft 365 Copilot">The business runs on Microsoft 365 and wants AI inside the tools people already use.</td></tr>
         </tbody>
       </table>
-    </div>
-  </section>
-
-  <section class="block">
-    <h2>How I'd help a business decide</h2>
-    <p class="sub">The right platform depends less on features than on where the work happens and who will look after it.</p>
-    <div class="four">
-      <div class="cell"><h3>Where does the work live?</h3><p>Microsoft 365, Google Workspace or a mix. Start where people already spend their day.</p></div>
-      <div class="cell"><h3>What's the first job?</h3><p>Pick one real workflow and test it on each platform with the people who'd use it.</p></div>
-      <div class="cell"><h3>Who will govern it?</h3><p>IT, legal and the business agree the guardrails before rollout.</p></div>
-      <div class="cell"><h3>How will we know?</h3><p>Take a baseline first, then track first use, weekly use and time saved.</p></div>
     </div>
     <ul class="srcs" aria-label="Sources">
       <li><a href="https://help.openai.com/en/articles/10128477-chatgpt-enterprise-and-edu-release-notes" target="_blank" rel="noopener">OpenAI: ChatGPT Enterprise and Edu release notes</a></li>
