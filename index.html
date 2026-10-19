@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Paige Elizabeth Morgan | AI enablement</title>
-<meta name="description" content="Paige Elizabeth Morgan: AI Champion, facilitator and learning designer, relocating to London. Training, sample work with real-world results, AI governance, an AI platform comparison and a 90-day plan for AI enablement.">
+<meta name="description" content="Paige Elizabeth Morgan: AI Champion, facilitator and learning designer, relocating to London. Training, sample work with real-world results, AI governance and platform choice, how I build with AI, and a 90-day plan for AI enablement.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Geist:wght@400;500;600&display=swap" rel="stylesheet">
@@ -607,6 +607,14 @@ table.cmp{ width:100%; border-collapse:collapse; font-size:15px; table-layout:fi
 @media (max-width:640px){ .links-list div{ grid-template-columns:1fr; gap:2px; } }
 .built a{ color:#fff; font-weight:600; text-underline-offset:3px; }
 
+.brand-row{ display:flex; gap:18px 22px; align-items:center; flex-wrap:wrap; background:var(--paper); border-radius:16px; padding:18px 20px; }
+.mini-sw{ display:flex; gap:6px; flex:none; }
+.mini-sw i{ width:34px; height:34px; border-radius:50%; }
+.brand-row p{ margin:0; flex:1; min-width:240px; color:var(--ink-2); font-size:15.5px; }
+.brand-row p b{ color:var(--ink); }
+.t-plan{ grid-column:3 / 5; }
+@media (max-width:1100px){ .t-plan{ grid-column:1 / -1; } }
+
 /* three-minute lesson */
 .lesson{ background:var(--paper); border-radius:20px; padding:24px; }
 .lesson-steps{ list-style:none; margin:0 0 20px; padding:0; display:flex; gap:8px; flex-wrap:wrap; counter-reset:ls; }
@@ -687,13 +695,13 @@ table.cmp{ width:100%; border-collapse:collapse; font-size:15px; table-layout:fi
     <a class="tile t-training" href="#/training" style="--i:2">
       <div class="row"><span class="tag">Enablement</span><span class="go" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9h11M9.5 4.5 14 9l-4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
       <h2>Training colleagues and CEOs to use AI</h2>
-      <div class="pv pv-chips" aria-hidden="true"><span>EMEA + APAC</span><span>Departments</span><span>CEOs</span></div>
+      <div class="pv pv-chips" aria-hidden="true"><span>EMEA + APAC</span><span>CEOs</span><span>4C framework</span></div>
     </a>
 
     <a class="tile t-gov" href="#/governance" style="--i:3">
       <div class="row"><span class="tag">Governance</span><span class="go" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9h11M9.5 4.5 14 9l-4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
       <h2>AI governance</h2>
-      <div class="pv pv-chips" aria-hidden="true"><span>Policy</span><span>Bylaws</span><span>IT sign-off</span></div>
+      <div class="pv pv-chips" aria-hidden="true"><span>Policy</span><span>Bylaws</span><span>Choosing tools</span></div>
     </a>
 
     <a class="tile t-work" href="#/work" style="--i:4">
@@ -709,38 +717,19 @@ table.cmp{ width:100%; border-collapse:collapse; font-size:15px; table-layout:fi
 
     <a class="tile t-workflows" href="#/workflows" style="--i:5">
       <div class="row"><span class="tag">How I build</span><span class="go" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9h11M9.5 4.5 14 9l-4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
-      <h2>AI workflows</h2>
-      <p>Skills, connectors and plugins working together, with five example workflows I run.</p>
+      <h2>How I build with AI</h2>
+      <p>My AI stack, five workflows I run, and how I built this site.</p>
       <div class="pv pv-flow" aria-hidden="true"><span>Context</span><b></b><span>Skills</span><b></b><span>Connectors</span><b></b><span>Plugins</span><b></b><span>Done</span></div>
     </a>
 
-    <a class="tile t-platforms" href="#/platforms" style="--i:6">
-      <div class="row"><span class="tag">Compared</span><span class="go" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9h11M9.5 4.5 14 9l-4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
-      <h2>Choosing an AI platform</h2>
-      <p>ChatGPT, Claude and Microsoft 365 Copilot, compared for the people who'll use them every day.</p>
-      <div class="pv pv-cols" aria-hidden="true"><span>ChatGPT</span><span>Claude</span><span>Copilot</span></div>
-    </a>
-
-    <a class="tile t-plan" href="#/plan" style="--i:7">
+    <a class="tile t-plan" href="#/plan" style="--i:6">
       <div class="row"><span class="tag">Plan</span><span class="go" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9h11M9.5 4.5 14 9l-4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
       <h2>My 90-day plan for AI enablement</h2>
       <p>How I'd start in any business, and the tools I'd bring.</p>
       <div class="pv pv-phases" aria-hidden="true"><span><b>30</b>Listen and baseline</span><span><b>60</b>Pilot and teach</span><span><b>90</b>Prove and scale</span></div>
     </a>
 
-    <a class="tile t-learning" href="#/learning" style="--i:8">
-      <div class="row"><span class="tag">Method</span><span class="go" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9h11M9.5 4.5 14 9l-4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
-      <h2>How I design learning</h2>
-      <div class="pv pv-steps" aria-hidden="true"><span>Curious</span><span>Capable</span><span>Confident</span><span>Champion</span></div>
-    </a>
-
-    <a class="tile t-built" href="#/built" style="--i:9">
-      <div class="row"><span class="tag">Behind the scenes</span><span class="go" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9h11M9.5 4.5 14 9l-4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
-      <h2>How I built this site</h2>
-      <div class="pv pv-swatch" aria-hidden="true"><i style="background:#3346FF"></i><i style="background:#FF5FA2"></i><i style="background:#FFD447"></i><i style="background:#3DDBA6"></i><i style="background:#C8B9FF"></i></div>
-    </a>
-
-    <a class="tile t-gift" href="#/gift" style="--i:10">
+    <a class="tile t-gift" href="#/gift" style="--i:7">
       <div class="gift-text"><span class="tag" style="align-self:flex-start">Free to use</span><h2>A gift for hiring managers</h2><p>A prompt that improves your prompts. Copy it and use it today.</p></div>
       <div class="gift-end"><div class="pv ticket" aria-hidden="true"><div class="main"><small>Admit one</small><b>A prompt that improves your prompts</b></div><div class="stub">GIFT</div></div><span class="go" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9h11M9.5 4.5 14 9l-4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
     </a>
@@ -789,11 +778,6 @@ table.cmp{ width:100%; border-collapse:collapse; font-size:15px; table-layout:fi
     <p style="margin:0">I'm genuinely excited about what AI can do, where it can go, and how I can help companies have the tools, skills and judgement to use it effectively and, most importantly, safely.</p>
   </section>
 
-  <section class="block">
-    <h2>A facilitator first</h2>
-    <p class="sub">I'm at my best in a room of senior leaders. A master's in how adults learn, and years in training roles, mean I can read a room, adapt in the moment and leave people confident, not just informed. I run facilitator trainings and train-the-trainer sessions for CEOs, and my trainings and board meetings consistently rate 4.8–4.9/5.</p>
-    <div class="creds-row"><span>MSc Education, University of Oxford</span><span>Training and Development Manager, UAE Ministry of Education</span><span>Regional Forum and Learning Manager, YPO</span><span>Train-the-trainer for CEOs</span></div>
-  </section>
 
   <section class="block">
     <h2>My view on AI</h2>
@@ -863,10 +847,6 @@ table.cmp{ width:100%; border-collapse:collapse; font-size:15px; table-layout:fi
     </div>
   </section>
 
-  <section class="built" aria-label="How this site was made">
-    <span class="spark" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M12 2v6M12 16v6M2 12h6M16 12h6M5 5l3.5 3.5M15.5 15.5 19 19M19 5l-3.5 3.5M8.5 15.5 5 19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
-    <div><b>This whole site was made with AI.</b><p>I designed and built every page, including the sample playbook, report and training kit, with AI, using the skills I describe here. <a href="#/built">See how I built it</a>.</p></div>
-  </section>
 </div>
 
 <!-- ============================ 2. TRAINING ============================ -->
@@ -953,6 +933,37 @@ table.cmp{ width:100%; border-collapse:collapse; font-size:15px; table-layout:fi
     </div>
   </section>
 
+  <section class="block" id="learning-design" style="scroll-margin-top:16px">
+    <h2>How I design learning: the 4C framework</h2>
+    <p class="sub">My Oxford MSc was in how adults learn. For AI, that means building confidence and judgement, not just teaching features. People sit at different stages, so each stage gets its own learning, not one course for everyone.</p>
+    <div class="four-c">
+      <div class="cstep"><span class="st">Stage 1</span><h3>Curious</h3><p class="who">Has heard the hype, hasn't used AI for real work.</p>
+        <dl><dt>What they need</dt><dd>To see it work on their own task, safely.</dd><dt>What I build</dt><dd>Short live demos on real tasks and a one-page guardrails guide.</dd><dt>How we know</dt><dd>A first real task done within 14 days.</dd></dl></div>
+      <div class="cstep"><span class="st">Stage 2</span><h3>Capable</h3><p class="who">Uses AI for simple tasks, but not consistently.</p>
+        <dl><dt>What they need</dt><dd>A reliable way to ask, and to check.</dd><dt>What I build</dt><dd>Role-based tutorials, prompt patterns and job aids.</dd><dt>How we know</dt><dd>Weekly use and time saved on routine work.</dd></dl></div>
+      <div class="cstep"><span class="st">Stage 3</span><h3>Confident</h3><p class="who">Uses AI daily, and knows when not to.</p>
+        <dl><dt>What they need</dt><dd>Workflows built around their real processes.</dd><dt>What I build</dt><dd>Workflow clinics, team templates, and skills and connectors set up for the team.</dd><dt>How we know</dt><dd>A workflow in daily use, with quality checks built in.</dd></dl></div>
+      <div class="cstep"><span class="st">Stage 4</span><h3>Champion</h3><p class="who">Teaches others and spots new uses.</p>
+        <dl><dt>What they need</dt><dd>Recognition, time and a network.</dd><dt>What I build</dt><dd>Train-the-trainer, a champions network and a shared library.</dd><dt>How we know</dt><dd>Peers trained and new use cases submitted.</dd></dl></div>
+    </div>
+    <div class="base">
+      <div><b>Judgement stays human</b><p>At every stage, AI drafts and people decide. Learning always covers checking the output, not just producing it.</p></div>
+      <div><b>Guardrails from day one</b><p>Everyone knows what can go into which tool before they start, so confidence never outruns safety.</p></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2>Six principles behind everything I build</h2>
+    <ul class="principles" style="margin-top:18px">
+      <li><b>Start from the behaviour, not the content.</b><span>I ask what people need to do differently at work, then build only what gets them there.</span><em>Action mapping</em></li>
+      <li><b>Respect what adults already know.</b><span>Senior people learn when it's relevant, self-directed and built on their experience.</span><em>Knowles' andragogy</em></li>
+      <li><b>Show, then hand over.</b><span>One worked example, then a partial one they finish, then their own real task.</span><em>Merrill's first principles</em></li>
+      <li><b>Cut anything that doesn't help.</b><span>Short segments, plain screens, one idea at a time.</span><em>Mayer's multimedia principles</em></li>
+      <li><b>Most learning happens back at the desk.</b><span>Job aids, champions and office hours do more than any single session.</span><em>70-20-10</em></li>
+      <li><b>Measure what changed, not who attended.</b><span>Behaviour at 30 days matters more than the rating on the day.</span><em>Kirkpatrick's four levels</em></li>
+    </ul>
+  </section>
+
   <section class="block">
     <h2>What I'd do differently</h2>
     <p class="philo" style="margin-top:14px;font-size:clamp(19px,1.9vw,24px)">Apart from wishing I'd started sooner, I'd have set up a formal network of AI champions from day one, so every team had its own go-to person close by, as well as me.</p>
@@ -990,11 +1001,10 @@ table.cmp{ width:100%; border-collapse:collapse; font-size:15px; table-layout:fi
     </div>
     <p class="note">Built for the fictional PMO Enterprises from the session I run. <a href="#/training" data-scroll="lesson">Try a three-minute lesson from it</a>.</p>
     <h3 class="rw">Real-world results</h3>
-    <div class="four">
+    <div class="three">
       <div class="stat s-pink"><b class="num">4.8–4.9/5</b><span>How my trainings and board meetings consistently rate</span></div>
-      <div class="stat s-blue"><b>EMEA + APAC</b><span>Regional Directors I train and support, plus the whole department</span></div>
       <div class="stat s-mint"><b class="num">60% to 100%</b><span>Platinum chapters in one year, after I wrote a peer-learning programme and trained its trainers</span></div>
-      <div class="stat s-lilac"><b>Exceeds</b><span>Expectations rating, with the time AI frees used to help other regions hit their KPIs</span></div>
+      <div class="stat s-lilac"><b>Now mandatory</b><span>A session I co-designed with YPO's global Learning team, piloted in my region, now required worldwide</span></div>
     </div>
   </section>
 
@@ -1011,21 +1021,10 @@ table.cmp{ width:100%; border-collapse:collapse; font-size:15px; table-layout:fi
     <div class="proj-acts"><a class="btn btn-ink" href="demos/playbook-demo.html" target="_blank" rel="noopener">Open the sample playbook</a></div>
 
     <h3 class="sec">The story</h3>
-    <div class="two">
+    <div class="three">
       <div class="cell"><h3>Problem</h3><p>Resources for chapter leaders were spread across folders, emails and systems. Leaders couldn't find what they needed, so they asked the regional office, and new boards took longer to reach the YPO standard.</p></div>
       <div class="cell"><h3>Approach</h3><p>One web playbook built with AI: 13 sections, a live commitments dashboard, a regional calendar and an assistant that answers only from playbook content. I piloted it confidentially with regional leadership, then rolled it out with a signed acknowledgement from every chapter chair.</p></div>
       <div class="cell hl"><h3>Result</h3><p>Every chapter in the region uses it regularly, and management-directed questions fell by 30%, freeing my team for the work that needs people.</p></div>
-      <div class="cell"><h3>What I'd do differently</h3><p>Apart from wishing I'd built it sooner, I'd have recorded a short video tour for each section from day one, for leaders who'd rather watch than read.</p></div>
-    </div>
-
-    <h3 class="sec">What's in the sample</h3>
-    <div class="three">
-      <div class="cell"><h3>Home at a glance</h3><p>Every section, upcoming dates and the most used resources on one page.</p></div>
-      <div class="cell"><h3>13 sections and an appendix</h3><p>From governance and commitments to emergency support, with a directory and glossary.</p></div>
-      <div class="cell"><h3>Ask the Playbook</h3><p>An assistant that answers only from the playbook and declines everything else.</p></div>
-      <div class="cell"><h3>Live tracker, embedded</h3><p>The commitments tracker sits inside the playbook, so leaders need no extra login.</p></div>
-      <div class="cell"><h3>Search</h3><p>Finds any topic across the playbook as you type.</p></div>
-      <div class="cell"><h3>Usage analytics</h3><p>Shows which sections leaders actually read, so content effort goes where it matters.</p></div>
     </div>
 
     <h3 class="rw">Real-world results</h3>
@@ -1064,11 +1063,10 @@ table.cmp{ width:100%; border-collapse:collapse; font-size:15px; table-layout:fi
     </div>
 
     <h3 class="sec">The story</h3>
-    <div class="two">
+    <div class="three">
       <div class="cell"><h3>Problem</h3><p>Ten lenses on chapter performance lived in ten places, refreshed on different dates and named in different ways. Nothing showed which chapters needed support first.</p></div>
       <div class="cell"><h3>Approach</h3><p>One report with every source matched to a single chapter name and refreshed on a fixed cadence. A concern score ranks chapters, and each one opens into a full profile with a suggested focus for the next visit.</p></div>
       <div class="cell hl"><h3>Result</h3><p>Regional chairs get one link before every chapter visit, with a clear focus for each conversation. The same data now feeds board submissions and policy proposals.</p></div>
-      <div class="cell"><h3>What I'd do differently</h3><p>Apart from wishing I'd built it sooner, I'd have added trend lines from the start, so chairs could see each chapter's direction of travel as well as where it stands today.</p></div>
     </div>
 
     <h3 class="rw">Real-world results</h3>
@@ -1101,9 +1099,8 @@ table.cmp{ width:100%; border-collapse:collapse; font-size:15px; table-layout:fi
     </div>
 
     <h3 class="rw">Real-world results</h3>
-    <div class="three">
+    <div class="two">
       <div class="stat s-pink"><b>Record</b><span>Satisfaction score for the Regional Board Meeting in Cyprus</span></div>
-      <div class="stat s-blue"><b class="num">4.8–4.9/5</b><span>How my board meetings and trainings consistently rate</span></div>
       <div class="stat s-sun"><b class="num">60</b><span>Participants in one connection activity, designed for the whole room</span></div>
     </div>
   </section>
@@ -1114,7 +1111,7 @@ table.cmp{ width:100%; border-collapse:collapse; font-size:15px; table-layout:fi
   <header class="view-head vh-lilac">
     <a class="crumb" href="#/">All work</a>
     <h1 tabindex="-1">AI governance</h1>
-    <p class="lede">Governance is what lets people use AI with confidence. I've written government policy and helped leadership teams write the rules they run on, and I bring the same discipline to AI: clear use cases, the right people signing off, and confidential information kept where it belongs.</p>
+    <p class="lede">Governance is what lets people use AI with confidence. I've written government policy and helped leadership teams write the rules they run on, and I bring the same discipline to AI: clear use cases, the right people signing off, the right tools, and confidential information kept where it belongs.</p>
   </header>
 
   <section class="block">
@@ -1127,7 +1124,7 @@ table.cmp{ width:100%; border-collapse:collapse; font-size:15px; table-layout:fi
     </div>
   </section>
 
-  <section class="block">
+  <section class="block" id="gov-steps" style="scroll-margin-top:16px">
     <h2>How I take a use case from idea to approved</h2>
     <p class="sub">The same steps whether it's a single team's workflow or a tool for the whole organisation.</p>
     <ol class="seq">
@@ -1140,14 +1137,43 @@ table.cmp{ width:100%; border-collapse:collapse; font-size:15px; table-layout:fi
     </ol>
   </section>
 
-  <section class="block">
-    <h2>Governance people actually follow</h2>
-    <div class="three" style="margin-top:16px">
-      <div class="cell"><h3>Plain language</h3><p>Rules people can read in two minutes get followed. I write for the person doing the work.</p></div>
-      <div class="cell"><h3>Confidential stays internal</h3><p>Sensitive material sits behind secure, work-only access. Public samples are rebuilt with fictional data.</p></div>
-      <div class="cell"><h3>People stay accountable</h3><p>AI drafts. A named person approves anything that leaves the team.</p></div>
+  <section class="block" id="platforms" style="scroll-margin-top:16px">
+    <h2>Choosing an AI platform</h2>
+    <p class="sub">The three platforms I'm asked about most, compared for the people who'll use them every day: ChatGPT Enterprise, Claude Enterprise and Microsoft 365 Copilot. I checked every line against each company's own documentation in October 2026, and I re-check before any recommendation. Pricing is left out because it changes too often to print.</p>
+    <div class="cmp-wrap">
+      <table class="cmp">
+        <thead><tr><th scope="col"><span class="sr">Question</span></th><th scope="col"><span class="pdot" style="background:var(--mint)"></span>ChatGPT Enterprise</th><th scope="col"><span class="pdot" style="background:var(--pink)"></span>Claude Enterprise</th><th scope="col"><span class="pdot" style="background:var(--blue)"></span>Microsoft 365 Copilot</th></tr></thead>
+        <tbody>
+        <tr><th scope="row">Where people use it</th><td data-p="ChatGPT Enterprise">The ChatGPT apps on web, desktop and mobile, and @ChatGPT inside Slack and Microsoft Teams.</td><td data-p="Claude Enterprise">The Claude apps, plus Claude inside Word, Excel, PowerPoint and Outlook, in the Chrome browser and in Slack.</td><td data-p="Microsoft 365 Copilot">Inside Word, Excel, PowerPoint, Outlook and Teams, plus the Microsoft 365 Copilot app.</td></tr>
+        <tr><th scope="row">Company data</th><td data-p="ChatGPT Enterprise">Connected apps such as Google Drive, SharePoint, Teams, Gmail and Outlook, which respect existing permissions.</td><td data-p="Claude Enterprise">Connectors for Google Drive, Gmail, Slack and Microsoft 365, plus custom connectors for internal systems. Admins approve each one.</td><td data-p="Microsoft 365 Copilot">Grounded in email, files, meetings and calendars through Microsoft Graph, plus connectors to other business systems.</td></tr>
+        <tr><th scope="row">Agents and automation</th><td data-p="ChatGPT Enterprise">Shareable workspace agents that can run on a schedule, and ChatGPT Work for longer, multi-step tasks.</td><td data-p="Claude Enterprise">Takes on longer research, analysis and document tasks in the background and returns finished work.</td><td data-p="Microsoft 365 Copilot">Copilot Cowork for multi-step tasks, pausing for approval before anything sensitive is sent, and Copilot Studio for building agents.</td></tr>
+        <tr><th scope="row">Reusable team workflows</th><td data-p="ChatGPT Enterprise">Shared projects and plugins. Custom GPTs are being retired in favour of plugins.</td><td data-p="Claude Enterprise">Skills that capture a team's templates, standards and workflows, plus projects and memory.</td><td data-p="Microsoft 365 Copilot">Simple agents built in the Copilot app, and agents built in Copilot Studio.</td></tr>
+        <tr><th scope="row">Models</th><td data-p="ChatGPT Enterprise">OpenAI's own models.</td><td data-p="Claude Enterprise">Anthropic's Claude models.</td><td data-p="Microsoft 365 Copilot">A mix, including OpenAI and Anthropic models in some apps.</td></tr>
+        <tr><th scope="row">Admin and governance</th><td data-p="ChatGPT Enterprise">SSO, SCIM, role-based access, IP allowlisting, audit logs and a Compliance API. Business data isn't used for training by default.</td><td data-p="Claude Enterprise">SSO, SCIM, role-based access, spend controls, audit logs, a Compliance API and custom data retention. No training on your data by default.</td><td data-p="Microsoft 365 Copilot">Managed in the Microsoft 365 admin centre, with sensitivity labels, data loss prevention policies and Agent 365 for governing agents.</td></tr>
+        <tr class="watch"><th scope="row">Watch out for</th><td data-p="ChatGPT Enterprise">Teams that built custom GPTs need a plan to move them to plugins.</td><td data-p="Claude Enterprise">Usage is billed on top of seats, so set spend controls from day one.</td><td data-p="Microsoft 365 Copilot">Copilot can surface anything people already have access to, so tidy SharePoint permissions first.</td></tr>
+        <tr class="pick"><th scope="row">I'd choose it when</th><td data-p="ChatGPT Enterprise">People already use ChatGPT and want one assistant that reaches across many apps.</td><td data-p="Claude Enterprise">The work is long documents, analysis and writing to a set standard, across Google and Microsoft tools.</td><td data-p="Microsoft 365 Copilot">The business runs on Microsoft 365 and wants AI inside the tools people already use.</td></tr>
+        </tbody>
+      </table>
     </div>
-    <div class="acts-row"><a class="btn btn-ink" href="#/plan" data-scroll="guardrails">See my responsible-use guide</a><a class="btn btn-line" href="#/platforms">Compare AI platforms</a><a class="btn btn-line" href="#/work" data-scroll="proj-playbook">See the governance playbook</a></div>
+  </section>
+
+  <section class="block">
+    <h2>How I'd help a business decide</h2>
+    <p class="sub">The right platform depends less on features than on where the work happens and who will look after it.</p>
+    <div class="four">
+      <div class="cell"><h3>Where does the work live?</h3><p>Microsoft 365, Google Workspace or a mix. Start where people already spend their day.</p></div>
+      <div class="cell"><h3>What's the first job?</h3><p>Pick one real workflow and test it on each platform with the people who'd use it.</p></div>
+      <div class="cell"><h3>Who will govern it?</h3><p>IT, legal and the business agree the guardrails before rollout. <a href="#/governance" data-scroll="gov-steps">My approach</a></p></div>
+      <div class="cell"><h3>How will we know?</h3><p>Take a baseline first, then track activation, habit and time saved. <a href="#/plan" data-scroll="scorecard">My scorecard</a></p></div>
+    </div>
+    <ul class="srcs" aria-label="Sources">
+      <li><a href="https://help.openai.com/en/articles/10128477-chatgpt-enterprise-and-edu-release-notes" target="_blank" rel="noopener">OpenAI: ChatGPT Enterprise and Edu release notes</a></li>
+      <li><a href="https://openai.com/index/more-ways-to-work-with-your-team/" target="_blank" rel="noopener">OpenAI: More ways to work with your team and tools in ChatGPT</a></li>
+      <li><a href="https://claude.com/solutions/enterprise" target="_blank" rel="noopener">Anthropic: Claude Enterprise</a></li>
+      <li><a href="https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes" target="_blank" rel="noopener">Microsoft: Release notes for Microsoft 365 Copilot</a></li>
+      <li><a href="https://www.hso.com/blog/microsoft-copilot-vs-studio/" target="_blank" rel="noopener">HSO: Microsoft Copilot vs Copilot Studio (2026)</a></li>
+    </ul>
+    <div class="acts-row"><a class="btn btn-ink" href="#/plan" data-scroll="guardrails">See my responsible-use guide</a><a class="btn btn-line" href="#/work" data-scroll="proj-playbook">See the governance playbook</a></div>
   </section>
 </div>
 
@@ -1155,8 +1181,8 @@ table.cmp{ width:100%; border-collapse:collapse; font-size:15px; table-layout:fi
 <div class="wrap view" data-route="workflows" hidden>
   <header class="view-head vh-night">
     <a class="crumb" href="#/">All work</a>
-    <h1 tabindex="-1">How I build AI workflows</h1>
-    <p class="lede">I treat AI like a new team member: it gets the context once, the right tools for the job and access to where the work lives. Then I check its work.</p>
+    <h1 tabindex="-1">How I build with AI</h1>
+    <p class="lede">I treat AI like a new team member: it gets the context once, the right tools for the job and access to where the work lives. Then I check its work. This site was built the same way.</p>
   </header>
 
   <section class="block">
@@ -1210,56 +1236,21 @@ table.cmp{ width:100%; border-collapse:collapse; font-size:15px; table-layout:fi
     </div>
   </section>
 
-  <section class="built" aria-label="How this site was made">
-    <span class="spark" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M12 2v6M12 16v6M2 12h6M16 12h6M5 5l3.5 3.5M15.5 15.5 19 19M19 5l-3.5 3.5M8.5 15.5 5 19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
-    <div><b>This website is a workflow too.</b><p>I designed and built the whole site, including the sample playbook, report and training kit, with AI, using the skills on this page. <a href="#/built">See how I built it</a>.</p></div>
-  </section>
-</div>
-
-<!-- ============================ PLATFORMS ============================ -->
-<div class="wrap view" data-route="platforms" hidden>
-  <header class="view-head vh-white">
-    <a class="crumb" href="#/">All work</a>
-    <h1 tabindex="-1">Choosing an AI platform</h1>
-    <p class="lede">The three platforms I'm asked about most, compared for the people who'll use them every day. I checked every line against each company's own documentation in October 2026. These products change monthly, so I re-check before any recommendation.</p>
-  </header>
-
-  <section class="block">
-    <h2>ChatGPT, Claude and Copilot, side by side</h2>
-    <p class="sub">Business plans only: ChatGPT Enterprise, Claude Enterprise and Microsoft 365 Copilot. Pricing is left out because it changes too often to print.</p>
-    <div class="cmp-wrap">
-      <table class="cmp">
-        <thead><tr><th scope="col"><span class="sr">Question</span></th><th scope="col"><span class="pdot" style="background:var(--mint)"></span>ChatGPT Enterprise</th><th scope="col"><span class="pdot" style="background:var(--pink)"></span>Claude Enterprise</th><th scope="col"><span class="pdot" style="background:var(--blue)"></span>Microsoft 365 Copilot</th></tr></thead>
-        <tbody>
-        <tr><th scope="row">Where people use it</th><td data-p="ChatGPT Enterprise">The ChatGPT apps on web, desktop and mobile, and @ChatGPT inside Slack and Microsoft Teams.</td><td data-p="Claude Enterprise">The Claude apps, plus Claude inside Word, Excel, PowerPoint and Outlook, in the Chrome browser and in Slack.</td><td data-p="Microsoft 365 Copilot">Inside Word, Excel, PowerPoint, Outlook and Teams, plus the Microsoft 365 Copilot app.</td></tr>
-        <tr><th scope="row">Company data</th><td data-p="ChatGPT Enterprise">Connected apps such as Google Drive, SharePoint, Teams, Gmail and Outlook, which respect existing permissions.</td><td data-p="Claude Enterprise">Connectors for Google Drive, Gmail, Slack and Microsoft 365, plus custom connectors for internal systems. Admins approve each one.</td><td data-p="Microsoft 365 Copilot">Grounded in email, files, meetings and calendars through Microsoft Graph, plus connectors to other business systems.</td></tr>
-        <tr><th scope="row">Agents and automation</th><td data-p="ChatGPT Enterprise">Shareable workspace agents that can run on a schedule, and ChatGPT Work for longer, multi-step tasks.</td><td data-p="Claude Enterprise">Takes on longer research, analysis and document tasks in the background and returns finished work.</td><td data-p="Microsoft 365 Copilot">Copilot Cowork for multi-step tasks, pausing for approval before anything sensitive is sent, and Copilot Studio for building agents.</td></tr>
-        <tr><th scope="row">Reusable team workflows</th><td data-p="ChatGPT Enterprise">Shared projects and plugins. Custom GPTs are being retired in favour of plugins.</td><td data-p="Claude Enterprise">Skills that capture a team's templates, standards and workflows, plus projects and memory.</td><td data-p="Microsoft 365 Copilot">Simple agents built in the Copilot app, and agents built in Copilot Studio.</td></tr>
-        <tr><th scope="row">Models</th><td data-p="ChatGPT Enterprise">OpenAI's own models.</td><td data-p="Claude Enterprise">Anthropic's Claude models.</td><td data-p="Microsoft 365 Copilot">A mix, including OpenAI and Anthropic models in some apps.</td></tr>
-        <tr><th scope="row">Admin and governance</th><td data-p="ChatGPT Enterprise">SSO, SCIM, role-based access, IP allowlisting, audit logs and a Compliance API. Business data isn't used for training by default.</td><td data-p="Claude Enterprise">SSO, SCIM, role-based access, spend controls, audit logs, a Compliance API and custom data retention. No training on your data by default.</td><td data-p="Microsoft 365 Copilot">Managed in the Microsoft 365 admin centre, with sensitivity labels, data loss prevention policies and Agent 365 for governing agents.</td></tr>
-        <tr class="watch"><th scope="row">Watch out for</th><td data-p="ChatGPT Enterprise">Teams that built custom GPTs need a plan to move them to plugins.</td><td data-p="Claude Enterprise">Usage is billed on top of seats, so set spend controls from day one.</td><td data-p="Microsoft 365 Copilot">Copilot can surface anything people already have access to, so tidy SharePoint permissions first.</td></tr>
-        <tr class="pick"><th scope="row">I'd choose it when</th><td data-p="ChatGPT Enterprise">People already use ChatGPT and want one assistant that reaches across many apps.</td><td data-p="Claude Enterprise">The work is long documents, analysis and writing to a set standard, across Google and Microsoft tools.</td><td data-p="Microsoft 365 Copilot">The business runs on Microsoft 365 and wants AI inside the tools people already use.</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-
-  <section class="block">
-    <h2>How I'd help a business decide</h2>
-    <p class="sub">The right platform depends less on features than on where the work happens and who will look after it.</p>
+  <section class="block" id="this-site" style="scroll-margin-top:16px">
+    <h2>How I built this site</h2>
+    <p class="sub">I designed and built every page with AI, including the sample playbook, the report and the training kit. Everything starts from something real: I supplied every figure, and each one was checked before it went on a page.</p>
     <div class="four">
-      <div class="cell"><h3>Where does the work live?</h3><p>Microsoft 365, Google Workspace or a mix. Start where people already spend their day.</p></div>
-      <div class="cell"><h3>What's the first job?</h3><p>Pick one real workflow and test it on each platform with the people who'd use it.</p></div>
-      <div class="cell"><h3>Who will govern it?</h3><p>IT, legal and the business agree the guardrails before rollout. <a href="#/governance">My approach</a></p></div>
-      <div class="cell"><h3>How will we know?</h3><p>Take a baseline first, then track activation, habit and time saved. <a href="#/plan" data-scroll="scorecard">My scorecard</a></p></div>
+      <div class="cell"><h3>Tools</h3><p>Claude for research, writing, design and code. Canva, through a connector, for the training deck, workbook and guide.</p></div>
+      <div class="cell"><h3>Data input</h3><p>My real results, my CV, the structure of my live work rebuilt with one fictional data set, AI enablement job descriptions and current product documentation.</p></div>
+      <div class="cell"><h3>Links</h3><p>My own domain, printed on my CV. Samples open in a new tab, and every section has its own link to share.</p></div>
+      <div class="cell"><h3>Checks</h3><p>Every page on desktop and phone, every link, and every number against its source. Confidential work is rebuilt with every name and figure changed.</p></div>
     </div>
-    <ul class="srcs" aria-label="Sources">
-      <li><a href="https://help.openai.com/en/articles/10128477-chatgpt-enterprise-and-edu-release-notes" target="_blank" rel="noopener">OpenAI: ChatGPT Enterprise and Edu release notes</a></li>
-      <li><a href="https://openai.com/index/more-ways-to-work-with-your-team/" target="_blank" rel="noopener">OpenAI: More ways to work with your team and tools in ChatGPT</a></li>
-      <li><a href="https://claude.com/solutions/enterprise" target="_blank" rel="noopener">Anthropic: Claude Enterprise</a></li>
-      <li><a href="https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes" target="_blank" rel="noopener">Microsoft: Release notes for Microsoft 365 Copilot</a></li>
-      <li><a href="https://www.hso.com/blog/microsoft-copilot-vs-studio/" target="_blank" rel="noopener">HSO: Microsoft Copilot vs Copilot Studio (2026)</a></li>
-    </ul>
+    <h3 class="sec">Branding</h3>
+    <div class="brand-row">
+      <div class="mini-sw" aria-hidden="true"><i style="background:#3346FF"></i><i style="background:#FF5FA2"></i><i style="background:#FFD447"></i><i style="background:#3DDBA6"></i><i style="background:#C8B9FF"></i><i style="background:#1A1530"></i></div>
+      <p><b>Bricolage Grotesque</b> for headlines and <b>Geist</b> for body text, in electric blue, hot pink, sunshine, mint, lilac and ink. I chose it to feel modern and confident, and deliberately unlike my employer's. The same brand runs through the samples, the training kit, my CV and my LinkedIn banner.</p>
+    </div>
+    <p class="philo" style="margin-top:26px;font-size:clamp(19px,1.9vw,24px)">What I'd tell any team doing the same: start with the evidence, not the design. AI makes building fast, so the real work is deciding what's worth saying.</p>
   </section>
 </div>
 
@@ -1293,7 +1284,7 @@ table.cmp{ width:100%; border-collapse:collapse; font-size:15px; table-layout:fi
         <ol>
           <li>Launch two or three pilots, each with a named owner and a success measure.<br><a class="ex" href="#/workflows">Example: my AI workflows</a></li>
           <li>Build role-based learning: short tutorials plus live workshops.<br><a class="ex" href="#/work" data-scroll="proj-training">Example: my training kit</a></li>
-          <li>Recruit and train a champions network through train-the-trainer.<br><a class="ex" href="#/learning">Example: the 4C framework</a></li>
+          <li>Recruit and train a champions network through train-the-trainer.<br><a class="ex" href="#/training" data-scroll="learning-design">Example: the 4C framework</a></li>
           <li>Open weekly office hours and a shared library of prompts and workflows.<br><a class="ex" href="#/work" data-scroll="proj-playbook">Example: the playbook</a></li>
         </ol>
         <div class="out"><p><b>You'll have</b>Live pilots, learning paths for each role, trained champions and a first resource hub.</p><p><b>Measured by</b>Activation in pilot teams, session ratings, champions trained.</p></div>
@@ -1305,7 +1296,7 @@ table.cmp{ width:100%; border-collapse:collapse; font-size:15px; table-layout:fi
         <ol>
           <li>Measure pilots against the baseline and publish short case studies.<br><a class="ex" href="#/work" data-scroll="proj-report">Example: reporting for success</a></li>
           <li>Scale the winning workflows to the next teams.<br><a class="ex" href="#/training">Example: scaling across regions</a></li>
-          <li>Embed AI in onboarding and in managers' routines.<br><a class="ex" href="#/learning">Example: how I design learning</a></li>
+          <li>Embed AI in onboarding and in managers' routines.<br><a class="ex" href="#/training" data-scroll="learning-design">Example: how I design learning</a></li>
           <li>Set up an intake process and a governance rhythm.<br><a class="ex" href="#/governance">Example: from idea to approved</a></li>
           <li>Present a 90-day impact readout and a two-quarter roadmap.<br><a class="ex" href="#/plan" data-scroll="scorecard">Example: adoption scorecard</a></li>
         </ol>
@@ -1352,55 +1343,6 @@ table.cmp{ width:100%; border-collapse:collapse; font-size:15px; table-layout:fi
   </section>
 </div>
 
-<!-- ============================ 7. LEARNING ============================ -->
-<div class="wrap view" data-route="learning" hidden>
-  <header class="view-head vh-sun">
-    <a class="crumb" href="#/">All work</a>
-    <h1 tabindex="-1">How I design learning</h1>
-    <p class="lede">My Oxford MSc was in how adults learn. For AI, that means building confidence and judgement, not just teaching features.</p>
-  </header>
-
-  <section class="block">
-    <h2>The 4C framework for AI capability</h2>
-    <p class="sub">How I'd move a business from curiosity to self-sustaining capability. People sit at different stages, so each stage gets its own learning, not one course for everyone.</p>
-    <div class="four-c">
-      <div class="cstep"><span class="st">Stage 1</span><h3>Curious</h3><p class="who">Has heard the hype, hasn't used AI for real work.</p>
-        <dl><dt>What they need</dt><dd>To see it work on their own task, safely.</dd><dt>What I build</dt><dd>Short live demos on real tasks and a one-page guardrails guide.</dd><dt>How we know</dt><dd>A first real task done within 14 days.</dd></dl></div>
-      <div class="cstep"><span class="st">Stage 2</span><h3>Capable</h3><p class="who">Uses AI for simple tasks, but not consistently.</p>
-        <dl><dt>What they need</dt><dd>A reliable way to ask, and to check.</dd><dt>What I build</dt><dd>Role-based tutorials, prompt patterns and job aids.</dd><dt>How we know</dt><dd>Weekly use and time saved on routine work.</dd></dl></div>
-      <div class="cstep"><span class="st">Stage 3</span><h3>Confident</h3><p class="who">Uses AI daily, and knows when not to.</p>
-        <dl><dt>What they need</dt><dd>Workflows built around their real processes.</dd><dt>What I build</dt><dd>Workflow clinics, team templates, and skills and connectors set up for the team.</dd><dt>How we know</dt><dd>A workflow in daily use, with quality checks built in.</dd></dl></div>
-      <div class="cstep"><span class="st">Stage 4</span><h3>Champion</h3><p class="who">Teaches others and spots new uses.</p>
-        <dl><dt>What they need</dt><dd>Recognition, time and a network.</dd><dt>What I build</dt><dd>Train-the-trainer, a champions network and a shared library.</dd><dt>How we know</dt><dd>Peers trained and new use cases submitted.</dd></dl></div>
-    </div>
-    <div class="base">
-      <div><b>Judgement stays human</b><p>At every stage, AI drafts and people decide. Learning always covers checking the output, not just producing it.</p></div>
-      <div><b>Guardrails from day one</b><p>Everyone knows what can go into which tool before they start, so confidence never outruns safety.</p></div>
-    </div>
-  </section>
-
-  <section class="block">
-    <h2>Six principles behind everything I build</h2>
-    <ul class="principles" style="margin-top:18px">
-      <li><b>Start from the behaviour, not the content.</b><span>I ask what people need to do differently at work, then build only what gets them there.</span><em>Action mapping</em></li>
-      <li><b>Respect what adults already know.</b><span>Senior people learn when it's relevant, self-directed and built on their experience.</span><em>Knowles' andragogy</em></li>
-      <li><b>Show, then hand over.</b><span>One worked example, then a partial one they finish, then their own real task.</span><em>Merrill's first principles</em></li>
-      <li><b>Cut anything that doesn't help.</b><span>Short segments, plain screens, one idea at a time.</span><em>Mayer's multimedia principles</em></li>
-      <li><b>Most learning happens back at the desk.</b><span>Job aids, champions and office hours do more than any single session.</span><em>70-20-10</em></li>
-      <li><b>Measure what changed, not who attended.</b><span>Behaviour at 30 days matters more than the rating on the day.</span><em>Kirkpatrick's four levels</em></li>
-    </ul>
-  </section>
-
-  <section class="block">
-    <h2>Learning design at scale</h2>
-    <div class="three" style="margin-top:18px">
-      <div class="stat s-mint"><b class="num">60% to 100%</b><span>YPO MENA Platinum chapters, one year after I wrote a peer-to-peer learning programme and trained its trainers</span></div>
-      <div class="stat s-sun"><b>Best worldwide</b><span>One of those chapters went on to win Best Chapter globally</span></div>
-      <div class="stat s-lilac"><b>Now mandatory</b><span>A session I co-designed with YPO's global Learning team, piloted in my region, now required worldwide</span></div>
-    </div>
-  </section>
-</div>
-
 <!-- ============================ 8. GIFT ============================ -->
 <div class="wrap view" data-route="gift" hidden>
   <header class="view-head vh-white">
@@ -1437,94 +1379,6 @@ table.cmp{ width:100%; border-collapse:collapse; font-size:15px; table-layout:fi
   </section>
 </div>
 
-<!-- ============================ HOW I BUILT THIS SITE ============================ -->
-<div class="wrap view" data-route="built" hidden>
-  <header class="view-head vh-night">
-    <a class="crumb" href="#/">All work</a>
-    <h1 tabindex="-1">How I built this site</h1>
-    <p class="lede">I designed and built every page with AI, including the sample playbook, the report and the training kit. Here's what went in, the decisions I made and how I checked it, so you can see the method as well as the result.</p>
-  </header>
-
-  <section class="block">
-    <h2>The tools</h2>
-    <div class="three" style="margin-top:16px">
-      <div class="cell"><h3>Claude</h3><p>Research, writing, design and code for every page, drawing on my past project work.</p></div>
-      <div class="cell"><h3>Canva</h3><p>The training deck, workbook and facilitator guide, built through a connector and kept editable.</p></div>
-      <div class="cell"><h3>Plain web pages</h3><p>Hand-built HTML with no build step, so it loads fast on any phone and is quick to update.</p></div>
-    </div>
-  </section>
-
-  <section class="block">
-    <h2>Data input</h2>
-    <p class="sub">Everything on the site starts from something real. I supplied every figure, and each one was checked before it went on a page.</p>
-    <div class="two">
-      <div class="cell"><h3>My real results</h3><p>Performance review outcomes, KPI results, retention, session ratings and the playbook's usage figures.</p></div>
-      <div class="cell"><h3>My CV and career history</h3><p>Roles, dates, qualifications and achievements, kept the same across the site, my CV and LinkedIn.</p></div>
-      <div class="cell"><h3>The structure of my live work</h3><p>The real playbook's 13 sections, the report's ten sources and my 90-minute session, rebuilt with fictional content.</p></div>
-      <div class="cell"><h3>One fictional data set</h3><p>PMO Enterprises' chapters, members and commitments live in a single shared file, so the playbook, report and tracker always agree.</p></div>
-      <div class="cell"><h3>AI enablement job descriptions</h3><p>What employers ask for, from training and adoption to governance and measurement, used to decide what each page needed to show.</p></div>
-      <div class="cell"><h3>Current product documentation</h3><p>The platform comparison is checked against each company's own documentation, not memory.</p></div>
-    </div>
-  </section>
-
-  <section class="block">
-    <h2>Branding</h2>
-    <p class="sub">I wanted a personal brand that felt modern and confident, and nothing like my employer's. The same system runs through this site, the sample playbook and report, the training kit, my CV and my LinkedIn banner.</p>
-    <div class="swatches">
-      <div class="sw" style="--c:#3346FF;--t:#fff"><b>Electric blue</b><span>#3346FF</span></div>
-      <div class="sw" style="--c:#FF5FA2"><b>Hot pink</b><span>#FF5FA2</span></div>
-      <div class="sw" style="--c:#FFD447"><b>Sunshine</b><span>#FFD447</span></div>
-      <div class="sw" style="--c:#3DDBA6"><b>Mint</b><span>#3DDBA6</span></div>
-      <div class="sw" style="--c:#C8B9FF"><b>Lilac</b><span>#C8B9FF</span></div>
-      <div class="sw" style="--c:#1A1530;--t:#fff"><b>Ink</b><span>#1A1530</span></div>
-    </div>
-    <div class="two" style="margin-top:12px">
-      <div class="type-card"><span>Headlines</span><b class="ty-d">Bricolage Grotesque</b><p>Bold and characterful, so headings feel like a person rather than a template.</p></div>
-      <div class="type-card"><span>Body text</span><b class="ty-s">Geist</b><p>Clean and easy to read at small sizes, especially on phones.</p></div>
-    </div>
-    <ul class="tick" style="margin-top:18px">
-      <li>Pink and yellow circles are the signature shape, used on the site, the slides, the workbook and the banner.</li>
-      <li>Text and background pairs were checked for contrast, so everything stays readable.</li>
-      <li>Rounded cards and pill buttons keep the look friendly next to serious content.</li>
-    </ul>
-  </section>
-
-  <section class="block">
-    <h2>Links</h2>
-    <p class="sub">Everything a recruiter might want is one tap away, and every link was tested before publishing.</p>
-    <div class="links-list">
-      <div><b>paigeelizabethmorgan.com</b><span>My own domain, printed on my CV as the link to this interactive CV.</span></div>
-      <div><b>Sample playbook, report and tracker</b><span>Open in a new tab, so you never lose your place here.</span></div>
-      <div><b>Training kit in Canva</b><span>View links to the deck, workbook and facilitator guide.</span></div>
-      <div><b>CV download</b><span>A PDF in the same branding, at the top of every page.</span></div>
-      <div><b>A link for every page</b><span>Each section has its own address, such as paigeelizabethmorgan.com/#/work, so I can send exactly the right page.</span></div>
-    </div>
-  </section>
-
-  <section class="block">
-    <h2>How it came together</h2>
-    <ol class="seq" style="margin-top:16px">
-      <li><div><b>Research the roles</b><span>Read AI enablement job descriptions to see what recruiters look for.</span></div></li>
-      <li><div><b>Gather the evidence</b><span>Collect real results and the structure of my live work.</span></div></li>
-      <li><div><b>Set the brand</b><span>Choose fonts, colours and shapes before building any page.</span></div></li>
-      <li><div><b>Build in rounds</b><span>From a single page to clickable sections, with my feedback after every round. Each change was made to the page, never a rebuild from scratch.</span></div></li>
-      <li><div><b>Protect confidentiality</b><span>Rebuild confidential work for a fictional company, with every name and figure changed.</span></div></li>
-      <li><div><b>Check before publishing</b><span>Every page on desktop and phone, every link, and every number against its source.</span></div></li>
-    </ol>
-  </section>
-
-  <section class="block">
-    <h2>Small things that matter</h2>
-    <div class="four" style="margin-top:16px">
-      <div class="cell"><h3>Made for phones</h3><p>Every page reflows to a single column, with no sideways scrolling.</p></div>
-      <div class="cell"><h3>Keyboard friendly</h3><p>Every page and tool works without a mouse, with visible focus.</p></div>
-      <div class="cell"><h3>Calm motion</h3><p>Animations switch off for anyone who has asked their device to reduce motion.</p></div>
-      <div class="cell"><h3>No sign-ins</h3><p>Recruiters can open everything, including the samples, without an account.</p></div>
-    </div>
-    <p class="philo" style="margin-top:26px;font-size:clamp(19px,1.9vw,24px)">What I'd tell any team doing the same: start with the evidence, not the design. AI makes building fast, so the real work is deciding what's worth saying.</p>
-  </section>
-</div>
-
 <!-- Next-up card (filled by the router) -->
 <div class="wrap" id="next-wrap" hidden><a class="next" id="next" href="#/"><span><small>Next up</small><b id="next-title"></b></span><span class="go" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 18 18" fill="none"><path d="M3 9h11M9.5 4.5 14 9l-4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></div>
 
@@ -1532,7 +1386,7 @@ table.cmp{ width:100%; border-collapse:collapse; font-size:15px; table-layout:fi
 
 <footer class="foot">
   <div class="wrap">
-    <span>Paige Elizabeth Morgan, 2026. This whole site was designed and built with AI. <a href="#/built">See how I built it</a>.</span>
+    <span>Paige Elizabeth Morgan, 2026. This whole site was designed and built with AI. <a href="#/workflows" data-scroll="this-site">See how I built it</a>.</span>
     <a data-cfg="email">paigeelizabethmorgan@gmail.com</a>
   </div>
 </footer>
@@ -1568,12 +1422,12 @@ document.querySelectorAll('[data-photo]').forEach(el => {
 });
 
 /* ---------- Router ---------- */
-const ORDER = ['about', 'training', 'work', 'governance', 'workflows', 'platforms', 'plan', 'learning', 'built', 'gift'];
+const ORDER = ['about', 'training', 'work', 'governance', 'workflows', 'plan', 'gift'];
 const TITLES = { about: 'About me', training: 'Training colleagues and CEOs to use AI', work: 'Sample work and real-world results', governance: 'AI governance',
-  workflows: 'AI workflows', platforms: 'Choosing an AI platform', plan: 'My 90-day plan for AI enablement', learning: 'How I design learning',
-  built: 'How I built this site', gift: 'A gift for hiring managers' };
+  workflows: 'How I build with AI', plan: 'My 90-day plan for AI enablement', gift: 'A gift for hiring managers' };
 /* Older links still work: they open the matching project on the Sample work page. */
-const ALIAS = { playbook: ['work', 'proj-playbook'], reports: ['work', 'proj-report'], board: ['work', 'proj-board'] };
+const ALIAS = { playbook: ['work', 'proj-playbook'], reports: ['work', 'proj-report'], board: ['work', 'proj-board'],
+  learning: ['training', 'learning-design'], platforms: ['governance', 'platforms'], built: ['workflows', 'this-site'] };
 const home = document.getElementById('home');
 const views = [...document.querySelectorAll('.view')];
 let pendingScroll = null, firstLoad = true;
