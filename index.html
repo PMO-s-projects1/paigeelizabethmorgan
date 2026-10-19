@@ -652,6 +652,25 @@ table.cmp{ width:100%; border-collapse:collapse; font-size:15px; table-layout:fi
 .project .wf h3{ font-size:19px; }
 .project .wf{ padding-top:18px; }
 
+.countries{ display:flex; flex-wrap:wrap; gap:8px; margin-top:14px; }
+.countries span{ background:var(--paper); border-radius:999px; padding:7px 14px; font-size:14.5px; font-weight:500; }
+.uc-notes{ display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:12px; margin:18px 0 0; }
+.uc-note{ border-radius:16px; padding:18px 20px; background:var(--paper); }
+.uc-note h4{ font:700 15px/1.3 var(--sans); margin:0 0 4px; display:flex; align-items:center; gap:8px; letter-spacing:0; }
+.uc-note h4 i{ width:10px; height:10px; border-radius:50%; background:var(--sun); flex:none; }
+.uc-note.any h4 i{ background:var(--mint); } .uc-note.secure h4 i{ background:var(--blue); }
+.uc-note p{ margin:0; font-size:15px; color:var(--ink-2); }
+.uc-notes.three-up{ grid-template-columns:repeat(3, minmax(0,1fr)); }
+@media (max-width:860px){ .uc-notes,.uc-notes.three-up{ grid-template-columns:1fr; } }
+.gov-grid.three-up{ grid-template-columns:repeat(3, minmax(0,1fr)); }
+@media (max-width:860px){ .gov-grid.three-up{ grid-template-columns:1fr; } }
+.cpath{ list-style:none; margin:0 0 14px; padding:0; display:grid; gap:8px; }
+.cpath li{ display:grid; grid-template-columns:104px 1fr; gap:12px; align-items:start; font-size:15px; }
+.cpath b{ display:inline-block; justify-self:start; font-size:13px; font-weight:700; padding:3px 11px; border-radius:999px; background:rgba(255,255,255,.22); }
+.a-champ .cpath b{ background:rgba(255,255,255,.6); }
+.academy .fmt{ margin:0; font-size:14.5px; opacity:.9; }
+@media (max-width:480px){ .cpath li{ grid-template-columns:1fr; gap:4px; } }
+
 /* three-minute lesson */
 .lesson{ background:var(--paper); border-radius:20px; padding:24px; }
 .lesson-steps{ list-style:none; margin:0 0 20px; padding:0; display:flex; gap:8px; flex-wrap:wrap; counter-reset:ls; }
@@ -902,10 +921,12 @@ table.cmp{ width:100%; border-collapse:collapse; font-size:15px; table-layout:fi
 
   <section class="block">
     <h2>What changed</h2>
-    <div class="two" style="margin-top:18px">
+    <div class="three" style="margin-top:18px">
       <div class="stat s-pink"><b class="num">4.8–4.9/5</b><span>My trainings and board meetings consistently rate 4.8–4.9 out of 5</span></div>
       <div class="stat s-mint"><b>EMEA + APAC</b><span>The regions I primarily support, plus the whole department</span></div>
+      <div class="stat s-blue"><b class="num">13 countries</b><span>Where I've supported in-person training with CEOs, using AI tools</span></div>
     </div>
+    <div class="countries" aria-label="Countries"><span>UAE</span><span>Pakistan</span><span>UK</span><span>Spain</span><span>Australia</span><span>Singapore</span><span>Thailand</span><span>US</span><span>Canada</span><span>Tunisia</span><span>Morocco</span><span>Cyprus</span><span>Turkey</span></div>
   </section>
 
   <section class="block">
@@ -964,15 +985,11 @@ table.cmp{ width:100%; border-collapse:collapse; font-size:15px; table-layout:fi
       <li><b>Respect what adults already know.</b><span>Senior people learn when it's relevant, self-directed and built on their experience.</span><em>Knowles' andragogy</em></li>
       <li><b>Show, then hand over.</b><span>One worked example, then a partial one they finish, then their own real task.</span><em>Merrill's first principles</em></li>
       <li><b>Cut anything that doesn't help.</b><span>Short segments, plain screens, one idea at a time.</span><em>Mayer's multimedia principles</em></li>
-      <li><b>Most learning happens back at the desk.</b><span>Job aids, champions and office hours do more than any single session.</span><em>70-20-10</em></li>
+      <li><b>Most learning happens back at the desk.</b><span>The 70-20-10 model says roughly 70% of what we learn comes from doing the job, 20% from other people, such as coaching and feedback, and only 10% from formal training. So job aids, champions and office hours do more than any single session.</span><em>70-20-10</em></li>
       <li><b>Measure what changed, not who attended.</b><span>Behaviour at 30 days matters more than the rating on the day.</span><em>Kirkpatrick's four levels</em></li>
     </ul>
   </section>
 
-  <section class="block">
-    <h2>What I'd do differently</h2>
-    <p class="philo" style="margin-top:14px;font-size:clamp(19px,1.9vw,24px)">Apart from wishing I'd started sooner, I'd have set up a formal network of AI champions from day one, so every team had its own go-to person close by, as well as me.</p>
-  </section>
 </div>
 
 <!-- ============================ 3. SAMPLE WORK ============================ -->
@@ -1025,6 +1042,11 @@ table.cmp{ width:100%; border-collapse:collapse; font-size:15px; table-layout:fi
       </div>
     </div>
     <div class="proj-acts"><a class="btn btn-ink" href="demos/playbook-demo.html" target="_blank" rel="noopener">Open the sample playbook</a></div>
+    <div class="uc-notes three-up">
+      <div class="uc-note"><h4><i></i>At YPO</h4><p>The playbook is where chapter chairs, officers and managers across 27 chapters find everything they need to run their chapter to the YPO standard.</p></div>
+      <div class="uc-note any"><h4><i></i>For any company</h4><p>The same approach and tool work for any organisation, from an onboarding hub to a policy handbook, built in that company's own branding.</p></div>
+      <div class="uc-note secure"><h4><i></i>Data kept secure</h4><p>Confidential information stays behind the work security portal, so only the right people can see it. In the sample, those links open a placeholder page.</p></div>
+    </div>
 
     <h3 class="sec">The story</h3>
     <div class="three">
@@ -1057,6 +1079,10 @@ table.cmp{ width:100%; border-collapse:collapse; font-size:15px; table-layout:fi
       </div>
     </div>
     <div class="proj-acts"><a class="btn btn-line" href="demos/report-demo.html#before" target="_blank" rel="noopener">See the before</a><a class="btn btn-ink" href="demos/report-demo.html#after" target="_blank" rel="noopener">See the after</a></div>
+    <div class="uc-notes">
+      <div class="uc-note"><h4><i></i>At YPO</h4><p>The report prepares Regional Chairs for every chapter visit, showing which chapters need support first and why.</p></div>
+      <div class="uc-note any"><h4><i></i>For any company</h4><p>The same approach works for any business with teams, branches or clients to compare, built in that company's own branding.</p></div>
+    </div>
 
     <h3 class="sec">Before and after</h3>
     <div class="ba">
@@ -1178,25 +1204,11 @@ table.cmp{ width:100%; border-collapse:collapse; font-size:15px; table-layout:fi
 
   <section class="block">
     <h2>Where my governance experience comes from</h2>
-    <div class="gov-grid">
+    <div class="gov-grid three-up">
       <article class="gcard g-blue"><span class="gk">Policy</span><h3>Written government policy</h3><p>I wrote government policy for the Ministry of Education in the UAE.</p></article>
       <article class="gcard g-sun"><span class="gk">Rules</span><h3>Chapter bylaws</h3><p>I support YPO chapters in writing, developing and amending their bylaws, so each one runs to the organisation's standards.</p></article>
       <article class="gcard g-mint"><span class="gk">Sign-off</span><h3>Use cases shared with IT and policy makers</h3><p>Before an AI use case goes wider, I share it with IT and policy makers: what it does, the data it touches and the guardrails around it.</p></article>
-      <article class="gcard g-pink"><span class="gk">Confidential</span><h3>Internal playbooks, kept secure</h3><p>Playbooks built for internal use keep confidential information behind the work security portal, so only the right people can see it.</p></article>
     </div>
-  </section>
-
-  <section class="block" id="gov-steps" style="scroll-margin-top:16px">
-    <h2>How I take a use case from idea to approved</h2>
-    <p class="sub">The same steps whether it's a single team's workflow or a tool for the whole organisation.</p>
-    <ol class="seq">
-      <li><div><b>Describe it plainly</b><span>What the task is, who will use it and what good looks like.</span></div></li>
-      <li><div><b>Classify the data</b><span>Using a traffic-light guide: go ahead, go with care, or stop and ask.</span></div></li>
-      <li><div><b>Share it with IT and policy makers</b><span>Agree the tool, the access and the guardrails before anything goes wider.</span></div></li>
-      <li><div><b>Pilot with a named owner</b><span>A small group, one owner and a clear success measure.</span></div></li>
-      <li><div><b>Write it down</b><span>Update the playbook or policy, so the rule lives where people can find it.</span></div></li>
-      <li><div><b>Review on a rhythm</b><span>Check use and risk regularly, and retire what no longer fits.</span></div></li>
-    </ol>
   </section>
 
   <section class="block" id="platforms" style="scroll-margin-top:16px">
@@ -1335,23 +1347,23 @@ table.cmp{ width:100%; border-collapse:collapse; font-size:15px; table-layout:fi
         <span class="ak">Curious to Confident</span>
         <h3>AI Academy</h3>
         <p class="what">Teaching teams how to use AI in their day-to-day work.</p>
-        <ul>
-          <li>Role-based learning paths built on the four Ds</li>
-          <li>Short live sessions, then practice on real work</li>
-          <li>Part of onboarding, so new starters begin with AI from day one</li>
-          <li>Progress tracked through first use, weekly use and time saved</li>
-        </ul>
+        <ol class="cpath" aria-label="How the AI Academy moves people through the stages">
+          <li><b>Curious</b><span>A live demo on their own task and the rules on what never goes into a tool, so the first try is safe.</span></li>
+          <li><b>Capable</b><span>Role-based practice in how to ask and how to check, until it's reliable every time.</span></li>
+          <li><b>Confident</b><span>AI built into one real workflow, with checks built in and a 30-day check-in.</span></li>
+        </ol>
+        <p class="fmt">Short live sessions, then practice on real work. Part of onboarding for every new starter.</p>
       </article>
       <article class="academy a-champ">
         <span class="ak">Confident to Champion</span>
         <h3>AI Champion Academy</h3>
         <p class="what">Developing AI Champions in each department to train and support their team members.</p>
-        <ul>
-          <li>At least one champion in every department</li>
-          <li>Train-the-trainer, using the same kit as my own sessions</li>
-          <li>A champions network that shares what works across teams</li>
-          <li>Office hours and a shared library of prompts and workflows</li>
-        </ul>
+        <ol class="cpath" aria-label="How the AI Champion Academy moves people through the stages">
+          <li><b>Confident</b><span>People who already use AI daily are nominated by their department, at least one per team.</span></li>
+          <li><b>Champion</b><span>Train-the-trainer on the four Ds, using the same kit as my own sessions.</span></li>
+          <li><b>In practice</b><span>Champions run office hours, share what works through the network and spot the next use cases.</span></li>
+        </ol>
+        <p class="fmt">A champions network across every department, with a shared library of prompts and workflows.</p>
       </article>
     </div>
   </section>
