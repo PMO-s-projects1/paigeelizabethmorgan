@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Paige Elizabeth Morgan | AI enablement</title>
-<meta name="description" content="Paige Elizabeth Morgan: AI Champion, facilitator and learning designer, relocating to London. Training, sample work with real-world results, AI governance and platform choice, how I build with AI, and a 90-day plan for AI enablement.">
+<meta name="description" content="Paige Elizabeth Morgan: AI Champion, facilitator and learning designer, relocating to London. Training, sample work with real-world results, AI governance and platform choice, how I build with AI, and an AI strategy with a 90-day plan.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Geist:wght@400;500;600&display=swap" rel="stylesheet">
@@ -615,6 +615,37 @@ table.cmp{ width:100%; border-collapse:collapse; font-size:15px; table-layout:fi
 .t-plan{ grid-column:3 / 5; }
 @media (max-width:1100px){ .t-plan{ grid-column:1 / -1; } }
 
+/* AI strategy: modes, 4D competencies, academies */
+.modes{ display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:16px; }
+.mode{ border-radius:18px; padding:22px; position:relative; display:flex; flex-direction:column; gap:8px; }
+.mode .role{ font-size:13px; font-weight:600; padding:3px 10px; border-radius:999px; background:rgba(255,255,255,.6); align-self:flex-start; }
+.mode h3{ font-size:clamp(26px, 2.6vw, 34px); letter-spacing:-.025em; }
+.mode p{ margin:0; font-size:15.5px; }
+.mode .eg{ margin-top:auto; padding-top:10px; font-size:14px; opacity:.85; }
+.m1{ background:var(--paper); } .m2{ background:var(--lilac); } .m3{ background:var(--blue); color:#fff; } .m3 .role{ background:rgba(255,255,255,.18); }
+.mode:not(:last-child)::after{ content:""; position:absolute; right:-14px; top:50%; width:14px; height:18px; background:var(--ink); clip-path:polygon(0 0, 100% 50%, 0 100%); transform:translateY(-50%); z-index:1; }
+@media (max-width:860px){ .modes{ grid-template-columns:1fr; } .mode:not(:last-child)::after{ right:auto; left:50%; top:auto; bottom:-15px; transform:translateX(-50%) rotate(90deg); } }
+.fourd{ display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); gap:12px; }
+.d-card{ border-radius:18px; padding:22px; display:flex; flex-direction:column; gap:8px; }
+.d-card .d{ font-family:var(--display); font-weight:800; font-size:64px; line-height:.8; letter-spacing:-.04em; }
+.d-card h3{ font-size:24px; letter-spacing:-.015em; }
+.d-card p{ margin:0; font-size:15.5px; }
+.d-card a{ margin-top:auto; padding-top:8px; font-size:14px; font-weight:600; text-underline-offset:3px; }
+.d1{ background:var(--sun); } .d2{ background:var(--pink); } .d3{ background:var(--mint); } .d4{ background:var(--ink); color:#fff; } .d4 a{ color:#fff; }
+@media (max-width:960px){ .fourd{ grid-template-columns:repeat(2, minmax(0,1fr)); } }
+@media (max-width:560px){ .fourd{ grid-template-columns:1fr; } }
+.academies{ display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:14px; }
+.academy{ border-radius:22px; padding:26px; position:relative; overflow:hidden; isolation:isolate; }
+.academy::after{ content:""; position:absolute; right:-50px; top:-60px; width:150px; height:150px; border-radius:50%; z-index:-1; }
+.academy .ak{ display:inline-block; font-size:13px; font-weight:600; padding:4px 11px; border-radius:999px; margin-bottom:12px; }
+.academy h3{ font-size:clamp(28px, 3vw, 40px); letter-spacing:-.03em; margin-bottom:8px; max-width:12ch; }
+.academy .what{ font-size:17px; margin:0 0 14px; max-width:30em; }
+.academy ul{ margin:0; padding-left:18px; font-size:15.5px; }
+.academy li{ margin-bottom:6px; }
+.a-learn{ background:var(--blue); color:#fff; } .a-learn .ak{ background:rgba(255,255,255,.18); } .a-learn::after{ background:var(--sun); }
+.a-champ{ background:var(--pink); } .a-champ .ak{ background:rgba(255,255,255,.55); } .a-champ::after{ background:var(--lilac); }
+@media (max-width:760px){ .academies{ grid-template-columns:1fr; } }
+
 /* three-minute lesson */
 .lesson{ background:var(--paper); border-radius:20px; padding:24px; }
 .lesson-steps{ list-style:none; margin:0 0 20px; padding:0; display:flex; gap:8px; flex-wrap:wrap; counter-reset:ls; }
@@ -724,8 +755,8 @@ table.cmp{ width:100%; border-collapse:collapse; font-size:15px; table-layout:fi
 
     <a class="tile t-plan" href="#/plan" style="--i:6">
       <div class="row"><span class="tag">Plan</span><span class="go" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9h11M9.5 4.5 14 9l-4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
-      <h2>My 90-day plan for AI enablement</h2>
-      <p>How I'd start in any business, and the tools I'd bring.</p>
+      <h2>My AI strategy and 90-day plan</h2>
+      <p>Fluency over prompts: the framework, the first 90 days and the academies that follow.</p>
       <div class="pv pv-phases" aria-hidden="true"><span><b>30</b>Listen and baseline</span><span><b>60</b>Pilot and teach</span><span><b>90</b>Prove and scale</span></div>
     </a>
 
@@ -931,7 +962,7 @@ table.cmp{ width:100%; border-collapse:collapse; font-size:15px; table-layout:fi
 
   <section class="block" id="learning-design" style="scroll-margin-top:16px">
     <h2>How I design learning: the 4C framework</h2>
-    <p class="sub">My Oxford MSc was in how adults learn. For AI, that means building confidence and judgement, not just teaching features. People sit at different stages, so each stage gets its own learning, not one course for everyone.</p>
+    <p class="sub">My Oxford MSc was in how adults learn. For AI, that means building confidence and judgement, not just teaching features. People sit at different stages, so each stage gets its own learning, not one course for everyone. At every stage, they build the same <a href="#/plan" data-scroll="fluency">four skills of AI fluency</a>.</p>
     <div class="four-c">
       <div class="cstep"><span class="st">Stage 1</span><h3>Curious</h3><p class="who">Has heard the hype, hasn't used AI for real work.</p>
         <dl><dt>What they need</dt><dd>To see it work on their own task, safely.</dd><dt>What I build</dt><dd>Short live demos on real tasks and a one-page guardrails guide.</dd><dt>How we know</dt><dd>A first real task done within 14 days.</dd></dl></div>
@@ -1222,7 +1253,7 @@ table.cmp{ width:100%; border-collapse:collapse; font-size:15px; table-layout:fi
     </div>
   </section>
 
-  <section class="block">
+  <section class="block" id="rules" style="scroll-margin-top:16px">
     <h2>Rules I work by</h2>
     <div class="four" style="margin-top:16px">
       <div class="cell"><h3>Verify before trusting</h3><p>Every number is checked before anyone else sees it.</p></div>
@@ -1254,11 +1285,42 @@ table.cmp{ width:100%; border-collapse:collapse; font-size:15px; table-layout:fi
 <div class="wrap view" data-route="plan" hidden>
   <header class="view-head vh-mint">
     <a class="crumb" href="#/">All work</a>
-    <h1 tabindex="-1">My 90-day plan for AI enablement</h1>
-    <p class="lede">The plan I'd adapt to any business. Each step links to work that shows how I'd do it, and the tools I'd bring are at the bottom of this page.</p>
+    <h1 tabindex="-1">My AI strategy and 90-day plan</h1>
+    <p class="lede">Many organisations adopt AI without a strategy: licences go out, a prompt workshop runs, and little changes. My approach is less about writing prompts and more about embedding AI into everyday work, safely, ethically and effectively, by building AI fluency across the workplace.</p>
+    <nav class="jump" aria-label="On this page">
+      <a href="#/plan" data-scroll="modes">From tool to collaborator</a>
+      <a href="#/plan" data-scroll="fluency">Four skills of AI fluency</a>
+      <a href="#/plan" data-scroll="first-90">The first 90 days</a>
+      <a href="#/plan" data-scroll="academies">Two academies</a>
+      <a href="#/plan" data-scroll="prioritiser">The toolkit</a>
+    </nav>
   </header>
 
-  <section class="block">
+  <section class="block" id="modes" style="scroll-margin-top:16px">
+    <h2>From a tool to a collaborator</h2>
+    <p class="sub">People work with AI in three ways. A good strategy plans for all three and moves people along at a safe pace, starting with the first.</p>
+    <div class="modes">
+      <div class="mode m1"><span class="role">AI as a tool</span><h3>Automation</h3><p>AI carries out a specific task, following your instructions.</p><span class="eg">For example: turn meeting notes into a list of actions.</span></div>
+      <div class="mode m2"><span class="role">AI as a thinking partner</span><h3>Augmentation</h3><p>You and AI work together, each bringing what the other can't.</p><span class="eg">For example: draft a board paper together, then ask AI to challenge it.</span></div>
+      <div class="mode m3"><span class="role">AI as a collaborator</span><h3>Agency</h3><p>You set AI up to carry out future tasks on your behalf, within limits you define.</p><span class="eg">For example: a weekly report that gathers its own data, checked by a person before it's shared.</span></div>
+    </div>
+  </section>
+
+  <section class="block" id="fluency" style="scroll-margin-top:16px">
+    <h2>Four skills of AI fluency</h2>
+    <p class="sub">The competency framework I build every programme around. These are skills, not techniques, so they don't go out of date when the tools change.</p>
+    <div class="fourd">
+      <div class="d-card d1"><span class="d" aria-hidden="true">D</span><h3>Delegation</h3><p>Thoughtfully deciding what work to do with AI and what to do yourself.</p><a href="#/plan" data-scroll="prioritiser">See the use-case prioritiser</a></div>
+      <div class="d-card d2"><span class="d" aria-hidden="true">D</span><h3>Description</h3><p>Communicating clearly with AI systems.</p><a href="#/training" data-scroll="lesson">Try the three-minute lesson</a></div>
+      <div class="d-card d3"><span class="d" aria-hidden="true">D</span><h3>Discernment</h3><p>Evaluating AI outputs and behaviour with a critical eye.</p><a href="#/workflows" data-scroll="rules">See the rules I work by</a></div>
+      <div class="d-card d4"><span class="d" aria-hidden="true">D</span><h3>Diligence</h3><p>Making sure you work with AI responsibly.</p><a href="#/plan" data-scroll="guardrails">See the responsible-use guide</a></div>
+    </div>
+    <p class="note">The four competencies and three modes come from the <a href="https://anthropic.skilljar.com/ai-fluency-framework-foundations" target="_blank" rel="noopener">AI Fluency Framework</a> by Rick Dakan, Joseph Feller and Anthropic, shared under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a>. I'm certified in AI Fluency through Anthropic Academy.</p>
+  </section>
+
+  <section class="block" id="first-90" style="scroll-margin-top:16px">
+    <h2>The first 90 days</h2>
+    <p class="sub">The plan I'd adapt to any business. Each step links to work that shows how I'd do it.</p>
     <div class="phases">
       <div class="phase">
         <span class="days">Days 1 to 30</span>
@@ -1280,7 +1342,7 @@ table.cmp{ width:100%; border-collapse:collapse; font-size:15px; table-layout:fi
         <ol>
           <li>Launch two or three pilots, each with a named owner and a success measure.<br><a class="ex" href="#/workflows">Example: my AI workflows</a></li>
           <li>Build role-based learning: short tutorials plus live workshops.<br><a class="ex" href="#/work" data-scroll="proj-training">Example: my training kit</a></li>
-          <li>Recruit and train a champions network through train-the-trainer.<br><a class="ex" href="#/training" data-scroll="learning-design">Example: the 4C framework</a></li>
+          <li>Recruit and train a champions network through train-the-trainer.<br><a class="ex" href="#/plan" data-scroll="academies">Example: the AI Champion Academy</a> <a class="ex" href="#/training" data-scroll="learning-design">Example: the 4C framework</a></li>
           <li>Open weekly office hours and a shared library of prompts and workflows.<br><a class="ex" href="#/work" data-scroll="proj-playbook">Example: the playbook</a></li>
         </ol>
         <div class="out"><p><b>You'll have</b>Live pilots, learning paths for each role, trained champions and a first resource hub.</p><p><b>Measured by</b>Activation in pilot teams, session ratings, champions trained.</p></div>
@@ -1292,13 +1354,43 @@ table.cmp{ width:100%; border-collapse:collapse; font-size:15px; table-layout:fi
         <ol>
           <li>Measure pilots against the baseline and publish short case studies.<br><a class="ex" href="#/work" data-scroll="proj-report">Example: reporting for success</a></li>
           <li>Scale the winning workflows to the next teams.<br><a class="ex" href="#/training">Example: scaling across regions</a></li>
-          <li>Embed AI in onboarding and in managers' routines.<br><a class="ex" href="#/training" data-scroll="learning-design">Example: how I design learning</a></li>
+          <li>Embed AI in onboarding and in managers' routines.<br><a class="ex" href="#/plan" data-scroll="academies">Example: the AI Academy</a></li>
           <li>Set up an intake process and a governance rhythm.<br><a class="ex" href="#/governance">Example: from idea to approved</a></li>
           <li>Present a 90-day impact readout and a two-quarter roadmap.<br><a class="ex" href="#/plan" data-scroll="scorecard">Example: adoption scorecard</a></li>
         </ol>
-        <div class="out"><p><b>You'll have</b>An impact readout, a scale plan, a playbook and a signed-off roadmap.</p><p><b>Measured by</b>Weekly active use, hours saved, confidence scores, workflows in daily use.</p></div>
+        <div class="out"><p><b>You'll have</b>An impact readout, a scale plan, a playbook and a signed-off roadmap for the two academies.</p><p><b>Measured by</b>Weekly active use, hours saved, confidence scores, workflows in daily use.</p></div>
       </div>
     </div>
+  </section>
+
+  <section class="block" id="academies" style="scroll-margin-top:16px">
+    <h2>Beyond 90 days: two academies</h2>
+    <p class="sub">The longer-term strategy. AI fluency becomes part of how the organisation learns, not a one-off launch.</p>
+    <div class="academies">
+      <article class="academy a-learn">
+        <span class="ak">For every team</span>
+        <h3>AI Academy</h3>
+        <p class="what">Teaching teams how to use AI in their day-to-day work.</p>
+        <ul>
+          <li>Role-based learning paths built on the four skills of AI fluency</li>
+          <li>Short live sessions, then practice on real work</li>
+          <li>Part of onboarding, so new starters begin with AI from day one</li>
+          <li>Progress tracked with the adoption scorecard</li>
+        </ul>
+      </article>
+      <article class="academy a-champ">
+        <span class="ak">For every department</span>
+        <h3>AI Champion Academy</h3>
+        <p class="what">Developing AI Champions in each department to train and support their team members.</p>
+        <ul>
+          <li>At least one champion in every department</li>
+          <li>Train-the-trainer, using the same kit as my own sessions</li>
+          <li>A champions network that shares what works across teams</li>
+          <li>Office hours and a shared library of prompts and workflows</li>
+        </ul>
+      </article>
+    </div>
+    <p class="philo" style="margin-top:22px;font-size:clamp(19px,1.9vw,24px)">The AI Academy builds fluency across everyone. The Champion Academy keeps it growing, team by team, long after launch day.</p>
   </section>
 
   <section class="block" id="prioritiser">
@@ -1420,7 +1512,7 @@ document.querySelectorAll('[data-photo]').forEach(el => {
 /* ---------- Router ---------- */
 const ORDER = ['about', 'training', 'work', 'governance', 'workflows', 'plan', 'gift'];
 const TITLES = { about: 'About me', training: 'Training colleagues and CEOs to use AI', work: 'Sample work and real-world results', governance: 'AI governance',
-  workflows: 'How I build with AI', plan: 'My 90-day plan for AI enablement', gift: 'A gift for hiring managers' };
+  workflows: 'How I build with AI', plan: 'My AI strategy and 90-day plan', gift: 'A gift for hiring managers' };
 /* Older links still work: they open the matching project on the Sample work page. */
 const ALIAS = { playbook: ['work', 'proj-playbook'], reports: ['work', 'proj-report'], board: ['work', 'proj-board'],
   learning: ['training', 'learning-design'], platforms: ['governance', 'platforms'], built: ['workflows', 'this-site'] };
