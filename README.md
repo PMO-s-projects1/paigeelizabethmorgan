@@ -1,29 +1,30 @@
-# Em Morgan: portfolio
+# Paige Elizabeth Morgan: portfolio
 
-A static site. No build step. Deploy the whole folder to Vercel (via GitHub, as with the playbook).
+A static site with no build step. Every push to `main` updates the live site at paigeelizabethmorgan.com.
 
 ## Files
 
-- `index.html`: homepage boxes and all nine pages
-- `demos/playbook-demo.html`: PMO Enterprises playbook demo
-- `demos/report-demo.html`: Chapter Overview Report demo (before and after)
+- `index.html`: the home page and every section, each with its own link (for example `/#/work`)
+- `demos/playbook-demo.html`: the PMO Enterprises sample playbook
+- `demos/report-demo.html`: the Chapter Overview Report sample (before and after)
 - `demos/commitments-demo.html`: the tracker embedded inside the report and the playbook
-- `demos/pmo-data.js`: the fictional data all three demos share
+- `demos/pmo-data.js`: the fictional data all three samples share
+- `assets/`: CV PDF and photo
 
-## To finish
+## Sections
+
+About me, Training, Sample work (four projects with real-world results), AI governance, AI workflows,
+Choosing an AI platform, 90-day plan, How I design learning, How I built this site, and a gift for hiring managers.
+Older links (`#/playbook`, `#/reports`, `#/board`) open the matching project on the Sample work page.
+
+## Settings
 
 Edit the `CONFIG` block at the bottom of `index.html`:
 
-- `photo`: add a square photo as `assets/em-morgan.jpg` and set `photo: "assets/em-morgan.jpg"`
-- `cv`: add your CV as `assets/Paige_Elizabeth_Morgan_CV.pdf` and set the path
-- `linkedin`: your profile URL
-- `boardDeck`: the link to your sample board presentation
-- `videos.training`: a Loom, YouTube or Vimeo share link
+- `photo`: `assets/paige-elizabeth-morgan.jpg`
+- `cv`: `assets/Paige-Elizabeth-Morgan-CV.pdf`
+- `linkedin`: your profile URL (the LinkedIn button stays hidden until this is filled in)
 
-Anything left empty hides its button or shows a "coming soon" state.
+## Sample shortcuts
 
-## Demo shortcuts
-
-- `demos/playbook-demo.html?skip=1` skips the chapter gate
 - `demos/report-demo.html#after` opens straight on the consolidated report
-- Report notes password: `demo`
