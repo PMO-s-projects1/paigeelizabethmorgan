@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Paige Elizabeth Morgan | AI enablement and AI adoption</title>
-<meta name="description" content="Paige Elizabeth Morgan: AI enablement and AI adoption, AI Champion, facilitator and learning designer, relocating to London. Training, real AI use cases with results, AI governance, and an AI strategy with a 90-day plan.">
+<meta name="description" content="Paige Elizabeth Morgan: AI enablement and AI adoption, agentic innovation and experimentation, AI Champion, facilitator and learning designer, relocating to London. Training, real AI use cases with results, AI governance, and an AI strategy with a 90-day plan.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Geist:wght@400;500;600&display=swap" rel="stylesheet">
@@ -89,7 +89,8 @@ button{ font:inherit; }
 .intro dl{ display:grid; gap:10px; margin:0; font-size:16px; }
 .intro dl div{ display:flex; gap:12px; align-items:baseline; flex-wrap:wrap; }
 .intro dt{ color:var(--ink-3); width:84px; flex:none; }
-.intro dd{ margin:0; font-weight:500; }
+.intro dd{ margin:0; font-weight:500; flex:1 1 220px; min-width:0; }
+.intro dd .rtw{ display:block; font-size:13.5px; font-weight:500; color:var(--ink-3); margin-top:2px; }
 .intro dd a{ text-decoration-thickness:2px; text-underline-offset:4px; text-decoration-color:var(--pink); }
 .intro .acts{ display:flex; gap:10px; flex-wrap:wrap; }
 @media (max-width:640px){ .intro{ padding:26px; } .intro::before{ width:220px; height:220px; right:-90px; top:-100px; } .intro::after{ width:90px; height:90px; right:70px; top:60px; } }
@@ -181,6 +182,7 @@ button{ font:inherit; }
 .view-head .crumb{ display:inline-flex; align-items:center; gap:8px; font-weight:600; font-size:14px; text-decoration:none; padding:7px 14px; border-radius:999px; background:rgba(255,255,255,.55); margin-bottom:28px; }
 .view-head h1{ font-size:clamp(40px, 6vw, 84px); font-weight:800; line-height:.95; letter-spacing:-.04em; max-width:14ch; outline:none; }
 .view-head .lede{ font-size:clamp(18px, 1.7vw, 21px); max-width:40em; margin:20px 0 0; }
+.rtw-pill{ display:inline-block; font-size:13px; font-weight:600; line-height:1.3; padding:3px 10px; border-radius:999px; background:rgba(255,255,255,.2); vertical-align:2px; white-space:nowrap; }
 .view-head .acts{ display:flex; gap:10px; flex-wrap:wrap; margin-top:26px; }
 @media (max-width:640px){ .view-head{ padding:26px; } }
 .vh-blue{ background:var(--blue); color:#fff; } .vh-blue .crumb{ background:rgba(255,255,255,.18); }
@@ -207,6 +209,9 @@ button{ font:inherit; }
 .cell h3{ font-size:20px; margin-bottom:8px; letter-spacing:-.01em; }
 .cell p{ font-size:15.5px; color:var(--ink-2); margin:0; }
 .cell.hl{ background:var(--ink); color:#fff; }
+.pilot{ display:flex; flex-direction:column; }
+.pilot p{ margin-bottom:12px !important; }
+.pilot .now{ margin-top:auto; align-self:flex-start; background:var(--mint); color:var(--ink); border-radius:999px; padding:5px 12px; font-size:13px; font-weight:600; line-height:1.3; }
 .cell.hl p{ color:rgba(255,255,255,.8); }
 .stat{ border-radius:16px; padding:20px; }
 .stat b{ display:block; font-family:var(--display); font-weight:800; font-size:clamp(30px, 3.2vw, 44px); line-height:1; letter-spacing:-.03em; margin-bottom:8px; }
@@ -848,16 +853,10 @@ p,li,dd,.stat span,.cell p,.mat span{ text-wrap:pretty; }
       <div>
         <h1 id="name">Paige<br>Elizabeth<br>Morgan</h1>
         <p class="role">I help people actually use AI at work.</p>
-        <ol class="journey" aria-label="The story of this site">
-          <li><span><b>Who I am</b></span></li>
-          <li><span><b>How I've enabled AI at YPO</b>, through training and use cases</span></li>
-          <li><span><b>How I'd enable AI in your company</b></span></li>
-          <li><span><b>How I'd work with your policy teams</b> to align governance</span></li>
-        </ol>
       </div>
       <dl>
-        <div><dt>Focus</dt><dd>AI enablement, AI adoption, facilitation and learning design</dd></div>
-        <div><dt>Location</dt><dd>Relocating to London in December 2026</dd></div>
+        <div><dt>Focus</dt><dd>AI enablement and adoption, agentic innovation, experimentation and learning design</dd></div>
+        <div><dt>Location</dt><dd>Relocating to London in December 2026 <small class="rtw">Full right to work in the UK</small></dd></div>
         <div><dt>Email</dt><dd><a data-cfg="email">paigeelizabethmorgan@gmail.com</a></dd></div>
       </dl>
     </section>
@@ -866,7 +865,7 @@ p,li,dd,.stat span,.cell p,.mat span{ text-wrap:pretty; }
       <div class="row"><span class="tag">1 · Who I am</span><span class="go" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9h11M9.5 4.5 14 9l-4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
       <h2>About me</h2>
       <p>My story, my experience, my qualifications and my CV.</p>
-      <div class="pv pv-about"><span class="avatar" data-photo>PEM</span><ul><li>AI Champion at YPO</li><li>Oxford MSc in Education</li><li>Facilitator</li></ul></div>
+      <div class="pv pv-about"><span class="avatar" data-photo>PEM</span><ul><li>AI Champion at YPO</li><li>Pilots scaled across YPO</li><li>Oxford MSc in Education</li></ul></div>
     </a>
 
     <a class="tile t-training" href="#/training" style="--i:2">
@@ -918,7 +917,7 @@ p,li,dd,.stat span,.cell p,.mat span{ text-wrap:pretty; }
       <span class="avatar" data-photo style="background:var(--pink);color:var(--ink)">PEM</span>
       <div>
         <h1 tabindex="-1">About me</h1>
-        <p class="lede">I'm Paige Elizabeth Morgan, YPO's Regional Director for the Middle East and North Africa and its AI Champion: a facilitator and learning designer driving AI enablement and adoption. From Wales, relocating to London in December 2026.</p>
+        <p class="lede">I'm Paige Elizabeth Morgan, YPO's Regional Director for the Middle East and North Africa and its AI Champion: a facilitator and learning designer driving AI enablement and adoption. From Wales, relocating to London in December 2026. <small class="rtw-pill">Full right to work in the UK</small></p>
         <div class="acts"><a class="btn btn-white" data-cfg="cv" download>Download my CV (PDF)</a><a class="btn btn-line" style="color:#fff;border-color:#fff" data-cfg="email">Email me</a><a class="btn btn-line" style="color:#fff;border-color:#fff" data-cfg="linkedin" target="_blank" rel="noopener">LinkedIn</a></div>
       </div>
     </div>
@@ -949,6 +948,21 @@ p,li,dd,.stat span,.cell p,.mat span{ text-wrap:pretty; }
     </div>
   </section>
 
+  <section class="block" id="innovation" style="scroll-margin-top:16px">
+    <h2>Innovation and experimentation</h2>
+    <p class="sub">Every new idea starts as an experiment with a success measure. I pilot it in MENA, decide on the evidence, then scale what works across YPO.</p>
+    <div class="flow" aria-label="How I run an experiment"><span>Spot the friction</span><span>Set a hypothesis and a success measure</span><span>Pilot with real users</span><span>Go, iterate or stop</span><span>Scale what works</span></div>
+    <h3 class="sec">Piloted in MENA, scaled across YPO</h3>
+    <div class="three pilots">
+      <div class="cell pilot"><h3>Onboarding</h3><p>Spotted that chapters weren't equipped to onboard members, redesigned the process and piloted YPO's new programme, rated 4.9/5.</p><span class="now">Now: I advise the global team</span></div>
+      <div class="cell pilot"><h3>Peer-to-peer mastery sessions</h3><p>Designed for chapter leadership teams, and tested in MENA first.</p><span class="now">Now: YPO's global standard</span></div>
+      <div class="cell pilot"><h3>Assistant Learning Officer session</h3><p>Co-built with YPO's global Learning team, and piloted in MENA.</p><span class="now">Now: mandatory worldwide</span></div>
+      <div class="cell pilot"><h3>AI use cases and agents</h3><p>Claude agents and AI workflows tested across my own role first.</p><span class="now">Now: enterprise adoption and an AI policy</span></div>
+      <div class="cell pilot"><h3>United MENA Playbook</h3><p>Prototyped with AI in two weeks instead of five months, then piloted with chapters.</p><span class="now">Now: 27 of 27 chapters, 30% fewer questions</span></div>
+      <div class="cell pilot"><h3>Budgeting and tracking</h3><p>A system built with the global team to track regional spend.</p><span class="now">Now: used by multiple regions</span></div>
+    </div>
+  </section>
+
   <figure class="quote">
     <blockquote>&ldquo;AI should strive to enhance us, not replace us.&rdquo;</blockquote>
     <figcaption>Fei-Fei Li, Co-Director of the Stanford Institute for Human-Centered AI, in <a href="https://democrats-science.house.gov/imo/media/doc/Li%20Testimony.pdf" target="_blank" rel="noopener">testimony to the US House Science Committee</a>, 2018</figcaption>
@@ -974,7 +988,7 @@ p,li,dd,.stat span,.cell p,.mat span{ text-wrap:pretty; }
             <li>Trained 1,000+ CEOs in 13 countries and hundreds of colleagues, with a network of 2 Champions and 6 trainers. <a href="#/training" data-scroll="kit">See my training kit</a></li>
             <li>Built the United MENA Playbook with AI. Every chapter uses it, and questions to my team are down 30%.</li>
           </ul>
-          <h4>Process and stakeholders</h4>
+          <h4>Innovation and stakeholders</h4>
           <ul>
             <li>Piloted YPO's new global onboarding programme, rated 4.9/5. My peer-to-peer mastery sessions are now the global standard.</li>
             <li>Advise Regional Chairs and boards of CEOs. Regional Board Meetings rate 4.8–4.9/5.</li>
@@ -1039,7 +1053,7 @@ p,li,dd,.stat span,.cell p,.mat span{ text-wrap:pretty; }
     <div class="two" style="margin-top:16px;align-items:start">
       <div>
         <h3 class="mini-h">What I bring</h3>
-        <div class="creds-row"><span>AI enablement</span><span>AI adoption at scale</span><span>Creating agents</span><span>Experimentation and pilots</span><span>AI governance</span><span>Change leadership</span><span>Facilitation</span><span>Executive advisory</span></div>
+        <div class="creds-row"><span>AI enablement</span><span>AI adoption at scale</span><span>Agentic innovation</span><span>Creating agents</span><span>Use-case discovery</span><span>Rapid prototyping</span><span>Experimentation and pilots</span><span>Value realisation and KPIs</span><span>Process redesign</span><span>AI governance</span><span>Change leadership</span><span>Influence without authority</span><span>Facilitation</span></div>
       </div>
       <div>
         <h3 class="mini-h">Tools I use</h3>
