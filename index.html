@@ -549,6 +549,20 @@ button{ font:inherit; }
 .proj-kicker{ display:inline-block; font-size:13px; font-weight:600; padding:4px 11px; border-radius:999px; background:var(--paper); margin-bottom:10px; }
 .project h2{ font-size:clamp(28px, 3.2vw, 44px); margin-bottom:10px; }
 .proj-lede{ font-size:clamp(17px, 1.5vw, 19px); color:var(--ink-2); max-width:44em; margin:0; }
+.uc > summary{ list-style:none; cursor:pointer; grid-template-columns:auto 1fr auto; align-items:center; margin:0; border-radius:12px; }
+.uc > summary::-webkit-details-marker{ display:none; }
+.uc > summary:focus-visible{ outline:3px solid var(--blue); outline-offset:6px; }
+.uc > summary h2{ margin-bottom:0; }
+.uc-ic{ flex:none; width:44px; height:44px; border-radius:50%; background:var(--paper); position:relative; transition:background .2s ease; }
+.uc > summary:hover .uc-ic{ background:var(--sun); }
+.uc-ic::before,.uc-ic::after{ content:""; position:absolute; left:50%; top:50%; width:16px; height:2.5px; border-radius:2px; background:var(--ink); transform:translate(-50%,-50%); }
+.uc-ic::after{ transform:translate(-50%,-50%) rotate(90deg); transition:transform .2s ease; }
+.uc[open] .uc-ic::after{ transform:translate(-50%,-50%) rotate(0deg); }
+.uc-body{ padding-top:22px; }
+.uc-body > .proj-lede{ margin-bottom:18px; }
+.wf-titles{ display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:10px 24px; }
+@media (max-width:640px){ .wf-titles{ grid-template-columns:1fr; } }
+@media (prefers-reduced-motion:reduce){ .uc-ic,.uc-ic::after{ transition:none; } }
 .proj-acts{ display:flex; gap:10px; flex-wrap:wrap; margin:0 0 6px; }
 .sec{ font-size:22px; margin:30px 0 12px; letter-spacing:-.01em; }
 .rw{ display:flex; align-items:center; gap:10px; font-size:24px; margin:32px 0 14px; letter-spacing:-.01em; }
@@ -562,7 +576,7 @@ button{ font:inherit; }
 .mat em{ position:absolute; left:20px; bottom:18px; font-style:normal; font-weight:600; font-size:14px; text-decoration:underline; text-underline-offset:3px; }
 .m-blue{ background:var(--blue); color:#fff; } .m-pink{ background:var(--pink); } .m-mint{ background:var(--mint); }
 @media (max-width:860px){ .mats{ grid-template-columns:1fr; } }
-@media (max-width:560px){ .proj-head{ grid-template-columns:1fr; gap:8px; } }
+@media (max-width:560px){ .proj-head{ grid-template-columns:1fr; gap:8px; } .uc > summary{ grid-template-columns:1fr auto; } .uc > summary .proj-num{ grid-column:1 / -1; } .uc-ic{ width:36px; height:36px; } }
 @media (prefers-reduced-motion:reduce){ .mat{ transition:none; } .mat:hover{ transform:none; } }
 
 /* governance */
@@ -927,14 +941,14 @@ p,li,dd,.stat span,.cell p,.mat span{ text-wrap:pretty; }
     <h2>My story</h2>
     <p class="lead" style="margin-top:14px">I started working alongside top CEOs to deliver AI to YPO members, then brought it into my own work and became YPO's AI Champion.</p>
     <p>I set up Claude agents across my role, and my management team now train others as AI Champions. Sharing our use cases led to enterprise adoption and an AI policy, and I'm now piloting AI workflows for all of YPO.</p>
-    <p style="margin:0">I run my region like a commercial team. I use Salesforce daily to turn prospects into chapter members and, ultimately, regional champions, and we've met or exceeded every KPI, every year.</p>
+    <p style="margin:0">I run my region like a commercial team. I use Salesforce to turn prospects into chapter members and, ultimately, regional champions, and since I became Regional Director I've led my team to meet or exceed every KPI.</p>
   </section>
 
   <section class="block">
     <h2>Results at a glance</h2>
     <div class="stat-rows" style="margin-top:16px">
       <div class="four">
-        <div class="stat s-blue"><b>Every KPI</b><span>Met or exceeded, every year, as Regional Director</span></div>
+        <div class="stat s-blue"><b>Every KPI</b><span>Met or exceeded by my team, since I became Regional Director</span></div>
         <div class="stat s-sun"><b class="num">97%</b><span>Record renewals, leading YPO globally</span></div>
         <div class="stat s-mint"><b class="num">100%</b><span>Of chapters at Platinum, YPO's top health score, a first for MENA</span></div>
         <div class="stat s-pink"><b class="num">1,000+</b><span>CEOs trained to use AI, in every global region</span></div>
@@ -963,11 +977,6 @@ p,li,dd,.stat span,.cell p,.mat span{ text-wrap:pretty; }
     </div>
   </section>
 
-  <figure class="quote">
-    <blockquote>&ldquo;AI should strive to enhance us, not replace us.&rdquo;</blockquote>
-    <figcaption>Fei-Fei Li, Co-Director of the Stanford Institute for Human-Centered AI, in <a href="https://democrats-science.house.gov/imo/media/doc/Li%20Testimony.pdf" target="_blank" rel="noopener">testimony to the US House Science Committee</a>, 2018</figcaption>
-  </figure>
-
   <section class="block">
     <h2>Experience</h2>
     <p class="sub">The highlights. The full detail is in my CV.</p>
@@ -977,8 +986,8 @@ p,li,dd,.stat span,.cell p,.mat span{ text-wrap:pretty; }
         <div><h3>Regional Director, Middle East and North Africa</h3><p class="org">YPO, Dubai. 27 chapters of chief executives. Rated Exceeds Expectations.</p>
           <h4>Targets and results</h4>
           <ul>
-            <li>Use Salesforce daily to turn prospects into chapter members and, ultimately, regional champions.</li>
-            <li>Met or exceeded every KPI, every year: 100% of chapters at Platinum, record 4.5/5 satisfaction and 97% renewals, leading YPO globally.</li>
+            <li>Use Salesforce to turn prospects into chapter members and, ultimately, regional champions.</li>
+            <li>Since I became Regional Director, I've led my team to meet or exceed every KPI: 100% of chapters at Platinum, record 4.5/5 satisfaction and 97% renewals, leading YPO globally.</li>
             <li>MENA ranked YPO's Most Highly Engaged region, and a Dubai chapter was named Best Chapter out of 500.</li>
             <li>Own the regional budget, and grew it by 25% through partnerships.</li>
           </ul>
@@ -1034,18 +1043,12 @@ p,li,dd,.stat span,.cell p,.mat span{ text-wrap:pretty; }
         </ul>
       </div>
     </div>
-    <h3 class="sec">Education and more</h3>
-    <div class="two" style="align-items:start">
-      <ul class="tick">
-        <li>BA English Language and Teaching, First Class Honours, Swansea University</li>
-        <li>Certificate in English Language Teaching to Adults, Cambridge English</li>
-        <li>Three years working alongside Birkman coaches</li>
-      </ul>
-      <ul class="tick">
-        <li>A network of CEOs in London and every YPO region, and experience with government ministers</li>
-        <li>UK citizen with full right to work in the UK</li>
-      </ul>
-    </div>
+    <h3 class="sec">Additional education and more</h3>
+    <ul class="tick">
+      <li>BA English Language and Teaching, First Class Honours, Swansea University</li>
+      <li>Certificate in English Language Teaching to Adults, Cambridge English</li>
+      <li>Three years working alongside Birkman coaches</li>
+    </ul>
   </section>
 
   <section class="block">
@@ -1053,15 +1056,20 @@ p,li,dd,.stat span,.cell p,.mat span{ text-wrap:pretty; }
     <div class="two" style="margin-top:16px;align-items:start">
       <div>
         <h3 class="mini-h">What I bring</h3>
-        <div class="creds-row"><span>AI enablement</span><span>AI adoption at scale</span><span>Agentic innovation</span><span>Creating agents</span><span>Use-case discovery</span><span>Rapid prototyping</span><span>Experimentation and pilots</span><span>Value realisation and KPIs</span><span>Process redesign</span><span>AI governance</span><span>Change leadership</span><span>Influence without authority</span><span>Facilitation</span></div>
+        <div class="creds-row"><span>Agentic innovation</span><span>Creating agents</span><span>AI use-case discovery</span><span>Rapid prototyping and low-code</span><span>Experimentation and go/no-go decisions</span><span>Value realisation and success metrics</span><span>KPI definition</span><span>Process mapping and redesign</span><span>AI governance and responsible AI</span><span>Change leadership and AI adoption</span><span>Cross-functional alignment</span><span>Senior stakeholder advisory</span><span>Influence without authority</span></div>
       </div>
       <div>
         <h3 class="mini-h">Tools I use</h3>
-        <div class="creds-row out"><span>Claude, including agents</span><span>Salesforce, daily</span><span>Tableau</span><span>Workday</span><span>Microsoft 365</span><span>Google Workspace</span><span>Apps Script</span><span>Monday.com</span></div>
+        <div class="creds-row out"><span>Claude, including agents</span><span>Salesforce</span><span>Tableau</span><span>Microsoft 365</span><span>Google Workspace</span><span>Apps Script</span><span>Monday.com</span></div>
       </div>
     </div>
   </section>
 
+
+  <figure class="quote">
+    <blockquote>&ldquo;AI should strive to enhance us, not replace us.&rdquo;</blockquote>
+    <figcaption>Fei-Fei Li, Co-Director of the Stanford Institute for Human-Centered AI, in <a href="https://democrats-science.house.gov/imo/media/doc/Li%20Testimony.pdf" target="_blank" rel="noopener">testimony to the US House Science Committee</a>, 2018</figcaption>
+  </figure>
 </div>
 
 <!-- ============================ 2. TRAINING ============================ -->
@@ -1140,226 +1148,192 @@ p,li,dd,.stat span,.cell p,.mat span{ text-wrap:pretty; }
 
   <!-- 01 Training kit -->
   <section class="project" id="proj-training" aria-labelledby="pj1">
-    <div class="proj-head">
-      <span class="proj-num" aria-hidden="true">01</span>
-      <div>
-        <span class="proj-kicker">Training kit</span>
-        <h2 id="pj1">AI for executive teams, built end to end with AI</h2>
+    <details class="uc">
+      <summary class="proj-head">
+        <span class="proj-num" aria-hidden="true">01</span>
+        <div>
+          <span class="proj-kicker">Training kit</span>
+          <h2 id="pj1">AI for executive teams, built end to end with AI</h2>
+        </div>
+        <i class="uc-ic" aria-hidden="true"></i>
+      </summary>
+      <div class="uc-body">
         <p class="proj-lede">My AI session for executive teams, packaged as a train-the-trainer kit: a 21-slide deck with a full trainer script, a participant workbook and a facilitator guide. Every piece was created with AI, using my brand and my learning methodology.</p>
+      <div class="proj-acts"><a class="btn btn-ink" href="#/training" data-scroll="kit">See the finished kit</a></div>
+
+      <h3 class="sec">How AI built it</h3>
+      <div class="flow"><span>A brief from real needs: what leaders must do differently</span><span><span>Learning design block by block: Knowles, Merrill, Mayer and <span class="nw">70-20-10</span></span></span><span>My brand applied: colours, fonts and the PMO Enterprises logo</span><span>The deck built in Canva, with a full script in the speaker notes</span><span>Workbook activities and a facilitator guide to match</span></div>
       </div>
-    </div>
-    <div class="proj-acts"><a class="btn btn-ink" href="#/training" data-scroll="kit">See the finished kit</a></div>
-
-    <h3 class="sec">How AI built it</h3>
-    <div class="flow"><span>A brief from real needs: what leaders must do differently</span><span><span>Learning design block by block: Knowles, Merrill, Mayer and <span class="nw">70-20-10</span></span></span><span>My brand applied: colours, fonts and the PMO Enterprises logo</span><span>The deck built in Canva, with a full script in the speaker notes</span><span>Workbook activities and a facilitator guide to match</span></div>
-
-    <div class="two" style="margin-top:16px">
-      <div class="cell"><h3>What AI did</h3><p>Drafted the structure, slides, trainer script, activities and guide, applied the brand and built every piece in Canva through a connector.</p></div>
-      <div class="cell hl"><h3>What I did</h3><p>Set the outcomes, chose the learning methods, checked every slide and activity, and decided what stayed in.</p></div>
-    </div>
+    </details>
   </section>
 
   <!-- 02 Playbook -->
   <section class="project" id="proj-playbook" aria-labelledby="pj2">
-    <div class="proj-head">
-      <span class="proj-num" aria-hidden="true">02</span>
-      <div>
-        <span class="proj-kicker">Governance playbook</span>
-        <h2 id="pj2">The United MENA Playbook</h2>
+    <details class="uc">
+      <summary class="proj-head">
+        <span class="proj-num" aria-hidden="true">02</span>
+        <div>
+          <span class="proj-kicker">Governance playbook</span>
+          <h2 id="pj2">The United MENA Playbook</h2>
+        </div>
+        <i class="uc-ic" aria-hidden="true"></i>
+      </summary>
+      <div class="uc-body">
         <p class="proj-lede">I look after 27 chapter leadership teams across the Middle East and North Africa. Leaders told us the resources they needed were scattered and hard to find, so I used AI to build one place for everything a chapter leader needs. The live playbook is internal, so I've rebuilt a sample.</p>
+      <div class="proj-acts"><a class="btn btn-ink" href="demos/playbook-demo.html" target="_blank" rel="noopener">Open the sample playbook</a></div>
+      <div class="uc-notes three-up">
+        <div class="uc-note"><h4><i></i>At YPO</h4><p>The playbook is where chapter chairs, officers and managers across 27 chapters find everything they need to run their chapter to the YPO standard.</p></div>
+        <div class="uc-note any"><h4><i></i>For any company</h4><p>The same approach and tool work for any organisation, from an onboarding hub to a policy handbook, built in that company's own branding.</p></div>
+        <div class="uc-note secure"><h4><i></i>Data kept secure</h4><p>Confidential information stays behind the work security portal, so only the right people can see it. In the sample, those links open a placeholder page.</p></div>
       </div>
-    </div>
-    <div class="proj-acts"><a class="btn btn-ink" href="demos/playbook-demo.html" target="_blank" rel="noopener">Open the sample playbook</a></div>
-    <div class="uc-notes three-up">
-      <div class="uc-note"><h4><i></i>At YPO</h4><p>The playbook is where chapter chairs, officers and managers across 27 chapters find everything they need to run their chapter to the YPO standard.</p></div>
-      <div class="uc-note any"><h4><i></i>For any company</h4><p>The same approach and tool work for any organisation, from an onboarding hub to a policy handbook, built in that company's own branding.</p></div>
-      <div class="uc-note secure"><h4><i></i>Data kept secure</h4><p>Confidential information stays behind the work security portal, so only the right people can see it. In the sample, those links open a placeholder page.</p></div>
-    </div>
 
-    <h3 class="sec">The story</h3>
-    <div class="three">
-      <div class="cell"><h3>Problem</h3><p>Resources for chapter leaders were spread across folders, emails and systems. Leaders couldn't find what they needed, so they asked the regional office, and new boards took longer to reach the YPO standard.</p></div>
-      <div class="cell"><h3>Approach</h3><p>One web playbook built with AI: 13 sections, a live commitments dashboard, a regional calendar and an assistant that answers only from playbook content. I piloted it confidentially with regional leadership, then rolled it out with a signed acknowledgement from every chapter chair.</p></div>
-      <div class="cell hl"><h3>Result</h3><p>Every chapter in the region uses it regularly, and management-directed questions fell by 30%, freeing my team for the work that needs people.</p></div>
-    </div>
+      <h3 class="sec">The story</h3>
+      <div class="three">
+        <div class="cell"><h3>Problem</h3><p>Resources for chapter leaders were spread across folders, emails and systems. Leaders couldn't find what they needed, so they asked the regional office, and new boards took longer to reach the YPO standard.</p></div>
+        <div class="cell"><h3>Approach</h3><p>One web playbook built with AI: 13 sections, a live commitments dashboard, a regional calendar and an assistant that answers only from playbook content. I piloted it confidentially with regional leadership, then rolled it out with a signed acknowledgement from every chapter chair.</p></div>
+        <div class="cell hl"><h3>Result</h3><p>Every chapter in the region uses it regularly, and management-directed questions fell by 30%, freeing my team for the work that needs people.</p></div>
+      </div>
+      </div>
+    </details>
   </section>
 
   <!-- 03 Report -->
   <section class="project" id="proj-report" aria-labelledby="pj3">
-    <div class="proj-head">
-      <span class="proj-num" aria-hidden="true">03</span>
-      <div>
-        <span class="proj-kicker">Reporting</span>
-        <h2 id="pj3">Chapter Overview Report: ten sources, one place</h2>
+    <details class="uc">
+      <summary class="proj-head">
+        <span class="proj-num" aria-hidden="true">03</span>
+        <div>
+          <span class="proj-kicker">Reporting</span>
+          <h2 id="pj3">Chapter Overview Report: ten sources, one place</h2>
+        </div>
+        <i class="uc-ic" aria-hidden="true"></i>
+      </summary>
+      <div class="uc-body">
         <p class="proj-lede">Preparing for one chapter visit meant opening ten different sources. I brought them together into one report, ranked by which chapters need support first. The sample is based on the real report, with a fictional company and every name and figure changed.</p>
+      <div class="proj-acts"><a class="btn btn-line" href="demos/report-demo.html#before" target="_blank" rel="noopener">See the before</a><a class="btn btn-ink" href="demos/report-demo.html#after" target="_blank" rel="noopener">See the after</a></div>
+      <div class="uc-notes">
+        <div class="uc-note"><h4><i></i>At YPO</h4><p>The report prepares Regional Chairs for every chapter visit, showing which chapters need support first and why.</p></div>
+        <div class="uc-note any"><h4><i></i>For any company</h4><p>The same approach works for any business with teams, branches or clients to compare, built in that company's own branding.</p></div>
       </div>
-    </div>
-    <div class="proj-acts"><a class="btn btn-line" href="demos/report-demo.html#before" target="_blank" rel="noopener">See the before</a><a class="btn btn-ink" href="demos/report-demo.html#after" target="_blank" rel="noopener">See the after</a></div>
-    <div class="uc-notes">
-      <div class="uc-note"><h4><i></i>At YPO</h4><p>The report prepares Regional Chairs for every chapter visit, showing which chapters need support first and why.</p></div>
-      <div class="uc-note any"><h4><i></i>For any company</h4><p>The same approach works for any business with teams, branches or clients to compare, built in that company's own branding.</p></div>
-    </div>
 
-    <h3 class="sec">Before and after</h3>
-    <div class="ba">
-      <div class="ten">
-        <div><b>Chapter health</b>CRM report</div><div><b>Commitments</b>CRM export to Excel</div>
-        <div><b>Engagement</b>BI dashboard</div><div><b>Membership</b>Shared spreadsheet</div>
-        <div><b>Satisfaction</b>Quarterly PDF pack</div><div><b>Events</b>Event platform export</div>
-        <div><b>Budget</b>Finance tracker</div><div><b>Bylaws</b>Document library</div>
-        <div><b>Officer training</b>Learning platform</div><div><b>Peer groups</b>Online form responses</div>
+      <h3 class="sec">Before and after</h3>
+      <div class="ba">
+        <div class="ten">
+          <div><b>Chapter health</b>CRM report</div><div><b>Commitments</b>CRM export to Excel</div>
+          <div><b>Engagement</b>BI dashboard</div><div><b>Membership</b>Shared spreadsheet</div>
+          <div><b>Satisfaction</b>Quarterly PDF pack</div><div><b>Events</b>Event platform export</div>
+          <div><b>Budget</b>Finance tracker</div><div><b>Bylaws</b>Document library</div>
+          <div><b>Officer training</b>Learning platform</div><div><b>Peer groups</b>Online form responses</div>
+        </div>
+        <span class="arrow" aria-hidden="true">=</span>
+        <div class="one"><b>Chapter Overview Report</b><ul><li>Ten lenses for every chapter</li><li>Ranked by a concern score</li><li>Click a chapter for its full profile</li><li>A suggested focus for each visit</li></ul></div>
       </div>
-      <span class="arrow" aria-hidden="true">=</span>
-      <div class="one"><b>Chapter Overview Report</b><ul><li>Ten lenses for every chapter</li><li>Ranked by a concern score</li><li>Click a chapter for its full profile</li><li>A suggested focus for each visit</li></ul></div>
-    </div>
 
-    <h3 class="sec">The story</h3>
-    <div class="three">
-      <div class="cell"><h3>Problem</h3><p>Ten lenses on chapter performance lived in ten places, refreshed on different dates and named in different ways. Nothing showed which chapters needed support first.</p></div>
-      <div class="cell"><h3>Approach</h3><p>One report with every source matched to a single chapter name and refreshed on a fixed cadence. A concern score ranks chapters, and each one opens into a full profile with a suggested focus for the next visit.</p></div>
-      <div class="cell hl"><h3>Result</h3><p>Regional chairs get one link before every chapter visit, with a clear focus for each conversation. The same data now feeds board submissions and policy proposals.</p></div>
-    </div>
+      <h3 class="sec">The story</h3>
+      <div class="three">
+        <div class="cell"><h3>Problem</h3><p>Ten lenses on chapter performance lived in ten places, refreshed on different dates and named in different ways. Nothing showed which chapters needed support first.</p></div>
+        <div class="cell"><h3>Approach</h3><p>One report with every source matched to a single chapter name and refreshed on a fixed cadence. A concern score ranks chapters, and each one opens into a full profile with a suggested focus for the next visit.</p></div>
+        <div class="cell hl"><h3>Result</h3><p>Regional chairs get one link before every chapter visit, with a clear focus for each conversation. The same data now feeds board submissions and policy proposals.</p></div>
+      </div>
+      </div>
+    </details>
   </section>
 
   <!-- 04 Board meetings -->
   <section class="project" id="proj-board" aria-labelledby="pj4">
-    <div class="proj-head">
-      <span class="proj-num" aria-hidden="true">04</span>
-      <div>
-        <span class="proj-kicker">Events</span>
-        <h2 id="pj4">Board meetings in a box</h2>
+    <details class="uc">
+      <summary class="proj-head">
+        <span class="proj-num" aria-hidden="true">04</span>
+        <div>
+          <span class="proj-kicker">Events</span>
+          <h2 id="pj4">Board meetings in a box</h2>
+        </div>
+        <i class="uc-ic" aria-hidden="true"></i>
+      </summary>
+      <div class="uc-body">
         <p class="proj-lede">I design and run board meetings for YPO's CEOs and regional leaders, building every deliverable with AI from the agenda up. They consistently rate 4.8–4.9 out of 5. This is what went into YPO MENA's Regional Board Meeting in Cyprus in June 2026; the materials belong to YPO members, so they aren't shared here.</p>
       </div>
-    </div>
-
-    <h3 class="sec">What I delivered</h3>
-    <div class="three">
-      <div class="cell"><h3>Facilitator cue cards</h3><p>One per slide and clock-timed, so every segment ran to time.</p></div>
-      <div class="cell"><h3>Seating plans</h3><p>Planned across several days, so leaders met new peers at every session.</p></div>
-      <div class="cell"><h3>Table activities</h3><p>A commitment gap audit and peer accountability pairs for chapter chairs.</p></div>
-      <div class="cell"><h3>A connection activity</h3><p>A forum-style exercise designed to work for 60 participants at once.</p></div>
-      <div class="cell"><h3>The moments people remember</h3><p>A dinner speech, a new chapter spotlight panel and a team challenge on the water.</p></div>
-      <div class="cell"><h3>Follow-up</h3><p>Emails, WhatsApp messages and social captions, ready to review and send.</p></div>
-    </div>
+    </details>
   </section>
 
   <!-- 05 Everyday workflows -->
   <section class="project" id="proj-build" aria-labelledby="pj5">
-    <div class="proj-head">
-      <span class="proj-num" aria-hidden="true">05</span>
-      <div>
-        <span class="proj-kicker">Everyday AI</span>
-        <h2 id="pj5">Everyday workflows and agents</h2>
+    <details class="uc">
+      <summary class="proj-head">
+        <span class="proj-num" aria-hidden="true">05</span>
+        <div>
+          <span class="proj-kicker">Everyday AI</span>
+          <h2 id="pj5">Everyday workflows and agents</h2>
+        </div>
+        <i class="uc-ic" aria-hidden="true"></i>
+      </summary>
+      <div class="uc-body">
         <p class="proj-lede">I treat AI like a new team member: it gets the context, the tools and access to where the work lives, and I check its work. These are the workflows I run every week, and the agents I'd build on them.</p>
+
+      <h3 class="sec">Workflows I run every week</h3>
+      <ul class="tick wf-titles">
+        <li>Email replies drafted in my voice, ready for me to check and send</li>
+        <li>A playbook every chapter uses, built and improved with AI</li>
+        <li>Meetings turned into actions, owners and follow-up emails</li>
+        <li>Board meeting materials, from the agenda to the follow-up</li>
+        <li>One report from ten data sources, ready before every chapter visit</li>
+        <li>New agents, piloted on one job and scaled only when they work</li>
+      </ul>
+
+      <h3 class="sec" id="agents" style="scroll-margin-top:16px">Agents across the member journey</h3>
+      <p class="sub">I use Salesforce daily to turn prospects into chapter members and, ultimately, regional champions. It's YPO's version of a sales pipeline, so it's where agents add the most value.</p>
+      <div class="mj" aria-label="The YPO member journey">
+        <span><small>Stage 1</small>Prospect</span>
+        <span><small>Stage 2</small>Chapter member</span>
+        <span><small>Stage 3</small>Chapter leader</span>
+        <span><small>Stage 4</small>Regional champion</span>
       </div>
-    </div>
-
-    <h3 class="sec">Workflows I run every week</h3>
-    <div class="wfs">
-      <details class="wfd">
-        <summary><span>Email replies drafted in my voice, ready for me to check and send</span><i aria-hidden="true"></i></summary>
-        <div class="wfd-body">
-          <div class="flow"><span>An email arrives in Outlook</span><span>AI reads the whole thread and its attachments</span><span>It drafts a reply in my voice, unsent</span><span>I check recipients, facts, tone and promises</span><span>I edit if needed, and send</span></div>
-          <p class="out"><b>Why it matters:</b> routine replies take minutes instead of a morning, and nothing leaves without my judgement.</p>
-        </div>
-      </details>
-      <details class="wfd">
-        <summary><span>A playbook every chapter uses, built and improved with AI</span><i aria-hidden="true"></i></summary>
-        <div class="wfd-body">
-          <div class="flow"><span>Gather feedback from leaders</span><span>Design the structure and content with AI</span><span>Build the playbook and its assistant</span><span>Roll out with sign-off from every chair</span><span>Measure use and questions, then improve</span></div>
-          <p class="out"><b>Why it matters:</b> every YPO MENA chapter uses the playbook, and questions to management fell by 30%.</p>
-        </div>
-      </details>
-      <details class="wfd">
-        <summary><span>Meetings turned into actions, owners and follow-up emails</span><i aria-hidden="true"></i></summary>
-        <div class="wfd-body">
-          <div class="flow"><span>Meeting notes or transcript</span><span>AI pulls out decisions and action points</span><span>Actions created in Monday.com, with owners and dates</span><span>Follow-up emails drafted</span><span>Notes saved for the next meeting</span></div>
-          <p class="out"><b>Why it matters:</b> nothing agreed in a meeting gets lost, and the next meeting starts where the last one ended.</p>
-        </div>
-      </details>
-      <details class="wfd">
-        <summary><span>Board meeting materials, from the agenda to the follow-up</span><i aria-hidden="true"></i></summary>
-        <div class="wfd-body">
-          <div class="flow"><span>Agenda and objectives</span><span>Presentation on brand</span><span>Facilitator cue cards, one per slide, timed</span><span>Briefing packs and table activities</span><span>Follow-up messages in the chair's voice</span></div>
-          <p class="out"><b>Why it matters:</b> board meetings consistently rate 4.8–4.9 out of 5, and Cyprus received a record satisfaction score.</p>
-        </div>
-      </details>
-      <details class="wfd">
-        <summary><span>One report from ten data sources, ready before every chapter visit</span><i aria-hidden="true"></i></summary>
-        <div class="wfd-body">
-          <div class="flow"><span>Pull data from ten sources</span><span>Match every chapter to one name</span><span>Check every number before it's shared</span><span>One report, ranked by who needs support</span><span>Shared before every chapter visit</span></div>
-          <p class="out"><b>Why it matters:</b> regional chairs walk into every visit knowing what to focus on.</p>
-        </div>
-      </details>
-      <details class="wfd">
-        <summary><span>New agents, piloted on one job and scaled only when they work</span><i aria-hidden="true"></i></summary>
-        <div class="wfd-body">
-          <div class="flow"><span>Pick one repeated job and a number to move</span><span>Write the brief and the rules</span><span>Connect tools like Salesforce, read-only first</span><span>Run it alongside the current process</span><span>Measure, then stop or scale</span></div>
-          <p class="out"><b>Why it matters:</b> every agent earns its place with results.</p>
-        </div>
-      </details>
-    </div>
-
-    <h3 class="sec" id="agents" style="scroll-margin-top:16px">Agents across the member journey</h3>
-    <p class="sub">I use Salesforce daily to turn prospects into chapter members and, ultimately, regional champions. It's YPO's version of a sales pipeline, so it's where agents add the most value.</p>
-    <div class="mj" aria-label="The YPO member journey">
-      <span><small>Stage 1</small>Prospect</span>
-      <span><small>Stage 2</small>Chapter member</span>
-      <span><small>Stage 3</small>Chapter leader</span>
-      <span><small>Stage 4</small>Regional champion</span>
-    </div>
-    <div class="agents">
-      <article class="agent">
-        <small>Prospect</small>
-        <h3>Prospect follow-up agent</h3>
-        <p>Drafts a personal follow-up for each new prospect in Salesforce, and flags anyone who has stalled.</p>
-        <p class="hc"><b>Human check:</b> I approve every message.</p>
-        <span class="eq">In sales terms: lead to opportunity</span>
-      </article>
-      <article class="agent">
-        <small>New member</small>
-        <h3>Onboarding agent</h3>
-        <p>Builds each new member's first-90-days plan, and nudges officers when a step is due.</p>
-        <p class="hc"><b>Human check:</b> the onboarding officer owns the plan.</p>
-        <span class="eq">In sales terms: onboarding</span>
-      </article>
-      <article class="agent">
-        <small>Member</small>
-        <h3>Renewal risk agent</h3>
-        <p>Flags members at risk well before renewal, from engagement, attendance and satisfaction data.</p>
-        <p class="hc"><b>Human check:</b> chairs decide who to call.</p>
-        <span class="eq">In sales terms: renewals and churn</span>
-      </article>
-      <article class="agent">
-        <small>Leader to champion</small>
-        <h3>Champion pipeline agent</h3>
-        <p>Spots members ready for a board or regional role, and briefs the Regional Chair.</p>
-        <p class="hc"><b>Human check:</b> appointments stay a people decision.</p>
-        <span class="eq">In sales terms: account growth</span>
-      </article>
-      <article class="agent">
-        <small>Every stage</small>
-        <h3>Chapter visit agent</h3>
-        <p>Turns ten data sources into a one-page brief before each visit.</p>
-        <p class="hc"><b>Human check:</b> I check every number.</p>
-        <span class="eq">In sales terms: account planning</span>
-      </article>
-      <article class="agent">
-        <small>Governance</small>
-        <h3>Bylaws check agent</h3>
-        <p>Compares draft bylaws with regional policy, and suggests wording for the gaps.</p>
-        <p class="hc"><b>Human check:</b> the board approves every change.</p>
-        <span class="eq">In sales terms: compliance</span>
-      </article>
-    </div>
-
-    <h3 class="sec">Rules I work by</h3>
-    <div class="four">
-      <div class="cell"><h3>Verify before trusting</h3><p>Every number is checked before anyone else sees it.</p></div>
-      <div class="cell"><h3>Edit surgically</h3><p>Change what needs changing, never rebuild what already works.</p></div>
-      <div class="cell"><h3>Keep sensitive content apart</h3><p>Confidential material never goes into shared views.</p></div>
-      <div class="cell"><h3>A human sends</h3><p>AI drafts. I decide what leaves my outbox.</p></div>
-    </div>
+      <div class="agents">
+        <article class="agent">
+          <small>Prospect</small>
+          <h3>Prospect follow-up agent</h3>
+          <p>Drafts a personal follow-up for each new prospect in Salesforce, and flags anyone who has stalled.</p>
+          <p class="hc"><b>Human check:</b> I approve every message.</p>
+          <span class="eq">In sales terms: lead to opportunity</span>
+        </article>
+        <article class="agent">
+          <small>New member</small>
+          <h3>Onboarding agent</h3>
+          <p>Builds each new member's first-90-days plan, and nudges officers when a step is due.</p>
+          <p class="hc"><b>Human check:</b> the onboarding officer owns the plan.</p>
+          <span class="eq">In sales terms: onboarding</span>
+        </article>
+        <article class="agent">
+          <small>Member</small>
+          <h3>Renewal risk agent</h3>
+          <p>Flags members at risk well before renewal, from engagement, attendance and satisfaction data.</p>
+          <p class="hc"><b>Human check:</b> chairs decide who to call.</p>
+          <span class="eq">In sales terms: renewals and churn</span>
+        </article>
+        <article class="agent">
+          <small>Leader to champion</small>
+          <h3>Champion pipeline agent</h3>
+          <p>Spots members ready for a board or regional role, and briefs the Regional Chair.</p>
+          <p class="hc"><b>Human check:</b> appointments stay a people decision.</p>
+          <span class="eq">In sales terms: account growth</span>
+        </article>
+        <article class="agent">
+          <small>Every stage</small>
+          <h3>Chapter visit agent</h3>
+          <p>Turns ten data sources into a one-page brief before each visit.</p>
+          <p class="hc"><b>Human check:</b> I check every number.</p>
+          <span class="eq">In sales terms: account planning</span>
+        </article>
+        <article class="agent">
+          <small>Governance</small>
+          <h3>Bylaws check agent</h3>
+          <p>Compares draft bylaws with regional policy, and suggests wording for the gaps.</p>
+          <p class="hc"><b>Human check:</b> the board approves every change.</p>
+          <span class="eq">In sales terms: compliance</span>
+        </article>
+      </div>
+      </div>
+    </details>
   </section>
 </div>
 
@@ -1397,7 +1371,7 @@ p,li,dd,.stat span,.cell p,.mat span{ text-wrap:pretty; }
           <li>Agree guardrails with IT, legal and policy teams in plain language.</li>
           <li>Deliver one quick win for a willing team.</li>
         </ol>
-        <div class="out"><p><b>You'll have</b>A discovery readout, a scored backlog, a baseline scorecard and a signed-off plan.</p><p><b>Measured by</b>Baseline captured, three teams engaged, sponsor sign-off.</p></div>
+        <div class="out"><p><b>Measured by</b>Baseline captured, three teams engaged, sponsor sign-off.</p></div>
       </div>
       <div class="phase">
         <span class="days">Days 31 to 60</span>
@@ -1409,7 +1383,7 @@ p,li,dd,.stat span,.cell p,.mat span{ text-wrap:pretty; }
           <li>Recruit and train a champions network through train-the-trainer.</li>
           <li>Open weekly office hours and a shared library of prompts and workflows.</li>
         </ol>
-        <div class="out"><p><b>You'll have</b>Live pilots, learning paths for each role, trained champions and a first resource hub.</p><p><b>Measured by</b>Activation in pilot teams, session ratings, champions trained.</p></div>
+        <div class="out"><p><b>Measured by</b>Activation in pilot teams, session ratings, champions trained.</p></div>
       </div>
       <div class="phase">
         <span class="days">Days 61 to 90</span>
@@ -1422,7 +1396,7 @@ p,li,dd,.stat span,.cell p,.mat span{ text-wrap:pretty; }
           <li>Set up an intake process and a governance rhythm with your policy teams.</li>
           <li>Present a 90-day impact readout and a two-quarter roadmap.</li>
         </ol>
-        <div class="out"><p><b>You'll have</b>An impact readout, a scale plan, a playbook and a signed-off roadmap for the two academies.</p><p><b>Measured by</b>Weekly active use, hours saved, confidence scores, workflows in daily use.</p></div>
+        <div class="out"><p><b>Measured by</b>Weekly active use, hours saved, confidence scores, workflows in daily use.</p></div>
       </div>
     </div>
   </section>
@@ -1453,10 +1427,6 @@ p,li,dd,.stat span,.cell p,.mat span{ text-wrap:pretty; }
         </ol>
         <p class="fmt">A champions network across every department, with a shared library of prompts and workflows.</p>
       </article>
-    </div>
-    <div class="law">
-      <span class="lk">Why it matters now</span>
-      <p>Article 4 of the EU AI Act requires organisations that build or use AI systems to take measures so their staff, and anyone using AI on their behalf, have a sufficient level of AI literacy. The AI Academy is a practical way to meet that duty: role-based learning for everyone, with progress tracked from first use. <a href="https://www.artificialintelligenceact.eu/article/4/" target="_blank" rel="noopener">Read Article 4</a></p>
     </div>
   </section>
 
@@ -1571,6 +1541,8 @@ const home = document.getElementById('home');
 const views = [...document.querySelectorAll('.view')];
 let pendingScroll = null, firstLoad = true;
 
+/* use cases are dropdowns: open the one a link points to */
+function reveal(t) { const d = t && (t.querySelector(':scope > details.uc') || t.closest('details.uc')); if (d) d.open = true; return t; }
 function route() {
   let key = location.hash.replace(/^#\/?/, '').split('?')[0];
   if (ALIAS[key]) { pendingScroll = ALIAS[key][1]; key = ALIAS[key][0]; history.replaceState(null, '', '#/' + key); }
@@ -1589,7 +1561,7 @@ function route() {
     document.title = 'Paige Elizabeth Morgan | AI enablement';
   }
   if (pendingScroll) {
-    const t = document.getElementById(pendingScroll); pendingScroll = null;
+    const t = reveal(document.getElementById(pendingScroll)); pendingScroll = null;
     if (t) { t.scrollIntoView({ block: 'start' }); return; }
   }
   window.scrollTo(0, 0);
@@ -1601,7 +1573,7 @@ document.addEventListener('click', e => {
   const a = e.target.closest('[data-scroll]'); if (!a) return;
   e.preventDefault();
   const target = a.dataset.scroll, href = a.getAttribute('href');
-  if (location.hash === href) document.getElementById(target).scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+  if (location.hash === href) reveal(document.getElementById(target)).scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
   else { pendingScroll = target; location.hash = href; }
 });
 route();
