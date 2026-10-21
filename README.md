@@ -13,12 +13,12 @@ A static site with no build step. Every push to `main` updates the live site at 
 
 ## Sections
 
-The site tells one story, in this order: who I am (About me), how I've enabled AI at YPO (Training, then
-Real use cases with the combined real results and five use cases), how I'd enable AI in your company (my AI strategy
-and 90-day plan, including the two academies), and how I'd work with your policy teams (AI governance, plus the
-platform comparison). It ends with a gift for hiring managers.
+The site tells one story, in this order: who I am (About me), how I've enabled AI at YPO (Training, led by the
+training kit, then Real use cases with the combined real results and five use cases), how I'd enable AI in your company
+(my AI strategy and 90-day plan, including the two academies), and how I'd work with your policy teams (AI governance).
+It ends with a gift for hiring managers.
 Older links still work: `#/playbook`, `#/reports`, `#/board`, `#/workflows` and `#/built` open the matching use case,
-`#/learning` opens the framework on the strategy page and `#/platforms` opens Governance.
+`#/learning` opens the strategy page and `#/platforms` opens Governance.
 
 ## Settings
 
