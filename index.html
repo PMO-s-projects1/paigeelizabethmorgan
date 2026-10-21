@@ -657,6 +657,23 @@ table.cmp{ width:100%; border-collapse:collapse; font-size:15px; table-layout:fi
 @media (max-width:760px){ .academies{ grid-template-columns:1fr; } }
 
 .project .wf h3{ font-size:19px; }
+.wfs{ display:grid; gap:8px; }
+.wfd{ background:var(--paper); border-radius:14px; }
+.wfd summary{ list-style:none; cursor:pointer; display:flex; align-items:center; justify-content:space-between; gap:16px; padding:16px 18px 16px 20px; font:700 17px/1.3 var(--display); letter-spacing:-.01em; border-radius:14px; }
+.wfd summary::-webkit-details-marker{ display:none; }
+.wfd summary:focus-visible{ outline:3px solid var(--blue); outline-offset:2px; }
+.wfd summary i{ flex:none; width:30px; height:30px; border-radius:50%; background:var(--surface); position:relative; transition:background .2s ease; }
+.wfd summary:hover i{ background:var(--sun); }
+.wfd summary i::before,.wfd summary i::after{ content:""; position:absolute; left:50%; top:50%; width:12px; height:2px; border-radius:2px; background:var(--ink); transform:translate(-50%,-50%); }
+.wfd summary i::after{ transform:translate(-50%,-50%) rotate(90deg); transition:transform .2s ease; }
+.wfd[open] summary i::after{ transform:translate(-50%,-50%) rotate(0deg); }
+.wfd-body{ padding:0 20px 18px; }
+.wfd .flow{ margin:0 0 12px; }
+.wfd .flow > span{ background:var(--surface); }
+.wfd .out{ font-size:15px; color:var(--ink-2); margin:0; }
+.wfd .out b{ color:var(--ink); }
+@media (max-width:640px){ .wfd summary{ font-size:16px; padding:14px 14px 14px 16px; } .wfd-body{ padding:0 16px 16px; } }
+@media (prefers-reduced-motion:reduce){ .wfd summary i,.wfd summary i::after{ transition:none; } }
 .project .wf{ padding-top:18px; }
 .project .sub{ color:var(--ink-2); max-width:44em; margin:0 0 16px; }
 .mj{ display:flex; flex-wrap:wrap; gap:8px; margin:0 0 16px; }
@@ -1292,35 +1309,50 @@ p,li,dd,.stat span,.cell p,.mat span{ text-wrap:pretty; }
       </div>
     </div>
 
-    <div class="wf">
-      <h3>Drafting replies to email automatically</h3>
-      <div class="flow"><span>An email arrives in Outlook</span><span>AI reads the whole thread and its attachments</span><span>It drafts a reply in my voice, unsent</span><span>I check recipients, facts, tone and promises</span><span>I edit if needed, and send</span></div>
-      <p class="out"><b>Why it matters:</b> routine replies take minutes instead of a morning, and nothing leaves without my judgement.</p>
-    </div>
-    <div class="wf">
-      <h3>Designing, running and measuring playbooks</h3>
-      <div class="flow"><span>Gather feedback from leaders</span><span>Design the structure and content with AI</span><span>Build the playbook and its assistant</span><span>Roll out with sign-off from every chair</span><span>Measure use and questions, then improve</span></div>
-      <p class="out"><b>Why it matters:</b> every YPO MENA chapter uses the playbook, and questions to management fell by 30%.</p>
-    </div>
-    <div class="wf">
-      <h3>Turning meetings into action</h3>
-      <div class="flow"><span>Meeting notes or transcript</span><span>AI pulls out decisions and action points</span><span>Actions created in Monday.com, with owners and dates</span><span>Follow-up emails drafted</span><span>Notes saved for the next meeting</span></div>
-      <p class="out"><b>Why it matters:</b> nothing agreed in a meeting gets lost, and the next meeting starts where the last one ended.</p>
-    </div>
-    <div class="wf">
-      <h3>Board meeting deliverables for C-suite and regional leadership</h3>
-      <div class="flow"><span>Agenda and objectives</span><span>Presentation on brand</span><span>Facilitator cue cards, one per slide, timed</span><span>Briefing packs and table activities</span><span>Follow-up messages in the chair's voice</span></div>
-      <p class="out"><b>Why it matters:</b> board meetings consistently rate 4.8–4.9 out of 5, and Cyprus received a record satisfaction score.</p>
-    </div>
-    <div class="wf">
-      <h3>Reporting for success</h3>
-      <div class="flow"><span>Pull data from ten sources</span><span>Match every chapter to one name</span><span>Check every number before it's shared</span><span>One report, ranked by who needs support</span><span>Shared before every chapter visit</span></div>
-      <p class="out"><b>Why it matters:</b> regional chairs walk into every visit knowing what to focus on.</p>
-    </div>
-    <div class="wf">
-      <h3>Creating an agent</h3>
-      <div class="flow"><span>Pick one repeated job and a number to move</span><span>Write the brief and the rules</span><span>Connect tools like Salesforce, read-only first</span><span>Run it alongside the current process</span><span>Measure, then stop or scale</span></div>
-      <p class="out"><b>Why it matters:</b> every agent earns its place with results.</p>
+    <h3 class="sec">Workflows I run every week</h3>
+    <div class="wfs">
+      <details class="wfd">
+        <summary><span>Email replies drafted in my voice, ready for me to check and send</span><i aria-hidden="true"></i></summary>
+        <div class="wfd-body">
+          <div class="flow"><span>An email arrives in Outlook</span><span>AI reads the whole thread and its attachments</span><span>It drafts a reply in my voice, unsent</span><span>I check recipients, facts, tone and promises</span><span>I edit if needed, and send</span></div>
+          <p class="out"><b>Why it matters:</b> routine replies take minutes instead of a morning, and nothing leaves without my judgement.</p>
+        </div>
+      </details>
+      <details class="wfd">
+        <summary><span>A playbook every chapter uses, built and improved with AI</span><i aria-hidden="true"></i></summary>
+        <div class="wfd-body">
+          <div class="flow"><span>Gather feedback from leaders</span><span>Design the structure and content with AI</span><span>Build the playbook and its assistant</span><span>Roll out with sign-off from every chair</span><span>Measure use and questions, then improve</span></div>
+          <p class="out"><b>Why it matters:</b> every YPO MENA chapter uses the playbook, and questions to management fell by 30%.</p>
+        </div>
+      </details>
+      <details class="wfd">
+        <summary><span>Meetings turned into actions, owners and follow-up emails</span><i aria-hidden="true"></i></summary>
+        <div class="wfd-body">
+          <div class="flow"><span>Meeting notes or transcript</span><span>AI pulls out decisions and action points</span><span>Actions created in Monday.com, with owners and dates</span><span>Follow-up emails drafted</span><span>Notes saved for the next meeting</span></div>
+          <p class="out"><b>Why it matters:</b> nothing agreed in a meeting gets lost, and the next meeting starts where the last one ended.</p>
+        </div>
+      </details>
+      <details class="wfd">
+        <summary><span>Board meeting materials, from the agenda to the follow-up</span><i aria-hidden="true"></i></summary>
+        <div class="wfd-body">
+          <div class="flow"><span>Agenda and objectives</span><span>Presentation on brand</span><span>Facilitator cue cards, one per slide, timed</span><span>Briefing packs and table activities</span><span>Follow-up messages in the chair's voice</span></div>
+          <p class="out"><b>Why it matters:</b> board meetings consistently rate 4.8–4.9 out of 5, and Cyprus received a record satisfaction score.</p>
+        </div>
+      </details>
+      <details class="wfd">
+        <summary><span>One report from ten data sources, ready before every chapter visit</span><i aria-hidden="true"></i></summary>
+        <div class="wfd-body">
+          <div class="flow"><span>Pull data from ten sources</span><span>Match every chapter to one name</span><span>Check every number before it's shared</span><span>One report, ranked by who needs support</span><span>Shared before every chapter visit</span></div>
+          <p class="out"><b>Why it matters:</b> regional chairs walk into every visit knowing what to focus on.</p>
+        </div>
+      </details>
+      <details class="wfd">
+        <summary><span>New agents, piloted on one job and scaled only when they work</span><i aria-hidden="true"></i></summary>
+        <div class="wfd-body">
+          <div class="flow"><span>Pick one repeated job and a number to move</span><span>Write the brief and the rules</span><span>Connect tools like Salesforce, read-only first</span><span>Run it alongside the current process</span><span>Measure, then stop or scale</span></div>
+          <p class="out"><b>Why it matters:</b> every agent earns its place with results.</p>
+        </div>
+      </details>
     </div>
 
     <h3 class="sec" id="agents" style="scroll-margin-top:16px">Agents across the member journey</h3>
