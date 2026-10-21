@@ -214,7 +214,7 @@ button{ font:inherit; }
 .pilot > summary::-webkit-details-marker{ display:none; }
 .pilot > summary:focus-visible{ outline:3px solid var(--blue); outline-offset:4px; border-radius:8px; }
 .pilot h3{ margin:0 !important; }
-.pilot .now{ grid-column:1; justify-self:start; background:var(--mint); color:var(--ink); border-radius:999px; padding:5px 12px; font-size:13px; font-weight:600; line-height:1.3; }
+.pilot .now{ grid-column:1 / -1; justify-self:start; background:var(--mint); color:var(--ink); border-radius:999px; padding:5px 12px; font-size:13px; font-weight:600; line-height:1.3; }
 .pilot > summary i{ grid-column:2; grid-row:1; width:28px; height:28px; border-radius:50%; background:var(--surface); position:relative; transition:background .2s ease; }
 .pilot > summary:hover i{ background:var(--sun); }
 .pilot > summary i::before,.pilot > summary i::after{ content:""; position:absolute; left:50%; top:50%; width:11px; height:2px; border-radius:2px; background:var(--ink); transform:translate(-50%,-50%); }
@@ -473,6 +473,23 @@ button{ font:inherit; }
 .job li{ margin-bottom:6px; font-size:15.5px; }
 .job h4{ font:600 12.5px/1.2 var(--sans); letter-spacing:.1em; text-transform:uppercase; color:var(--ink-3); margin:16px 0 8px; }
 .job h4:first-of-type{ margin-top:6px; }
+.dsum{ list-style:none; cursor:pointer; }
+.dsum::-webkit-details-marker{ display:none; }
+.dsum:focus-visible{ outline:3px solid var(--blue); outline-offset:4px; border-radius:8px; }
+.pm{ flex:none; width:32px; height:32px; border-radius:50%; background:var(--paper); position:relative; transition:background .2s ease; }
+.dsum:hover > .pm{ background:var(--sun); }
+.pm::before,.pm::after{ content:""; position:absolute; left:50%; top:50%; width:12px; height:2px; border-radius:2px; background:var(--ink); transform:translate(-50%,-50%); }
+.pm::after{ transform:translate(-50%,-50%) rotate(90deg); transition:transform .2s ease; }
+details[open] > .dsum > .pm::after{ transform:translate(-50%,-50%) rotate(0deg); }
+.job.job-d{ display:block; }
+.job-d .pm{ background:var(--surface); }
+.job-d > summary{ display:grid; grid-template-columns:200px minmax(0,1fr) auto; gap:24px; align-items:center; }
+.job-d > summary .org{ margin:0; }
+.job-body{ padding:16px 0 0 224px; }
+@media (max-width:760px){ .job-d > summary{ grid-template-columns:minmax(0,1fr) auto; gap:6px 12px; } .job-d > summary .when{ grid-column:1 / -1; } .job-body{ padding-left:0; } }
+.more-d > summary{ display:flex; align-items:center; justify-content:space-between; gap:12px; margin:30px 0 12px; }
+.more-d > summary .sec{ margin:0; }
+@media (prefers-reduced-motion:reduce){ .pm,.pm::after{ transition:none; } }
 @media (max-width:760px){ .job{ grid-template-columns:1fr; gap:6px; } }
 
 .built{ background:var(--night); color:#fff; border-radius:var(--r); padding:30px 36px; margin-bottom:16px; display:grid; grid-template-columns:auto 1fr; gap:24px; align-items:center; }
@@ -980,28 +997,13 @@ p,li,dd,.stat span,.cell p,.mat span{ text-wrap:pretty; }
     </div>
   </section>
 
-  <section class="block" id="innovation" style="scroll-margin-top:16px">
-    <h2>Innovation and experimentation</h2>
-    <p class="sub">Every new idea starts as an experiment with a success measure. I pilot it in MENA, decide on the evidence, then scale what works across YPO.</p>
-    <div class="flow" aria-label="How I run an experiment"><span>Spot the friction</span><span>Set a hypothesis and a success measure</span><span>Pilot with real users</span><span>Go, iterate or stop</span><span>Scale what works</span></div>
-    <h3 class="sec">Piloted in MENA, scaled across YPO</h3>
-    <div class="three pilots">
-      <details class="cell pilot"><summary><h3>Onboarding</h3><span class="now">Now: I advise the global team</span><i aria-hidden="true"></i></summary><p>Spotted that chapters weren't equipped to onboard members, redesigned the process and piloted YPO's new programme, rated 4.9/5.</p></details>
-      <details class="cell pilot"><summary><h3>Peer-to-peer mastery sessions</h3><span class="now">Now: YPO's global standard</span><i aria-hidden="true"></i></summary><p>Designed for chapter leadership teams, and tested in MENA first.</p></details>
-      <details class="cell pilot"><summary><h3>Assistant Learning Officer session</h3><span class="now">Now: mandatory worldwide</span><i aria-hidden="true"></i></summary><p>Co-built with YPO's global Learning team, and piloted in MENA.</p></details>
-      <details class="cell pilot"><summary><h3>AI use cases and agents</h3><span class="now">Now: enterprise adoption and an AI policy</span><i aria-hidden="true"></i></summary><p>Claude agents and AI workflows tested across my own role first.</p></details>
-      <details class="cell pilot"><summary><h3>United MENA Playbook</h3><span class="now">Now: used by all 27 chapters</span><i aria-hidden="true"></i></summary><p>Prototyped with AI in two weeks instead of five months, then piloted with chapters. Questions to management fell by 30%.</p></details>
-      <details class="cell pilot"><summary><h3>Budgeting and tracking</h3><span class="now">Now: used by multiple regions</span><i aria-hidden="true"></i></summary><p>A system built with the global team to track regional spend.</p></details>
-    </div>
-  </section>
-
   <section class="block">
     <h2>Experience</h2>
-    <p class="sub">The highlights. The full detail is in my CV.</p>
+    <p class="sub">Click a role for the highlights. The full detail is in my CV.</p>
     <div class="exp">
-      <article class="job">
-        <span class="when">January 2024 to now</span>
-        <div><h3>Regional Director, Middle East and North Africa</h3><p class="org">YPO, Dubai. 27 chapters of chief executives. Rated Exceeds Expectations.</p>
+      <details class="job job-d">
+        <summary class="dsum"><span class="when">January 2024 to now</span><div><h3>Regional Director, Middle East and North Africa</h3><p class="org">YPO, Dubai. 27 chapters of chief executives. Rated Exceeds Expectations.</p></div><i class="pm" aria-hidden="true"></i></summary>
+        <div class="job-body">
           <h4>Targets and results</h4>
           <ul>
             <li>Use Salesforce to turn prospects into chapter members and, ultimately, regional champions.</li>
@@ -1020,26 +1022,29 @@ p,li,dd,.stat span,.cell p,.mat span{ text-wrap:pretty; }
             <li>Piloted YPO's new global onboarding programme, rated 4.9/5. My peer-to-peer mastery sessions are now the global standard.</li>
             <li>Advise Regional Chairs and boards of CEOs. Regional Board Meetings rate 4.8–4.9/5.</li>
             <li>Write and maintain chapter and regional bylaws and operations manuals.</li>
-          </ul></div>
-      </article>
-      <article class="job">
-        <span class="when">March 2022 to January 2024</span>
-        <div><h3>Regional Forum and Learning Manager</h3><p class="org">YPO, Middle East and North Africa</p>
+          </ul>
+        </div>
+      </details>
+      <details class="job job-d">
+        <summary class="dsum"><span class="when">March 2022 to January 2024</span><div><h3>Regional Forum and Learning Manager</h3><p class="org">YPO, Middle East and North Africa</p></div><i class="pm" aria-hidden="true"></i></summary>
+        <div class="job-body">
           <ul>
             <li>Wrote and delivered the MENA peer-to-peer learning programme, and trained its trainers.</li>
             <li>Co-built the Assistant Learning Officer session, piloted in MENA and now mandatory worldwide.</li>
             <li>Ran workshops at the Global Leadership Conference, rated highly valuable by 200+ executive officers.</li>
-          </ul></div>
-      </article>
-      <article class="job">
-        <span class="when">August 2017 to February 2022</span>
-        <div><h3>Training and Development Manager</h3><p class="org">Ministry of Education, UAE</p>
+          </ul>
+        </div>
+      </details>
+      <details class="job job-d">
+        <summary class="dsum"><span class="when">August 2017 to February 2022</span><div><h3>Training and Development Manager</h3><p class="org">Ministry of Education, UAE</p></div><i class="pm" aria-hidden="true"></i></summary>
+        <div class="job-body">
           <ul>
             <li>Directed national training programmes for the UAE Vision 2021 National Agenda.</li>
             <li>Wrote government policy and co-developed national curriculum frameworks.</li>
             <li>Led recruitment that grew the faculty by more than 1,000.</li>
-          </ul></div>
-      </article>
+          </ul>
+        </div>
+      </details>
     </div>
   </section>
 
@@ -1061,17 +1066,30 @@ p,li,dd,.stat span,.cell p,.mat span{ text-wrap:pretty; }
         </ul>
       </div>
     </div>
-    <h3 class="sec">Additional education and more</h3>
-    <ul class="tick">
+    <details class="more-d">
+      <summary class="dsum"><h3 class="sec">Additional education and more</h3><i class="pm" aria-hidden="true"></i></summary>
+      <ul class="tick">
       <li>BA English Language and Teaching, First Class Honours, Swansea University</li>
       <li>Certificate in English Language Teaching to Adults, Cambridge English</li>
       <li>Three years working alongside Birkman coaches</li>
-    </ul>
+      </ul>
+    </details>
   </section>
 
   <section class="block">
     <h2>Tools I use</h2>
     <div class="creds-row out" style="margin-top:14px"><span>Claude, including agents</span><span>Salesforce</span><span>Tableau</span><span>Microsoft 365</span><span>Google Workspace</span><span>Apps Script</span><span>Monday.com</span></div>
+  </section>
+
+  <section class="block" id="innovation" style="scroll-margin-top:16px">
+    <h2>Innovation and experimentation</h2>
+    <p class="sub">Every idea starts as a pilot with a success measure: I test it in MENA, decide to go, iterate or stop, then scale what works across YPO.</p>
+    <div class="four pilots">
+      <details class="cell pilot"><summary><h3>Onboarding</h3><span class="now">Now advising globally</span><i aria-hidden="true"></i></summary><p>Spotted that chapters weren't equipped to onboard members, redesigned the process and piloted YPO's new programme, rated 4.9/5.</p></details>
+      <details class="cell pilot"><summary><h3>Peer-to-peer mastery sessions</h3><span class="now">Now the global standard</span><i aria-hidden="true"></i></summary><p>Designed for chapter leadership teams, and tested in MENA first.</p></details>
+      <details class="cell pilot"><summary><h3>Assistant Learning Officer session</h3><span class="now">Now mandatory worldwide</span><i aria-hidden="true"></i></summary><p>Co-built with YPO's global Learning team, and piloted in MENA.</p></details>
+      <details class="cell pilot"><summary><h3>AI use cases and agents</h3><span class="now">Now YPO's AI policy</span><i aria-hidden="true"></i></summary><p>Claude agents and AI workflows tested in my own role first, which led to enterprise adoption.</p></details>
+    </div>
   </section>
 
   <figure class="quote">
