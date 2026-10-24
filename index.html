@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Paige Elizabeth Morgan | AI enablement and AI adoption</title>
-<meta name="description" content="Paige Elizabeth Morgan: AI enablement and AI adoption, agentic innovation and experimentation, AI Champion, facilitator and learning designer, relocating to London. Training, real AI use cases with results, AI governance, and an AI strategy with a 90-day plan.">
+<meta name="description" content="Paige Elizabeth Morgan: AI adoption and enablement, change management, experimentation and value realisation. AI Champion, facilitator, learning designer and PMP-certified programme lead, based in London. Training, real AI use cases with results, AI governance, and an AI strategy with a 90-day plan.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Geist:wght@400;500;600&display=swap" rel="stylesheet">
@@ -301,6 +301,19 @@ button{ font:inherit; }
 .steps[open] > summary i::after{ transform:translate(-50%,-50%) rotate(0deg); }
 .steps ol{ margin-top:12px !important; }
 .phase .out b{ display:block; }
+/* how I prove value */
+.vloop{ list-style:none; margin:0; padding:0; counter-reset:v; display:grid; grid-template-columns:repeat(5, minmax(0,1fr)); gap:12px; }
+.vloop li{ counter-increment:v; background:var(--paper); border-radius:16px; padding:18px; display:flex; flex-direction:column; gap:6px; }
+.vloop li::before{ content:counter(v); width:34px; height:34px; border-radius:50%; background:var(--sun); color:var(--ink); display:grid; place-items:center; font-weight:700; font-size:15px; margin-bottom:6px; }
+.vloop li:nth-child(2)::before{ background:var(--mint); } .vloop li:nth-child(3)::before{ background:var(--lilac); } .vloop li:nth-child(4)::before{ background:var(--pink); } .vloop li:nth-child(5)::before{ background:var(--blue); color:#fff; }
+.vloop b{ font-family:var(--display); font-size:20px; line-height:1.15; letter-spacing:-.01em; }
+.vloop span{ font-size:15px; color:var(--ink-2); line-height:1.45; }
+@media (max-width:960px){
+  .vloop{ grid-template-columns:1fr; gap:10px; }
+  .vloop li{ display:grid; grid-template-columns:34px 1fr; column-gap:14px; row-gap:2px; padding:14px 16px; }
+  .vloop li::before{ grid-row:1 / span 2; margin:0; }
+  .vloop b,.vloop span{ grid-column:2; }
+}
 .phase .out p{ margin:0 0 8px; }
 
 /* prioritiser */
@@ -565,6 +578,11 @@ details[open] > .dsum > .pm::after{ transform:translate(-50%,-50%) rotate(0deg);
 .qual-main b{ display:block; font-family:var(--display); font-size:clamp(26px, 2.6vw, 34px); line-height:1.05; letter-spacing:-.02em; margin-bottom:10px; max-width:12ch; }
 .qual-main p{ margin:0; opacity:.92; font-size:15.5px; max-width:30em; }
 .acc{ list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:10px; }
+.q-left{ display:grid; gap:16px; }
+.qual-pmp{ background:var(--sun); border-radius:20px; padding:22px 24px; display:grid; gap:2px; }
+.qual-pmp .q-kicker{ background:rgba(255,255,255,.62); justify-self:start; margin-bottom:8px; }
+.qual-pmp b{ font-family:var(--display); font-size:22px; line-height:1.15; letter-spacing:-.015em; }
+.qual-pmp .when{ font-size:14px; color:var(--ink-2); }
 .acc li{ background:var(--paper); border-radius:16px; padding:16px 18px; display:grid; gap:4px; }
 .acc .iss{ justify-self:start; font-size:12.5px; font-weight:600; padding:3px 10px; border-radius:999px; }
 .iss-a{ background:var(--pink); } .iss-o{ background:var(--mint); }
@@ -904,8 +922,8 @@ p,li,dd,.stat span,.cell p,.mat span{ text-wrap:pretty; }
         <p class="role">I help people actually use AI at work.</p>
       </div>
       <dl>
-        <div><dt>Focus</dt><dd>AI enablement and adoption, agentic innovation, experimentation and learning design</dd></div>
-        <div><dt>Location</dt><dd>Relocating to London in December 2026 <small class="rtw">Full right to work in the UK</small></dd></div>
+        <div><dt>Focus</dt><dd>AI adoption and enablement, change management, experimentation and value realisation</dd></div>
+        <div><dt>Location</dt><dd>London, UK <small class="rtw">Full right to work in the UK</small></dd></div>
         <div><dt>Email</dt><dd><a data-cfg="email">paigeelizabethmorgan@gmail.com</a></dd></div>
       </dl>
     </section>
@@ -914,7 +932,7 @@ p,li,dd,.stat span,.cell p,.mat span{ text-wrap:pretty; }
       <div class="row"><span class="tag">1 · Who I am</span><span class="go" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9h11M9.5 4.5 14 9l-4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
       <h2>About me</h2>
       <p>My story, my experience, my qualifications and my CV.</p>
-      <div class="pv pv-about"><span class="avatar" data-photo>PEM</span><ul><li>AI Champion at YPO</li><li>Pilots scaled across YPO</li><li>Oxford MSc in Education</li></ul></div>
+      <div class="pv pv-about"><span class="avatar" data-photo>PEM</span><ul><li>AI Champion at YPO</li><li>Pilots scaled across YPO</li><li>Oxford MSc in Education</li><li>PMP certified</li></ul></div>
     </a>
 
     <a class="tile t-training" href="#/training" style="--i:2">
@@ -929,17 +947,17 @@ p,li,dd,.stat span,.cell p,.mat span{ text-wrap:pretty; }
       <div class="work-top"><h2>Real use cases</h2><p>Six ways I use AI at work, with materials you can open and the results behind them.</p></div>
       <div class="pv pv-projects" aria-hidden="true">
         <span><b>4.8–4.9/5</b>AI for executive teams training kit</span>
-        <span><b>27 of 27</b>Chapters using my governance playbook</span>
+        <span><b>100%</b>Of chapters using my governance playbook</span>
         <span><b>10 to 1</b>Sources in my Chapter Overview Report</span>
         <span><b>Record</b>Satisfaction score for my board meeting</span>
-        <span><b>Prospect to champion</b>Agents across the member journey, with Salesforce</span>
+        <span><b>Prospect to champion</b>Agents across the member lifecycle, in Salesforce</span>
       </div>
     </a>
 
     <a class="tile t-plan" href="#/plan" style="--i:4">
       <div class="row"><span class="tag">3 · In your company</span><span class="go" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9h11M9.5 4.5 14 9l-4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
       <h2>My AI strategy and 90-day plan</h2>
-      <p>How I'd enable AI in your company: the first 90 days and the academies that follow.</p>
+      <p>How I'd enable AI in your company: the first 90 days, how I prove value and the academies that follow.</p>
       <div class="pv pv-phases" aria-hidden="true"><span><b>30</b>Listen and baseline</span><span><b>60</b>Pilot and teach</span><span><b>90</b>Prove and scale</span></div>
     </a>
 
@@ -966,7 +984,7 @@ p,li,dd,.stat span,.cell p,.mat span{ text-wrap:pretty; }
       <span class="avatar" data-photo style="background:var(--pink);color:var(--ink)">PEM</span>
       <div>
         <h1 tabindex="-1">About me</h1>
-        <p class="lede">I'm Paige Elizabeth Morgan, YPO's Regional Director for the Middle East and North Africa and its AI Champion: a facilitator and learning designer driving AI enablement and adoption. From Wales, relocating to London in December 2026. <small class="rtw-pill">Full right to work in the UK</small></p>
+        <p class="lede">I'm Paige Elizabeth Morgan, YPO's Regional Director for the Middle East and North Africa and its AI Champion: a facilitator, learning designer and PMP-certified programme lead driving AI adoption and change. From Wales, based in London. <small class="rtw-pill">Full right to work in the UK</small></p>
         <div class="acts"><a class="btn btn-white" data-cfg="cv" download>Download my CV (PDF)</a><a class="btn btn-line" style="color:#fff;border-color:#fff" data-cfg="email">Email me</a><a class="btn btn-line" style="color:#fff;border-color:#fff" data-cfg="linkedin" target="_blank" rel="noopener">LinkedIn</a></div>
       </div>
     </div>
@@ -1002,7 +1020,7 @@ p,li,dd,.stat span,.cell p,.mat span{ text-wrap:pretty; }
     <p class="sub">Click a role for the highlights. The full detail is in my CV.</p>
     <div class="exp">
       <details class="job job-d">
-        <summary class="dsum"><span class="when">January 2024 to now</span><div><h3>Regional Director, Middle East and North Africa</h3><p class="org">YPO, Dubai. 27 chapters of chief executives. Rated Exceeds Expectations.</p></div><i class="pm" aria-hidden="true"></i></summary>
+        <summary class="dsum"><span class="when">January 2024 to now</span><div><h3>Regional Director, Middle East and North Africa</h3><p class="org">YPO, fully remote. A region of 1,800 members. Rated Exceeds Expectations.</p></div><i class="pm" aria-hidden="true"></i></summary>
         <div class="job-body">
           <h4>Targets and results</h4>
           <ul>
@@ -1020,6 +1038,7 @@ p,li,dd,.stat span,.cell p,.mat span{ text-wrap:pretty; }
           <h4>Innovation and stakeholders</h4>
           <ul>
             <li>Piloted YPO's new global onboarding programme, rated 4.9/5. My peer-to-peer mastery sessions are now the global standard.</li>
+            <li>Give every chapter board a success plan and a quarterly review, and feed what members tell us back to YPO's global teams.</li>
             <li>Advise Regional Chairs and boards of CEOs. Regional Board Meetings rate 4.8–4.9/5.</li>
             <li>Write and maintain chapter and regional bylaws and operations manuals.</li>
           </ul>
@@ -1051,10 +1070,17 @@ p,li,dd,.stat span,.cell p,.mat span{ text-wrap:pretty; }
   <section class="block">
     <h2>Qualifications</h2>
     <div class="quals-grid" style="margin-top:16px">
-      <div class="qual-main">
-        <span class="q-kicker">Master's degree</span>
-        <b>MSc Education, University of Oxford</b>
-        <p>Focused on adult learning methodology. Lead researcher on digital learning and virtual train-the-trainer delivery.</p>
+      <div class="q-left">
+        <div class="qual-main">
+          <span class="q-kicker">Master's degree</span>
+          <b>MSc Education, University of Oxford</b>
+          <p>Focused on adult learning methodology. Lead researcher on digital learning and virtual train-the-trainer delivery.</p>
+        </div>
+        <div class="qual-pmp">
+          <span class="q-kicker">Project management</span>
+          <b>PMP, Project Management Professional</b>
+          <span class="when">Project Management Institute (PMI), October 2026</span>
+        </div>
       </div>
       <div>
         <span class="q-kicker">AI accreditations</span>
@@ -1078,12 +1104,13 @@ p,li,dd,.stat span,.cell p,.mat span{ text-wrap:pretty; }
 
   <section class="block">
     <h2>Tools I use</h2>
-    <div class="creds-row out" style="margin-top:14px"><span>Claude, including agents</span><span>Salesforce</span><span>Tableau</span><span>Microsoft 365</span><span>Google Workspace</span><span>Apps Script</span><span>Monday.com</span></div>
+    <p class="sub" style="margin-bottom:0">Hands on, not just in the training room: I've built on an LLM API, connect AI tools to Microsoft 365, Canva and Monday.com through MCP connectors, and track usage-based AI spend and adoption.</p>
+    <div class="creds-row out" style="margin-top:14px"><span>Claude, including Projects, agents and Claude Code</span><span>MCP connectors</span><span>Microsoft Copilot</span><span>ChatGPT</span><span>Salesforce</span><span>Tableau</span><span>Workday</span><span>Monday.com</span><span>Microsoft 365</span><span>Google Workspace</span><span>Canva</span><span>GitHub, Vercel and Apps Script</span></div>
   </section>
 
   <section class="block" id="innovation" style="scroll-margin-top:16px">
     <h2>Innovation and experimentation</h2>
-    <p class="sub">Every idea starts as a pilot with a success measure: I test it in MENA, decide to go, iterate or stop, then scale what works across YPO.</p>
+    <p class="sub">Every idea starts as a pilot with a success measure: I test it in MENA, decide to go, iterate or stop, then scale what works across YPO. <a href="#/plan" data-scroll="value">How I prove value</a></p>
     <div class="four pilots">
       <details class="cell pilot"><summary><h3>Onboarding</h3><span class="now">Now advising globally</span><i aria-hidden="true"></i></summary><p>Spotted that chapters weren't equipped to onboard members, redesigned the process and piloted YPO's new programme, rated 4.9/5.</p></details>
       <details class="cell pilot"><summary><h3>Peer-to-peer mastery sessions</h3><span class="now">Now the global standard</span><i aria-hidden="true"></i></summary><p>Designed for chapter leadership teams, and tested in MENA first.</p></details>
@@ -1165,7 +1192,7 @@ p,li,dd,.stat span,.cell p,.mat span{ text-wrap:pretty; }
       <div class="stat s-blue"><b class="num">97%</b><span>Chapter Officers attending training</span></div>
       <div class="stat s-sun"><b class="num">100%</b><span>Of chapters have received AI workshops</span></div>
       <div class="stat s-mint"><b class="num">12%</b><span>Improvement in member engagement</span></div>
-      <div class="stat s-pink"><b class="num">27 of 27</b><span>Chapters using the playbook regularly</span></div>
+      <div class="stat s-pink"><b class="num">100%</b><span>Of chapters using the playbook regularly</span></div>
       <div class="stat s-lilac"><b class="num">30% fewer</b><span>Questions from chapters to management</span></div>
       <div class="stat s-blue"><b class="num">4.8–4.9/5</b><span>Board meetings and trainings</span></div>
       <div class="stat s-sun"><b class="num">10 to 1</b><span>Sources brought into one report</span></div>
@@ -1209,7 +1236,7 @@ p,li,dd,.stat span,.cell p,.mat span{ text-wrap:pretty; }
         <div class="three">
         <div class="cell"><h3>Problem</h3><p>Resources were scattered, so leaders kept asking the regional office.</p></div>
         <div class="cell"><h3>Approach</h3><p>An AI-built web playbook with a live dashboard and an assistant, piloted with leadership, then rolled out to every chair.</p></div>
-        <div class="cell hl"><h3>Result</h3><p>Used by all 27 chapters, with 30% fewer questions to management.</p></div>
+        <div class="cell hl"><h3>Result</h3><p>Used by 100% of chapters, with 30% fewer questions to management.</p></div>
         </div>
       </div>
     </details>
@@ -1288,17 +1315,17 @@ p,li,dd,.stat span,.cell p,.mat span{ text-wrap:pretty; }
         <span class="proj-num" aria-hidden="true">06</span>
         <div>
           <span class="proj-kicker">Agents</span>
-          <h2 id="pj6">Agents across the member journey</h2>
+          <h2 id="pj6">Agents across the member lifecycle</h2>
         </div>
         <i class="uc-ic" aria-hidden="true"></i>
       </summary>
       <div class="uc-body">
-        <p class="proj-lede">I use Salesforce daily to turn prospects into chapter members and, ultimately, regional champions. It's YPO's version of a sales pipeline, so it's where agents add the most value. These are the agents I'd put to work along it.</p>
-        <div class="mj" aria-label="The YPO member journey">
-        <span><small>Stage 1</small>Prospect</span>
-        <span><small>Stage 2</small>Chapter member</span>
-        <span><small>Stage 3</small>Chapter leader</span>
-        <span><small>Stage 4</small>Regional champion</span>
+        <p class="proj-lede">YPO's members are its customers, and I manage their whole lifecycle in Salesforce, from prospect to regional champion. Every chapter board has a success plan and a quarterly review, much like a QBR. It's a sales pipeline and a customer lifecycle in one, so it's where agents add the most value. These are the agents I'd put to work along it.</p>
+        <div class="mj" aria-label="The YPO member lifecycle">
+        <span><small>Acquire</small>Prospect</span>
+        <span><small>Onboard, adopt, renew</small>Chapter member</span>
+        <span><small>Expand</small>Chapter leader</span>
+        <span><small>Advocate</small>Regional champion</span>
         </div>
         <div class="agents">
         <article class="agent">
@@ -1306,42 +1333,42 @@ p,li,dd,.stat span,.cell p,.mat span{ text-wrap:pretty; }
         <h3>Prospect follow-up agent</h3>
         <p>Drafts a personal follow-up for each new prospect in Salesforce, and flags anyone who has stalled.</p>
         <p class="hc"><b>Human check:</b> I approve every message.</p>
-        <span class="eq">In sales terms: lead to opportunity</span>
+        <span class="eq">Pipeline and conversion</span>
         </article>
         <article class="agent">
         <small>New member</small>
         <h3>Onboarding agent</h3>
         <p>Builds each new member's first-90-days plan, and nudges officers when a step is due.</p>
         <p class="hc"><b>Human check:</b> the onboarding officer owns the plan.</p>
-        <span class="eq">In sales terms: onboarding</span>
+        <span class="eq">Onboarding and adoption</span>
         </article>
         <article class="agent">
         <small>Member</small>
         <h3>Renewal risk agent</h3>
-        <p>Flags members at risk well before renewal, from engagement, attendance and satisfaction data.</p>
+        <p>Spots members who've stopped taking part, and flags renewal risk early, from engagement, attendance and satisfaction data.</p>
         <p class="hc"><b>Human check:</b> chairs decide who to call.</p>
-        <span class="eq">In sales terms: renewals and churn</span>
+        <span class="eq">Churn and under-use</span>
         </article>
         <article class="agent">
         <small>Leader to champion</small>
         <h3>Champion pipeline agent</h3>
         <p>Spots members ready for a board or regional role, and briefs the Regional Chair.</p>
         <p class="hc"><b>Human check:</b> appointments stay a people decision.</p>
-        <span class="eq">In sales terms: account growth</span>
+        <span class="eq">Expansion and advocacy</span>
         </article>
         <article class="agent">
         <small>Every stage</small>
         <h3>Chapter visit agent</h3>
-        <p>Turns ten data sources into a one-page brief before each visit.</p>
+        <p>Turns ten data sources into a one-page brief before each visit and quarterly review.</p>
         <p class="hc"><b>Human check:</b> I check every number.</p>
-        <span class="eq">In sales terms: account planning</span>
+        <span class="eq">Account and success planning</span>
         </article>
         <article class="agent">
         <small>Governance</small>
         <h3>Bylaws check agent</h3>
         <p>Compares draft bylaws with regional policy, and suggests wording for the gaps.</p>
         <p class="hc"><b>Human check:</b> the board approves every change.</p>
-        <span class="eq">In sales terms: compliance</span>
+        <span class="eq">Governance and compliance</span>
         </article>
         </div>
       </div>
@@ -1415,6 +1442,24 @@ p,li,dd,.stat span,.cell p,.mat span{ text-wrap:pretty; }
     </div>
   </section>
 
+  <section class="block" id="value" style="scroll-margin-top:16px">
+    <h2>How I prove value</h2>
+    <p class="sub">Licences and attendance don't prove anything. I measure whether people actually use AI and what it changes, the same way I run every pilot at YPO.</p>
+    <ol class="vloop">
+      <li><b>Baseline</b><span>Agree what success looks like, and measure where we start.</span></li>
+      <li><b>Pilot</b><span>Start small, with an owner and one success measure.</span></li>
+      <li><b>Track real use</b><span>Usage after training, not attendance, with feedback to IT.</span></li>
+      <li><b>Decide</b><span>Iterate, stop or scale, based on the evidence.</span></li>
+      <li><b>Report back</b><span>A quarterly review with leaders, and a business case for what's next.</span></li>
+    </ol>
+    <h3 class="sec">At YPO, this delivered</h3>
+    <div class="three">
+      <div class="cell"><h3>Pilot to global</h3><p>My onboarding pilot was rated 4.9/5, and I now advise YPO's global onboarding team.</p></div>
+      <div class="cell"><h3>Real adoption</h3><p>100% of chapters use my AI-built playbook, and questions to my team are down 30%.</p></div>
+      <div class="cell"><h3>Time back</h3><p>One project delivered in two weeks instead of five months, using AI.</p></div>
+    </div>
+  </section>
+
   <section class="block" id="academies" style="scroll-margin-top:16px">
     <h2>Beyond 90 days: two academies</h2>
     <p class="sub">One academy for everyone, and one for the Champions who keep it growing.</p>
@@ -1432,7 +1477,7 @@ p,li,dd,.stat span,.cell p,.mat span{ text-wrap:pretty; }
       <article class="academy a-champ">
         <span class="ak">Confident to Champion</span>
         <h3>AI Champion Academy</h3>
-        <p class="what">AI Champions in every department, training their teams.</p>
+        <p class="what">Your Centre of Excellence: AI Champions in every department, training their teams.</p>
         <ol class="cpath" aria-label="How the AI Champion Academy moves people through the stages">
           <li><b>Confident</b><span>Nominated by their department.</span></li>
           <li><b>Champion</b><span>Train-the-trainer on the four Ds.</span></li>
@@ -1494,8 +1539,8 @@ p,li,dd,.stat span,.cell p,.mat span{ text-wrap:pretty; }
   <section class="block">
     <h2>Before and after</h2>
     <div class="compare" style="margin-top:16px">
-      <div class="before"><b>Before</b>Which deals in my pipeline are at risk this quarter?</div>
-      <div class="after"><b>After</b>You're my sales operations analyst. Using the pipeline export below, find the open deals most at risk of slipping out of this quarter. Context: I lead eight account executives, the quarter closes on 31 March, and deals tend to stall between quote and signed contract. Input: the CRM export between &lt;pipeline&gt; tags, with stage, value, close date, days in stage and last activity. Output: a table of the 10 riskiest deals, each with the reason and one next step, then a two-line summary for my manager, in UK English. Only flag what the data shows, and ask me if a field is missing.</div>
+      <div class="before"><b>Before</b>Which teams are under-using our new AI tool, and why?</div>
+      <div class="after"><b>After</b>You're my AI adoption analyst. Using the usage export below, find the teams under-using our new AI assistant, and the likely reasons. Context: we rolled it out to 400 people across six teams eight weeks ago, every team had the same training, and leadership reviews adoption at the end of the quarter. Input: the export between &lt;usage&gt; tags, with team, licences, weekly active users, prompts per user and training attendance. Output: a table of teams from lowest to highest adoption, each with the likely blocker and one next step, then a three-line summary for our quarterly review, in UK English. Only draw conclusions the data supports, and ask me if a field is missing.</div>
     </div>
   </section>
 </div>
@@ -1548,7 +1593,7 @@ const TITLES = { about: 'About me', training: 'Training colleagues and CEOs to u
   plan: 'My AI strategy and 90-day plan', gift: 'A gift for hiring managers' };
 /* Older links still work: they open the matching project on the Sample work page. */
 const ALIAS = { playbook: ['work', 'proj-playbook'], reports: ['work', 'proj-report'], board: ['work', 'proj-board'],
-  learning: ['plan', 'modes'], platforms: ['governance', null], workflows: ['work', 'proj-build'], built: ['work', 'proj-build'], agents: ['work', 'proj-agents'] };
+  learning: ['plan', 'modes'], platforms: ['governance', null], workflows: ['work', 'proj-build'], built: ['work', 'proj-build'], agents: ['work', 'proj-agents'], value: ['plan', 'value'] };
 const home = document.getElementById('home');
 const views = [...document.querySelectorAll('.view')];
 let pendingScroll = null, firstLoad = true;
