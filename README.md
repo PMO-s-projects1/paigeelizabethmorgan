@@ -28,6 +28,12 @@ Edit the `CONFIG` block at the bottom of `index.html`:
 - `cv`: `assets/Paige-Elizabeth-Morgan-CV.pdf`
 - `linkedin`: your profile URL (the LinkedIn button stays hidden until this is filled in)
 
+## Visitor numbers
+
+Vercel Web Analytics is loaded in the `<head>` of `index.html`, `demos/playbook-demo.html` and `demos/report-demo.html`
+(not `commitments-demo.html`, which sits inside the other samples and would double count). Turn it on in the Vercel
+project's Analytics tab; visitors, page views, referrers, countries and devices then show there.
+
 ## Sample shortcuts
 
 - `demos/report-demo.html#after` opens straight on the consolidated report
