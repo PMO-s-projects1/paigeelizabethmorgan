@@ -13,10 +13,12 @@ A static site with no build step. Every push to `main` updates the live site at 
 
 ## Sections
 
-The site tells one story, in this order: who I am (About me), how I've enabled AI at YPO (Training, led by the
-training kit, then Real use cases with the combined real results and six use cases), how I'd enable AI in your company
-(my AI strategy and 90-day plan, how I prove value, and the two academies), and how I'd work with your policy teams (AI governance).
-It ends with a gift for hiring managers.
+The site tells one story, in this order: what I do (Executive briefings, end to end: at a glance, the eight steps
+of a briefing, the calendar, pipeline influence, one standard, and how I'd run a briefing centre in my first 90 days),
+who I am (About me), how I've enabled AI at YPO (Training, led by the training kit, then Real use cases with the combined
+real results and six use cases), how I'd enable AI in your company (my AI strategy and 90-day plan, how I prove value,
+and the two academies), and how I'd work with your policy teams (AI governance). It ends with a gift for hiring managers.
+The briefings page is `#/briefings` (`#/briefing`, `#/ebc` and `#/executive` also open it).
 Older links still work: `#/playbook`, `#/reports`, `#/board`, `#/workflows` and `#/built` open the matching use case,
 `#/learning` opens the strategy page, `#/value` opens How I prove value, `#/agents` opens the agents use case and `#/platforms` opens Governance.
 
