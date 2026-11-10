@@ -974,6 +974,20 @@ p,li,dd,.stat span,.cell p,.mat span{ text-wrap:pretty; }
 .aside-line i{ flex:none; width:12px; height:12px; border-radius:50%; background:var(--pink); }
 .aside-line p{ margin:0; font-size:15.5px; }
 .aside-line a{ color:#fff; font-weight:600; text-underline-offset:3px; }
+
+/* =====================================================================
+   v6: community page
+   ===================================================================== */
+.bento > .t-community{ grid-column:1 / -1; grid-row:auto; min-height:0; background:var(--sun); color:var(--ink); flex-direction:row; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap; }
+.t-community .tag{ background:rgba(255,255,255,.6); align-self:flex-start; }
+.t-community .com-text{ display:flex; flex-direction:column; gap:8px; flex:1 1 320px; }
+.t-community .com-text h2{ max-width:none; }
+.t-community .com-end{ display:flex; align-items:center; gap:18px; flex:0 1 auto; }
+.t-community .pv{ margin:0; padding:0; }
+.t-community .pv-chips span{ background:#fff; color:var(--ink); }
+.t-community .pv-chips span:nth-child(2){ background:var(--pink); }
+.t-community .pv-chips span:nth-child(3){ background:var(--mint); }
+.t-community .go{ background:var(--ink); color:#fff; flex:none; }
 </style>
 </head>
 <body>
@@ -1041,7 +1055,12 @@ p,li,dd,.stat span,.cell p,.mat span{ text-wrap:pretty; }
       <div class="pv pv-chips" aria-hidden="true"><span>1,000+ CEOs</span><span>Hundreds of colleagues</span><span>2 Champions, 6 trainers</span></div>
     </a>
 
-    <a class="tile t-work" href="#/work" style="--i:4">
+    <a class="tile t-community" href="#/community" style="--i:4">
+      <div class="com-text"><span class="tag">Also what I do</span><h2>Building community</h2><p>How I built YPO's most engaged region: 1,800 members across 11 markets, led by local leaders who learn from each other.</p></div>
+      <div class="com-end"><div class="pv pv-chips" aria-hidden="true"><span>Most engaged region globally</span><span>290,000 students</span><span>97% renewals</span></div><span class="go" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9h11M9.5 4.5 14 9l-4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+    </a>
+
+    <a class="tile t-work" href="#/work" style="--i:5">
       <div class="row"><span class="tag">3 · AI at YPO</span><span class="go" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9h11M9.5 4.5 14 9l-4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
       <div class="work-top"><h2>Real use cases</h2><p>Six ways I use AI at work, with materials you can open and the results behind them.</p></div>
       <div class="pv pv-projects" aria-hidden="true">
@@ -1053,21 +1072,21 @@ p,li,dd,.stat span,.cell p,.mat span{ text-wrap:pretty; }
       </div>
     </a>
 
-    <a class="tile t-plan" href="#/plan" style="--i:5">
+    <a class="tile t-plan" href="#/plan" style="--i:6">
       <div class="row"><span class="tag">4 · AI in your company</span><span class="go" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9h11M9.5 4.5 14 9l-4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
       <h2>My AI strategy and 90-day plan</h2>
       <p>How I'd enable AI in your company: the first 90 days, how I prove value and the academies that follow.</p>
       <div class="pv pv-phases" aria-hidden="true"><span><b>30</b>Listen and baseline</span><span><b>60</b>Pilot and teach</span><span><b>90</b>Prove and scale</span></div>
     </a>
 
-    <a class="tile t-gov" href="#/governance" style="--i:6">
+    <a class="tile t-gov" href="#/governance" style="--i:7">
       <div class="row"><span class="tag">5 · With your policy teams</span><span class="go" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9h11M9.5 4.5 14 9l-4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
       <h2>AI governance</h2>
       <p>The policy, bylaws and manuals I've written, and how I'd work with your policy teams on AI.</p>
       <div class="pv pv-chips" aria-hidden="true"><span>Policy</span><span>Bylaws</span><span>Manuals</span></div>
     </a>
 
-    <a class="tile t-gift" href="#/gift" style="--i:7">
+    <a class="tile t-gift" href="#/gift" style="--i:8">
       <div class="gift-text"><span class="tag" style="align-self:flex-start">Free to use</span><h2>A gift for hiring managers</h2><p>A prompt that improves your prompts. Copy it and use it today.</p></div>
       <div class="gift-end"><div class="pv ticket" aria-hidden="true"><div class="main"><small>Admit one</small><b>A prompt that improves your prompts</b></div><div class="stub">GIFT</div></div><span class="go" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9h11M9.5 4.5 14 9l-4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
     </a>
@@ -1204,6 +1223,140 @@ p,li,dd,.stat span,.cell p,.mat span{ text-wrap:pretty; }
       <a class="mat m-blue" href="#/work" data-scroll="proj-board"><small>Use case 04</small><b>Board meetings in a box</b><span>Every board meeting deliverable built with AI, from the agenda to the follow-up.</span><em>See the use case</em></a>
       <a class="mat m-pink" href="demos/report-demo.html#after" target="_blank" rel="noopener"><small>Use case 03, sample</small><b>Chapter Overview Report</b><span>Ten sources in one report, ranked by which chapters need support first, ready before every visit.</span><em>Open the sample</em></a>
       <a class="mat m-mint" href="#/training"><small>1,000+ CEOs</small><b>Training CEOs to use AI</b><span>The training kit I built with AI, and the executives I've trained in 13 countries.</span><em>See the training</em></a>
+    </div>
+  </section>
+</div>
+
+<!-- ============================ COMMUNITY ============================ -->
+<div class="wrap view" data-route="community" hidden>
+  <header class="view-head vh-sun">
+    <a class="crumb" href="#/">All work</a>
+    <h1 tabindex="-1">Building community</h1>
+    <p class="lede">I build communities where people learn from each other. At YPO, a global organisation of chief executives, I lead a community of 1,800 members across 11 markets, and it is now YPO's most engaged region. Before that, I led training across a national school system of 290,000 students.</p>
+    <div class="acts"><a class="btn btn-ink" data-cfg="cv" download>Download my CV (PDF)</a><a class="btn btn-line" data-cfg="email">Email me</a></div>
+    <nav class="jump" aria-label="On this page">
+      <a href="#/community" data-scroll="c-how">How I build community</a>
+      <a href="#/community" data-scroll="c-students">Students and learning</a>
+      <a href="#/community" data-scroll="c-global">From one market to global</a>
+      <a href="#/community" data-scroll="c-value">Community that pays its way</a>
+      <a href="#/community" data-scroll="c-plan">My first 90 days</a>
+    </nav>
+  </header>
+
+  <section class="block">
+    <h2>At a glance</h2>
+    <div class="stat-rows" style="margin-top:16px">
+      <div class="four">
+        <div class="stat s-ink"><b class="num">1,800</b><span>Members in my community, across 11 markets in the Middle East, North Africa and Pakistan</span></div>
+        <div class="stat s-pink"><b>Most engaged</b><span>MENA ranked YPO's Most Highly Engaged region globally</span></div>
+        <div class="stat s-mint"><b class="num">97%</b><span>Average renewals, year on year, leading YPO globally</span></div>
+        <div class="stat s-sun"><b class="num">100%</b><span>Of chapters at Platinum, YPO's top health score, a first for MENA</span></div>
+      </div>
+      <div class="four">
+        <div class="stat s-blue"><b class="num">250</b><span>Volunteer chapter leaders I support and coach</span></div>
+        <div class="stat s-lilac"><b class="num">290,000</b><span>Students across 640 schools, in the UAE public school system</span></div>
+        <div class="stat s-sun"><b class="num">70%</b><span>Open rate for my region-wide communications</span></div>
+        <div class="stat s-mint"><b class="num">1,000+</b><span>CEOs I've trained to use AI, in person, in 13 countries</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="c-how" style="scroll-margin-top:16px">
+    <h2>How I build community</h2>
+    <p class="sub">A community works when its members would miss it. That comes from knowing people well, giving local leaders real responsibility, and making it easy to do the right thing. This is how I do it.</p>
+    <ol class="bflow">
+      <li><b>Listen first</b><span>Chapter visits, member surveys and engagement data tell me which groups to know, support and learn from. I ran online sessions for our least engaged members, and engagement and satisfaction both rose.</span><em>Now the most engaged region</em></li>
+      <li><b>Build the first relationships myself</b><span>I meet members and chapter boards in person across the region, so I know what a good relationship looks like before I ask a team to keep it up.</span><em>11 markets</em></li>
+      <li><b>Develop local leaders</b><span>Every chapter is led by volunteers. I onboard and coach them, and the best go on to regional roles.</span><em>Applicants for regional roles up 600%</em></li>
+      <li><b>Write the playbook</b><span>The United MENA Playbook puts process and guidance in one place, with usage tracked by market and role. Built with AI in three weeks against a three-month plan.</span><em>100% of chapters use it</em></li>
+      <li><b>Measure community health</b><span>My AI dashboard brings every chapter's metrics together and matches the level of support to the risk. Every chapter has a success plan and a quarterly review.</span><em>100% of chapters at the top score</em></li>
+      <li><b>Bring people together</b><span>I run 10 to 15 in-person events a year for about 1,000 attendees, and opened more than 100 events across the region to every member at no cost.</span><em>Attendance up 20% year on year</em></li>
+      <li><b>Hire and develop the team</b><span>I hire for teams in my region, sit on interview panels for Europe and Africa, and lead a team of 5, plus 6 trainers and 2 AI Champions, alongside agencies and contractors.</span><em>Every KPI met or exceeded</em></li>
+      <li><b>Close the loop</b><span>Surveys and feedback loops capture what members tell us at scale. I turn the patterns into clear recommendations for YPO's global teams.</span><em>Record 4.5/5 satisfaction</em></li>
+    </ol>
+  </section>
+
+  <section class="block" id="c-students" style="scroll-margin-top:16px">
+    <h2>Students, young people and learning</h2>
+    <p class="sub" style="margin-bottom:0">My career started in education, and it still shapes how I build communities: meet people where they are, and let them learn from each other.</p>
+    <div class="gov-grid">
+      <article class="gcard g-blue"><span class="gk">A national school system</span><h3>290,000 students, 640 schools</h3><p>As Training and Development Manager at the UAE Ministry of Education, I led training and development across the entire public school system, and wrote government policy for the ministry.</p></article>
+      <article class="gcard g-sun"><span class="gk">A partnership for young people</span><h3>Dubai College</h3><p>I set up a strategic partnership with Dubai College, hosting open events that help our members' children get into top universities.</p></article>
+      <article class="gcard g-mint"><span class="gk">How people learn</span><h3>Oxford MSc in Education</h3><p>My master's is in how people learn, and my first degree is a first-class BA in Applied Linguistics. Both shape every session and programme I design.</p></article>
+      <article class="gcard g-pink"><span class="gk">Confidence with AI</span><h3>From sceptical to confident</h3><p>I shared the use cases that led YPO to adopt ChatGPT for every employee, and have trained 70 colleagues on it, department by department. <a href="#/training">See the training</a></p></article>
+    </div>
+  </section>
+
+  <section class="block" id="c-global" style="scroll-margin-top:16px">
+    <h2>From one market to global</h2>
+    <p class="sub" style="margin-bottom:0">Good ideas start locally. I test them in my region against a baseline, then take what works to YPO's global teams, so the insight from one community improves the programme for everyone.</p>
+    <ol class="pipe">
+      <li><small>Now the global standard</small><b>Peer-to-peer</b><span>The peer-to-peer session I conceived, wrote and delivered for chapter leadership teams was adopted across regions.</span></li>
+      <li><small>Now in every chapter worldwide</small><b>Day Chair training</b><span>I designed the session and piloted it in MENA. It is now rolled out globally.</span></li>
+      <li><small>Now mandatory worldwide</small><b>Learning officers</b><span>The Assistant Learning Officer session, co-built with YPO's global Learning team and piloted in MENA.</span></li>
+      <li><small>Now advising globally</small><b>Onboarding</b><span>I piloted YPO's new global onboarding programme, rated 4.9/5, and now advise the global onboarding team.</span></li>
+    </ol>
+  </section>
+
+  <section class="block" id="c-value" style="scroll-margin-top:16px">
+    <h2>Community that pays its way</h2>
+    <p class="sub">An engaged community stays, grows and brings others in. About 60% of my members run small and mid-sized businesses, and these are the commercial results.</p>
+    <div class="four">
+      <div class="stat s-ink"><b class="num">$70M</b><span>Just under, in regional revenue over my tenure as Regional Director</span></div>
+      <div class="stat s-sun"><b class="num">$4.5M</b><span>From 300 prospects converted into members</span></div>
+      <div class="stat s-pink"><b class="num">25%</b><span>Rise in regional revenue in the year of our American Express partnership</span></div>
+      <div class="stat s-mint"><b class="num">1,000+</b><span>Adoptions for American Express, one of four strategic partners I negotiated and renewed</span></div>
+    </div>
+  </section>
+
+  <section class="block" id="c-plan" style="scroll-margin-top:16px">
+    <h2>How I'd build your community</h2>
+    <p class="sub">My first 90 days leading a community across several markets, using what worked at YPO.</p>
+    <div class="phases">
+      <div class="phase">
+        <span class="days">Days 1 to 30</span>
+        <h3>Listen and map</h3>
+        <p class="goal">Meet the people already in the community, and see how it really runs today.</p>
+        <ol>
+          <li>Visit community leaders in each market, as I do with chapter visits</li>
+          <li>Meet the global programme leads, agencies and partner teams</li>
+          <li>Map the community landscape and baseline each group's health</li>
+        </ol>
+        <div class="out"><p><b>Measured by</b>A baseline for every group, and a first view of which communities and markets matter most.</p></div>
+      </div>
+      <div class="phase">
+        <span class="days">Days 31 to 60</span>
+        <h3>Build the system</h3>
+        <p class="goal">Give every market one way of working, with room for local differences.</p>
+        <ol>
+          <li>Write the regional playbook, with usage tracked by market and role</li>
+          <li>Introduce a community health score, with support matched to risk</li>
+          <li>Set the cadences: a success plan per group and quarterly reviews</li>
+          <li>Hire the first local community managers</li>
+        </ol>
+        <div class="out"><p><b>Measured by</b>Playbook usage, health scores, and a monthly insight digest for product and marketing teams.</p></div>
+      </div>
+      <div class="phase">
+        <span class="days">Days 61 to 90</span>
+        <h3>Prove and recommend</h3>
+        <p class="goal">Test one new idea properly, and say where to invest next.</p>
+        <ol>
+          <li>Pilot one peer-to-peer format in one market, against a baseline and success measures</li>
+          <li>Create a pathway that grows local leaders into regional champions</li>
+          <li>Publish the first community stories and use cases</li>
+        </ol>
+        <div class="out"><p><b>Measured by</b>A go/no-go on the pilot, and an evidence-based recommendation on where to invest next.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2>See it in practice</h2>
+    <p class="sub">The playbook, the training and the meetings behind this community.</p>
+    <div class="mats">
+      <a class="mat m-blue" href="demos/playbook-demo.html" target="_blank" rel="noopener"><small>Sample</small><b>The community playbook</b><span>Process and guidance in one place, with an assistant that answers only from approved content.</span><em>Open the sample playbook</em></a>
+      <a class="mat m-pink" href="#/training"><small>1,000+ CEOs</small><b>Training people to use AI</b><span>The training kit I built with AI, and the executives I've trained in 13 countries.</span><em>See the training</em></a>
+      <a class="mat m-mint" href="#/briefings"><small>4.8–4.9/5</small><b>Executive briefings</b><span>How I run the board meetings and sessions that bring this community together.</span><em>See how I run them</em></a>
     </div>
   </section>
 </div>
@@ -1829,13 +1982,14 @@ document.querySelectorAll('[data-photo]').forEach(el => {
 });
 
 /* ---------- Router ---------- */
-const ORDER = ['briefings', 'about', 'training', 'work', 'plan', 'governance', 'gift'];
-const TITLES = { briefings: 'Executive briefings', about: 'About me', training: 'Training colleagues and CEOs to use AI', work: 'Real use cases', governance: 'AI governance',
+const ORDER = ['briefings', 'community', 'about', 'training', 'work', 'plan', 'governance', 'gift'];
+const TITLES = { briefings: 'Executive briefings', community: 'Building community', about: 'About me', training: 'Training colleagues and CEOs to use AI', work: 'Real use cases', governance: 'AI governance',
   plan: 'My AI strategy and 90-day plan', gift: 'A gift for hiring managers' };
 /* Older links still work: they open the matching project on the Sample work page. */
 const ALIAS = { playbook: ['work', 'proj-playbook'], reports: ['work', 'proj-report'], board: ['work', 'proj-board'],
   learning: ['plan', 'modes'], platforms: ['governance', null], workflows: ['work', 'proj-build'], built: ['work', 'proj-build'], agents: ['work', 'proj-agents'], value: ['plan', 'value'],
-  briefing: ['briefings', null], ebc: ['briefings', null], executive: ['briefings', null] };
+  briefing: ['briefings', null], ebc: ['briefings', null], executive: ['briefings', null],
+  communities: ['community', null], students: ['community', 'c-students'] };
 const home = document.getElementById('home');
 const views = [...document.querySelectorAll('.view')];
 let pendingScroll = null, firstLoad = true;

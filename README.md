@@ -18,6 +18,7 @@ of a briefing, the calendar, pipeline influence, one standard, and how I'd run a
 who I am (About me), how I've enabled AI at YPO (Training, led by the training kit, then Real use cases with the combined
 real results and six use cases), how I'd enable AI in your company (my AI strategy and 90-day plan, how I prove value,
 and the two academies), and how I'd work with your policy teams (AI governance). It ends with a gift for hiring managers.
+A Community page (`#/community`; `#/communities` also opens it, and `#/students` opens its students section) sits beside the story, linked from a full-width card on the home page: how I build community, students and learning, from one market to global, the commercial results, and a 90-day plan.
 The briefings page is `#/briefings` (`#/briefing`, `#/ebc` and `#/executive` also open it).
 Older links still work: `#/playbook`, `#/reports`, `#/board`, `#/workflows` and `#/built` open the matching use case,
 `#/learning` opens the strategy page, `#/value` opens How I prove value, `#/agents` opens the agents use case and `#/platforms` opens Governance.
